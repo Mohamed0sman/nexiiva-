@@ -1,0 +1,388 @@
+{
+  "common": {
+    "brandName": "Nexiiva",
+    "tagline": "REAL OPERATIONS. VIRTUAL EXPERIENCE.",
+    "closingLine": "Let's Make OTS Accessible to Every Industrial Unit.",
+    "requestPilot": "Request a Pilot",
+    "bookDemo": "Book a Demo",
+    "watchPlatform": "Watch the Platform",
+    "downloadBrief": "Download Capability Brief",
+    "contactUs": "Contact Us",
+    "readMore": "Read more",
+    "learnMore": "Learn more",
+    "explorePlatform": "Explore Platform",
+    "viewIndustries": "View Industries",
+    "placeholderTag": "PLACEHOLDER",
+    "comingSoon": "Roadmap",
+    "inProgress": "In Progress",
+    "completed": "Validated",
+    "nextMilestone": "Next Stage",
+    "preRevenueBadge": "Pre-Revenue Stage"
+  },
+  "nav": {
+    "platform": "Platform",
+    "solutions": "Solutions",
+    "industries": "Industries",
+    "pilot": "Pilot",
+    "about": "About",
+    "insights": "Insights",
+    "contact": "Contact",
+    "investors": "Investors",
+    "menu": "Menu",
+    "close": "Close",
+    "solutionsMega": {
+      "otsTitle": "Operator Training Simulator",
+      "otsDesc": "Dynamic 1:1 DCS console emulation with live multi-component physics.",
+      "builderTitle": "AI Unit Builder",
+      "builderDesc": "Rapid unit generation from engineering flowsheets and process logic.",
+      "consoleTitle": "Instructor Console",
+      "consoleDesc": "Real-time fault injection, trainee monitoring, and emergency freezes.",
+      "certTitle": "Scoring & Certification",
+      "certDesc": "Automated performance evaluation with objective error breakdown."
+    }
+  },
+  "announcement": {
+    "text": "Pilot programme open — train on your own unit in ~1 week of build time",
+    "cta": "Learn about the pilot"
+  },
+  "hero": {
+    "eyebrow": "OPERATOR TRAINING SIMULATOR",
+    "title": "Real operations.\nVirtual experience.",
+    "subtitle": "Nexiiva turns your own process unit into a safe, realistic DCS-style training simulator — so operators face the worst day before it happens.",
+    "primaryCta": "Request a Pilot",
+    "secondaryCta": "Watch the platform",
+    "floatingCaption": "Atmospheric Crude Distillation (CDU) — Dynamic Process Console",
+    "chips": {
+      "cduTop": "TIC102 · 361.8 °C",
+      "reflux": "FIC104 · 142.4 m³/h",
+      "drumLevel": "LIC009 · 54.2 %",
+      "columnPres": "PIC101 · 1.42 bar"
+    }
+  },
+  "trustStrip": [
+    "CDU / VDU",
+    "Preheat Train",
+    "387 equipment types",
+    "12 live trends",
+    "Instructor-injected faults",
+    "Auto scoring + certificate",
+    "Offline mode",
+    "Arabic & English"
+  ],
+  "problem": {
+    "eyebrow": "01 — THE PROBLEM",
+    "title": "The high cost of learning on a live unit.",
+    "statAmount": "$150K",
+    "statLabel": "lost from one small problem",
+    "beats": [
+      {
+        "step": "01",
+        "title": "Day one in the control room",
+        "desc": "Screens, alarms, and 'sit next to the senior'. Observational training without dynamic emergency reps."
+      },
+      {
+        "step": "02",
+        "title": "The annual reality",
+        "desc": "After a year, an operator has seen about 8 problems — 3 of them repeated. Rare upsets remain unpracticed."
+      },
+      {
+        "step": "03",
+        "title": "The senior is absent",
+        "desc": "A problem never seen before hits: leak, fire, or emergency shutdown. Hesitation turns into a plant trip."
+      },
+      {
+        "step": "04",
+        "title": "The compounding bill",
+        "desc": "7 days down ($70K) + repairs ($50K) + penalties ($30K) = $150K total impact."
+      }
+    ],
+    "costBreakdown": {
+      "downtime": "7 days downtime: $70K",
+      "repairs": "Refractory & equipment repairs: $50K",
+      "penalties": "Off-spec penalties & compliance: $30K",
+      "total": "Total direct loss: $150K"
+    }
+  },
+  "solution": {
+    "eyebrow": "02 — THE SOLUTION",
+    "title": "A simulation platform built for industrial reality.",
+    "subtitle": "Connecting engineering rigor with accessible console training.",
+    "nodes": [
+      {
+        "title": "Simulation Platform",
+        "desc": "Full-spectrum dynamic simulation designed specifically for industrial units."
+      },
+      {
+        "title": "Safe Scenario Practice",
+        "desc": "Let operators practice real-world operational upsets without asset risk."
+      },
+      {
+        "title": "Tailored Unit Logic",
+        "desc": "Tailor the model to your exact physical unit with its full P&ID logic."
+      },
+      {
+        "title": "Cost-Effective Delivery",
+        "desc": "An accessible solution delivered in days, not multi-year vendor contracts."
+      }
+    ]
+  },
+  "howItWorks": {
+    "eyebrow": "03 — HOW IT WORKS",
+    "title": "Practice. Instruct. Certify.",
+    "subtitle": "A complete operational cycle replicating real DCS workflows.",
+    "steps": [
+      {
+        "id": "practice",
+        "tab": "1. Practice",
+        "title": "DCS-Style Console Operations",
+        "desc": "Operators train on realistic distributed control system screens with live PFD diagrams, alarms, faceplates, and 12 simultaneous live trends.",
+        "image": "/assets/screens/cdu-atm-column-pfd.png",
+        "alt": "Atmospheric Column Process Flow Diagram Screenshot"
+      },
+      {
+        "id": "instruct",
+        "tab": "2. Instruct",
+        "title": "Real-Time Fault Injection",
+        "desc": "The instructor triggers pre-programmed or live faults (pump trips, valve stiction, furnace tube leaks) and monitors trainee response in real time.",
+        "image": "/assets/screens/instructor-console.png",
+        "alt": "Nexiiva Instructor Fault Console Screenshot"
+      },
+      {
+        "id": "certify",
+        "tab": "3. Certify",
+        "title": "Objective Scoring & Credentials",
+        "desc": "Every trainee action is timestamped against standard operating procedures. Receive an itemized performance breakdown and verification certificate.",
+        "image": "/assets/screens/preheat-train-pfd.png",
+        "alt": "Preheat Train Process Diagram Screenshot"
+      }
+    ]
+  },
+  "demo": {
+    "eyebrow": "INTERACTIVE SIMULATOR",
+    "title": "Try the console",
+    "subtitle": "Experience Nexiiva's dynamic model directly in your browser. Trigger an operational upset on the atmospheric column and watch the DCS alarms react.",
+    "caption": "Illustrative interactive demo — values are simulated in real time using local client state.",
+    "normalStatus": "NORMAL RUN",
+    "alarmStatus": "PROCESS ALARM",
+    "tripStatus": "TRIP EMERGENCY",
+    "scoreLabel": "Trainee Score",
+    "columnUnit": "CDU-101 Atmospheric Distillation Column",
+    "furnace": "Furnace H01",
+    "refluxDrum": "Reflux V10",
+    "resetBtn": "RESET TO NORMAL",
+    "scenariosTitle": "Instructor Scenarios",
+    "scenarios": {
+      "refluxLoss": "REFLUX LOSS",
+      "vacuumLoss": "VACUUM LOSS",
+      "feedLossV10": "FEED LOSS V10",
+      "h01Trip": "H01 TRIP",
+      "feedLossP01": "FEED LOSS P01",
+      "steamLoss": "STEAM LOSS"
+    },
+    "tags": {
+      "tTop": "Top Temp (TIC102)",
+      "tFeed": "Feed Temp (TI143)",
+      "tBtm": "Bottom Temp (TIC108)",
+      "pCol": "Top Pres (PIC101)",
+      "fReflux": "Reflux Flow (FIC104)",
+      "lDrum": "Reflux Level (LIC009)"
+    },
+    "draws": {
+      "naphtha": "Naphtha",
+      "kerosene": "Kerosene",
+      "diesel": "L. Diesel",
+      "residue": "Residue"
+    }
+  },
+  "whyNexiiva": {
+    "eyebrow": "04 — WHY NEXIIVA",
+    "title": "Engineered for speed, security, and precision.",
+    "cards": [
+      {
+        "title": "AI Unit Builder",
+        "desc": "An AI agent builds the unit from an Arabic or English description, converting engineering documents into simulator logic."
+      },
+      {
+        "title": "387 Equipment Types",
+        "desc": "A comprehensive library of verified industrial process components generates a full training project with accurate hydraulic coupling."
+      },
+      {
+        "title": "Target: ~1 Week Build Time",
+        "desc": "Target build time: about one week per unit — to be measured on unit two during pilot deployment."
+      },
+      {
+        "title": "100% Offline Mode",
+        "desc": "Offline mode needs no AI and no internet. Fully compliant with air-gapped industrial cybersecurity standards."
+      }
+    ]
+  },
+  "comparison": {
+    "eyebrow": "05 — HOW WE COMPARE",
+    "title": "A fundamental shift in simulator economics.",
+    "headers": ["Provider Category", "Cost Profile", "Delivery & Deployment Architecture"],
+    "rows": [
+      {
+        "provider": "Large DCS Vendors",
+        "cost": "Very high cost",
+        "costPill": "high",
+        "delivery": "Longer delivery cycles, rigid vendor support, proprietary hardware requirements."
+      },
+      {
+        "provider": "Specialist Simulator Firms",
+        "cost": "High cost",
+        "costPill": "medium",
+        "delivery": "Custom bespoke build per customer, heavy engineering consulting fees."
+      },
+      {
+        "provider": "Nexiiva",
+        "cost": "Low cost",
+        "costPill": "low",
+        "delivery": "Fast customization; cloud or on-premise; offline-first air-gapped deployment.",
+        "highlight": true
+      }
+    ]
+  },
+  "solutions": {
+    "eyebrow": "06 — SOLUTIONS",
+    "title": "Comprehensive simulation infrastructure.",
+    "items": [
+      {
+        "id": "ots",
+        "title": "Operator Training Simulator",
+        "desc": "DCS-authentic console simulator with multi-trend monitoring and real thermodynamic balances."
+      },
+      {
+        "id": "builder",
+        "title": "AI Unit Builder (OTS Builder)",
+        "desc": "Automated model generation pipeline converting P&IDs and process operating envelopes into simulator units."
+      },
+      {
+        "id": "console",
+        "title": "Instructor Console",
+        "desc": "Supervisory fault injection platform enabling instructors to craft complex emergency scenarios on the fly."
+      },
+      {
+        "id": "certification",
+        "title": "Scoring & Certification",
+        "desc": "Granular procedural evaluation engine that scores operator reaction time and compliance with plant SOPs."
+      }
+    ]
+  },
+  "industries": {
+    "eyebrow": "07 — INDUSTRIES",
+    "title": "From one industrial unit to every process industry.",
+    "items": [
+      {
+        "name": "Refining",
+        "badge": "Delivered Today",
+        "isDelivered": true,
+        "desc": "Atmospheric distillation (CDU), vacuum distillation (VDU), and preheat train integration."
+      },
+      {
+        "name": "Gas Processing",
+        "badge": "Roadmap",
+        "isDelivered": false,
+        "desc": "Gas dehydration, acid gas removal, and NGL fractionation train simulation."
+      },
+      {
+        "name": "Petrochemicals",
+        "badge": "Roadmap",
+        "isDelivered": false,
+        "desc": "Ethylene crackers, polymerization reactors, and aromatic separation units."
+      },
+      {
+        "name": "Technical Institutes & Universities",
+        "badge": "Roadmap",
+        "isDelivered": false,
+        "desc": "Curriculum-aligned chemical engineering and process plant operator vocational labs."
+      }
+    ]
+  },
+  "journey": {
+    "eyebrow": "08 — OUR JOURNEY",
+    "title": "Milestones and roadmap.",
+    "subtitle": "Honest progression from core engineering to industrial pilot deployment.",
+    "items": [
+      {
+        "status": "done",
+        "title": "Working CDU/VDU Training Unit",
+        "desc": "Built and tested dynamic atmospheric distillation and preheat train models with full DCS console emulations."
+      },
+      {
+        "status": "in_progress",
+        "title": "OTS Builder in Active Development",
+        "desc": "Engineering the automated unit generation pipeline. Second unit to measure real build time."
+      },
+      {
+        "status": "done",
+        "title": "Commercial Benchmarking Completed",
+        "desc": "Approached international OTS providers and evaluated preliminary market quotations to validate positioning."
+      },
+      {
+        "status": "next",
+        "title": "Pre-Revenue Stage — Pilot Deployments",
+        "desc": "Preparing initial industrial pilot deployments and direct market entry in Egyptian and GCC facilities."
+      }
+    ]
+  },
+  "pilotSection": {
+    "eyebrow": "09 — PILOT PROGRAMME",
+    "title": "Start with one unit.\nExpand across the facility.",
+    "subtitle": "A structured, low-risk pilot program designed for plant operations and training leadership.",
+    "steps": [
+      {
+        "step": "1",
+        "title": "Direct Engagement",
+        "desc": "Technical scoping session with your plant operations and training managers to define unit boundaries."
+      },
+      {
+        "step": "2",
+        "title": "Paid Pilot for One Process Unit",
+        "desc": "Rapid build and deployment of a single critical unit simulator tailored to your operating envelope."
+      },
+      {
+        "step": "3",
+        "title": "Land & Expand",
+        "desc": "Validate console training outcomes, then expand unit-by-unit across your entire refining complex."
+      }
+    ],
+    "distributionNote": "Strategic partnerships available for regional distribution and operator training institutes.",
+    "cta": "Request a Pilot"
+  },
+  "leadership": {
+    "quote": "[CEO quote — to be provided by Mostafa Adel. 'Our mission is to ensure every control room technician has faced their worst-case emergency hundreds of times in simulation before ever touching live valves.']",
+    "author": "Mostafa Adel",
+    "role": "Founder & CEO, Nexiiva",
+    "note": "Committed to Operational Excellence & Plant Safety"
+  },
+  "responsibility": {
+    "eyebrow": "SAFETY & RESPONSIBILITY",
+    "title": "Safer plants start in the simulator.",
+    "body1": "Industrial plants operate on the front line of community safety and environmental protection. An unexpected shutdown or flaring incident carries profound consequences far beyond balance sheets.",
+    "body2": "Nexiiva provides a risk-free digital environment where operators can fail safely, analyze procedural mistakes immediately, and master emergency sequences without venting a single gram of hydrocarbon or risking personnel safety."
+  },
+  "insights": {
+    "eyebrow": "LATEST INSIGHTS",
+    "title": "Engineering perspectives & analysis.",
+    "cta": "View all articles"
+  },
+  "finalCta": {
+    "title": "Let's make OTS accessible to every industrial unit.",
+    "subtitle": "Join us in changing the future of industrial training.",
+    "requestPilot": "Request a Pilot",
+    "contactUs": "Contact Us"
+  },
+  "footer": {
+    "desc": "High-fidelity Operator Training Simulators (OTS) for refineries, gas plants, and petrochemical sites.",
+    "navCol": "Navigation",
+    "solutionsCol": "Solutions",
+    "companyCol": "Company",
+    "legalCol": "Legal",
+    "addressPlaceholder": "[Corporate Headquarters — Cairo / Alexandria, Egypt]",
+    "emailPlaceholder": "[Official Email — contact@nexiiva.com]",
+    "phonePlaceholder": "[Official Phone — to be provided]",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}
