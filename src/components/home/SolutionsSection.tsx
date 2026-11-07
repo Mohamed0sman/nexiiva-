@@ -27,7 +27,8 @@ export function SolutionsSection({ locale, dict }: SolutionsSectionProps) {
       id: 'builder',
       icon: Cpu,
       title:
-        dict?.solutions?.items?.[1]?.title || 'AI Unit Builder (OTS Builder)',
+        dict?.solutions?.items?.[1]?.title ||
+        (locale === 'ar' ? 'محرك بناء النماذج الرقمية (OTS Builder)' : 'Unit Modeling Engine (OTS Builder)'),
       desc:
         dict?.solutions?.items?.[1]?.desc ||
         'Automated model generation pipeline converting P&IDs, mass-energy balances, and operating envelopes into simulation units.',
@@ -63,7 +64,11 @@ export function SolutionsSection({ locale, dict }: SolutionsSectionProps) {
           title={
             dict?.solutions?.title || 'بنية تحتية هندسية متكاملة لمحاكاة العمليات.'
           }
-          subtitle="وحدات مصممة للتكامل مع برامج التدريب والتأهيل المعتمدة في منشأتك."
+          subtitle={
+            locale === 'ar'
+              ? 'وحدات مصممة للتكامل مع برامج التدريب والتأهيل المعتمدة في منشأتك.'
+              : 'Modular simulation infrastructure built to integrate with your plant’s qualification and SOP standards.'
+          }
           theme="light"
         />
 

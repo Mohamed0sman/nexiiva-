@@ -25,110 +25,159 @@ export default async function AboutPage({ params }: Props) {
   setRequestLocale(locale);
   const messages = (await getMessages()) as unknown as Dict;
 
-  const team = [
+  const team = messages?.leadership?.members || [
     {
-      name: 'Mostafa Adel',
-      role: 'Founder & CEO',
-      bio: 'Process simulation lead and chemical engineering practitioner focused on democratizing high-fidelity simulator technology across Middle East energy infrastructure.',
+      name: locale === 'ar' ? 'مصطفى عادل' : 'Mostafa Adel',
+      role: locale === 'ar' ? 'المؤسس والرئيس التنفيذي' : 'Founder & CEO',
+      bio:
+        locale === 'ar'
+          ? 'مهندس كيميائي ومتخصص في المحاكاة الديناميكية للعمليات البترولية وتطوير أنظمة تدريب المشغلين.'
+          : 'Process simulation specialist and chemical engineer focused on accessible high-fidelity dynamic modeling for energy plants.',
       image: '/assets/team/mostafa-adel.jpg',
-      initials: null,
-      linkedin: '#',
+      initials: 'MA',
     },
     {
-      name: 'Mohamed Osman',
-      role: 'Co-Founder & CTO',
-      bio: 'Software architect specializing in high-performance dynamic simulation engines, air-gapped system design, and industrial DCS emulation.',
+      name: locale === 'ar' ? 'محمد عثمان' : 'Mohamed Osman',
+      role: locale === 'ar' ? 'شريك مؤسس والرئيس التقني (CTO)' : 'Co-Founder & CTO',
+      bio:
+        locale === 'ar'
+          ? 'معماري أنظمة برمجية متخصص في محركات الحسابات الديناميكية ومحاكاة شاشات DCS المعزولة أمنياً.'
+          : 'Software systems architect specializing in dynamic calculation engines, real-time thermodynamics, and air-gapped DCS emulation.',
       image: '/assets/team/mohamed-osman.jpg',
-      initials: null,
-      linkedin: '#',
+      initials: 'MO',
     },
     {
-      name: 'Gehad Ashraf',
-      role: 'Co-Founder, Business Advisor & Mentor',
-      bio: 'Strategic operations mentor with deep cross-border expertise in regional venture growth, industrial partnerships, and corporate enterprise alignment.',
+      name: locale === 'ar' ? 'جهاد أشرف' : 'Gehad Ashraf',
+      role: locale === 'ar' ? 'شريك مؤسس ومستشار الأعمال' : 'Co-Founder, Business Advisor & Mentor',
+      bio:
+        locale === 'ar'
+          ? 'مستشار استراتيجي في الحوكمة المؤسسية والشراكات الإقليمية ونمو المشاريع الصناعية.'
+          : 'Strategic operations mentor with deep cross-border expertise in regional venture growth, industrial partnerships, and corporate governance.',
       image: null,
       initials: 'GA',
-      linkedin: '#',
     },
     {
-      name: 'Rodayna Emam',
-      role: 'Co-Founder, Business Development',
-      bio: 'Commercial growth strategist leading refinery and NOC client engagement, pilot trial contracts, and institutional partnerships across Egypt and the GCC.',
+      name: locale === 'ar' ? 'ردينة إمام' : 'Rodayna Emam',
+      role: locale === 'ar' ? 'شريك مؤسس وتطوير الأعمال' : 'Co-Founder, Business Development',
+      bio:
+        locale === 'ar'
+          ? 'مسؤولة النمو التجاري وإدارة عقود المشاريع التجريبية والتوسع في قطاع التكرير والطاقة.'
+          : 'Commercial growth strategist leading refinery client engagement, industrial pilot contracts, and GCC expansion.',
       image: null,
       initials: 'RE',
-      linkedin: '#',
     },
   ];
 
   return (
-    <div className="py-20 bg-slate-50 border-b border-slate-200">
+    <div className="py-24 bg-slate-50 border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          eyebrow="OUR STORY & PURPOSE"
-          title="Making OTS Accessible to Every Industrial Unit"
-          subtitle="Founded by engineers who believe control room safety should never depend on luck or informal apprenticeship."
+          eyebrow={locale === 'ar' ? 'قصتنا ورؤيتنا' : 'OUR STORY & PURPOSE'}
+          title={
+            locale === 'ar'
+              ? 'إتاحة محاكيات OTS عالية الدقة لكل وحدة صناعية'
+              : 'Making OTS Accessible to Every Industrial Unit'
+          }
+          subtitle={
+            locale === 'ar'
+              ? 'تأسست نكسيفا على أيدي مهندسين يؤمنون بأن سلامة غرف التحكم يجب ألا تعتمد على الحظ أو الملاحظة العابرة.'
+              : 'Founded by engineers who believe control room safety should never depend on luck or informal apprenticeship.'
+          }
           theme="light"
         />
 
         {/* Narrative Section: Adam's First Day */}
-        <div className="mt-12 rounded-2xl border border-slate-200 bg-white p-8 lg:p-12 shadow-sm">
+        <div className="mt-14 rounded-2xl border border-slate-200 bg-white p-8 lg:p-12 shadow-sm">
           <div className="max-w-3xl">
-            <span className="font-mono-tag text-xs font-bold text-[#1D4ED8] uppercase">
-              THE GENESIS NARRATIVE
+            <span className="text-xs font-semibold text-[#1D4ED8]">
+              {locale === 'ar' ? 'قصة التأسيس الواقعية' : 'THE GENESIS NARRATIVE'}
             </span>
-            <h3 className="mt-3 text-2xl sm:text-3xl font-extrabold text-[#0A192F]">
-              Adam’s First Day in the Central Control Room
+            <h3 className="mt-3 text-2xl sm:text-3xl font-bold text-[#0A192F]">
+              {locale === 'ar'
+                ? 'اليوم الأول للمهندس في غرفة التحكم المركزية'
+                : 'Adam’s First Day in the Central Control Room'}
             </h3>
 
             <div className="mt-6 space-y-4 text-sm sm:text-base leading-relaxed text-slate-600">
-              <p>
-                When a junior console engineer named Adam sat down for his first 12-hour shift at an atmospheric distillation unit, he was handed a headset, shown twelve glowing screens, and told: <span className="text-[#0A192F] italic font-medium">&ldquo;Sit next to the senior and watch carefully.&rdquo;</span>
-              </p>
-              <p>
-                Months passed. Adam observed routine steady-state conditions: slight valve tweaks, level drifts, normal rundown sampling. But the severe, terrifying operational transients—reflux pump seizure, furnace flameout, emergency trip sequences—only happened once every five years.
-              </p>
-              <p>
-                When a rare upset finally occurred during an off-shift with the senior engineer away, the inevitable hesitation resulted in a unit trip: <strong className="text-[#0A192F]">seven days of lost production ($70K), $50K in refractory and tray repairs, and $30K in off-spec penalties. Over $150,000 lost from one small problem.</strong>
-              </p>
-              <p>
-                Nexiiva was founded to change this reality: to ensure that every control room operator faces the worst day hundreds of times in a realistic virtual simulator before ever touching a live valve.
-              </p>
+              {locale === 'ar' ? (
+                <>
+                  <p>
+                    عندما بدأ مهندس الكونسول المبتدئ ورديته الأولى لمدة 12 ساعة في وحدة التقطير الجوي، سُلِّم سماعة الرأس وأمامه اثنتا عشرة شاشة متوهجة، وقيل له: <span className="text-[#0A192F] italic font-medium">&ldquo;اجلس بجوار المهندس الأقدم وشاهد ما يفعله بدقة.&rdquo;</span>
+                  </p>
+                  <p>
+                    مرت الأشهر وهو يشاهد عمليات روتينية هادئة: تعديلات طفيفة على الصمامات، تقلبات اعتيادية في المستويات، وأخذ عينات قياسية. أما حالات الطوارئ المخيفة — كانقطاع تيار الراجع، أو انطفاء شعلة الفرن، أو تسلسل الإغلاق الاضطراري — فتحدث مرة كل سنوات.
+                  </p>
+                  <p>
+                    وعندما وقع اضطراب حرج للمرة الأولى في غياب المهندس الأقدم، أدت ثوانٍ معدودة من التردد إلى إغلاق كامل للوحدة: <strong className="text-[#0A192F]">7 أيام من فقدان الإنتاج (70 ألف دولار)، 50 ألف دولار تكاليف صيانة لبطانة الفرن، و30 ألف دولار غرامات منتجات خارج المواصفات. خسارة تجاوزت 150 ألف دولار بسبب حادثة واحدة كان يمكن التدرب عليها مسبقاً.</strong>
+                  </p>
+                  <p>
+                    تأسست نكسيفا لإنهاء هذه المعضلة: لتمكين كل مشغل من مواجهة أسوأ السيناريوهات مئات المرات في بيئة محاكاة واقعية قبل أن يتعامل مع صمام حقيقي واحد.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p>
+                    When a junior console engineer sat down for his first 12-hour shift at an atmospheric distillation unit, he was handed a headset, shown twelve glowing screens, and told: <span className="text-[#0A192F] italic font-medium">&ldquo;Sit next to the senior and watch carefully.&rdquo;</span>
+                  </p>
+                  <p>
+                    Months passed. He observed routine steady-state conditions: slight valve tweaks, level drifts, normal rundown sampling. But the severe, terrifying operational transients—reflux pump seizure, furnace flameout, emergency trip sequences—only happened once every few years.
+                  </p>
+                  <p>
+                    When a rare upset finally occurred during an off-shift with the senior engineer away, the inevitable hesitation resulted in a unit trip: <strong className="text-[#0A192F]">seven days of lost production ($70K), $50K in refractory and tray repairs, and $30K in off-spec penalties. Over $150,000 lost from one small problem.</strong>
+                  </p>
+                  <p>
+                    Nexiiva was founded to change this reality: to ensure that every control room operator faces the worst day hundreds of times in a realistic virtual simulator before ever touching a live valve.
+                  </p>
+                </>
+              )}
             </div>
           </div>
         </div>
 
         {/* Mission Statement Callout */}
         <div className="mt-16 text-center max-w-3xl mx-auto">
-          <span className="font-mono-tag text-xs font-bold text-[#1D4ED8] uppercase">
-            CORPORATE VISION
+          <span className="text-xs font-semibold text-[#1D4ED8]">
+            {locale === 'ar' ? 'الرؤية المؤسسية' : 'CORPORATE VISION'}
           </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-[#0A192F]">
-            &ldquo;Let’s Make OTS Accessible to Every Industrial Unit.&rdquo;
+          <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-[#0A192F]">
+            {locale === 'ar'
+              ? '«محاكيات تدريب المشغلين حق لكل وحدة صناعية وليست حكراً على المنشآت العملاقة.»'
+              : '“Let’s Make OTS Accessible to Every Industrial Unit.”'}
           </h2>
-          <p className="mt-4 text-sm text-slate-600">
-            Traditional OTS providers charge millions of dollars and take years to deliver custom proprietary hardware. Nexiiva delivers air-gapped, high-fidelity simulation in approximately one week of build time at a fraction of the cost.
+          <p className="mt-4 text-sm text-slate-600 leading-relaxed">
+            {locale === 'ar'
+              ? 'تتطلب أنظمة المحاكاة التقليدية ملايين الدولارات وسنوات طويلة للتسليم في بيئات برمجية معقدة. تقدم نكسيفا محاكاة عالية الدقة معزولة أمنياً في غضون أيام وبكسر من التكلفة المعتادة.'
+              : 'Traditional OTS providers charge millions of dollars and take years to deliver custom proprietary hardware. Nexiiva delivers air-gapped, high-fidelity simulation in approximately one week of build time at a fraction of the cost.'}
           </p>
         </div>
 
         {/* Founding Leadership Team (4 members) */}
         <div id="team" className="mt-20">
           <SectionHeader
-            eyebrow="LEADERSHIP & FOUNDERS"
-            title="The Engineering & Executive Team"
-            subtitle="Led by process modeling engineers, systems architects, and industrial commercial leaders."
+            eyebrow={locale === 'ar' ? 'فريق القيادة' : 'LEADERSHIP & FOUNDERS'}
+            title={
+              locale === 'ar'
+                ? 'الفريق القيادي والمهندسون المؤسسون'
+                : 'The Engineering & Executive Team'
+            }
+            subtitle={
+              locale === 'ar'
+                ? 'بقيادة مهندسي محاكاة العمليات الكيميائية ومعماريي البرمجيات وخبراء تطوير الأعمال الصناعية.'
+                : 'Led by process modeling engineers, systems architects, and industrial commercial leaders.'
+            }
             align="center"
             theme="light"
           />
 
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {team.map((member, idx) => (
               <div
                 key={idx}
-                className="group rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm transition-colors hover:border-slate-300 flex flex-col justify-between"
+                className="group rounded-xl border border-slate-200 bg-white p-6 text-center shadow-xs transition-colors hover:border-slate-300 flex flex-col justify-between"
               >
                 <div>
                   {/* Portrait or Initials Avatar with clean blue ring */}
-                  <div className="mx-auto relative h-28 w-28 shrink-0 rounded-full border-2 border-[#1D4ED8] p-0.5 shadow-sm">
+                  <div className="mx-auto relative h-28 w-28 shrink-0 rounded-full border-2 border-blue-600 p-0.5 shadow-xs">
                     <div className="h-full w-full rounded-full overflow-hidden bg-slate-100 flex items-center justify-center">
                       {member.image ? (
                         <Image
@@ -139,17 +188,17 @@ export default async function AboutPage({ params }: Props) {
                           className="h-full w-full object-cover aspect-square"
                         />
                       ) : (
-                        <span className="font-mono-tag text-2xl font-bold tracking-wider text-[#0A192F]">
+                        <span className="text-2xl font-bold tracking-wider text-[#0A192F]">
                           {member.initials}
                         </span>
                       )}
                     </div>
                   </div>
 
-                  <h3 className="mt-5 text-lg font-bold text-[#0A192F] group-hover:text-[#1D4ED8] transition-colors">
+                  <h3 className="mt-5 text-lg font-bold text-[#0A192F] group-hover:text-blue-600 transition-colors">
                     {member.name}
                   </h3>
-                  <p className="font-mono-tag text-xs font-semibold text-[#1D4ED8] mt-1">
+                  <p className="text-xs font-semibold text-blue-600 mt-1">
                     {member.role}
                   </p>
 
@@ -159,13 +208,10 @@ export default async function AboutPage({ params }: Props) {
                 </div>
 
                 <div className="mt-6 pt-4 border-t border-slate-100 flex justify-center">
-                  <a
-                    href={member.linkedin}
-                    className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200 bg-slate-50 text-slate-600 hover:border-blue-400 hover:text-[#1D4ED8] transition-colors"
-                    aria-label={`${member.name} LinkedIn Profile`}
-                  >
-                    <LinkedinIcon className="h-4 w-4" />
-                  </a>
+                  <span className="inline-flex items-center gap-1.5 text-[11px] font-medium text-slate-500">
+                    <LinkedinIcon className="h-3.5 w-3.5 text-blue-600" />
+                    <span>Nexiiva Executive Team</span>
+                  </span>
                 </div>
               </div>
             ))}

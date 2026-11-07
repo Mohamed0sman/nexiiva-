@@ -47,19 +47,23 @@ export function PilotSection({ locale, dict }: PilotSectionProps) {
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-500/10 px-3.5 py-1 text-xs font-semibold text-blue-300">
               <Building2 className="h-3.5 w-3.5 text-blue-400" />
-              <span>{dict?.pilotSection?.eyebrow || 'برنامج المشاريع التجريبية'}</span>
+              <span>{dict?.pilotSection?.eyebrow || (locale === 'ar' ? 'برنامج المشاريع التجريبية' : 'Pilot Programme')}</span>
             </div>
 
             {/* Headline */}
             <h2 className="mt-4 text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-snug">
               {dict?.pilotSection?.title ||
-                'ابدأ بوحدة تشغيلية واحدة.\nثم توسع في باقي المنشأة.'}
+                (locale === 'ar'
+                  ? 'ابدأ بوحدة تشغيلية واحدة.\nثم توسع في باقي المنشأة.'
+                  : 'Start with one unit.\nExpand across the facility.')}
             </h2>
 
             {/* Subtitle */}
             <p className="mt-3 text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
               {dict?.pilotSection?.subtitle ||
-                'برنامج تجريبي مدروس ومحدد النطاق لإدارات العمليات والتدريب للتحقق من أداء المحاكي على وحدة حقيقية.'}
+                (locale === 'ar'
+                  ? 'برنامج تجريبي مدروس ومحدد النطاق لإدارات العمليات والتدريب للتحقق من أداء المحاكي على وحدة حقيقية.'
+                  : 'A structured, low-risk pilot program designed for plant operations and training leadership.')}
             </p>
           </div>
 

@@ -350,10 +350,43 @@
     "cta": "Request a Pilot"
   },
   "leadership": {
-    "quote": "[CEO quote — to be provided by Mostafa Adel. 'Our mission is to ensure every control room technician has faced their worst-case emergency hundreds of times in simulation before ever touching live valves.']",
+    "quote": "Our mission is to ensure every control room technician has faced their worst-case emergency hundreds of times in simulation before ever touching live plant valves.",
     "author": "Mostafa Adel",
     "role": "Founder & CEO, Nexiiva",
-    "note": "Committed to Operational Excellence & Plant Safety"
+    "note": "Committed to Operational Excellence & Plant Safety",
+    "teamEyebrow": "Leadership & Founders",
+    "teamTitle": "The Engineering & Executive Team",
+    "teamSubtitle": "Led by process simulation engineers, software systems architects, and industrial commercial leaders.",
+    "members": [
+      {
+        "name": "Mostafa Adel",
+        "role": "Founder & CEO",
+        "bio": "Process simulation specialist and chemical engineer focused on accessible high-fidelity dynamic modeling for energy plants.",
+        "image": "/assets/team/mostafa-adel.jpg",
+        "initials": "MA"
+      },
+      {
+        "name": "Mohamed Osman",
+        "role": "Co-Founder & CTO",
+        "bio": "Software systems architect specializing in dynamic calculation engines, real-time thermodynamics, and air-gapped DCS emulation.",
+        "image": "/assets/team/mohamed-osman.jpg",
+        "initials": "MO"
+      },
+      {
+        "name": "Gehad Ashraf",
+        "role": "Co-Founder, Business Advisor & Mentor",
+        "bio": "Strategic operations mentor with deep cross-border expertise in regional venture growth, industrial partnerships, and corporate governance.",
+        "image": null,
+        "initials": "GA"
+      },
+      {
+        "name": "Rodayna Emam",
+        "role": "Co-Founder, Business Development",
+        "bio": "Commercial growth strategist leading refinery client engagement, industrial pilot contracts, and GCC expansion.",
+        "image": null,
+        "initials": "RE"
+      }
+    ]
   },
   "responsibility": {
     "eyebrow": "SAFETY & RESPONSIBILITY",

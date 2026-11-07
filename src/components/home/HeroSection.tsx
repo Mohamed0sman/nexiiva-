@@ -32,23 +32,36 @@ export function HeroSection({ locale, dict }: HeroSectionProps) {
   };
 
   return (
-    <section className="relative bg-white pt-20 pb-16 lg:pt-28 lg:pb-20 border-b border-slate-200">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="relative bg-[#0A192F] text-white pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden border-b border-slate-800">
+      {/* Subtle authentic industrial refinery background */}
+      <div className="absolute inset-0 pointer-events-none opacity-20">
+        <Image
+          src="/assets/photos/refinery-dusk.jpg"
+          alt="Industrial Refinery Background"
+          fill
+          priority
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A192F] via-[#0A192F]/90 to-[#0A192F]/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-transparent to-[#0A192F]/80" />
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-12">
           {/* Left Column: Headline, Subtitle, CTAs */}
           <div className="lg:col-span-7 flex flex-col items-start text-start">
-            {/* Calm Eyebrow */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1 text-xs font-semibold text-slate-700">
-              <span className="h-2 w-2 rounded-full bg-[#1D4ED8]" />
+            {/* Calm Industrial Eyebrow */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-950/60 px-3.5 py-1 text-xs font-semibold text-blue-300 backdrop-blur-xs">
+              <span className="h-2 w-2 rounded-full bg-blue-400" />
               <span>{dict?.hero?.eyebrow || 'محاكي تدريب المشغلين (OTS)'}</span>
             </div>
 
             {/* H1 Headline */}
-            <h1 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0A192F] leading-[1.2]">
+            <h1 className="mt-5 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-white leading-[1.18]">
               {dict?.hero?.title?.split('\n').map((line: string, i: number) => (
                 <span key={i} className="block">
                   {i === 1 ? (
-                    <span className="text-[#1D4ED8]">{line}</span>
+                    <span className="text-blue-400">{line}</span>
                   ) : (
                     line
                   )}
@@ -56,7 +69,7 @@ export function HeroSection({ locale, dict }: HeroSectionProps) {
               )) || (
                 <>
                   عمليات حقيقية.
-                  <span className="block text-[#1D4ED8]">
+                  <span className="block text-blue-400">
                     تجربة افتراضية.
                   </span>
                 </>
@@ -64,16 +77,16 @@ export function HeroSection({ locale, dict }: HeroSectionProps) {
             </h1>
 
             {/* Subtitle */}
-            <p className="mt-4 max-w-2xl text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+            <p className="mt-5 max-w-2xl text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
               {dict?.hero?.subtitle ||
                 'تحول نكسيفا وحدتك الصناعية الحقيقية إلى محاكي تدريب متقدم وواقعي بنظام تحكم موزع DCS — ليواجه المشغلون أصعب سيناريوهات الطوارئ قبل حدوثها على أرض الواقع.'}
             </p>
 
             {/* Action Buttons */}
-            <div className="mt-7 flex flex-wrap items-center gap-4">
+            <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
                 href={`/${locale}/pilot`}
-                className="inline-flex items-center gap-2 rounded-lg bg-[#0A192F] px-6 py-3.5 text-sm font-semibold text-white shadow-xs transition-colors hover:bg-[#1E293B]"
+                className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white shadow-xs transition-colors hover:bg-blue-500"
               >
                 <span>{dict?.hero?.primaryCta || 'طلب مشروع تجريبي'}</span>
                 <ArrowRight className="h-4 w-4 rtl:rotate-180" />
@@ -82,9 +95,9 @@ export function HeroSection({ locale, dict }: HeroSectionProps) {
               <button
                 type="button"
                 onClick={() => handleOpenVideo()}
-                className="inline-flex items-center gap-2.5 rounded-lg border border-slate-300 bg-white px-5 py-3.5 text-sm font-semibold text-slate-800 shadow-xs transition-colors hover:bg-slate-50 hover:border-slate-400"
+                className="inline-flex items-center gap-2.5 rounded-lg border border-slate-700 bg-slate-900/80 px-5 py-3.5 text-sm font-semibold text-white shadow-xs transition-colors hover:bg-slate-800 hover:border-slate-600 backdrop-blur-xs"
               >
-                <div className="flex h-5 w-5 items-center justify-center rounded-full bg-red-50 text-red-600">
+                <div className="flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-white">
                   <Play className="h-3 w-3 fill-current ms-0.5" />
                 </div>
                 <span>{dict?.hero?.secondaryCta || 'مشاهدة المنصة (فيديو)'}</span>
@@ -92,14 +105,14 @@ export function HeroSection({ locale, dict }: HeroSectionProps) {
             </div>
 
             {/* Direct Video Links */}
-            <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-slate-500">
-              <span className="font-medium text-slate-700">
+            <div className="mt-5 flex flex-wrap items-center gap-3 text-xs text-slate-400">
+              <span className="font-medium text-slate-300">
                 {locale === 'ar' ? 'فيديوهات النظام:' : 'Demo Walkthroughs:'}
               </span>
               <button
                 type="button"
                 onClick={() => handleOpenVideo('en')}
-                className="text-[#1D4ED8] hover:underline font-medium"
+                className="hover:text-blue-300 hover:underline transition-colors"
               >
                 English Walkthrough (YouTube)
               </button>
@@ -107,86 +120,101 @@ export function HeroSection({ locale, dict }: HeroSectionProps) {
               <button
                 type="button"
                 onClick={() => handleOpenVideo('ar')}
-                className="text-[#1D4ED8] hover:underline font-medium"
+                className="hover:text-blue-300 hover:underline transition-colors"
               >
                 العرض باللغة العربية (YouTube)
               </button>
             </div>
           </div>
 
-          {/* Right Column: Clean Industrial Console Frame */}
-          <div className="lg:col-span-5 flex flex-col items-center">
-            <div
-              className="relative w-full cursor-pointer group rounded-2xl border border-slate-200 bg-white p-2 shadow-sm transition-all hover:border-slate-300"
-              onClick={() => handleOpenVideo()}
-            >
-              <div className="flex items-center justify-between px-3 py-2 text-[11px] font-mono text-slate-500 border-b border-slate-100">
-                <div className="flex items-center gap-1.5">
-                  <span className="h-2 w-2 rounded-full bg-slate-300" />
-                  <span className="h-2 w-2 rounded-full bg-slate-300" />
-                  <span className="h-2 w-2 rounded-full bg-slate-300" />
-                  <span className="ms-2 font-semibold text-slate-700">CDU-101 ATM COLUMN · PFD</span>
+          {/* Right Column: DCS Console Screen Frame */}
+          <div className="lg:col-span-5">
+            <div className="relative rounded-2xl border border-slate-700/80 bg-slate-950 p-3 shadow-xl backdrop-blur-sm">
+              {/* DCS Console Bezel Header */}
+              <div className="flex items-center justify-between px-3 py-2 border-b border-slate-800/80 text-[11px] text-slate-400">
+                <div className="flex items-center gap-2">
+                  <span className="inline-block rounded bg-emerald-950/80 px-2 py-0.5 text-[10px] font-semibold text-emerald-400 border border-emerald-800/50">
+                    AIR-GAPPED 100%
+                  </span>
                 </div>
-                <span className="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-semibold">100% AIR-GAPPED</span>
-              </div>
-
-              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-slate-900 mt-2">
-                <Image
-                  src="/assets/screens/cdu-atm-column-pfd.png"
-                  alt="Atmospheric Distillation Column PFD Console"
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-[1.01]"
-                  priority
-                />
-
-                {/* Gentle Play Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center bg-slate-900/35 transition-colors group-hover:bg-slate-900/25">
-                  <div className="flex items-center gap-2.5 rounded-full bg-white px-5 py-2.5 text-xs font-bold text-slate-900 shadow-md transition-transform group-hover:scale-105">
-                    <div className="flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-white">
-                      <Play className="h-2.5 w-2.5 fill-current ms-0.5" />
-                    </div>
-                    <span>{locale === 'ar' ? 'تشغيل الفيديو التجريبي' : 'Play Video Demo'}</span>
+                <div className="flex items-center gap-2 font-mono text-[10px] text-slate-400">
+                  <span>CDU-101 ATM COLUMN · PFD</span>
+                  <div className="flex gap-1">
+                    <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                    <span className="h-2 w-2 rounded-full bg-amber-500" />
+                    <span className="h-2 w-2 rounded-full bg-blue-500" />
                   </div>
                 </div>
               </div>
 
-              <div className="px-3 pt-2 pb-1 text-center text-xs text-slate-500">
-                {locale === 'ar'
-                  ? 'شاشة محاكاة لبرج التقطير الجوي (CDU) متطابقة 1:1 مع أنظمة التحكم الموزع'
-                  : 'Authentic 1:1 DCS simulation screen of an atmospheric crude distillation column'}
+              {/* Console Screen Image with Play Overlay */}
+              <div
+                className="relative mt-2 aspect-16/10 w-full overflow-hidden rounded-lg bg-black cursor-pointer group"
+                onClick={() => handleOpenVideo()}
+              >
+                <Image
+                  src="/assets/screens/cdu-atm-column-pfd.png"
+                  alt="Nexiiva DCS Simulator Interface"
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-102"
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                  priority
+                />
+
+                {/* Subtle Hover Play Button */}
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-colors">
+                  <div className="flex items-center gap-2.5 rounded-full bg-slate-900/90 border border-slate-700 px-5 py-2.5 text-xs font-semibold text-white shadow-lg backdrop-blur-sm group-hover:scale-105 transition-transform">
+                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-white">
+                      <Play className="h-3.5 w-3.5 fill-current ms-0.5" />
+                    </div>
+                    <span>
+                      {locale === 'ar' ? 'تشغيل الفيديو التجريبي' : 'Play Video Walkthrough'}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Console Footer */}
+              <div className="mt-2.5 px-3 py-1 flex items-center justify-between text-[11px] text-slate-400 border-t border-slate-800/60">
+                <span>
+                  {locale === 'ar'
+                    ? 'شاشة محاكاة لبرج التقطير الجوي (CDU) متطابقة 1:1 مع أنظمة التحكم الموزع'
+                    : '1:1 DCS-matching atmospheric column simulation screen'}
+                </span>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* YouTube Video Modal */}
+      {/* Video Modal */}
       {isVideoModalOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/80 p-4 backdrop-blur-sm"
-          onClick={() => setIsVideoModalOpen(false)}
           role="dialog"
           aria-modal="true"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm"
+          onClick={() => setIsVideoModalOpen(false)}
         >
           <div
-            className="relative w-full max-w-4xl overflow-hidden rounded-2xl border border-slate-700 bg-[#0A192F] shadow-2xl"
+            className="relative w-full max-w-4xl overflow-hidden rounded-2xl bg-slate-950 border border-slate-800 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="flex items-center justify-between border-b border-slate-800 px-5 py-3.5 text-white">
+            <div className="flex items-center justify-between border-b border-slate-800 px-6 py-4">
               <div className="flex items-center gap-3">
-                <span className="font-mono-tag text-xs font-bold uppercase tracking-wider text-[#38BDF8]">
-                  {locale === 'ar' ? 'عرض النظام التجريبي' : 'Platform Walkthrough'}
+                <span className="text-sm font-bold text-white">
+                  {selectedVideoLang === 'ar'
+                    ? 'عرض منصة نكسيفا (باللغة العربية)'
+                    : 'Nexiiva OTS Platform Walkthrough'}
                 </span>
-
-                {/* In-Modal Language Toggle */}
-                <div className="flex items-center gap-1 rounded-lg border border-slate-700 bg-slate-800/80 p-0.5 text-xs">
+                {/* Language Toggle in Modal */}
+                <div className="flex rounded-md bg-slate-900 p-0.5 border border-slate-800 text-xs">
                   <button
                     type="button"
                     onClick={() => setSelectedVideoLang('en')}
-                    className={`rounded px-2.5 py-1 font-semibold transition-colors ${
+                    className={`px-2.5 py-1 rounded font-medium transition-colors ${
                       selectedVideoLang === 'en'
-                        ? 'bg-[#1D4ED8] text-white'
+                        ? 'bg-blue-600 text-white'
                         : 'text-slate-400 hover:text-white'
                     }`}
                   >
@@ -195,9 +223,9 @@ export function HeroSection({ locale, dict }: HeroSectionProps) {
                   <button
                     type="button"
                     onClick={() => setSelectedVideoLang('ar')}
-                    className={`rounded px-2.5 py-1 font-semibold transition-colors ${
+                    className={`px-2.5 py-1 rounded font-medium transition-colors ${
                       selectedVideoLang === 'ar'
-                        ? 'bg-[#1D4ED8] text-white'
+                        ? 'bg-blue-600 text-white'
                         : 'text-slate-400 hover:text-white'
                     }`}
                   >
@@ -209,21 +237,21 @@ export function HeroSection({ locale, dict }: HeroSectionProps) {
               <button
                 type="button"
                 onClick={() => setIsVideoModalOpen(false)}
-                className="rounded-lg p-1.5 text-slate-400 hover:bg-slate-800 hover:text-white transition-colors"
+                className="rounded-lg p-1.5 text-slate-400 hover:bg-slate-900 hover:text-white transition-colors"
                 aria-label="Close"
               >
                 <X className="h-5 w-5" />
               </button>
             </div>
 
-            {/* Responsive 16:9 YouTube Embed */}
+            {/* Video Frame */}
             <div className="relative aspect-video w-full bg-black">
               <iframe
-                src={`https://www.youtube-nocookie.com/embed/${videoIds[selectedVideoLang]}?autoplay=1&rel=0`}
-                title="Nexiiva Simulator Video Demo"
-                className="absolute inset-0 h-full w-full border-0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                src={`https://www.youtube.com/embed/${videoIds[selectedVideoLang]}?autoplay=1&rel=0`}
+                title="Nexiiva Platform Walkthrough"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
+                className="h-full w-full border-0"
               />
             </div>
           </div>

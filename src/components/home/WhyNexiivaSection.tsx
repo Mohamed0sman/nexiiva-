@@ -2,71 +2,86 @@
 
 import React from 'react';
 import { SectionHeader } from '@/components/SectionHeader';
-import { Bot, Library, Timer, WifiOff } from 'lucide-react';
+import { Workflow, Library, Timer, WifiOff } from 'lucide-react';
 import type { Dict } from '@/types/dict';
 
 interface WhyNexiivaSectionProps {
+  locale?: string;
   dict: Dict;
 }
 
-export function WhyNexiivaSection({ dict }: WhyNexiivaSectionProps) {
+export function WhyNexiivaSection({ locale = 'en', dict }: WhyNexiivaSectionProps) {
   const cards = [
     {
-      icon: Bot,
-      badge: 'نمذجة مؤتمتة',
+      icon: Workflow,
+      badge: locale === 'ar' ? 'نمذجة مؤتمتة' : 'Automated Modeling',
       title:
-        dict?.whyNexiiva?.cards?.[0]?.title || 'محرك بناء ومطابقة النماذج',
+        dict?.whyNexiiva?.cards?.[0]?.title ||
+        (locale === 'ar' ? 'محرك بناء ومطابقة النماذج' : 'Unit Modeling Engine'),
       desc:
         dict?.whyNexiiva?.cards?.[0]?.desc ||
-        'تحويل وثائق ومخططات P&ID الهندسية إلى منطق محاكاة متكامل ومطابق لظروف التشغيل.',
-      accent: '#1D4ED8',
+        (locale === 'ar'
+          ? 'تحويل وثائق ومخططات P&ID الهندسية إلى منطق محاكاة متكامل ومطابق لظروف التشغيل.'
+          : 'Automated pipeline models the unit from technical specifications, converting engineering documents into simulator logic.'),
     },
     {
       icon: Library,
-      badge: '387 طراز معتمد',
+      badge: locale === 'ar' ? '387 طراز معتمد' : '387 Verified Models',
       title:
-        dict?.whyNexiiva?.cards?.[1]?.title || '387 نوعاً من المعدات الصناعية',
+        dict?.whyNexiiva?.cards?.[1]?.title ||
+        (locale === 'ar' ? '387 نوعاً من المعدات الصناعية' : '387 Equipment Types'),
       desc:
         dict?.whyNexiiva?.cards?.[1]?.desc ||
-        'مكتبة نمذجة غنية تتيح توليد مشروع تدريب كامل بحسابات هيدروليكية وحرارية دقيقة.',
-      accent: '#38BDF8',
+        (locale === 'ar'
+          ? 'مكتبة نمذجة غنية تتيح توليد مشروع تدريب كامل بحسابات هيدروليكية وحرارية دقيقة.'
+          : 'A comprehensive library of verified industrial process components generates a full training project with accurate hydraulic coupling.'),
     },
     {
       icon: Timer,
-      badge: 'سرعة التنفيذ',
+      badge: locale === 'ar' ? 'سرعة التنفيذ' : '~1 Week Target',
       title:
-        dict?.whyNexiiva?.cards?.[2]?.title || 'أسبوع واحد مستهدف للبناء',
+        dict?.whyNexiiva?.cards?.[2]?.title ||
+        (locale === 'ar' ? 'أسبوع واحد مستهدف للبناء' : 'Target: ~1 Week Build Time'),
       desc:
         dict?.whyNexiiva?.cards?.[2]?.desc ||
-        'مستهدف زمني قياسي لبناء واختبار محاكي الوحدة الصناعية لتقليل فترات الانتظار.',
-      accent: '#F59E0B',
+        (locale === 'ar'
+          ? 'مستهدف زمني قياسي لبناء واختبار محاكي الوحدة الصناعية لتقليل فترات الانتظار.'
+          : 'Target build time: about one week per unit — to be measured on unit two during pilot deployment.'),
     },
     {
       icon: WifiOff,
-      badge: 'أمان البيانات 100%',
+      badge: locale === 'ar' ? 'أمان البيانات 100%' : '100% Air-Gapped',
       title:
-        dict?.whyNexiiva?.cards?.[3]?.title || 'تشغيل محلي معزول بدون إنترنت',
+        dict?.whyNexiiva?.cards?.[3]?.title ||
+        (locale === 'ar' ? 'تشغيل محلي معزول بدون إنترنت' : '100% Offline Mode'),
       desc:
         dict?.whyNexiiva?.cards?.[3]?.desc ||
-        'تشغيل محلي بالكامل دون أي اتصال سحابي خارجي، ملائم لشبكات التحكم الصارمة والمعزولة.',
-      accent: '#22C55E',
+        (locale === 'ar'
+          ? 'تشغيل محلي بالكامل دون أي اتصال سحابي خارجي، ملائم لشبكات التحكم الصارمة والمعزولة.'
+          : 'Offline mode needs no AI and no internet. Fully compliant with air-gapped industrial cybersecurity standards.'),
     },
   ];
 
   return (
-    <section className="relative py-20 bg-white overflow-hidden border-b border-slate-200">
+    <section className="relative py-24 bg-white overflow-hidden border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          eyebrow={dict?.whyNexiiva?.eyebrow || 'المزايا والقدرات الهندسية'}
+          eyebrow={dict?.whyNexiiva?.eyebrow || (locale === 'ar' ? 'المزايا والقدرات الهندسية' : 'ENGINEERING DISTINCTION')}
           title={
             dict?.whyNexiiva?.title ||
-            'هندسة متطورة تجمع بين السرعة، الأمان، والدقة.'
+            (locale === 'ar'
+              ? 'هندسة متطورة تجمع بين السرعة، الأمان، والدقة.'
+              : 'Engineered for speed, security, and precision.')
           }
-          subtitle="بناء نماذج المحاكاة من وثائق المنشأة مع تشغيل محلي معزول تماماً عن الإنترنت."
+          subtitle={
+            locale === 'ar'
+              ? 'بناء نماذج المحاكاة من وثائق المنشأة مع تشغيل محلي معزول تماماً عن الإنترنت.'
+              : 'Building simulation models directly from plant documentation with strictly air-gapped deployment.'
+          }
           theme="light"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
           {cards.map((card, idx) => {
             const Icon = card.icon;
             return (

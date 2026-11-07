@@ -34,16 +34,16 @@ export default async function HomePage({ params }: Props) {
       <HeroSection locale={locale} dict={messages} />
 
       {/* 2. Trust/capability strip */}
-      <TrustStrip dict={messages} />
+      <TrustStrip locale={locale} dict={messages} />
 
-      {/* 3. 01 — THE PROBLEM */}
-      <ProblemSection dict={messages} />
+      {/* 3. THE PROBLEM */}
+      <ProblemSection locale={locale} dict={messages} />
 
       {/* 4. 02 — THE SOLUTION */}
       <SolutionSection dict={messages} />
 
-      {/* 5. 03 — HOW IT WORKS */}
-      <HowItWorksSection dict={messages} />
+      {/* 5. HOW IT WORKS */}
+      <HowItWorksSection locale={locale} dict={messages} />
 
       {/* 6. LIVE DEMO — "Try the console" */}
       <section className="relative py-20 bg-[#0A192F] overflow-hidden border-b border-slate-800">
@@ -62,29 +62,29 @@ export default async function HomePage({ params }: Props) {
         </div>
       </section>
 
-      {/* 7. 04 — WHY NEXIIVA */}
-      <WhyNexiivaSection dict={messages} />
+      {/* 7. WHY NEXIIVA */}
+      <WhyNexiivaSection locale={locale} dict={messages} />
 
-      {/* 8. 05 — HOW WE COMPARE */}
-      <ComparisonSection dict={messages} />
+      {/* 8. HOW WE COMPARE */}
+      <ComparisonSection locale={locale} dict={messages} />
 
-      {/* 9. 06 — SOLUTIONS */}
+      {/* 9. SOLUTIONS */}
       <SolutionsSection locale={locale} dict={messages} />
 
-      {/* 10. 07 — INDUSTRIES */}
+      {/* 10. INDUSTRIES */}
       <IndustriesSection locale={locale} dict={messages} />
 
-      {/* 11. 08 — OUR JOURNEY */}
+      {/* 11. OUR JOURNEY */}
       <JourneySection dict={messages} />
 
-      {/* 12. 09 — PILOT PROGRAMME */}
+      {/* 12. PILOT PROGRAMME */}
       <PilotSection locale={locale} dict={messages} />
 
-      {/* 13. Leadership quote */}
-      <LeadershipSection dict={messages} />
+      {/* 13. Leadership & Founding Team */}
+      <LeadershipSection locale={locale} dict={messages} />
 
       {/* 14. Responsibility / Safety block */}
-      <ResponsibilitySection dict={messages} />
+      <ResponsibilitySection locale={locale} dict={messages} />
 
       {/* 15. Latest insights */}
       <InsightsSection locale={locale} dict={messages} />

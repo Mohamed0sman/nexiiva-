@@ -12,10 +12,11 @@ import {
 import type { Dict } from '@/types/dict';
 
 interface ProblemSectionProps {
+  locale?: string;
   dict: Dict;
 }
 
-export function ProblemSection({ dict }: ProblemSectionProps) {
+export function ProblemSection({ locale = 'en', dict }: ProblemSectionProps) {
   const [activeBeat, setActiveBeat] = useState(0);
 
   const beats = [
@@ -23,51 +24,72 @@ export function ProblemSection({ dict }: ProblemSectionProps) {
       step: '01',
       icon: Clock,
       title:
-        dict?.problem?.beats?.[0]?.title || 'Day one in the control room',
+        dict?.problem?.beats?.[0]?.title ||
+        (locale === 'ar' ? 'اليوم الأول في غرفة التحكم' : 'Day one in the control room'),
       desc:
         dict?.problem?.beats?.[0]?.desc ||
-        "Screens, alarms, and 'sit next to the senior'. Observational learning without emergency repetitions.",
+        (locale === 'ar'
+          ? 'مئات الشاشات، إنذارات متتالية، والتوجيه المعتاد: "اجلس بجوار المشغل الأقدم". تعلم يعتمد على المشاهدة فقط دون تجربة مواقف الخطر.'
+          : "Screens, alarms, and 'sit next to the senior'. Observational learning without critical emergency repetitions."),
     },
     {
       step: '02',
       icon: TrendingUp,
-      title: dict?.problem?.beats?.[1]?.title || 'The annual reality',
+      title:
+        dict?.problem?.beats?.[1]?.title ||
+        (locale === 'ar' ? 'واقع العام الأول' : 'The annual reality'),
       desc:
         dict?.problem?.beats?.[1]?.desc ||
-        'After a year, an operator has seen about 8 problems — 3 of them repeated. Critical upsets remain completely unpracticed.',
+        (locale === 'ar'
+          ? 'بعد عام كامل، يمر المشغل بقرابة 8 اضطرابات تشغيلية فقط — 3 منها متكررة وروتينية. أما الحالات الحرجة فلا فرصة لممارستها.'
+          : 'After a year, an operator has seen about 8 operational upsets — 3 of them routine. Critical transients remain unpracticed.'),
     },
     {
       step: '03',
       icon: UserX,
-      title: dict?.problem?.beats?.[2]?.title || 'The senior is absent',
+      title:
+        dict?.problem?.beats?.[2]?.title ||
+        (locale === 'ar' ? 'غياب المشغل الخبير' : 'The senior is absent'),
       desc:
         dict?.problem?.beats?.[2]?.desc ||
-        'A problem never seen before hits: leak, fire, or emergency shutdown. Seconds of hesitation escalate into a full plant trip.',
+        (locale === 'ar'
+          ? 'يقع حادث غير مسبوق: تسريب، حريق، أو إيقاف طارئ في ظل غياب المشغل القديم. أي تردد ثوانٍ معدودة يتحول إلى إغلاق كامل للوحدة.'
+          : 'A rare upset hits during an off-shift with the senior away. Seconds of hesitation escalate into a full unit trip.'),
     },
     {
       step: '04',
       icon: Flame,
-      title: dict?.problem?.beats?.[3]?.title || 'The compounding cost',
+      title:
+        dict?.problem?.beats?.[3]?.title ||
+        (locale === 'ar' ? 'فاتورة الخسائر المتراكمة' : 'The compounding cost'),
       desc:
         dict?.problem?.beats?.[3]?.desc ||
-        '7 days downtime ($70K) + equipment repairs ($50K) + off-spec penalties ($30K) = $150K lost from one small problem.',
+        (locale === 'ar'
+          ? '7 أيام توقف (70 ألف دولار) + صيانة وبطانات (50 ألف دولار) + غرامات منتجات ومخالفات (30 ألف دولار) = إجمالي 150 ألف دولار.'
+          : '7 days downtime ($70K) + refractory repairs ($50K) + off-spec penalties ($30K) = $150K direct damage from one small problem.'),
     },
   ];
 
   return (
-    <section className="relative py-20 bg-white overflow-hidden border-b border-slate-200">
+    <section className="relative py-24 bg-slate-50/70 overflow-hidden border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          eyebrow={dict?.problem?.eyebrow || 'التحدي التشغيلي'}
+          eyebrow={dict?.problem?.eyebrow || (locale === 'ar' ? 'التحدي التشغيلي' : 'THE OPERATIONAL PROBLEM')}
           title={
             dict?.problem?.title ||
-            'التكلفة الباهظة للتعلم على وحدة صناعية حية.'
+            (locale === 'ar'
+              ? 'التكلفة الباهظة للتعلم على وحدة صناعية حية.'
+              : 'The prohibitive cost of learning on live industrial assets.')
           }
-          subtitle="التدريب التقليدي القائم على المشاهدة فقط يترك مشغلي الكونسول غير مستعدين للتعامل مع اضطرابات العمليات النادرة والحرجة."
+          subtitle={
+            locale === 'ar'
+              ? 'التدريب التقليدي القائم على المشاهدة فقط يترك مشغلي الكونسول غير مستعدين للتعامل مع اضطرابات العمليات النادرة والحرجة.'
+              : 'Traditional observational training leaves console operators unequipped for rare, catastrophic process upsets.'
+          }
           theme="light"
         />
 
-        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12">
+        <div className="mt-12 grid grid-cols-1 items-start gap-12 lg:grid-cols-12">
           {/* Left: 4 Beats Steps (7 cols) */}
           <div className="lg:col-span-7 space-y-3.5">
             {beats.map((beat, index) => {
@@ -81,7 +103,7 @@ export function ProblemSection({ dict }: ProblemSectionProps) {
                   className={`cursor-pointer rounded-xl border p-5 transition-all duration-200 ${
                     isSelected
                       ? 'border-slate-400 bg-white shadow-xs'
-                      : 'border-slate-200 bg-slate-50 hover:border-slate-300 hover:bg-slate-100/60'
+                      : 'border-slate-200 bg-white/70 hover:border-slate-300 hover:bg-white'
                   }`}
                 >
                   <div className="flex items-start gap-4">
@@ -89,7 +111,7 @@ export function ProblemSection({ dict }: ProblemSectionProps) {
                       className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold transition-colors ${
                         isSelected
                           ? 'bg-[#0A192F] text-white'
-                          : 'bg-white border border-slate-200 text-slate-600'
+                          : 'bg-slate-100 border border-slate-200 text-slate-600'
                       }`}
                     >
                       {beat.step}
@@ -123,7 +145,7 @@ export function ProblemSection({ dict }: ProblemSectionProps) {
           {/* Right: Real Photo + Calm Economic Breakdown (5 cols) */}
           <div className="lg:col-span-5 flex flex-col gap-5">
             {/* Operator Control Room Photo */}
-            <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-slate-100 shadow-xs">
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-slate-900 shadow-xs">
               <Image
                 src="/assets/photos/operator-control-room.jpg"
                 alt="Console Operator Monitoring Distributed Control System"
@@ -134,13 +156,15 @@ export function ProblemSection({ dict }: ProblemSectionProps) {
             </div>
 
             {/* Cost Buildup Breakdown Card */}
-            <div className="rounded-xl border border-slate-200 bg-slate-50/80 p-5 shadow-xs">
+            <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-xs">
               <div className="flex items-center justify-between pb-3 border-b border-slate-200">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700">
-                  تحليل التكلفة التقديرية للتوقف غير المخطط له
+                  {locale === 'ar'
+                    ? 'تحليل التكلفة التقديرية للتوقف غير المخطط له'
+                    : 'Estimated Unplanned Trip Cost Analysis'}
                 </h4>
                 <span className="text-xs font-bold text-red-600 font-mono">
-                  $150,000+
+                  +$150,000 USD
                 </span>
               </div>
 
@@ -148,7 +172,11 @@ export function ProblemSection({ dict }: ProblemSectionProps) {
                 {/* 1. Downtime */}
                 <div>
                   <div className="flex justify-between text-xs text-slate-700">
-                    <span>فاقد الإنتاج وتوقف الوحدة (7 أيام)</span>
+                    <span>
+                      {locale === 'ar'
+                        ? 'فاقد الإنتاج وتوقف الوحدة (7 أيام)'
+                        : '7 Days Lost Production Downtime'}
+                    </span>
                     <span className="text-slate-900 font-bold font-mono">$70,000</span>
                   </div>
                   <div className="mt-1.5 h-1.5 w-full rounded-full bg-slate-200 overflow-hidden">
@@ -159,7 +187,11 @@ export function ProblemSection({ dict }: ProblemSectionProps) {
                 {/* 2. Equipment Repairs */}
                 <div>
                   <div className="flex justify-between text-xs text-slate-700">
-                    <span>صيانة البطانات والأعطال الداخلية للصواني</span>
+                    <span>
+                      {locale === 'ar'
+                        ? 'صيانة البطانات والأعطال الداخلية للصواني'
+                        : 'Refractory & Valve Mechanical Repairs'}
+                    </span>
                     <span className="text-slate-900 font-bold font-mono">$50,000</span>
                   </div>
                   <div className="mt-1.5 h-1.5 w-full rounded-full bg-slate-200 overflow-hidden">
@@ -170,7 +202,11 @@ export function ProblemSection({ dict }: ProblemSectionProps) {
                 {/* 3. Off-spec & Penalties */}
                 <div>
                   <div className="flex justify-between text-xs text-slate-700">
-                    <span>مخالفات تصريف الشعلة والمنتجات خارج المواصفات</span>
+                    <span>
+                      {locale === 'ar'
+                        ? 'مخالفات تصريف الشعلة والمنتجات خارج المواصفات'
+                        : 'Flaring Penalties & Off-Spec Product Rerun'}
+                    </span>
                     <span className="text-slate-900 font-bold font-mono">$30,000</span>
                   </div>
                   <div className="mt-1.5 h-1.5 w-full rounded-full bg-slate-200 overflow-hidden">
@@ -180,7 +216,11 @@ export function ProblemSection({ dict }: ProblemSectionProps) {
               </div>
 
               <div className="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-xs">
-                <span className="text-slate-500">إجمالي الخسائر المباشرة لحادثة واحدة:</span>
+                <span className="text-slate-500">
+                  {locale === 'ar'
+                    ? 'إجمالي الخسائر المباشرة لحادثة واحدة:'
+                    : 'Total Direct Loss from Single Incident:'}
+                </span>
                 <span className="font-bold text-[#0A192F] font-mono">$150,000 USD</span>
               </div>
             </div>

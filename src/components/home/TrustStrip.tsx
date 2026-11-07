@@ -10,33 +10,58 @@ import {
 import type { Dict } from '@/types/dict';
 
 interface TrustStripProps {
+  locale?: string;
   dict?: Dict;
 }
 
-export function TrustStrip({ dict }: TrustStripProps) {
+export function TrustStrip({ locale = 'en' }: TrustStripProps) {
   const specs = [
     {
       metric: '100%',
-      title: dict?.trustStrip?.[6] || 'تشغيل محلي معزول (Air-Gapped)',
-      desc: 'يعمل دون إنترنت لضمان سرية وأمن بيانات المنشأة بالكامل.',
+      title:
+        locale === 'ar'
+          ? 'تشغيل محلي معزول (Air-Gapped)'
+          : '100% Air-Gapped Deployment',
+      desc:
+        locale === 'ar'
+          ? 'يعمل دون اتصال بالإنترنت لضمان سرية وأمن بيانات المنشأة الحيوية.'
+          : 'Runs strictly on-premise without internet, ensuring zero industrial cyber risk.',
       icon: ShieldCheck,
     },
     {
       metric: '387',
-      title: dict?.trustStrip?.[2] || 'معدة وطراز هيدروليكي معتمد',
-      desc: 'مكتبة نمذجة متكاملة للأبراج والأفران والمضخات ومبادلات الحرارة.',
+      title:
+        locale === 'ar'
+          ? 'معدة وطراز هيدروليكي معتمد'
+          : '387 Verified Equipment Models',
+      desc:
+        locale === 'ar'
+          ? 'مكتبة نمذجة متكاملة للأبراج والأفران والمضخات ومبادلات الحرارة.'
+          : 'Comprehensive library of verified distillation, furnace, pump, and valve dynamics.',
       icon: Boxes,
     },
     {
       metric: '1:1',
-      title: 'مطابقة شاشات التحكم الموزع (DCS)',
-      desc: 'نفس لوحات التحكم ومؤشرات الإنذار التي يتعامل معها المشغل يومياً.',
+      title:
+        locale === 'ar'
+          ? 'مطابقة شاشات التحكم الموزع (DCS)'
+          : '1:1 DCS Console Matching',
+      desc:
+        locale === 'ar'
+          ? 'نفس لوحات التحكم ومؤشرات الإنذار التي يتعامل معها المشغل يومياً.'
+          : 'Exact replication of console faceplates, alarm annunciators, and live trend monitors.',
       icon: MonitorCheck,
     },
     {
       metric: '~1 wk',
-      title: 'أسبوع واحد مستهدف للبناء',
-      desc: 'مستهدف قياسي لبناء واختبار محاكي الوحدة التشغيلية.',
+      title:
+        locale === 'ar'
+          ? 'أسبوع واحد مستهدف للبناء'
+          : '~1 Week Build Time Target',
+      desc:
+        locale === 'ar'
+          ? 'مستهدف قياسي لبناء واختبار محاكي الوحدة التشغيلية.'
+          : 'Target build turnaround to configure and test a single unit dynamic simulator.',
       icon: Clock4,
     },
   ];
@@ -44,7 +69,7 @@ export function TrustStrip({ dict }: TrustStripProps) {
   return (
     <section
       id="trust-strip"
-      className="relative z-20 border-y border-slate-200 bg-slate-50/80 py-8"
+      className="relative z-20 border-b border-slate-200 bg-white py-10"
       aria-label="Platform Specifications"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -54,21 +79,21 @@ export function TrustStrip({ dict }: TrustStripProps) {
             return (
               <div
                 key={index}
-                className="flex items-start gap-4 p-4 rounded-xl bg-white border border-slate-200/80 shadow-xs"
+                className="flex items-start gap-4 p-5 rounded-xl bg-slate-50/70 border border-slate-200/90 shadow-xs hover:border-slate-300 transition-colors"
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-[#1D4ED8]">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-[#1D4ED8]">
                   <Icon className="h-5 w-5" />
                 </div>
-                <div className="min-w-0">
+                <div>
                   <div className="flex items-baseline gap-2">
-                    <span className="font-mono text-base font-bold text-[#0A192F]">
+                    <span className="text-xl font-bold tracking-tight text-[#0A192F]">
                       {item.metric}
                     </span>
-                    <span className="text-xs font-bold text-slate-800 truncate">
-                      {item.title}
-                    </span>
                   </div>
-                  <p className="mt-1 text-xs leading-relaxed text-slate-500">
+                  <h3 className="mt-1 text-xs font-bold text-[#0A192F]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-1 text-[11px] leading-relaxed text-slate-500">
                     {item.desc}
                   </p>
                 </div>
