@@ -4,6 +4,7 @@ import { HeroSection } from '@/components/home/HeroSection';
 import { TrustStrip } from '@/components/home/TrustStrip';
 import { CorporateProjects } from '@/components/home/CorporateProjects';
 import { SolutionsSection } from '@/components/home/SolutionsSection';
+import { DeploymentArchitecture } from '@/components/home/DeploymentArchitecture';
 import { PilotSection } from '@/components/home/PilotSection';
 import { LeadershipSection } from '@/components/home/LeadershipSection';
 import { FinalCtaSection } from '@/components/home/FinalCtaSection';
@@ -20,7 +21,7 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <div className="flex flex-col w-full">
-      {/* 1. CORPORATE HERO — Dynamic Process Simulation for Energy Facilities */}
+      {/* 1. CORPORATE HERO — Dynamic Process Simulation with Logo Sky-Blue & Direct Controls */}
       <HeroSection locale={locale} dict={messages} />
 
       {/* 2. INDUSTRIAL STANDARDS & CREDIBILITY STRIP */}
@@ -32,16 +33,17 @@ export default async function HomePage({ params }: Props) {
       {/* 4. CORE SIMULATION CAPABILITIES & ARCHITECTURAL PILLARS */}
       <SolutionsSection locale={locale} dict={messages} />
 
-      {/* 5. STRUCTURED LOW-RISK PLANT PILOT PROGRAMME */}
+      {/* 5. AIR-GAPPED ON-PREMISE VS CLOUD SAAS ARCHITECTURE */}
+      <DeploymentArchitecture locale={locale} dict={messages} />
+
+      {/* 6. STRUCTURED LOW-RISK PLANT PILOT PROGRAMME */}
       <PilotSection locale={locale} dict={messages} />
 
-      {/* 6. EXECUTIVE LEADERSHIP & FOUNDING PARTNERS */}
+      {/* 7. EXECUTIVE LEADERSHIP & FOUNDING PARTNERS */}
       <LeadershipSection locale={locale} dict={messages} />
 
-      {/* 7. CORPORATE HEADQUARTERS & DIRECT ACTION CENTER */}
+      {/* 8. CORPORATE HEADQUARTERS & DIRECT ACTION CENTER */}
       <FinalCtaSection locale={locale} dict={messages} />
     </div>
   );
 }
-
-

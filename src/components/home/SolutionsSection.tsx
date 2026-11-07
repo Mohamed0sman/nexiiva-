@@ -59,7 +59,7 @@ export function SolutionsSection({ locale, dict }: SolutionsSectionProps) {
           <div className="text-xs font-mono font-bold tracking-wider text-slate-500 uppercase">
             {isAr ? 'مجالات العمل والحلول الهندسية' : 'CORE ENGINEERING CAPABILITIES'}
           </div>
-          <h2 className="mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0A192F] tracking-tight">
+          <h2 className="mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
             {isAr
               ? 'بنية متكاملة لمحاكاة العمليات وتأهيل الكوادر.'
               : 'Integrated infrastructure for unit modeling & qualification.'}
@@ -71,19 +71,19 @@ export function SolutionsSection({ locale, dict }: SolutionsSectionProps) {
           </p>
         </div>
 
-        {/* 4 Clean Editorial Columns (No blue square icons) */}
+        {/* 4 Clean Editorial Columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {solutions.map((item) => (
             <div
               key={item.num}
-              className="bg-white border border-slate-200 rounded-xl p-6 flex flex-col justify-between hover:border-slate-300 transition-colors shadow-2xs"
+              className="bg-white border border-slate-200 rounded-xl p-6 flex flex-col justify-between hover:border-sky-300 transition-colors shadow-2xs"
             >
               <div>
-                <span className="font-mono text-xs font-bold text-slate-400">
+                <span className="font-mono text-xs font-bold text-sky-600">
                   {item.num}
                 </span>
 
-                <h3 className="mt-3 text-lg font-bold text-[#0A192F] leading-snug">
+                <h3 className="mt-3 text-lg font-bold text-slate-900 leading-snug">
                   {item.title}
                 </h3>
 
@@ -102,7 +102,7 @@ export function SolutionsSection({ locale, dict }: SolutionsSectionProps) {
               <div className="mt-6 pt-4 border-t border-slate-100">
                 <Link
                   href={item.link}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-700 hover:underline"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-sky-600 hover:text-sky-700 hover:underline"
                 >
                   <span>{dict?.common?.readMore || (isAr ? 'التفاصيل الهندسية' : 'Learn more')}</span>
                   <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />

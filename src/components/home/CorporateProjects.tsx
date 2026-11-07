@@ -106,7 +106,7 @@ export function CorporateProjects({ locale }: CorporateProjectsProps) {
             <div className="text-xs font-mono font-bold tracking-wider text-slate-500 uppercase">
               {isAr ? 'المشاريع الهندسية والوحدات المنجزة' : 'FEATURED ENGINEERING PROJECTS & SIMULATORS'}
             </div>
-            <h2 className="mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0A192F] tracking-tight">
+            <h2 className="mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
               {isAr
                 ? 'نماذج هندسية حقيقية بنيت لواقع منشآت الطاقة.'
                 : 'Validated engineering projects for energy facilities.'}
@@ -120,7 +120,7 @@ export function CorporateProjects({ locale }: CorporateProjectsProps) {
 
           <Link
             href={`/${locale}/pilot`}
-            className="inline-flex items-center gap-2 text-sm font-bold text-blue-700 hover:text-blue-800 hover:underline shrink-0"
+            className="inline-flex items-center gap-2 text-sm font-bold text-sky-600 hover:text-sky-700 hover:underline shrink-0"
           >
             <span>{isAr ? 'طلب مناقشة مشروع تجريبي لمنشأتك ←' : 'Request a project scoping →'}</span>
           </Link>
@@ -152,11 +152,11 @@ export function CorporateProjects({ locale }: CorporateProjectsProps) {
 
                 {/* Body Details */}
                 <div className="p-6 sm:p-7">
-                  <div className="text-xs font-semibold text-blue-700 uppercase tracking-wide">
+                  <div className="text-xs font-semibold text-sky-600 uppercase tracking-wide">
                     {proj.sector}
                   </div>
 
-                  <h3 className="mt-2 text-lg sm:text-xl font-bold text-[#0A192F] leading-snug">
+                  <h3 className="mt-2 text-lg sm:text-xl font-bold text-slate-900 leading-snug">
                     {proj.title}
                   </h3>
 
@@ -180,7 +180,7 @@ export function CorporateProjects({ locale }: CorporateProjectsProps) {
               <div className="px-6 py-4 bg-white border-t border-slate-200 flex items-center justify-between">
                 <Link
                   href={proj.link}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-700 hover:underline"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-sky-600 hover:text-sky-700 hover:underline"
                 >
                   <span>{isAr ? 'تفاصيل المشروع والمواصفات' : 'View specifications'}</span>
                   <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />

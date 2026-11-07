@@ -64,15 +64,15 @@ export function PilotSection({ locale, dict }: PilotSectionProps) {
     <section className="relative py-16 sm:py-20 bg-slate-50 overflow-hidden border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Main Panel Container */}
-        <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-[#0A192F] p-8 sm:p-12 lg:p-14 shadow-xl">
+        <div className="relative overflow-hidden rounded-2xl border border-sky-200 bg-gradient-to-br from-sky-50/70 via-white to-blue-50/40 p-8 sm:p-12 lg:p-14 shadow-sm">
           <div className="relative z-10 max-w-3xl">
             {/* Eyebrow */}
-            <span className="font-mono text-xs font-bold text-blue-300 uppercase tracking-wider block">
+            <span className="font-mono text-xs font-bold text-sky-700 uppercase tracking-wider block">
               {dict?.pilotSection?.eyebrow || (locale === 'ar' ? 'برنامج المشاريع التجريبية المنضبط' : 'STRUCTURED PILOT PROGRAMME')}
             </span>
 
             {/* Headline */}
-            <h2 className="mt-4 text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.18]">
+            <h2 className="mt-4 text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.18]">
               {dict?.pilotSection?.title ||
                 (locale === 'ar'
                   ? 'ابدأ بوحدة صناعية واحدة.\nثم توسع في باقي المنشأة.'
@@ -80,7 +80,7 @@ export function PilotSection({ locale, dict }: PilotSectionProps) {
             </h2>
 
             {/* Subtitle */}
-            <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
+            <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
               {dict?.pilotSection?.subtitle ||
                 (locale === 'ar'
                   ? 'برنامج تجريبي مدروس ومحدد النطاق ومحدود المخاطر، صُمم لإدارات العمليات والتدريب للتحقق من دقة وموثوقية المحاكي على وحدة حقيقية قبل أي التزام رأسمالي واسع.'
@@ -93,43 +93,43 @@ export function PilotSection({ locale, dict }: PilotSectionProps) {
             {steps.map((item) => (
               <div
                 key={item.step}
-                className="relative rounded-xl border border-slate-800 bg-slate-900/90 p-6 shadow-sm transition-colors hover:border-slate-700 flex flex-col justify-between"
+                className="relative rounded-xl border border-sky-100 bg-white p-6 shadow-2xs transition-colors hover:border-sky-300 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-sm font-bold text-blue-400">
+                    <span className="font-mono text-sm font-bold text-sky-600">
                       {item.step}
                     </span>
-                    <span className="font-mono text-xs text-slate-400">
+                    <span className="font-mono text-xs font-semibold text-sky-700 bg-sky-50 border border-sky-200 rounded px-2 py-0.5">
                       {item.timeline}
                     </span>
                   </div>
 
-                  <h3 className="mt-4 text-base font-bold text-white leading-snug">
+                  <h3 className="mt-4 text-base font-bold text-slate-900 leading-snug">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-xs leading-relaxed text-slate-300">
+                  <p className="mt-2 text-xs leading-relaxed text-slate-600">
                     {item.desc}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-3 border-t border-slate-800 text-[11px] text-slate-400">
-                  <span className="text-slate-500 block mb-0.5">{locale === 'ar' ? 'المخرج الهندسي:' : 'Deliverable:'}</span>
-                  <span className="text-white font-medium">{item.deliverable}</span>
+                <div className="mt-6 pt-3 border-t border-slate-100 text-[11px] text-slate-500">
+                  <span className="text-slate-400 block mb-0.5">{locale === 'ar' ? 'المخرج الهندسي:' : 'Deliverable:'}</span>
+                  <span className="text-slate-900 font-semibold">{item.deliverable}</span>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Pilot Deliverables Checklist Bar */}
-          <div className="relative z-10 mt-10 rounded-xl border border-slate-800 bg-slate-900/60 p-6">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-300 font-mono mb-4">
+          <div className="relative z-10 mt-10 rounded-xl border border-sky-100 bg-white/90 p-6 shadow-2xs">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800 font-mono mb-4">
               {locale === 'ar' ? 'ما تتضمنه حزمة المشروع التجريبي (Pilot Deliverables)' : 'INCLUDED IN EVERY PILOT DEPLOYMENT'}
             </h4>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-700">
               {pilotDeliverables.map((item, idx) => (
                 <div key={idx} className="flex items-start gap-2.5">
-                  <span className="font-mono text-blue-400 font-bold shrink-0">—</span>
+                  <span className="font-mono text-sky-600 font-bold shrink-0">—</span>
                   <span>{item}</span>
                 </div>
               ))}
@@ -137,8 +137,8 @@ export function PilotSection({ locale, dict }: PilotSectionProps) {
           </div>
 
           {/* Bottom Callout & Action */}
-          <div className="relative z-10 mt-10 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-slate-800 pt-8">
-            <div className="text-xs text-slate-400">
+          <div className="relative z-10 mt-10 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-sky-200/80 pt-8">
+            <div className="text-xs text-slate-600">
               <span>
                 {locale === 'ar'
                   ? 'جاهزية تامة للتوقيع على اتفاقية سرية المعلومات (Mutual NDA) قبل استلام أي وثائق هندسية.'
@@ -148,7 +148,7 @@ export function PilotSection({ locale, dict }: PilotSectionProps) {
 
             <Link
               href={`/${locale}/pilot`}
-              className="inline-flex items-center gap-2 rounded-lg bg-blue-600 hover:bg-blue-500 px-8 py-3.5 text-sm font-bold text-white shadow-xs transition-colors shrink-0 active:scale-95"
+              className="inline-flex items-center gap-2 rounded-lg bg-sky-600 hover:bg-sky-500 px-8 py-3.5 text-sm font-bold text-white shadow-xs transition-colors shrink-0 active:scale-95"
             >
               <span>{dict?.pilotSection?.cta || (locale === 'ar' ? 'طلب مناقشة مشروع تجريبي' : 'Request a Pilot Scoping')}</span>
               <ArrowRight className="h-4 w-4 rtl:rotate-180" />

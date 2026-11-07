@@ -2,8 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { ArrowRight, Play, X } from 'lucide-react';
+import { ArrowRight, Play, X, MessageSquare } from 'lucide-react';
 import type { Dict } from '@/types/dict';
 
 interface HeroSectionProps {
@@ -29,171 +28,109 @@ export function HeroSection({ locale }: HeroSectionProps) {
   };
 
   return (
-    <section className="relative bg-[#0A192F] text-white pt-16 pb-16 lg:pt-20 lg:pb-20 overflow-hidden border-b border-slate-800">
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-14">
-          {/* Left Column: Corporate Headline, Vision, CTAs */}
-          <div className="lg:col-span-7 flex flex-col items-start text-start">
-            {/* Corporate Discipline Eyebrow */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-950/70 px-4 py-1.5 text-xs font-semibold text-blue-300">
-              <span className="h-2 w-2 rounded-full bg-blue-400" />
-              <span>
-                {isAr
-                  ? 'هندسة محاكاة العمليات وتأهيل مشغلي منشآت الطاقة'
-                  : 'ENERGY PROCESS SIMULATION & OPERATOR QUALIFICATION'}
+    <section className="relative bg-gradient-to-b from-sky-50/70 via-white to-slate-50 text-slate-900 pt-20 pb-16 lg:pt-28 lg:pb-24 overflow-hidden border-b border-slate-200">
+      <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+        {/* Corporate Discipline Eyebrow */}
+        <div className="inline-flex items-center gap-2 rounded-full border border-sky-300 bg-sky-100/80 px-4 py-1.5 text-xs font-bold text-sky-800 shadow-2xs">
+          <span className="h-2 w-2 rounded-full bg-sky-600" />
+          <span>
+            {isAr
+              ? 'هندسة محاكاة العمليات وتأهيل مشغلي منشآت الطاقة'
+              : 'ENERGY PROCESS SIMULATION & OPERATOR QUALIFICATION'}
+          </span>
+        </div>
+
+        {/* H1 Headline — Grand, Authoritative, Corporate with Logo Sky-Blue */}
+        <h1 className="mt-6 text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.14] max-w-4xl">
+          {isAr ? (
+            <>
+              هندسة المحاكاة الديناميكية.
+              <span className="block text-sky-600 mt-2">
+                لتأهيل مشغلي المنشآت الحيوية.
               </span>
-            </div>
-
-            {/* H1 Headline — Grand, Authoritative, Corporate */}
-            <h1 className="mt-6 text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
-              {isAr ? (
-                <>
-                  هندسة المحاكاة الديناميكية.
-                  <span className="block text-blue-400 mt-2">
-                    لتأهيل مشغلي المنشآت الحيوية.
-                  </span>
-                </>
-              ) : (
-                <>
-                  Dynamic Process Simulation.
-                  <span className="block text-blue-400 mt-2">
-                    Engineered for Plant Reality.
-                  </span>
-                </>
-              )}
-            </h1>
-
-            {/* Corporate Mission Subtitle */}
-            <p className="mt-6 max-w-2xl text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
-              {isAr
-                ? 'تقوم نكسيفا ببناء محاكيات تدريب المشغلين (OTS) ونماذج التوأم الرقمي عالية الدقة لمصافي التكرير ومجمعات الغاز والبتروكيماويات بمطابقة تامة لأنظمة التحكم الموزع (DCS) لتمكين الكوادر من مواجهة أعتى طوارئ العمليات قبل حدوثها على أرض الواقع.'
-                : 'Nexiiva engineers high-fidelity dynamic process digital twins and Operator Training Simulators (OTS) tailored for refineries, gas complexes, and petrochemical facilities with 1:1 DCS console parity—ensuring operators master worst-case transients before touching live valves.'}
-            </p>
-
-            {/* Action Buttons */}
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Link
-                href={`/${locale}/pilot`}
-                className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-8 py-3.5 text-sm font-bold text-white shadow-xs transition-colors hover:bg-blue-500 active:scale-95"
-              >
-                <span>{isAr ? 'طلب مناقشة مشروع تجريبي' : 'Request Plant Pilot'}</span>
-                <ArrowRight className="h-4 w-4 rtl:rotate-180" />
-              </Link>
-
-              <button
-                type="button"
-                onClick={() => handleOpenVideo()}
-                className="inline-flex items-center gap-2.5 rounded-lg border border-slate-700 bg-slate-900/90 px-6 py-3.5 text-sm font-semibold text-white shadow-xs transition-colors hover:bg-slate-800 hover:border-slate-600 active:scale-95"
-              >
-                <div className="flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-white">
-                  <Play className="h-3 w-3 fill-current ms-0.5" />
-                </div>
-                <span>{isAr ? 'مشاهدة عرض المنصة (فيديو)' : 'Watch System Walkthrough'}</span>
-              </button>
-
-              <Link
-                href="#projects"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-white transition-colors ms-2"
-              >
-                <span>{isAr ? 'استعراض المشاريع المنجزة ↓' : 'Explore Featured Projects ↓'}</span>
-              </Link>
-            </div>
-
-            {/* Direct Video Walkthrough Triggers */}
-            <div className="mt-5 flex flex-wrap items-center gap-3 text-xs text-slate-400">
-              <span className="font-semibold text-slate-300">
-                {isAr ? 'فيديوهات النظام:' : 'Demo Walkthroughs:'}
+            </>
+          ) : (
+            <>
+              Dynamic Process Simulation.
+              <span className="block text-sky-600 mt-2">
+                Engineered for Plant Reality.
               </span>
-              <button
-                type="button"
-                onClick={() => handleOpenVideo('en')}
-                className="hover:text-blue-300 hover:underline transition-colors"
-              >
-                English Walkthrough (YouTube)
-              </button>
-              <span>·</span>
-              <button
-                type="button"
-                onClick={() => handleOpenVideo('ar')}
-                className="hover:text-blue-300 hover:underline transition-colors"
-              >
-                العرض باللغة العربية (YouTube)
-              </button>
+            </>
+          )}
+        </h1>
+
+        {/* Corporate Mission Subtitle */}
+        <p className="mt-6 max-w-3xl text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+          {isAr
+            ? 'تقوم نكسيفا ببناء محاكيات تدريب المشغلين (OTS) ونماذج التوأم الرقمي عالية الدقة لمصافي التكرير ومجمعات الغاز والبتروكيماويات بمطابقة تامة لأنظمة التحكم الموزع (DCS) لتمكين الكوادر من مواجهة أعتى طوارئ العمليات قبل حدوثها على أرض الواقع.'
+            : 'Nexiiva engineers high-fidelity dynamic process digital twins and Operator Training Simulators (OTS) tailored for refineries, gas complexes, and petrochemical facilities with 1:1 DCS console parity—ensuring operators master worst-case transients before touching live valves.'}
+        </p>
+
+        {/* Action Buttons */}
+        <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
+          <Link
+            href={`/${locale}/pilot`}
+            className="inline-flex items-center gap-2 rounded-lg bg-sky-600 hover:bg-sky-500 px-8 py-3.5 text-sm font-bold text-white shadow-xs transition-colors active:scale-95"
+          >
+            <span>{isAr ? 'طلب مناقشة مشروع تجريبي' : 'Request Plant Pilot'}</span>
+            <ArrowRight className="h-4 w-4 rtl:rotate-180" />
+          </Link>
+
+          <button
+            type="button"
+            onClick={() => handleOpenVideo()}
+            className="inline-flex items-center gap-2.5 rounded-lg border border-slate-300 bg-white hover:bg-slate-50 px-6 py-3.5 text-sm font-semibold text-slate-800 shadow-2xs transition-colors active:scale-95"
+          >
+            <div className="flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-white">
+              <Play className="h-3 w-3 fill-current ms-0.5" />
             </div>
+            <span>{isAr ? 'مشاهدة عرض المنصة (فيديو)' : 'Watch System Walkthrough'}</span>
+          </button>
 
-            {/* Accreditations & Standards Bar */}
-            <div className="mt-8 flex flex-wrap items-center gap-4 pt-6 border-t border-slate-800 text-xs font-mono text-slate-400">
-              <span>{isAr ? 'تشغيل محلي معزول 100% (Air-Gapped)' : '100% Air-Gapped On-Premise'}</span>
-              <span className="text-slate-600">·</span>
-              <span>{isAr ? 'حماية تامة للبيانات والمخططات' : 'Zero Cloud Telemetry Risk'}</span>
-              <span className="text-slate-600">·</span>
-              <span>{isAr ? 'معايير الإنذارات القياسية ISA-18.2' : 'ISA-18.2 Alarm Standard'}</span>
-            </div>
-          </div>
+          <a
+            href="https://wa.me/201004131154"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg border border-emerald-300 bg-emerald-50 hover:bg-emerald-100 px-6 py-3.5 text-sm font-bold text-emerald-800 shadow-2xs transition-colors active:scale-95"
+          >
+            <MessageSquare className="h-4 w-4 text-emerald-600" />
+            <span>{isAr ? 'واتساب مباشر (01004131154)' : 'Direct WhatsApp (01004131154)'}</span>
+          </a>
+        </div>
 
-          {/* Right Column: High-Precision DCS Console Interface Screen Display */}
-          <div className="lg:col-span-5">
-            <div className="relative rounded-2xl border border-slate-700 bg-slate-950 p-3 shadow-2xl">
-              {/* Console Screen Bezel Header */}
-              <div className="flex items-center justify-between px-3 py-2 border-b border-slate-800 text-[11px] text-slate-400">
-                <div className="flex items-center gap-2">
-                  <span className="inline-block rounded bg-emerald-950 px-2 py-0.5 text-[10px] font-bold text-emerald-400 border border-emerald-800/60 font-mono">
-                    AIR-GAPPED 100%
-                  </span>
-                  <span className="text-slate-400 font-mono text-[10px]">
-                    ISA-18.2 · PFD CONSOLE
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 font-mono text-[10px] text-slate-400">
-                  <span>CDU-101 ATM COLUMN</span>
-                  <div className="flex gap-1.5">
-                    <span className="h-2 w-2 rounded-full bg-emerald-500" />
-                    <span className="h-2 w-2 rounded-full bg-amber-500" />
-                    <span className="h-2 w-2 rounded-full bg-blue-500" />
-                  </div>
-                </div>
-              </div>
+        {/* Direct Video Walkthrough Triggers */}
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-xs text-slate-500">
+          <span className="font-semibold text-slate-700">
+            {isAr ? 'فيديوهات النظام المتاحة:' : 'Available Walkthroughs:'}
+          </span>
+          <button
+            type="button"
+            onClick={() => handleOpenVideo('en')}
+            className="text-sky-600 hover:text-sky-700 font-semibold hover:underline transition-colors"
+          >
+            English Walkthrough (YouTube)
+          </button>
+          <span>·</span>
+          <button
+            type="button"
+            onClick={() => handleOpenVideo('ar')}
+            className="text-sky-600 hover:text-sky-700 font-semibold hover:underline transition-colors"
+          >
+            العرض باللغة العربية (YouTube)
+          </button>
+        </div>
 
-              {/* Console Screen Image with Play Overlay */}
-              <div
-                className="relative mt-2 aspect-16/10 w-full overflow-hidden rounded-lg bg-black cursor-pointer group"
-                onClick={() => handleOpenVideo()}
-              >
-                <Image
-                  src="/assets/screens/cdu-atm-column-pfd.png"
-                  alt="Nexiiva DCS Simulator Interface - Atmospheric Distillation Column"
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-102"
-                  sizes="(max-width: 1024px) 100vw, 45vw"
-                  priority
-                />
-
-                {/* Subtle Hover Play Button */}
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-colors">
-                  <div className="flex items-center gap-2.5 rounded-full bg-slate-900/90 border border-slate-700 px-5 py-2.5 text-xs font-semibold text-white shadow-xl backdrop-blur-sm group-hover:scale-105 transition-transform">
-                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-white">
-                      <Play className="h-3.5 w-3.5 fill-current ms-0.5" />
-                    </div>
-                    <span>
-                      {isAr ? 'تشغيل العرض التوضيحي للنظام' : 'Watch Live Platform Demo'}
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Console Footer Metadata */}
-              <div className="mt-2.5 px-3 py-1 flex items-center justify-between text-[11px] text-slate-400 border-t border-slate-800 font-mono">
-                <span className="truncate">
-                  {isAr
-                    ? 'شاشة محاكاة لبرج التقطير الجوي CDU متطابقة 1:1 مع أنظمة DCS'
-                    : '1:1 DCS-matching atmospheric column simulation screen'}
-                </span>
-                <span className="text-emerald-400 text-[10px] shrink-0 ms-2">
-                  VERIFIED MODEL
-                </span>
-              </div>
-            </div>
-          </div>
+        {/* Accreditations & Standards Bar */}
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4 sm:gap-6 pt-6 border-t border-slate-200 text-xs font-mono text-slate-500">
+          <span className="font-semibold text-slate-700">
+            {isAr ? 'تشغيل محلي معزول 100% (Air-Gapped)' : '100% Air-Gapped On-Premise'}
+          </span>
+          <span className="text-slate-300">·</span>
+          <span>{isAr ? 'حماية تامة للمخططات وسرية البيانات' : 'Zero Cloud Telemetry Risk'}</span>
+          <span className="text-slate-300">·</span>
+          <span>{isAr ? 'معايير الإنذارات القياسية ISA-18.2' : 'ISA-18.2 Alarm Hierarchy'}</span>
+          <span className="text-slate-300">·</span>
+          <span>{isAr ? 'توقيع اتفاقية سرية متبادلة (NDA)' : 'Binding Mutual NDA'}</span>
         </div>
       </div>
 
@@ -224,7 +161,7 @@ export function HeroSection({ locale }: HeroSectionProps) {
                     onClick={() => setSelectedVideoLang('en')}
                     className={`px-2.5 py-1 rounded font-medium transition-colors ${
                       selectedVideoLang === 'en'
-                        ? 'bg-blue-600 text-white'
+                        ? 'bg-sky-600 text-white'
                         : 'text-slate-400 hover:text-white'
                     }`}
                   >
@@ -235,7 +172,7 @@ export function HeroSection({ locale }: HeroSectionProps) {
                     onClick={() => setSelectedVideoLang('ar')}
                     className={`px-2.5 py-1 rounded font-medium transition-colors ${
                       selectedVideoLang === 'ar'
-                        ? 'bg-blue-600 text-white'
+                        ? 'bg-sky-600 text-white'
                         : 'text-slate-400 hover:text-white'
                     }`}
                   >

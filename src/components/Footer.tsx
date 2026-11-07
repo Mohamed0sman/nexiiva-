@@ -49,36 +49,36 @@ export function Footer({ locale, dict }: FooterProps) {
   ];
 
   return (
-    <footer className="relative border-t border-slate-800 bg-[#050D1A] text-slate-400">
+    <footer className="relative border-t border-slate-200 bg-white text-slate-600">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-5">
           {/* Brand & Corporate Description (2 cols on lg) */}
           <div className="lg:col-span-2 flex flex-col justify-between">
             <div>
               <Link href={`/${locale}`} className="inline-block">
-                <NexiivaLogo variant="light" className="h-8 w-auto" showTagline={true} />
+                <NexiivaLogo variant="dark" className="h-8 w-auto" showTagline={true} />
               </Link>
-              <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-400">
+              <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-600">
                 {dict?.footer?.desc ||
                   'High-fidelity Operator Training Simulators (OTS) for refineries, gas plants, and petrochemical sites. Engineered to turn physical process units into virtual DCS consoles.'}
               </p>
 
               {/* Tagline Badge */}
-              <div className="mt-4 inline-flex items-center gap-2 rounded border border-slate-800 bg-slate-900 px-2.5 py-1 font-mono-tag text-[10px] text-blue-400">
-                <span>CLOSING VISION:</span>
-                <span className="text-slate-200">
+              <div className="mt-4 inline-flex items-center gap-2 rounded border border-sky-200 bg-sky-50 px-2.5 py-1 font-mono text-[10px] text-sky-800">
+                <span className="font-bold">CLOSING VISION:</span>
+                <span className="text-slate-800">
                   {dict?.common?.closingLine || 'Let’s Make OTS Accessible to Every Industrial Unit.'}
                 </span>
               </div>
             </div>
 
             {/* Social Icons */}
-            <div className="mt-6 flex items-center gap-3 text-slate-400">
+            <div className="mt-6 flex items-center gap-3 text-slate-500">
               <a
                 href="https://youtu.be/x400rPgBSo4?si=uMibAhcd_L-hHyRR"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-800 bg-slate-900 transition-colors hover:border-slate-600 hover:text-white"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 bg-slate-50 transition-colors hover:border-red-300 hover:text-red-600"
                 aria-label="YouTube"
               >
                 <YoutubeIcon className="h-4 w-4" />
@@ -87,7 +87,7 @@ export function Footer({ locale, dict }: FooterProps) {
                 href="https://wa.me/201004131154"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-800 bg-slate-900 transition-colors hover:border-emerald-600 hover:text-emerald-400"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 bg-slate-50 transition-colors hover:border-emerald-300 hover:text-emerald-600"
                 aria-label="WhatsApp"
               >
                 <Phone className="h-4 w-4" />
@@ -97,7 +97,7 @@ export function Footer({ locale, dict }: FooterProps) {
 
           {/* Navigation Column */}
           <div>
-            <h3 className="font-mono-tag text-xs font-bold tracking-wider text-white uppercase">
+            <h3 className="font-mono text-xs font-bold tracking-wider text-slate-900 uppercase">
               {dict?.footer?.navCol || 'Navigation'}
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm">
@@ -105,7 +105,7 @@ export function Footer({ locale, dict }: FooterProps) {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="transition-colors hover:text-blue-400"
+                    className="transition-colors hover:text-sky-600"
                   >
                     {item.label}
                   </Link>
@@ -116,7 +116,7 @@ export function Footer({ locale, dict }: FooterProps) {
 
           {/* Solutions Column */}
           <div>
-            <h3 className="font-mono-tag text-xs font-bold tracking-wider text-white uppercase">
+            <h3 className="font-mono text-xs font-bold tracking-wider text-slate-900 uppercase">
               {dict?.footer?.solutionsCol || 'Solutions'}
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm">
@@ -124,7 +124,7 @@ export function Footer({ locale, dict }: FooterProps) {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="transition-colors hover:text-blue-400"
+                    className="transition-colors hover:text-sky-600"
                   >
                     {item.label}
                   </Link>
@@ -135,45 +135,45 @@ export function Footer({ locale, dict }: FooterProps) {
 
           {/* Contact & Corporate Info Block */}
           <div>
-            <h3 className="font-mono-tag text-xs font-bold tracking-wider text-white uppercase">
+            <h3 className="font-mono text-xs font-bold tracking-wider text-slate-900 uppercase">
               {dict?.footer?.companyCol || 'Corporate Office'}
             </h3>
             <div className="mt-4 space-y-3 text-xs leading-relaxed">
               <div className="flex items-start gap-2.5">
-                <MapPin className="h-4 w-4 text-blue-400 shrink-0 mt-0.5" />
-                <span className="font-mono-tag text-slate-300">
+                <MapPin className="h-4 w-4 text-sky-600 shrink-0 mt-0.5" />
+                <span className="font-mono text-slate-700">
                   {dict?.footer?.addressPlaceholder ||
                     'Cairo / Alexandria, Egypt'}
                 </span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Mail className="h-4 w-4 text-blue-400 shrink-0" />
+                <Mail className="h-4 w-4 text-sky-600 shrink-0" />
                 <a
                   href="mailto:Mostafa.adel.esmaiel@gmail.com"
-                  className="font-mono-tag text-slate-200 hover:text-blue-400 hover:underline break-all"
+                  className="font-mono text-slate-800 hover:text-sky-600 hover:underline break-all"
                 >
                   Mostafa.adel.esmaiel@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
-                <Phone className="h-4 w-4 text-emerald-400 shrink-0" />
+                <Phone className="h-4 w-4 text-emerald-600 shrink-0" />
                 <a
                   href="https://wa.me/201004131154"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono-tag text-slate-200 hover:text-emerald-400 hover:underline"
+                  className="font-mono text-slate-800 hover:text-emerald-600 hover:underline"
                 >
                   +20 100 413 1154 (WhatsApp)
                 </a>
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-slate-800">
+            <div className="mt-6 pt-4 border-t border-slate-200">
               <Link
                 href={redirectedPathName(switchLocale)}
-                className="inline-flex items-center gap-2 rounded border border-slate-700 bg-slate-800/80 px-2.5 py-1 text-xs font-mono-tag text-slate-200 transition-colors hover:bg-slate-700"
+                className="inline-flex items-center gap-2 rounded border border-slate-300 bg-slate-50 px-2.5 py-1 text-xs font-mono text-slate-700 transition-colors hover:bg-slate-100 hover:border-slate-400"
               >
-                <Languages className="h-3.5 w-3.5 text-blue-400" />
+                <Languages className="h-3.5 w-3.5 text-sky-600" />
                 <span>{locale === 'en' ? 'تغيير اللغة إلى العربية' : 'Switch to English (US)'}</span>
               </Link>
             </div>
@@ -181,30 +181,30 @@ export function Footer({ locale, dict }: FooterProps) {
         </div>
 
         {/* Bottom Bar: Copyright, Legal, Disclaimer */}
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-slate-800 pt-8 sm:flex-row text-xs">
-          <p className="text-slate-400">
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-slate-200 pt-8 sm:flex-row text-xs">
+          <p className="text-slate-500">
             © {currentYear} Nexiiva. {dict?.footer?.rights || 'All rights reserved.'}{' '}
-            <span className="font-mono-tag text-[10px] text-blue-400">
-              [PRE-REVENUE STAGE · PILOT READINESS]
+            <span className="font-mono text-[10px] text-sky-700 bg-sky-50 border border-sky-200 rounded px-1.5 py-0.5">
+              [PILOT READINESS · ENERGY OT OTS]
             </span>
           </p>
 
           <div className="flex items-center gap-6">
             <Link
               href={`/${locale}/investors`}
-              className="text-slate-400 hover:text-blue-400 transition-colors"
+              className="text-slate-500 hover:text-sky-600 transition-colors"
             >
               {dict?.nav?.investors || 'Investors'}
             </Link>
             <Link
               href={`/${locale}/legal/privacy`}
-              className="text-slate-400 hover:text-blue-400 transition-colors"
+              className="text-slate-500 hover:text-sky-600 transition-colors"
             >
               {dict?.footer?.privacy || 'Privacy Policy'}
             </Link>
             <Link
               href={`/${locale}/legal/terms`}
-              className="text-slate-400 hover:text-blue-400 transition-colors"
+              className="text-slate-500 hover:text-sky-600 transition-colors"
             >
               {dict?.footer?.terms || 'Terms of Service'}
             </Link>

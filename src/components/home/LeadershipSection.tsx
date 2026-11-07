@@ -59,7 +59,7 @@ export function LeadershipSection({ locale = 'en', dict }: LeadershipSectionProp
           </span>
 
           <div className="relative mt-4">
-            <blockquote className="text-xl sm:text-2xl lg:text-3xl font-medium text-[#0A192F] leading-relaxed tracking-tight">
+            <blockquote className="text-xl sm:text-2xl lg:text-3xl font-medium text-slate-900 leading-relaxed tracking-tight">
               &ldquo;
               {dict?.leadership?.quote ||
                 (locale === 'ar'
@@ -69,7 +69,7 @@ export function LeadershipSection({ locale = 'en', dict }: LeadershipSectionProp
             </blockquote>
 
             <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs text-slate-500">
-              <span className="font-bold text-[#0A192F]">
+              <span className="font-bold text-slate-900">
                 {dict?.leadership?.author || (locale === 'ar' ? 'مصطفى عادل' : 'Mostafa Adel')}
               </span>
               <span>·</span>
@@ -87,7 +87,7 @@ export function LeadershipSection({ locale = 'en', dict }: LeadershipSectionProp
         {/* Founding & Leadership Team Grid */}
         <div className="mt-16 pt-12 border-t border-slate-100">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <h3 className="text-xl sm:text-2xl font-bold text-[#0A192F]">
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
               {dict?.leadership?.teamTitle ||
                 (locale === 'ar' ? 'الفريق القيادي والمهندسون المؤسسون' : 'The Engineering & Executive Team')}
             </h3>
@@ -103,15 +103,15 @@ export function LeadershipSection({ locale = 'en', dict }: LeadershipSectionProp
             {members.map((member, idx) => (
               <div
                 key={idx}
-                className="group relative flex flex-col justify-between rounded-xl border border-slate-200 bg-slate-50/60 p-6 hover:border-slate-300 hover:bg-white transition-all duration-200 shadow-2xs"
+                className="group relative flex flex-col justify-between rounded-xl border border-slate-200 bg-slate-50/60 p-6 hover:border-sky-300 hover:bg-white transition-all duration-200 shadow-2xs"
               >
                 <div>
                   {/* Discipline / Domain Tag */}
-                  <span className="inline-block rounded bg-white border border-slate-200 px-2 py-0.5 text-[10px] font-bold text-[#1D4ED8] tracking-wider font-mono">
+                  <span className="inline-block rounded bg-sky-50 border border-sky-200 px-2 py-0.5 text-[10px] font-bold text-sky-700 tracking-wider font-mono">
                     {member.domain}
                   </span>
 
-                  <h4 className="mt-4 text-base font-bold text-[#0A192F] group-hover:text-[#1D4ED8] transition-colors">
+                  <h4 className="mt-4 text-base font-bold text-slate-900 group-hover:text-sky-600 transition-colors">
                     {member.name}
                   </h4>
 

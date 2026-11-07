@@ -39,11 +39,11 @@ export function TrustStrip({ locale = 'en' }: TrustStripProps) {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((item, idx) => (
-            <div key={idx} className="border-s-2 border-slate-300 ps-4 sm:ps-6">
-              <div className="font-mono text-3xl sm:text-4xl font-extrabold text-[#0A192F] tracking-tight">
+            <div key={idx} className="border-s-2 border-sky-300 ps-4 sm:ps-6">
+              <div className="font-mono text-3xl sm:text-4xl font-extrabold text-sky-600 tracking-tight">
                 {item.metric}
               </div>
-              <div className="mt-2 text-sm font-bold text-[#0A192F]">
+              <div className="mt-2 text-sm font-bold text-slate-900">
                 {item.label}
               </div>
               <div className="mt-1 text-xs text-slate-500 leading-normal">
