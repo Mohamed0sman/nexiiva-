@@ -6,6 +6,7 @@ interface SectionHeaderProps {
   subtitle?: string;
   align?: 'start' | 'center';
   className?: string;
+  theme?: 'light' | 'dark';
 }
 
 export function SectionHeader({
@@ -14,8 +15,10 @@ export function SectionHeader({
   subtitle,
   align = 'start',
   className = '',
+  theme = 'light',
 }: SectionHeaderProps) {
   const isCenter = align === 'center';
+  const isDark = theme === 'dark';
 
   return (
     <div
@@ -25,22 +28,34 @@ export function SectionHeader({
     >
       {/* Eyebrow with hairline rule */}
       <div
-        className={`inline-flex items-center gap-3 font-mono-tag text-xs font-bold tracking-[0.2em] text-[#8B4CFF] uppercase ${
+        className={`inline-flex items-center gap-3 font-mono-tag text-xs font-bold tracking-[0.2em] uppercase ${
           isCenter ? 'justify-center' : ''
-        }`}
+        } ${isDark ? 'text-blue-400' : 'text-[#1D4ED8]'}`}
       >
         <span>{eyebrow}</span>
-        <span className="h-px w-8 bg-[#8B4CFF]/40" />
+        <span
+          className={`h-px w-8 ${
+            isDark ? 'bg-blue-400/40' : 'bg-[#1D4ED8]/30'
+          }`}
+        />
       </div>
 
       {/* Main Title */}
-      <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[#E9EAF4] sm:text-4xl lg:text-5xl leading-[1.15]">
+      <h2
+        className={`mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl leading-[1.15] ${
+          isDark ? 'text-white' : 'text-[#0A192F]'
+        }`}
+      >
         {title}
       </h2>
 
       {/* Subtitle */}
       {subtitle && (
-        <p className="mt-4 text-base sm:text-lg text-[#9A9CB3] leading-relaxed">
+        <p
+          className={`mt-4 text-base sm:text-lg leading-relaxed ${
+            isDark ? 'text-slate-300' : 'text-slate-600'
+          }`}
+        >
           {subtitle}
         </p>
       )}

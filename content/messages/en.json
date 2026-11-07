@@ -378,9 +378,9 @@
     "solutionsCol": "Solutions",
     "companyCol": "Company",
     "legalCol": "Legal",
-    "addressPlaceholder": "[Corporate Headquarters — Cairo / Alexandria, Egypt]",
-    "emailPlaceholder": "[Official Email — contact@nexiiva.com]",
-    "phonePlaceholder": "[Official Phone — to be provided]",
+    "addressPlaceholder": "Cairo / Alexandria, Egypt",
+    "emailPlaceholder": "Mostafa.adel.esmaiel@gmail.com",
+    "phonePlaceholder": "+20 100 413 1154",
     "rights": "All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"

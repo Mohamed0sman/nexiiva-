@@ -14,20 +14,22 @@ This document tracks all placeholder fields across the Nexiiva corporate site. P
 
 ## 2. Contact Information & Legal
 - **Corporate Headquarters Address** (`/[locale]/contact`, Footer)
-  - Status: `[Corporate Address — Cairo / Alexandria, Egypt — to be provided]`
+  - Status: Cairo / Alexandria, Egypt
 - **Official Contact Email** (`/[locale]/contact`, Footer)
-  - Status: `contact@nexiiva.com` / `[Official Email — to be verified]`
-- **Official Phone Number** (`/[locale]/contact`, Footer)
-  - Status: `[Phone number — to be provided]`
+  - Status: `Mostafa.adel.esmaiel@gmail.com`
+- **Official WhatsApp / Phone** (`/[locale]/contact`, Footer, Header)
+  - Status: `+20 100 413 1154` (`01004131154`)
 - **Company Registration & Commercial ID** (`/[locale]/legal/terms`, Footer)
   - Status: `[Commercial Registration No. — in progress / to be added upon incorporation]`
 - **Privacy Policy & Terms of Service** (`/[locale]/legal/privacy`, `/[locale]/legal/terms`)
   - Status: Standard legal framework marked clearly as `[Pre-incorporation draft placeholder — pending legal counsel]`.
 
 ## 3. Media & Assets
-- **Platform Walkthrough Video** (`/`, Hero)
-  - Status: Modal lightbox with video placeholder (`[Platform Demonstration Video — to be added]`).
-- **Partner / Institue Endorsements**
+- **Platform Walkthrough Videos** (`/`, Hero, Footer)
+  - English Walkthrough: `https://youtu.be/x400rPgBSo4` (`x400rPgBSo4`)
+  - Arabic Walkthrough: `https://youtu.be/hYILfbdodzQ` (`hYILfbdodzQ`)
+  - Status: Embedded in Hero Lightbox Modal with EN/AR switch and direct external links.
+- **Partner / Institute Endorsements**
   - Status: Factual capability tiles only. No client logos fabricated.
 
 ## 4. Pilot Program & Custom Scenarios

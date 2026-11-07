@@ -148,7 +148,7 @@ export function LiveDemoConsole({ dict }: LiveDemoConsoleProps) {
             onClick={resetNormal}
             className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-3 py-1 font-mono-tag text-xs font-medium text-[#E9EAF4] transition-all hover:bg-white/15 active:scale-95"
           >
-            <RotateCcw className="h-3.5 w-3.5 text-[#8B4CFF]" />
+            <RotateCcw className="h-3.5 w-3.5 text-[#38BDF8]" />
             {dict?.resetBtn || 'RESET TO NORMAL'}
           </button>
         </div>
@@ -195,7 +195,7 @@ export function LiveDemoConsole({ dict }: LiveDemoConsoleProps) {
                 </linearGradient>
                 <linearGradient id="liquid-grad" x1="0%" y1="0%" x2="0%" y2="100%">
                   <stop offset="0%" stopColor="#38BDF8" stopOpacity="0.4" />
-                  <stop offset="100%" stopColor="#6D3BF0" stopOpacity="0.8" />
+                  <stop offset="100%" stopColor="#1E40AF" stopOpacity="0.8" />
                 </linearGradient>
               </defs>
 
@@ -311,7 +311,7 @@ export function LiveDemoConsole({ dict }: LiveDemoConsoleProps) {
                 {/* Reflux return line back to column */}
                 <path
                   d="M 180 117 L 180 140 L 90 140"
-                  stroke={telemetry.refluxFlow < 30 ? '#EF4444' : '#8B4CFF'}
+                  stroke={telemetry.refluxFlow < 30 ? '#EF4444' : '#3B82F6'}
                   strokeWidth="2.5"
                   fill="none"
                 />
@@ -336,8 +336,8 @@ export function LiveDemoConsole({ dict }: LiveDemoConsoleProps) {
                 </text>
 
                 {/* Bottom Residue */}
-                <path d="M 45 300 L 45 340 L 290 340" stroke="#6D3BF0" strokeWidth="2.5" fill="none" />
-                <text x="295" y="344" fill="#A87FFB" fontSize="10" fontFamily="monospace" fontWeight="bold">
+                <path d="M 45 300 L 45 340 L 290 340" stroke="#475569" strokeWidth="2.5" fill="none" />
+                <text x="295" y="344" fill="#94A3B8" fontSize="10" fontFamily="monospace" fontWeight="bold">
                   → {dict?.draws?.residue || 'Atm Residue'}
                 </text>
               </g>
@@ -431,7 +431,7 @@ export function LiveDemoConsole({ dict }: LiveDemoConsoleProps) {
           <div>
             <div className="flex items-center justify-between pb-3 border-b border-white/10">
               <div className="flex items-center gap-2">
-                <Sliders className="h-4 w-4 text-[#8B4CFF]" />
+                <Sliders className="h-4 w-4 text-[#38BDF8]" />
                 <h3 className="font-mono-tag text-xs font-bold uppercase tracking-wider text-[#E9EAF4]">
                   {dict?.scenariosTitle || 'Instructor Fault Injection'}
                 </h3>

@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { SectionHeader } from '@/components/SectionHeader';
 import { ContactForm } from '@/components/ContactForm';
-import { MapPin, Mail, Phone, Clock, Building2 } from 'lucide-react';
+import { MapPin, Mail, Phone, Clock, Building2, MessageCircle } from 'lucide-react';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: locale === 'ar' ? 'اتصل بنكسيفا' : 'Contact Us & Corporate Inquiries',
     description:
-      'Connect with Nexiiva engineering and commercial leadership in Cairo and Alexandria, Egypt.',
+      'Connect directly with Nexiiva engineering and commercial leadership in Cairo and Alexandria, Egypt.',
   };
 }
 
@@ -23,83 +23,107 @@ export default async function ContactPage({ params }: Props) {
   setRequestLocale(locale);
 
   return (
-    <div className="py-24 bg-[#05060A]">
+    <div className="py-20 bg-slate-50 border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="COMMERCIAL & ENGINEERING"
           title="Direct Contact & Site Scoping"
-          subtitle="Reach out to our engineering and commercial teams for technical consultations, pilot scoping, and enterprise inquiries."
+          subtitle="Reach out directly to Eng. Mostafa Adel and our engineering operations team for technical consultations, pilot scoping, and enterprise inquiries."
+          theme="light"
         />
 
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           {/* Left Column: Contact Form (7 cols) */}
           <div className="lg:col-span-7">
             <ContactForm />
           </div>
 
-          {/* Right Column: Corporate Info & Map Placeholder (5 cols) */}
-          <div className="lg:col-span-5 space-y-8">
-            <div className="rounded-2xl border border-white/10 bg-[#0E111E] p-8 shadow-xl space-y-6">
-              <h3 className="font-mono-tag text-xs font-bold uppercase tracking-wider text-[#E9EAF4]">
-                Corporate Headquarters & Contacts
+          {/* Right Column: Corporate Info & Direct Access (5 cols) */}
+          <div className="lg:col-span-5 space-y-6">
+            <div className="rounded-xl border border-slate-200 bg-white p-7 shadow-sm space-y-6">
+              <h3 className="font-mono-tag text-xs font-bold uppercase tracking-wider text-[#0A192F]">
+                Direct Contacts & Office
               </h3>
 
               <div className="space-y-4 text-sm">
                 <div className="flex items-start gap-3">
-                  <MapPin className="h-5 w-5 text-[#8B4CFF] shrink-0 mt-0.5" />
+                  <Mail className="h-5 w-5 text-[#1D4ED8] shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white block font-mono-tag text-xs">OFFICE LOCATION</strong>
-                    <span className="text-[#9A9CB3] text-xs">
-                      [Corporate Headquarters — Cairo / Alexandria, Egypt — to be provided]
-                    </span>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <Mail className="h-5 w-5 text-[#38BDF8] shrink-0 mt-0.5" />
-                  <div>
-                    <strong className="text-white block font-mono-tag text-xs">EMAIL</strong>
+                    <strong className="text-[#0A192F] block font-mono-tag text-xs">DIRECT INQUIRIES EMAIL</strong>
                     <a
-                      href="mailto:contact@nexiiva.com"
-                      className="text-xs text-[#38BDF8] hover:underline font-mono-tag"
+                      href="mailto:Mostafa.adel.esmaiel@gmail.com"
+                      className="text-xs text-[#1D4ED8] hover:underline font-mono-tag font-medium break-all"
                     >
-                      contact@nexiiva.com
+                      Mostafa.adel.esmaiel@gmail.com
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <Phone className="h-5 w-5 text-[#22C55E] shrink-0 mt-0.5" />
+                  <Phone className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white block font-mono-tag text-xs">PHONE</strong>
-                    <span className="text-[#9A9CB3] text-xs font-mono-tag">
-                      [Phone number — to be provided upon incorporation]
+                    <strong className="text-[#0A192F] block font-mono-tag text-xs">WHATSAPP & MOBILE</strong>
+                    <a
+                      href="https://wa.me/201004131154"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-emerald-700 hover:underline font-mono-tag font-bold flex items-center gap-1.5 mt-0.5"
+                    >
+                      <MessageCircle className="h-4 w-4" />
+                      <span>+20 100 413 1154 (01004131154)</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <MapPin className="h-5 w-5 text-[#1D4ED8] shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-[#0A192F] block font-mono-tag text-xs">HEADQUARTERS LOCATION</strong>
+                    <span className="text-slate-600 text-xs font-mono-tag">
+                      Cairo & Alexandria Operations, Egypt
                     </span>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <Clock className="h-5 w-5 text-[#F59E0B] shrink-0 mt-0.5" />
+                  <Clock className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white block font-mono-tag text-xs">WORKING HOURS</strong>
-                    <span className="text-[#9A9CB3] text-xs font-mono-tag">
-                      Sunday – Thursday: 08:00 – 17:00 (EET / UTC+2)
+                    <strong className="text-[#0A192F] block font-mono-tag text-xs">RESPONSE SLA</strong>
+                    <span className="text-slate-600 text-xs font-mono-tag">
+                      Sunday – Thursday: 08:00 – 18:00 (EET) · Inquiries acknowledged within 24 hours
                     </span>
                   </div>
                 </div>
               </div>
+
+              {/* Direct WhatsApp Action Box */}
+              <div className="pt-4 border-t border-slate-100">
+                <a
+                  href="https://wa.me/201004131154?text=Hello%20Eng.%20Mostafa%2C%20I%20am%20contacting%20you%20regarding%20Nexiiva%20industrial%20simulation."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[#25D366] hover:bg-[#20bd5a] px-4 py-3 text-xs font-bold text-white shadow-sm transition-colors"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  <span>Start WhatsApp Conversation</span>
+                </a>
+              </div>
             </div>
 
-            {/* Stylized Static Map / Location Graphic */}
-            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#070912] p-6 text-center">
-              <div className="h-44 w-full rounded-xl border border-white/5 bg-[#0A0D18] flex flex-col items-center justify-center p-4">
-                <Building2 className="h-8 w-8 text-[#8B4CFF] mb-2" />
-                <span className="font-mono-tag text-xs font-bold text-white">
-                  Egypt & GCC Regional Hub
-                </span>
-                <span className="mt-1 font-mono-tag text-[10px] text-[#9A9CB3]">
-                  [Interactive Satellite Map — Cairo Operations Centre]
-                </span>
+            {/* Corporate Hub Card */}
+            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-[#1D4ED8]">
+                  <Building2 className="h-5 w-5" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold text-[#0A192F]">
+                    Egypt & GCC Industrial Deployment
+                  </h4>
+                  <p className="text-xs text-slate-500 font-mono-tag mt-0.5">
+                    Air-gapped on-premise installation & regional simulation support
+                  </p>
+                </div>
               </div>
             </div>
           </div>

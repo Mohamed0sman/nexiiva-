@@ -15,6 +15,7 @@ import {
   Sliders,
   Award,
   ArrowRight,
+  MessageCircle,
 } from 'lucide-react';
 
 interface HeaderProps {
@@ -90,10 +91,8 @@ export function Header({ locale, dict }: HeaderProps) {
   return (
     <>
       <header
-        className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 ${
-          isScrolled
-            ? 'border-b border-white/10 bg-[#05060A]/85 backdrop-blur-md py-3 shadow-lg'
-            : 'bg-transparent py-5'
+        className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 bg-[#0A192F] text-white border-b border-slate-800 ${
+          isScrolled ? 'py-3 shadow-md' : 'py-4'
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -123,12 +122,12 @@ export function Header({ locale, dict }: HeaderProps) {
                   >
                     <Link
                       href={item.href}
-                      className="inline-flex items-center gap-1.5 text-sm font-medium text-[#E9EAF4]/80 transition-colors hover:text-white"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-200 transition-colors hover:text-white"
                     >
                       {item.label}
                       <ChevronDown
                         className={`h-4 w-4 transition-transform duration-200 ${
-                          isSolutionsOpen ? 'rotate-180 text-[#8B4CFF]' : ''
+                          isSolutionsOpen ? 'rotate-180 text-[#38BDF8]' : ''
                         }`}
                       />
                     </Link>
@@ -136,7 +135,7 @@ export function Header({ locale, dict }: HeaderProps) {
                     {/* Solutions Mega Menu Dropdown */}
                     {isSolutionsOpen && (
                       <div className="absolute start-1/2 top-full -translate-x-1/2 pt-3 w-[560px]">
-                        <div className="overflow-hidden rounded-xl border border-white/10 bg-[#0E111C]/95 p-4 shadow-2xl backdrop-blur-xl">
+                        <div className="overflow-hidden rounded-xl border border-slate-700 bg-[#0F2744] p-4 shadow-2xl">
                           <div className="grid grid-cols-2 gap-3">
                             {megaSolutions.map((sol) => {
                               const Icon = sol.icon;
@@ -144,17 +143,17 @@ export function Header({ locale, dict }: HeaderProps) {
                                 <Link
                                   key={sol.href}
                                   href={sol.href}
-                                  className="group/item flex flex-col rounded-lg border border-transparent p-3 transition-all hover:border-white/10 hover:bg-white/5"
+                                  className="group/item flex flex-col rounded-lg border border-transparent p-3 transition-colors hover:border-slate-600 hover:bg-white/5"
                                 >
                                   <div className="flex items-center gap-2.5">
-                                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#6D3BF0]/15 text-[#8B4CFF] group-hover/item:bg-[#6D3BF0]/25">
+                                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#1D4ED8]/20 text-[#38BDF8]">
                                       <Icon className="h-4 w-4" />
                                     </div>
-                                    <span className="text-xs font-bold text-[#E9EAF4] group-hover/item:text-[#38BDF8]">
+                                    <span className="text-xs font-bold text-white group-hover/item:text-[#38BDF8]">
                                       {sol.title}
                                     </span>
                                   </div>
-                                  <p className="mt-2 text-[11px] leading-relaxed text-[#9A9CB3]">
+                                  <p className="mt-2 text-[11px] leading-relaxed text-slate-300">
                                     {sol.desc}
                                   </p>
                                 </Link>
@@ -176,7 +175,7 @@ export function Header({ locale, dict }: HeaderProps) {
                   className={`text-sm font-medium transition-colors ${
                     isActive
                       ? 'text-white font-semibold'
-                      : 'text-[#E9EAF4]/80 hover:text-white'
+                      : 'text-slate-200 hover:text-white'
                   }`}
                 >
                   {item.label}
@@ -185,12 +184,24 @@ export function Header({ locale, dict }: HeaderProps) {
             })}
           </nav>
 
-          {/* Right Header Actions: Locale switch, CTA */}
-          <div className="hidden lg:flex items-center gap-4">
+          {/* Right Header Actions: WhatsApp, Locale switch, CTA */}
+          <div className="hidden lg:flex items-center gap-3">
+            {/* WhatsApp Direct Connect */}
+            <a
+              href="https://wa.me/201004131154"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/40 bg-emerald-950/40 px-3 py-1.5 font-mono-tag text-xs font-semibold text-emerald-400 hover:bg-emerald-900/40 transition-colors"
+              title="WhatsApp: 01004131154"
+            >
+              <MessageCircle className="h-3.5 w-3.5 fill-current" />
+              <span>01004131154</span>
+            </a>
+
             {/* EN / AR Switcher */}
             <Link
               href={redirectedPathName(switchLocale)}
-              className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1.5 font-mono-tag text-xs font-semibold text-[#E9EAF4] transition-all hover:bg-white/15"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-slate-700 bg-slate-800/80 px-2.5 py-1.5 font-mono-tag text-xs font-semibold text-slate-200 transition-colors hover:bg-slate-700 hover:text-white"
               title="Switch Language"
             >
               <Languages className="h-3.5 w-3.5 text-[#38BDF8]" />
@@ -200,7 +211,7 @@ export function Header({ locale, dict }: HeaderProps) {
             {/* Request a Pilot CTA */}
             <Link
               href={`/${locale}/pilot`}
-              className="inline-flex items-center gap-2 rounded-lg brand-gradient px-4 py-2 text-xs font-bold text-white shadow-[0_0_20px_rgba(109,59,240,0.4)] transition-all duration-200 hover:shadow-[0_0_28px_rgba(109,59,240,0.6)] hover:brightness-110 active:scale-95"
+              className="inline-flex items-center gap-2 rounded-lg bg-[#1D4ED8] hover:bg-[#1E40AF] px-4 py-2 text-xs font-bold text-white transition-colors"
             >
               <span>{dict?.common?.requestPilot || 'Request a Pilot'}</span>
               <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />
@@ -209,16 +220,25 @@ export function Header({ locale, dict }: HeaderProps) {
 
           {/* Mobile Hamburger Button */}
           <div className="flex items-center gap-2 lg:hidden">
+            <a
+              href="https://wa.me/201004131154"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg border border-emerald-500/30 bg-emerald-950/40 p-2 text-emerald-400"
+              title="WhatsApp"
+            >
+              <MessageCircle className="h-4 w-4 fill-current" />
+            </a>
             <Link
               href={redirectedPathName(switchLocale)}
-              className="rounded-lg border border-white/10 bg-white/5 p-2 text-xs font-mono-tag text-[#E9EAF4]"
+              className="rounded-lg border border-slate-700 bg-slate-800 p-2 text-xs font-mono-tag text-white"
             >
               {locale === 'en' ? 'عربي' : 'EN'}
             </Link>
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="rounded-lg border border-white/10 bg-white/5 p-2 text-[#E9EAF4] hover:bg-white/10"
+              className="rounded-lg border border-slate-700 bg-slate-800 p-2 text-white hover:bg-slate-700"
               aria-label="Toggle navigation menu"
             >
               {isMobileMenuOpen ? (
@@ -233,13 +253,13 @@ export function Header({ locale, dict }: HeaderProps) {
 
       {/* Full-Height Mobile Navigation Drawer / Sheet */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-50 flex flex-col bg-[#05060A]/95 backdrop-blur-2xl lg:hidden">
-          <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
+        <div className="fixed inset-0 z-50 flex flex-col bg-[#0A192F] text-white lg:hidden">
+          <div className="flex items-center justify-between border-b border-slate-800 px-5 py-4">
             <NexiivaLogo variant="light" className="h-7 w-auto" />
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="rounded-lg border border-white/10 bg-white/5 p-2 text-[#E9EAF4]"
+              className="rounded-lg border border-slate-700 bg-slate-800 p-2 text-white"
               aria-label="Close menu"
             >
               <X className="h-5 w-5" />
@@ -253,18 +273,28 @@ export function Header({ locale, dict }: HeaderProps) {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="border-b border-white/5 pb-3 text-base font-medium text-[#E9EAF4] hover:text-[#38BDF8]"
+                  className="border-b border-slate-800 pb-3 text-base font-medium text-slate-200 hover:text-white"
                 >
                   {item.label}
                 </Link>
               ))}
             </nav>
 
-            <div className="mt-8 flex flex-col gap-4">
+            <div className="mt-8 flex flex-col gap-3">
+              <a
+                href="https://wa.me/201004131154"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 rounded-lg bg-emerald-600 py-3 text-sm font-bold text-white hover:bg-emerald-700 transition-colors"
+              >
+                <MessageCircle className="h-4 w-4 fill-current" />
+                <span>واتساب مباشر: 01004131154</span>
+              </a>
+
               <Link
                 href={`/${locale}/pilot`}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 rounded-lg brand-gradient py-3 text-sm font-bold text-white shadow-lg"
+                className="flex items-center justify-center gap-2 rounded-lg bg-[#1D4ED8] py-3 text-sm font-bold text-white"
               >
                 <span>{dict?.common?.requestPilot || 'Request a Pilot'}</span>
                 <ArrowRight className="h-4 w-4 rtl:rotate-180" />
@@ -273,7 +303,7 @@ export function Header({ locale, dict }: HeaderProps) {
               <Link
                 href={redirectedPathName(switchLocale)}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 rounded-lg border border-white/10 bg-white/5 py-2.5 font-mono-tag text-xs font-semibold text-[#E9EAF4]"
+                className="flex items-center justify-center gap-2 rounded-lg border border-slate-700 bg-slate-800 py-2.5 font-mono-tag text-xs font-semibold text-white"
               >
                 <Languages className="h-4 w-4 text-[#38BDF8]" />
                 <span>{locale === 'en' ? 'التحويل إلى العربية' : 'Switch to English'}</span>

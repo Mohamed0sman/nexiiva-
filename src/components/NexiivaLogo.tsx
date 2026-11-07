@@ -65,14 +65,9 @@ export function NexiivaLogo({
             x2="100%"
             y2="100%"
           >
-            <stop offset="0%" stopColor="#6D3BF0" />
-            <stop offset="50%" stopColor="#8B4CFF" />
-            <stop offset="100%" stopColor="#3B6BFF" />
+            <stop offset="0%" stopColor="#1E40AF" />
+            <stop offset="100%" stopColor="#2563EB" />
           </linearGradient>
-          <filter id="x-glow" x="-20%" y="-20%" width="140%" height="140%">
-            <feGaussianBlur stdDeviation="1.5" result="blur" />
-            <feComposite in="SourceGraphic" in2="blur" operator="over" />
-          </filter>
         </defs>
 
         {/* Letter 'N' */}
@@ -87,8 +82,8 @@ export function NexiivaLogo({
           fill={textColor}
         />
 
-        {/* Chevrons for 'X' with brand gradient */}
-        <g filter="url(#x-glow)">
+        {/* Chevrons for 'X' with clean engineering blue */}
+        <g>
           {/* Left chevron of X */}
           <path
             d="M87 8L99 23L87 38H96L104 28L98 20L95 16L102 8H87Z"
@@ -100,7 +95,7 @@ export function NexiivaLogo({
             fill="url(#nexiiva-brand-x)"
           />
           {/* Center core diamond accent */}
-          <circle cx="104" cy="23" r="2.2" fill="#38BDF8" opacity="0.9" />
+          <circle cx="104" cy="23" r="2.2" fill="#38BDF8" />
         </g>
 
         {/* Letter 'I' (first) */}

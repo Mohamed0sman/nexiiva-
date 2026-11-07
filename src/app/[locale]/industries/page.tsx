@@ -93,36 +93,37 @@ export default async function IndustriesPage({ params }: Props) {
   ];
 
   return (
-    <div className="py-24 bg-[#05060A]">
+    <div className="py-20 bg-slate-50 border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="INDUSTRIES & SCENARIOS"
           title="Engineered for Process Industries"
           subtitle="Delivered today for crude distillation; expanding across the downstream and petrochemical value chain."
+          theme="light"
         />
 
-        <div className="mt-16 space-y-16">
+        <div className="mt-12 space-y-12">
           {industries.map((ind) => {
             const Icon = ind.icon;
             return (
               <div
                 key={ind.id}
-                className={`rounded-3xl border p-8 lg:p-12 transition-all ${
+                className={`rounded-2xl border p-8 lg:p-10 transition-colors shadow-sm bg-white ${
                   ind.isDelivered
-                    ? 'border-[#8B4CFF] bg-[#0E111E] shadow-[0_0_40px_rgba(109,59,240,0.15)]'
-                    : 'border-white/10 bg-[#0A0D18]'
+                    ? 'border-[#1D4ED8] ring-1 ring-[#1D4ED8]/20'
+                    : 'border-slate-200'
                 }`}
               >
                 <div className="flex flex-wrap items-center justify-between gap-4">
                   <div className="flex items-center gap-4">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#6D3BF0]/20 text-[#38BDF8]">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-blue-50 text-[#1D4ED8]">
                       <Icon className="h-7 w-7" />
                     </div>
                     <div>
-                      <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
+                      <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0A192F]">
                         {ind.name}
                       </h2>
-                      <p className="mt-1 font-mono-tag text-xs text-[#8B4CFF]">
+                      <p className="mt-1 font-mono-tag text-xs font-bold text-[#1D4ED8]">
                         {ind.badge}
                       </p>
                     </div>
@@ -131,26 +132,26 @@ export default async function IndustriesPage({ params }: Props) {
                   {ind.isDelivered ? (
                     <Link
                       href={`/${locale}/pilot`}
-                      className="inline-flex items-center gap-2 rounded-xl brand-gradient px-6 py-2.5 text-xs font-bold text-white shadow-md hover:brightness-110"
+                      className="inline-flex items-center gap-2 rounded-lg bg-[#1D4ED8] hover:bg-blue-600 px-6 py-2.5 text-xs font-bold text-white shadow-sm transition-colors active:scale-95"
                     >
                       <span>Request a Refining Pilot</span>
                       <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />
                     </Link>
                   ) : (
-                    <span className="rounded-lg border border-white/10 bg-white/5 px-3 py-1 font-mono-tag text-xs text-[#9A9CB3]">
+                    <span className="rounded-md border border-slate-200 bg-slate-50 px-3 py-1 font-mono-tag text-xs text-slate-500 font-semibold">
                       In Engineering Roadmap
                     </span>
                   )}
                 </div>
 
-                <p className="mt-6 text-sm sm:text-base leading-relaxed text-[#9A9CB3] max-w-4xl">
+                <p className="mt-5 text-sm sm:text-base leading-relaxed text-slate-600 max-w-4xl">
                   {ind.desc}
                 </p>
 
                 {/* Pre-engineered emergency scenarios table */}
-                <div className="mt-8 pt-8 border-t border-white/10">
-                  <h3 className="font-mono-tag text-xs font-bold uppercase tracking-wider text-[#E9EAF4] flex items-center gap-2">
-                    <AlertTriangle className="h-4 w-4 text-[#F59E0B]" />
+                <div className="mt-8 pt-6 border-t border-slate-100">
+                  <h3 className="font-mono-tag text-xs font-bold uppercase tracking-wider text-[#0A192F] flex items-center gap-2">
+                    <AlertTriangle className="h-4 w-4 text-amber-500" />
                     Typical Emergency & Operational Upsets Trained:
                   </h3>
 
@@ -158,12 +159,12 @@ export default async function IndustriesPage({ params }: Props) {
                     {ind.scenarios.map((sc, i) => (
                       <div
                         key={i}
-                        className="rounded-xl border border-white/5 bg-[#05060A]/60 p-4"
+                        className="rounded-lg border border-slate-200 bg-slate-50 p-4"
                       >
-                        <span className="font-mono-tag text-xs font-bold text-[#38BDF8] block">
+                        <span className="font-mono-tag text-xs font-bold text-[#0A192F] block">
                           {sc.name}
                         </span>
-                        <p className="mt-1 text-xs text-[#9A9CB3] leading-relaxed">
+                        <p className="mt-1 text-xs text-slate-600 leading-relaxed">
                           {sc.impact}
                         </p>
                       </div>

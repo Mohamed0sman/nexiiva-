@@ -76,43 +76,44 @@ export default async function PilotPage({ params }: Props) {
   ];
 
   return (
-    <div className="py-24 bg-[#05060A]">
+    <div className="py-20 bg-slate-50 border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="PILOT PROGRAMME"
           title="Start with One Unit. Expand Across the Facility."
           subtitle="A low-risk, high-impact pilot program to prove simulator fidelity, build speed, and operator training outcomes on your own process equipment."
+          theme="light"
         />
 
         {/* 3 Step Flow & Inputs Grid */}
-        <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          <div className="lg:col-span-5 space-y-8">
-            <div className="rounded-3xl border border-white/10 bg-[#0E111E] p-8 shadow-xl">
-              <span className="font-mono-tag text-xs font-bold text-[#8B4CFF] uppercase">
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <div className="lg:col-span-5 space-y-6">
+            <div className="rounded-xl border border-slate-200 bg-white p-7 shadow-sm">
+              <span className="font-mono-tag text-xs font-bold text-[#1D4ED8] uppercase">
                 TARGET BUILD TIMELINE
               </span>
-              <div className="mt-3 flex items-baseline gap-2">
-                <span className="text-3xl font-extrabold text-white font-mono-tag">~1 Week</span>
-                <span className="text-xs text-[#9A9CB3]">target build time per unit</span>
+              <div className="mt-2 flex items-baseline gap-2">
+                <span className="text-3xl font-extrabold text-[#0A192F] font-mono-tag">~1 Week</span>
+                <span className="text-xs text-slate-500">target build time per unit</span>
               </div>
-              <p className="mt-2 text-xs text-[#9A9CB3] leading-relaxed">
+              <p className="mt-2 text-xs text-slate-600 leading-relaxed">
                 Target build time: about one week per unit — to be measured and validated on unit two.
               </p>
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-[#0E111E] p-8 shadow-xl">
-              <h3 className="text-lg font-bold text-white mb-4">
+            <div className="rounded-xl border border-slate-200 bg-white p-7 shadow-sm">
+              <h3 className="text-base font-bold text-[#0A192F] mb-4">
                 What Is Needed from the Client:
               </h3>
               <div className="space-y-4">
                 {clientInputs.map((input) => (
                   <div key={input.step} className="flex items-start gap-3">
-                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#6D3BF0]/20 font-mono-tag text-xs font-bold text-[#38BDF8]">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-blue-50 font-mono-tag text-xs font-bold text-[#1D4ED8]">
                       {input.step}
                     </span>
                     <div>
-                      <h4 className="text-sm font-bold text-white">{input.title}</h4>
-                      <p className="text-xs text-[#9A9CB3] mt-1 leading-relaxed">
+                      <h4 className="text-sm font-bold text-[#0A192F]">{input.title}</h4>
+                      <p className="text-xs text-slate-600 mt-1 leading-relaxed">
                         {input.desc}
                       </p>
                     </div>
@@ -121,10 +122,10 @@ export default async function PilotPage({ params }: Props) {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-[#121626] p-6 text-xs text-[#9A9CB3] space-y-2 font-mono-tag">
-              <div className="flex items-center gap-2 text-[#22C55E]">
+            <div className="rounded-xl border border-slate-200 bg-white p-6 text-xs text-slate-600 space-y-2 font-mono-tag shadow-sm">
+              <div className="flex items-center gap-2 text-emerald-700">
                 <ShieldCheck className="h-4 w-4" />
-                <span className="font-bold text-white">Mutual NDA Executed Prior to Data Transfer</span>
+                <span className="font-bold text-[#0A192F]">Mutual NDA Executed Prior to Data Transfer</span>
               </div>
               <p>All client proprietary process data remains strictly confidential and stored on air-gapped systems.</p>
             </div>
@@ -137,27 +138,28 @@ export default async function PilotPage({ params }: Props) {
         </div>
 
         {/* 8 Mandatory FAQs Accordion */}
-        <div className="mt-24 max-w-4xl mx-auto">
+        <div className="mt-20 max-w-4xl mx-auto">
           <SectionHeader
             eyebrow="FREQUENTLY ASKED QUESTIONS"
             title="Pilot Program & Technical FAQ"
             subtitle="Transparent answers regarding security, offline deployment, data confidentiality, and hardware requirements."
             align="center"
+            theme="light"
           />
 
-          <div className="mt-12 space-y-4">
+          <div className="mt-10 space-y-3.5">
             {faqs.map((faq, idx) => (
               <details
                 key={idx}
-                className="group rounded-2xl border border-white/10 bg-[#0E111C] p-6 transition-all duration-200 open:border-[#8B4CFF] open:bg-[#121626]"
+                className="group rounded-xl border border-slate-200 bg-white p-6 transition-colors shadow-sm open:border-[#1D4ED8] open:bg-blue-50/30"
               >
-                <summary className="flex cursor-pointer items-center justify-between font-bold text-[#E9EAF4] hover:text-white">
+                <summary className="flex cursor-pointer items-center justify-between font-bold text-[#0A192F] hover:text-[#1D4ED8]">
                   <span className="text-base pe-4">{faq.q}</span>
-                  <span className="ms-2 font-mono-tag text-sm text-[#8B4CFF] group-open:rotate-45 transition-transform duration-200">
+                  <span className="ms-2 font-mono-tag text-base text-[#1D4ED8] font-bold group-open:rotate-45 transition-transform duration-200">
                     +
                   </span>
                 </summary>
-                <p className="mt-4 text-sm leading-relaxed text-[#9A9CB3] border-t border-white/5 pt-4">
+                <p className="mt-3.5 text-sm leading-relaxed text-slate-600 border-t border-slate-100 pt-3.5">
                   {faq.a}
                 </p>
               </details>

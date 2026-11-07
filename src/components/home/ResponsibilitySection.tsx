@@ -29,7 +29,7 @@ export function ResponsibilitySection({ dict }: ResponsibilitySectionProps) {
   ];
 
   return (
-    <section className="relative py-24 bg-[#070912] overflow-hidden border-b border-white/10">
+    <section className="relative py-20 bg-slate-50 overflow-hidden border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow={
@@ -40,23 +40,24 @@ export function ResponsibilitySection({ dict }: ResponsibilitySectionProps) {
             'Safer plants start in the simulator.'
           }
           subtitle="Industrial responsibility is rooted in operational discipline. Practicing the worst day prevents the catastrophic day."
+          theme="light"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
           {pillars.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div
                 key={idx}
-                className="rounded-2xl border border-white/10 bg-[#0E111C] p-8 transition-all hover:border-white/20"
+                className="rounded-xl border border-slate-200 bg-white p-7 shadow-sm transition-colors hover:border-slate-300"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#6D3BF0]/15 text-[#38BDF8]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-[#1D4ED8]">
                   <Icon className="h-6 w-6" />
                 </div>
-                <h3 className="mt-6 text-lg font-bold text-[#E9EAF4]">
+                <h3 className="mt-5 text-lg font-bold text-[#0A192F]">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#9A9CB3]">
+                <p className="mt-2.5 text-sm leading-relaxed text-slate-600">
                   {item.desc}
                 </p>
               </div>

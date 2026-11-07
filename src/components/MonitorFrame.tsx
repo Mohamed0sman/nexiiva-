@@ -29,10 +29,10 @@ export function MonitorFrame({
   return (
     <>
       <div
-        className={`group relative overflow-hidden rounded-xl border border-white/10 bg-[#0A0B12] shadow-2xl transition-all duration-300 hover:border-[#8B4CFF]/40 hover:shadow-[0_0_30px_rgba(109,59,240,0.2)] ${className}`}
+        className={`group relative overflow-hidden rounded-xl border border-slate-700 bg-[#0A192F] shadow-lg transition-colors hover:border-slate-500 ${className}`}
       >
         {/* Top Console Monitor Chrome */}
-        <div className="flex items-center justify-between border-b border-white/5 bg-[#11131D]/90 px-4 py-2.5 backdrop-blur-md">
+        <div className="flex items-center justify-between border-b border-slate-800 bg-[#0F2238] px-4 py-2.5">
           <div className="flex items-center gap-2">
             <span className="h-2.5 w-2.5 rounded-full bg-[#EF4444]/80" />
             <span className="h-2.5 w-2.5 rounded-full bg-[#F59E0B]/80" />

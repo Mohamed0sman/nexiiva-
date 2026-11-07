@@ -19,7 +19,7 @@ export function WhyNexiivaSection({ dict }: WhyNexiivaSectionProps) {
       desc:
         dict?.whyNexiiva?.cards?.[0]?.desc ||
         'An AI agent builds the unit from an Arabic or English description, converting engineering documents into simulator logic.',
-      accent: '#8B4CFF',
+      accent: '#1D4ED8',
     },
     {
       icon: Library,
@@ -54,7 +54,7 @@ export function WhyNexiivaSection({ dict }: WhyNexiivaSectionProps) {
   ];
 
   return (
-    <section className="relative py-24 bg-[#05060A] overflow-hidden border-b border-white/10">
+    <section className="relative py-20 bg-white overflow-hidden border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow={dict?.whyNexiiva?.eyebrow || '04 — WHY NEXIIVA'}
@@ -63,32 +63,30 @@ export function WhyNexiivaSection({ dict }: WhyNexiivaSectionProps) {
             'Engineered for speed, security, and precision.'
           }
           subtitle="Combining automated model synthesis with air-gapped operational safety."
+          theme="light"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {cards.map((card, idx) => {
             const Icon = card.icon;
             return (
               <div
                 key={idx}
-                className="chamfer-card relative rounded-2xl border border-white/10 bg-[#0E111C] p-8 transition-all duration-300 hover:border-white/20 hover:shadow-[0_0_30px_rgba(109,59,240,0.15)] group"
+                className="relative rounded-xl border border-slate-200 bg-slate-50 p-7 transition-colors hover:border-slate-300 shadow-sm"
               >
                 <div className="flex items-center justify-between">
-                  <div
-                    className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/5 transition-transform group-hover:scale-105"
-                    style={{ color: card.accent }}
-                  >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-[#1D4ED8]">
                     <Icon className="h-6 w-6" />
                   </div>
-                  <span className="font-mono-tag text-[10px] font-bold tracking-wider uppercase text-[#9A9CB3]">
+                  <span className="font-mono-tag text-[10px] font-bold tracking-wider uppercase text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded">
                     {card.badge}
                   </span>
                 </div>
 
-                <h3 className="mt-6 text-xl font-bold text-[#E9EAF4]">
+                <h3 className="mt-5 text-xl font-bold text-[#0A192F]">
                   {card.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#9A9CB3]">
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">
                   {card.desc}
                 </p>
               </div>

@@ -15,7 +15,7 @@ export function JourneySection({ dict }: JourneySectionProps) {
       status: 'done',
       icon: CheckCircle2,
       badge: 'VALIDATED MILESTONE',
-      badgeColor: 'text-[#22C55E] bg-[#22C55E]/10 border-[#22C55E]/30',
+      badgeColor: 'text-emerald-800 bg-emerald-50 border-emerald-200',
       title:
         dict?.journey?.items?.[0]?.title ||
         'A Working CDU/VDU Training Unit, Built and Tested',
@@ -28,7 +28,7 @@ export function JourneySection({ dict }: JourneySectionProps) {
       status: 'in_progress',
       icon: Wrench,
       badge: 'IN ACTIVE DEVELOPMENT',
-      badgeColor: 'text-amber-400 bg-amber-400/10 border-amber-400/30',
+      badgeColor: 'text-amber-800 bg-amber-50 border-amber-200',
       title:
         dict?.journey?.items?.[1]?.title ||
         'OTS Builder Under Development',
@@ -41,7 +41,7 @@ export function JourneySection({ dict }: JourneySectionProps) {
       status: 'done',
       icon: CheckCircle2,
       badge: 'MARKET BENCHMARK COMPLETE',
-      badgeColor: 'text-[#22C55E] bg-[#22C55E]/10 border-[#22C55E]/30',
+      badgeColor: 'text-emerald-800 bg-emerald-50 border-emerald-200',
       title:
         dict?.journey?.items?.[2]?.title ||
         'Commercial Benchmarking Completed',
@@ -54,7 +54,7 @@ export function JourneySection({ dict }: JourneySectionProps) {
       status: 'next',
       icon: Rocket,
       badge: 'PRE-REVENUE · NEXT STAGE',
-      badgeColor: 'text-[#38BDF8] bg-[#38BDF8]/10 border-[#38BDF8]/30',
+      badgeColor: 'text-blue-800 bg-blue-50 border-blue-200',
       title:
         dict?.journey?.items?.[3]?.title ||
         'Pre-Revenue Stage — Preparing Initial Pilot Deployments',
@@ -66,7 +66,7 @@ export function JourneySection({ dict }: JourneySectionProps) {
   ];
 
   return (
-    <section className="relative py-24 bg-[#05060A] overflow-hidden border-b border-white/10">
+    <section className="relative py-20 bg-white overflow-hidden border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow={dict?.journey?.eyebrow || '08 — OUR JOURNEY'}
@@ -75,30 +75,31 @@ export function JourneySection({ dict }: JourneySectionProps) {
             dict?.journey?.subtitle ||
             'Honest progression from core engineering to industrial pilot deployment. Plainly pre-revenue and focused on execution.'
           }
+          theme="light"
         />
 
         {/* Timeline Cards Container */}
         <div className="relative mt-12 max-w-4xl mx-auto">
           {/* Vertical Connecting Hairline Rule */}
-          <div className="absolute top-4 bottom-4 start-6 w-px bg-white/10 hidden md:block" />
+          <div className="absolute top-4 bottom-4 start-6 w-px bg-slate-200 hidden md:block" />
 
-          <div className="space-y-8">
+          <div className="space-y-6">
             {milestones.map((item, idx) => {
               const Icon = item.icon;
               return (
                 <div
                   key={idx}
-                  className="relative flex flex-col md:flex-row items-start gap-6 rounded-2xl border border-white/10 bg-[#0E111C] p-6 transition-all duration-300 hover:border-white/20 hover:shadow-xl"
+                  className="relative flex flex-col md:flex-row items-start gap-6 rounded-xl border border-slate-200 bg-slate-50 p-6 transition-colors hover:border-slate-300 shadow-sm"
                 >
                   {/* Status Icon Indicator */}
-                  <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-[#141828] text-white shadow-lg">
+                  <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-800 shadow-sm">
                     <Icon
                       className={`h-6 w-6 ${
                         item.status === 'done'
-                          ? 'text-[#22C55E]'
+                          ? 'text-emerald-600'
                           : item.status === 'in_progress'
-                          ? 'text-amber-400'
-                          : 'text-[#38BDF8]'
+                          ? 'text-amber-600'
+                          : 'text-[#1D4ED8]'
                       }`}
                     />
                   </div>
@@ -111,15 +112,15 @@ export function JourneySection({ dict }: JourneySectionProps) {
                       >
                         {item.badge}
                       </span>
-                      <span className="font-mono-tag text-xs text-[#9A9CB3]">
+                      <span className="font-mono-tag text-xs text-slate-500">
                         {item.details}
                       </span>
                     </div>
 
-                    <h3 className="mt-3 text-lg font-bold text-[#E9EAF4]">
+                    <h3 className="mt-3 text-lg font-bold text-[#0A192F]">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-[#9A9CB3]">
+                    <p className="mt-2 text-sm leading-relaxed text-slate-600">
                       {item.desc}
                     </p>
                   </div>

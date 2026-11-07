@@ -47,7 +47,7 @@ export function InsightsSection({ locale, dict }: InsightsSectionProps) {
   ];
 
   return (
-    <section className="relative py-24 bg-[#05060A] overflow-hidden border-b border-white/10">
+    <section className="relative py-20 bg-white overflow-hidden border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <SectionHeader
@@ -57,27 +57,28 @@ export function InsightsSection({ locale, dict }: InsightsSectionProps) {
             }
             subtitle="Deep dives into control room human factors, dynamic modeling, and industrial simulation."
             className="mb-0"
+            theme="light"
           />
 
           <Link
             href={`/${locale}/insights`}
-            className="inline-flex items-center gap-2 font-mono-tag text-xs font-bold text-[#38BDF8] hover:underline shrink-0"
+            className="inline-flex items-center gap-2 font-mono-tag text-xs font-bold text-[#1D4ED8] hover:underline shrink-0"
           >
             <span>{dict?.insights?.cta || 'View all articles'}</span>
             <ArrowRight className="h-4 w-4 rtl:rotate-180" />
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {articles.map((item) => (
             <Link
               key={item.slug}
               href={`/${locale}/insights/${item.slug}`}
-              className="group flex flex-col justify-between rounded-2xl border border-white/10 bg-[#0E111C] p-6 transition-all duration-300 hover:border-[#8B4CFF] hover:shadow-[0_0_25px_rgba(109,59,240,0.2)]"
+              className="group flex flex-col justify-between rounded-xl border border-slate-200 bg-slate-50 p-6 transition-colors hover:border-slate-300 shadow-sm"
             >
               <div>
-                <div className="flex items-center justify-between text-[11px] font-mono-tag text-[#9A9CB3]">
-                  <span className="rounded bg-white/5 px-2 py-0.5 text-[#8B4CFF] font-semibold">
+                <div className="flex items-center justify-between text-[11px] font-mono-tag text-slate-500">
+                  <span className="rounded bg-white border border-slate-200 px-2.5 py-0.5 text-[#1D4ED8] font-semibold">
                     {item.category}
                   </span>
                   <div className="flex items-center gap-1.5">
@@ -86,18 +87,18 @@ export function InsightsSection({ locale, dict }: InsightsSectionProps) {
                   </div>
                 </div>
 
-                <h3 className="mt-4 text-lg font-bold text-[#E9EAF4] group-hover:text-white transition-colors">
+                <h3 className="mt-4 text-lg font-bold text-[#0A192F] group-hover:text-[#1D4ED8] transition-colors">
                   {item.title}
                 </h3>
 
-                <p className="mt-2.5 text-xs text-[#9A9CB3] leading-relaxed line-clamp-3">
+                <p className="mt-2.5 text-xs text-slate-600 leading-relaxed line-clamp-3">
                   {item.summary}
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono-tag">
-                <span className="text-[#9A9CB3]">{item.author}</span>
-                <span className="inline-flex items-center gap-1 font-semibold text-[#38BDF8] group-hover:underline">
+              <div className="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between text-xs font-mono-tag">
+                <span className="text-slate-500">{item.author}</span>
+                <span className="inline-flex items-center gap-1 font-semibold text-[#1D4ED8] group-hover:underline">
                   Read article →
                 </span>
               </div>

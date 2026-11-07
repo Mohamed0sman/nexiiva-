@@ -19,7 +19,8 @@ export function JsonLd({ locale }: { locale: string }) {
         },
         contactPoint: {
           '@type': 'ContactPoint',
-          email: 'contact@nexiiva.com',
+          email: 'Mostafa.adel.esmaiel@gmail.com',
+          telephone: '+201004131154',
           contactType: 'technical support and sales',
         },
       },

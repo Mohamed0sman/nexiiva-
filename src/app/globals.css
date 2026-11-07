@@ -2,60 +2,46 @@
 
 @layer base {
   :root {
-    --bg-0: #05060A;
-    --bg-1: #0A0B12;
-    --bg-2: #11131D;
-    --line: rgba(255, 255, 255, 0.08);
-    --line-subtle: rgba(255, 255, 255, 0.04);
-    --text: #E9EAF4;
-    --text-dim: #9A9CB3;
-    --lavender: #E6E6F2;
-    
-    /* Brand Accent Colors */
-    --purple-700: #4C1DB8;
-    --purple-500: #6D3BF0;
-    --violet-400: #8B4CFF;
-    --blue-500: #3B6BFF;
-    --cyan-glow: #38BDF8;
+    --navy-950: #050D1A;
+    --navy-900: #0A192F;
+    --navy-800: #0F2744;
+    --navy-700: #1B365D;
+    --blue-600: #1D4ED8;
+    --blue-500: #2563EB;
+
+    --slate-50: #F8FAFC;
+    --slate-100: #F1F5F9;
+    --slate-200: #E2E8F0;
+    --slate-300: #CBD5E1;
+    --slate-600: #475569;
+    --slate-700: #334155;
+    --slate-900: #0F172A;
 
     /* DCS Industrial Status Colors */
-    --ok: #22C55E;
-    --warn: #F59E0B;
-    --alarm: #EF4444;
+    --ok: #16A34A;
+    --warn: #D97706;
+    --alarm: #DC2626;
 
-    /* Backgrounds & Text */
-    --background: var(--bg-0);
-    --foreground: var(--text);
-  }
-
-  .light {
-    --bg-0: #F6F6FB;
-    --bg-1: #FFFFFF;
-    --bg-2: #ECECF5;
-    --line: rgba(11, 12, 20, 0.08);
-    --line-subtle: rgba(11, 12, 20, 0.04);
-    --text: #0B0C14;
-    --text-dim: #5E6075;
-    --lavender: #31334A;
-    --background: var(--bg-0);
-    --foreground: var(--text);
+    --background: #FFFFFF;
+    --foreground: #0F172A;
   }
 }
 
 @theme inline {
-  --color-bg-0: var(--bg-0);
-  --color-bg-1: var(--bg-1);
-  --color-bg-2: var(--bg-2);
-  --color-line: var(--line);
-  --color-text: var(--text);
-  --color-text-dim: var(--text-dim);
-  --color-lavender: var(--lavender);
-  
-  --color-purple-700: var(--purple-700);
-  --color-purple-500: var(--purple-500);
-  --color-violet-400: var(--violet-400);
+  --color-navy-950: var(--navy-950);
+  --color-navy-900: var(--navy-900);
+  --color-navy-800: var(--navy-800);
+  --color-navy-700: var(--navy-700);
+  --color-blue-600: var(--blue-600);
   --color-blue-500: var(--blue-500);
-  --color-cyan-glow: var(--cyan-glow);
+
+  --color-slate-50: var(--slate-50);
+  --color-slate-100: var(--slate-100);
+  --color-slate-200: var(--slate-200);
+  --color-slate-300: var(--slate-300);
+  --color-slate-600: var(--slate-600);
+  --color-slate-700: var(--slate-700);
+  --color-slate-900: var(--slate-900);
 
   --color-ok: var(--ok);
   --color-warn: var(--warn);
@@ -68,10 +54,10 @@
   --font-arabic-display: var(--font-arabic-display, "Cairo", sans-serif);
 }
 
-/* Base Body Styles */
+/* Base Body Styles - Clean Corporate */
 body {
-  background-color: var(--bg-0);
-  color: var(--text);
+  background-color: #FFFFFF;
+  color: #0F172A;
   font-family: var(--font-sans);
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
@@ -89,76 +75,25 @@ body {
   font-family: var(--font-arabic-display);
 }
 
-/* Brand Gradient Utilities */
+/* Corporate Solid Buttons & Accents - No Neon/AI Gradients */
 .brand-gradient {
-  background: linear-gradient(135deg, #6D3BF0 0%, #8B4CFF 45%, #3B6BFF 100%);
+  background-color: #0A192F;
+}
+
+.brand-gradient:hover {
+  background-color: #0F2744;
 }
 
 .brand-gradient-text {
-  background: linear-gradient(135deg, #A87FFB 0%, #C4A5FF 45%, #60A5FA 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #1D4ED8;
 }
 
-.brand-gradient-border {
-  position: relative;
-}
-.brand-gradient-border::before {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(109, 59, 240, 0.6) 0%, rgba(139, 76, 255, 0.4) 50%, rgba(59, 107, 255, 0.6) 100%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
-/* Chamfered Cut Corners for Industrial UI */
-.chamfer-8 {
-  clip-path: polygon(
-    0 8px,
-    8px 0,
-    calc(100% - 8px) 0,
-    100% 8px,
-    100% calc(100% - 8px),
-    calc(100% - 8px) 100%,
-    8px 100%,
-    0 calc(100% - 8px)
-  );
-}
-
-.chamfer-card {
-  clip-path: polygon(
-    0 0,
-    calc(100% - 12px) 0,
-    100% 12px,
-    100% 100%,
-    12px 100%,
-    0 calc(100% - 12px)
-  );
-}
-
-/* Industrial Blinking Alarms */
-@keyframes alarm-blink {
-  0%, 100% { opacity: 1; filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.8)); }
-  50% { opacity: 0.35; filter: none; }
-}
-
-.animate-alarm-blink {
-  animation: alarm-blink 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-/* Precision Code/Monospace */
 .font-mono-tag {
   font-family: var(--font-mono);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
-/* Smooth Focus Ring */
 *:focus-visible {
-  outline: 2px solid var(--violet-400);
+  outline: 2px solid #1D4ED8;
   outline-offset: 2px;
 }

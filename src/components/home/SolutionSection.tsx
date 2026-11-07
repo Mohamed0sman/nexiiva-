@@ -64,10 +64,7 @@ export function SolutionSection({ dict }: SolutionSectionProps) {
   ];
 
   return (
-    <section className="relative py-24 bg-[#05060A] overflow-hidden border-b border-white/10">
-      {/* Background Radial Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-[#6D3BF0]/10 blur-[140px] pointer-events-none" />
-
+    <section className="relative py-20 bg-slate-50 overflow-hidden border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow={dict?.solution?.eyebrow || '02 — THE SOLUTION'}
@@ -80,84 +77,67 @@ export function SolutionSection({ dict }: SolutionSectionProps) {
             'Connecting engineering rigor with accessible console training.'
           }
           align="center"
+          theme="light"
         />
 
         {/* Central Logo Node with 4 Connected Branches */}
-        <div className="relative mt-16 max-w-5xl mx-auto">
-          {/* Animated Connecting SVG Curves (Deck Motif) */}
+        <div className="relative mt-12 max-w-5xl mx-auto">
+          {/* Subtle Connecting Lines */}
           <svg
             className="absolute inset-0 h-full w-full hidden md:block pointer-events-none"
             viewBox="0 0 800 480"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <defs>
-              <linearGradient id="curve-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#6D3BF0" stopOpacity="0.8" />
-                <stop offset="50%" stopColor="#8B4CFF" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="#3B6BFF" stopOpacity="0.8" />
-              </linearGradient>
-            </defs>
-
             {/* Connecting Lines from Center (400, 240) to 4 Nodes */}
-            {/* Top-Left */}
             <path
               d="M 400 240 C 320 200, 250 140, 200 110"
-              stroke="url(#curve-gradient)"
+              stroke="#CBD5E1"
               strokeWidth="1.5"
               strokeDasharray="4 4"
             />
-            {/* Top-Right */}
             <path
               d="M 400 240 C 480 200, 550 140, 600 110"
-              stroke="url(#curve-gradient)"
+              stroke="#CBD5E1"
               strokeWidth="1.5"
               strokeDasharray="4 4"
             />
-            {/* Bottom-Left */}
             <path
               d="M 400 240 C 320 280, 250 340, 200 370"
-              stroke="url(#curve-gradient)"
+              stroke="#CBD5E1"
               strokeWidth="1.5"
               strokeDasharray="4 4"
             />
-            {/* Bottom-Right */}
             <path
               d="M 400 240 C 480 280, 550 340, 600 370"
-              stroke="url(#curve-gradient)"
+              stroke="#CBD5E1"
               strokeWidth="1.5"
               strokeDasharray="4 4"
             />
-
-            {/* Travelling pulse circles */}
-            <circle cx="280" cy="168" r="3" fill="#38BDF8" className="animate-ping" />
-            <circle cx="520" cy="168" r="3" fill="#8B4CFF" className="animate-ping" />
-            <circle cx="280" cy="312" r="3" fill="#8B4CFF" className="animate-ping" />
-            <circle cx="520" cy="312" r="3" fill="#38BDF8" className="animate-ping" />
           </svg>
 
           {/* Grid Layout of 4 Cards Surrounding Center Logo */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
             {nodes.map((node) => {
               const Icon = node.icon;
               return (
                 <div
                   key={node.id}
-                  className="rounded-xl border border-white/10 bg-[#0E111C]/90 p-6 shadow-xl backdrop-blur-md transition-all duration-300 hover:border-[#8B4CFF]/50 hover:shadow-[0_0_25px_rgba(109,59,240,0.25)]"
+                  className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-colors hover:border-slate-300"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#6D3BF0]/15 text-[#38BDF8]">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-[#1D4ED8]">
                       <Icon className="h-5 w-5" />
                     </div>
-                    <span className="font-mono-tag text-xs font-bold text-[#8B4CFF]">
+                    <span className="font-mono-tag text-xs font-bold text-[#1D4ED8]">
                       PILLAR {node.id}
                     </span>
                   </div>
 
-                  <h3 className="mt-4 text-lg font-bold text-[#E9EAF4]">
+                  <h3 className="mt-4 text-lg font-bold text-[#0A192F]">
                     {node.title}
                   </h3>
-                  <p className="mt-2 text-sm text-[#9A9CB3] leading-relaxed">
+                  <p className="mt-2 text-sm text-slate-600 leading-relaxed">
                     {node.desc}
                   </p>
                 </div>
@@ -166,11 +146,11 @@ export function SolutionSection({ dict }: SolutionSectionProps) {
           </div>
 
           {/* Center Brand Anchor Core */}
-          <div className="mt-10 flex justify-center">
-            <div className="inline-flex items-center gap-3 rounded-2xl border border-white/15 bg-[#090C16] px-6 py-3 shadow-2xl backdrop-blur-xl">
+          <div className="mt-8 flex justify-center relative z-20">
+            <div className="inline-flex items-center gap-3 rounded-xl border border-slate-800 bg-[#0A192F] px-6 py-3 shadow-md">
               <NexiivaLogo variant="light" className="h-7 w-auto" />
-              <div className="h-4 w-px bg-white/10" />
-              <span className="font-mono-tag text-xs text-[#38BDF8] font-semibold">
+              <div className="h-4 w-px bg-slate-700" />
+              <span className="font-mono-tag text-xs text-blue-300 font-semibold tracking-wide">
                 CORE SIMULATION ARCHITECTURE
               </span>
             </div>

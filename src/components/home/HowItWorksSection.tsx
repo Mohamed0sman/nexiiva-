@@ -71,7 +71,7 @@ export function HowItWorksSection({ dict }: HowItWorksSectionProps) {
   const Icon = current.icon;
 
   return (
-    <section className="relative py-24 bg-[#070912] overflow-hidden border-b border-white/10">
+    <section className="relative py-20 bg-white overflow-hidden border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow={dict?.howItWorks?.eyebrow || '03 — HOW IT WORKS'}
@@ -80,10 +80,11 @@ export function HowItWorksSection({ dict }: HowItWorksSectionProps) {
             dict?.howItWorks?.subtitle ||
             'A complete operational cycle replicating real DCS workflows and plant safety protocols.'
           }
+          theme="light"
         />
 
         {/* Tab Navigation Pill Bar */}
-        <div className="flex flex-wrap items-center gap-3 border-b border-white/10 pb-6">
+        <div className="flex flex-wrap items-center gap-3 border-b border-slate-200 pb-6">
           {steps.map((step, idx) => {
             const isSelected = activeTab === idx;
             return (
@@ -91,10 +92,10 @@ export function HowItWorksSection({ dict }: HowItWorksSectionProps) {
                 key={step.id}
                 type="button"
                 onClick={() => setActiveTab(idx)}
-                className={`inline-flex items-center gap-2 rounded-xl px-5 py-3 font-mono-tag text-xs font-bold transition-all duration-200 ${
+                className={`inline-flex items-center gap-2 rounded-lg px-5 py-2.5 font-mono-tag text-xs font-bold transition-all duration-150 ${
                   isSelected
-                    ? 'brand-gradient text-white shadow-[0_0_20px_rgba(109,59,240,0.4)]'
-                    : 'border border-white/10 bg-white/5 text-[#9A9CB3] hover:border-white/20 hover:text-white'
+                    ? 'bg-[#0A192F] text-white shadow-sm'
+                    : 'border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 hover:text-slate-900'
                 }`}
               >
                 <span>{step.tabLabel}</span>
@@ -107,22 +108,22 @@ export function HowItWorksSection({ dict }: HowItWorksSectionProps) {
         <div className="mt-10 grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
           {/* Details (5 cols) */}
           <div className="lg:col-span-5 flex flex-col items-start">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#6D3BF0]/20 text-[#38BDF8]">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-[#1D4ED8]">
               <Icon className="h-6 w-6" />
             </div>
 
-            <h3 className="mt-5 text-2xl font-bold text-[#E9EAF4]">
+            <h3 className="mt-5 text-2xl font-bold text-[#0A192F]">
               {current.title}
             </h3>
 
-            <p className="mt-3 text-base text-[#9A9CB3] leading-relaxed">
+            <p className="mt-3 text-base text-slate-600 leading-relaxed">
               {current.desc}
             </p>
 
             <ul className="mt-6 space-y-3">
               {current.bullets.map((bullet, i) => (
-                <li key={i} className="flex items-start gap-3 text-sm text-[#E9EAF4]">
-                  <CheckCircle2 className="h-4 w-4 text-[#22C55E] shrink-0 mt-0.5" />
+                <li key={i} className="flex items-start gap-3 text-sm text-slate-800">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
                   <span>{bullet}</span>
                 </li>
               ))}

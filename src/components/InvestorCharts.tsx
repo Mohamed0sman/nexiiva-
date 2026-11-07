@@ -69,9 +69,9 @@ export function InvestorFinancialsChart() {
               fontSize: '11px',
             }}
           />
-          <Bar dataKey="revenue" name="Revenue ($K)" fill="#6D3BF0" radius={[4, 4, 0, 0]} />
-          <Bar dataKey="grossProfit" name="Gross Profit ($K)" fill="#3B6BFF" radius={[4, 4, 0, 0]} />
-          <Bar dataKey="netIncome" name="Net Income ($K)" fill="#22C55E" radius={[4, 4, 0, 0]} />
+          <Bar dataKey="revenue" name="Revenue ($K)" fill="#1D4ED8" radius={[4, 4, 0, 0]} />
+          <Bar dataKey="grossProfit" name="Gross Profit ($K)" fill="#2563EB" radius={[4, 4, 0, 0]} />
+          <Bar dataKey="netIncome" name="Net Income ($K)" fill="#10B981" radius={[4, 4, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>
     </div>

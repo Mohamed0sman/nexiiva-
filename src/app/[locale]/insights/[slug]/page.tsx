@@ -108,21 +108,21 @@ export default async function InsightArticlePage({ params }: Props) {
   }
 
   return (
-    <article className="py-24 bg-[#05060A]">
+    <article className="py-20 bg-slate-50 border-b border-slate-200">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb Back Link */}
         <Link
           href={`/${locale}/insights`}
-          className="inline-flex items-center gap-2 font-mono-tag text-xs font-semibold text-[#8B4CFF] hover:underline"
+          className="inline-flex items-center gap-2 font-mono-tag text-xs font-semibold text-[#1D4ED8] hover:text-[#0A192F] transition-colors"
         >
           <ArrowLeft className="h-4 w-4 rtl:rotate-180" />
           <span>Back to Insights</span>
         </Link>
 
         {/* Article Header */}
-        <header className="mt-8 border-b border-white/10 pb-8">
-          <div className="flex flex-wrap items-center gap-3 text-xs font-mono-tag text-[#9A9CB3]">
-            <span className="rounded bg-[#6D3BF0]/20 px-2.5 py-1 text-[#38BDF8] font-bold">
+        <header className="mt-8 border-b border-slate-200 pb-8">
+          <div className="flex flex-wrap items-center gap-3 text-xs font-mono-tag text-slate-500">
+            <span className="rounded bg-blue-50 border border-blue-200 px-2.5 py-1 text-[#1D4ED8] font-bold">
               {article.category}
             </span>
             <span>·</span>
@@ -137,19 +137,19 @@ export default async function InsightArticlePage({ params }: Props) {
             </div>
           </div>
 
-          <h1 className="mt-4 text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+          <h1 className="mt-4 text-3xl sm:text-5xl font-extrabold tracking-tight text-[#0A192F] leading-tight">
             {article.title}
           </h1>
 
           <div className="mt-6 flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full brand-gradient text-xs font-bold text-white font-mono-tag">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1D4ED8] text-xs font-bold text-white font-mono-tag">
               NA
             </div>
             <div>
-              <span className="text-sm font-bold text-[#E9EAF4] block">
+              <span className="text-sm font-bold text-[#0A192F] block">
                 {article.author}
               </span>
-              <span className="text-xs text-[#9A9CB3] font-mono-tag">
+              <span className="text-xs text-slate-500 font-mono-tag">
                 Nexiiva Engineering
               </span>
             </div>
@@ -157,33 +157,33 @@ export default async function InsightArticlePage({ params }: Props) {
         </header>
 
         {/* Article Summary Lead */}
-        <div className="mt-8 rounded-2xl border border-white/10 bg-[#0E111C] p-6 text-base sm:text-lg font-medium text-[#E9EAF4] leading-relaxed">
+        <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 text-base sm:text-lg font-medium text-slate-800 shadow-sm leading-relaxed">
           {article.summary}
         </div>
 
         {/* Article Paragraphs */}
-        <div className="mt-10 space-y-6 text-base text-[#9A9CB3] leading-relaxed">
+        <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-8 sm:p-10 shadow-sm space-y-6 text-base text-slate-700 leading-relaxed">
           {article.content.map((p, idx) => (
-            <p key={idx} className="text-[#B5B7CA]">
+            <p key={idx} className="text-slate-700 leading-relaxed">
               {p}
             </p>
           ))}
         </div>
 
         {/* Post CTA */}
-        <div className="mt-16 rounded-2xl border border-white/15 bg-gradient-to-r from-[#12162A] to-[#0A0D18] p-8 text-center sm:text-start flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="mt-14 rounded-2xl border border-slate-800 bg-[#0A192F] p-8 text-center sm:text-start flex flex-col sm:flex-row items-center justify-between gap-6 shadow-md">
           <div>
             <h3 className="text-lg font-bold text-white">
               Ready to test this in your control room?
             </h3>
-            <p className="text-xs text-[#9A9CB3] mt-1">
+            <p className="text-xs text-slate-300 mt-1">
               Start with a focused unit pilot deployed directly at your facility.
             </p>
           </div>
 
           <Link
             href={`/${locale}/pilot`}
-            className="inline-flex items-center gap-2 rounded-xl brand-gradient px-6 py-3 text-xs font-bold text-white shadow-lg hover:brightness-110 active:scale-95 shrink-0"
+            className="inline-flex items-center gap-2 rounded-xl bg-[#1D4ED8] hover:bg-[#2563EB] px-6 py-3 text-xs font-bold text-white shadow-sm transition-colors active:scale-95 shrink-0"
           >
             <span>Request a Pilot</span>
             <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />

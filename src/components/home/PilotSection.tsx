@@ -39,48 +39,45 @@ export function PilotSection({ locale, dict }: PilotSectionProps) {
   ];
 
   return (
-    <section className="relative py-24 bg-[#070912] overflow-hidden border-b border-white/10">
+    <section className="relative py-20 bg-slate-50 overflow-hidden border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Big Gradient Panel Container */}
-        <div className="relative overflow-hidden rounded-3xl border border-white/15 bg-gradient-to-br from-[#12162A] via-[#0E1120] to-[#080A14] p-8 sm:p-12 lg:p-16 shadow-[0_0_80px_rgba(109,59,240,0.15)]">
-          {/* Subtle Ambient Radial Glow */}
-          <div className="absolute top-0 end-0 h-96 w-96 rounded-full bg-[#6D3BF0]/20 blur-[130px] pointer-events-none" />
-
+        {/* Big Navy Panel Container */}
+        <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-[#0A192F] p-8 sm:p-12 lg:p-14 shadow-md">
           <div className="relative z-10 max-w-3xl">
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#8B4CFF]/40 bg-[#6D3BF0]/15 px-3.5 py-1 font-mono-tag text-xs font-bold text-[#A87FFB] uppercase">
-              <Sparkles className="h-3.5 w-3.5 text-[#38BDF8]" />
+            <div className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-500/10 px-3.5 py-1 font-mono-tag text-xs font-bold text-blue-300 uppercase">
+              <Sparkles className="h-3.5 w-3.5 text-blue-400" />
               <span>{dict?.pilotSection?.eyebrow || '09 — PILOT PROGRAMME'}</span>
             </div>
 
             {/* Headline */}
-            <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-[#E9EAF4] sm:text-5xl leading-tight">
+            <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-white sm:text-5xl leading-tight">
               {dict?.pilotSection?.title ||
                 'Start with one unit.\nExpand across the facility.'}
             </h2>
 
             {/* Subtitle */}
-            <p className="mt-4 text-base sm:text-lg text-[#9A9CB3] leading-relaxed">
+            <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
               {dict?.pilotSection?.subtitle ||
                 'A structured, low-risk pilot program designed for plant operations and training leadership.'}
             </p>
           </div>
 
           {/* 3 Steps Row */}
-          <div className="relative z-10 mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="relative z-10 mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
             {steps.map((item) => (
               <div
                 key={item.step}
-                className="relative rounded-2xl border border-white/10 bg-[#070912]/80 p-6 backdrop-blur-md transition-all duration-300 hover:border-white/20"
+                className="relative rounded-xl border border-slate-700/80 bg-[#0F2238] p-6 shadow-sm transition-colors hover:border-slate-600"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl brand-gradient font-mono-tag text-sm font-bold text-white shadow-md">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#1D4ED8] font-mono-tag text-sm font-bold text-white shadow-sm">
                   0{item.step}
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-[#E9EAF4]">
+                <h3 className="mt-5 text-lg font-bold text-white">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-xs leading-relaxed text-[#9A9CB3]">
+                <p className="mt-2 text-xs leading-relaxed text-slate-300">
                   {item.desc}
                 </p>
               </div>
@@ -88,9 +85,9 @@ export function PilotSection({ locale, dict }: PilotSectionProps) {
           </div>
 
           {/* Bottom Callout & Action */}
-          <div className="relative z-10 mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-white/10 pt-8">
-            <div className="flex items-center gap-3 text-xs text-[#9A9CB3]">
-              <Building2 className="h-4 w-4 text-[#38BDF8] shrink-0" />
+          <div className="relative z-10 mt-10 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-slate-800 pt-8">
+            <div className="flex items-center gap-3 text-xs text-slate-400">
+              <Building2 className="h-4 w-4 text-blue-400 shrink-0" />
               <span>
                 {dict?.pilotSection?.distributionNote ||
                   'Strategic partnerships for regional distribution and operator training institutes.'}
@@ -99,7 +96,7 @@ export function PilotSection({ locale, dict }: PilotSectionProps) {
 
             <Link
               href={`/${locale}/pilot`}
-              className="inline-flex items-center gap-2 rounded-xl brand-gradient px-8 py-3.5 text-sm font-bold text-white shadow-[0_0_25px_rgba(109,59,240,0.4)] transition-all duration-200 hover:brightness-110 active:scale-95 shrink-0"
+              className="inline-flex items-center gap-2 rounded-lg bg-[#1D4ED8] hover:bg-blue-600 px-7 py-3 text-sm font-bold text-white shadow-sm transition-colors shrink-0"
             >
               <span>{dict?.pilotSection?.cta || 'Request a Pilot'}</span>
               <ArrowRight className="h-4 w-4 rtl:rotate-180" />

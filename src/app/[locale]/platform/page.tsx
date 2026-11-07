@@ -51,22 +51,23 @@ export default async function PlatformPage({ params }: Props) {
   ];
 
   return (
-    <div className="py-24 bg-[#05060A]">
+    <div className="py-20 bg-slate-50 border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="ENGINEERING ARCHITECTURE"
           title="The Nexiiva OTS Platform"
           subtitle="A high-fidelity software simulator combining thermodynamic precision, DCS screen fidelity, and supervisory fault management."
+          theme="light"
         />
 
         {/* Console DCS Screens Showcase */}
-        <div className="mt-12 rounded-3xl border border-white/10 bg-[#0A0D18] p-6 lg:p-10 shadow-2xl">
-          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-6">
+        <div className="mt-12 rounded-2xl border border-slate-200 bg-white p-6 lg:p-10 shadow-sm">
+          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-5">
             <div>
-              <span className="font-mono-tag text-xs text-[#8B4CFF] font-bold uppercase">
+              <span className="font-mono-tag text-xs text-[#1D4ED8] font-bold uppercase">
                 DCS-STYLE CONSOLE TABS
               </span>
-              <h3 className="text-xl font-bold text-white mt-1">
+              <h3 className="text-xl font-bold text-[#0A192F] mt-1">
                 Authentic Distributed Control System Interface
               </h3>
             </div>
@@ -78,8 +79,8 @@ export default async function PlatformPage({ params }: Props) {
                   key={idx}
                   className={`rounded-lg px-3 py-1 font-mono-tag text-xs font-semibold ${
                     idx === 0
-                      ? 'bg-[#6D3BF0] text-white shadow-md'
-                      : 'border border-white/10 bg-white/5 text-[#9A9CB3]'
+                      ? 'bg-[#0A192F] text-white shadow-sm'
+                      : 'border border-slate-200 bg-slate-50 text-slate-600'
                   }`}
                 >
                   {tab}
@@ -99,32 +100,32 @@ export default async function PlatformPage({ params }: Props) {
             </div>
 
             <div className="lg:col-span-4 space-y-4">
-              <div className="rounded-xl border border-white/10 bg-[#0E111E] p-5">
-                <h4 className="font-bold text-white flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-[#22C55E]" />
+              <div className="rounded-xl border border-slate-200 bg-slate-50 p-5">
+                <h4 className="font-bold text-[#0A192F] flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600" />
                   Multi-Stage Column Hydraulics
                 </h4>
-                <p className="mt-2 text-xs text-[#9A9CB3] leading-relaxed">
+                <p className="mt-2 text-xs text-slate-600 leading-relaxed">
                   Real-time mass and vapor balances calculated across each fractionator tray stage. Predicts foaming, weeping, and pressure drop fluctuations.
                 </p>
               </div>
 
-              <div className="rounded-xl border border-white/10 bg-[#0E111E] p-5">
-                <h4 className="font-bold text-white flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-[#22C55E]" />
+              <div className="rounded-xl border border-slate-200 bg-slate-50 p-5">
+                <h4 className="font-bold text-[#0A192F] flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600" />
                   Control Loop Cascades
                 </h4>
-                <p className="mt-2 text-xs text-[#9A9CB3] leading-relaxed">
+                <p className="mt-2 text-xs text-slate-600 leading-relaxed">
                   Supports complex feedback and feedforward loops including temperature-to-reflux cascade, tray pressure compensation, and overhead accumulator level control.
                 </p>
               </div>
 
-              <div className="rounded-xl border border-white/10 bg-[#0E111E] p-5">
-                <h4 className="font-bold text-white flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-[#22C55E]" />
+              <div className="rounded-xl border border-slate-200 bg-slate-50 p-5">
+                <h4 className="font-bold text-[#0A192F] flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600" />
                   Alarm Suppression & Prioritization
                 </h4>
-                <p className="mt-2 text-xs text-[#9A9CB3] leading-relaxed">
+                <p className="mt-2 text-xs text-slate-600 leading-relaxed">
                   Standard ISA-18.2 compliant alarm trip points with flashing banners, audible horn simulation, and first-out alarm identification.
                 </p>
               </div>
@@ -133,30 +134,30 @@ export default async function PlatformPage({ params }: Props) {
         </div>
 
         {/* Section 2: Preheat Train & Hydraulic Network */}
-        <div className="mt-16 rounded-3xl border border-white/10 bg-[#0A0D18] p-6 lg:p-10 shadow-2xl">
+        <div className="mt-12 rounded-2xl border border-slate-200 bg-white p-6 lg:p-10 shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-4 space-y-4">
-              <span className="font-mono-tag text-xs text-[#38BDF8] font-bold uppercase">
+              <span className="font-mono-tag text-xs text-[#1D4ED8] font-bold uppercase">
                 HEAT INTEGRATION
               </span>
-              <h3 className="text-2xl font-bold text-white">
+              <h3 className="text-2xl font-bold text-[#0A192F]">
                 Preheat Train & Shell-and-Tube Exchangers
               </h3>
-              <p className="text-sm text-[#9A9CB3] leading-relaxed">
+              <p className="text-sm text-slate-600 leading-relaxed">
                 The crude preheat train simulates complex thermal exchange between raw incoming crude and hot product run-down streams (naphtha, kerosene, diesel, and residue).
               </p>
 
-              <ul className="space-y-2.5 pt-2 text-xs text-[#E9EAF4]">
+              <ul className="space-y-2.5 pt-2 text-xs text-slate-700">
                 <li className="flex items-center gap-2">
-                  <Flame className="h-4 w-4 text-amber-400" />
+                  <Flame className="h-4 w-4 text-amber-500" />
                   Thermal duty tracking across exchanger shell & tube passes
                 </li>
                 <li className="flex items-center gap-2">
-                  <LineChart className="h-4 w-4 text-[#38BDF8]" />
+                  <LineChart className="h-4 w-4 text-[#1D4ED8]" />
                   Desalter pressure and temperature operating boundary checks
                 </li>
                 <li className="flex items-center gap-2">
-                  <Sliders className="h-4 w-4 text-[#8B4CFF]" />
+                  <Sliders className="h-4 w-4 text-slate-600" />
                   Fouling simulation and bypass valve operation
                 </li>
               </ul>
@@ -174,7 +175,7 @@ export default async function PlatformPage({ params }: Props) {
         </div>
 
         {/* Section 3: Instructor Supervisory Console */}
-        <div className="mt-16 rounded-3xl border border-white/10 bg-[#0A0D18] p-6 lg:p-10 shadow-2xl">
+        <div className="mt-12 rounded-2xl border border-slate-200 bg-white p-6 lg:p-10 shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8">
               <MonitorFrame
@@ -186,24 +187,24 @@ export default async function PlatformPage({ params }: Props) {
             </div>
 
             <div className="lg:col-span-4 space-y-4">
-              <span className="font-mono-tag text-xs text-[#8B4CFF] font-bold uppercase">
+              <span className="font-mono-tag text-xs text-[#1D4ED8] font-bold uppercase">
                 SUPERVISORY CONTROL
               </span>
-              <h3 className="text-2xl font-bold text-white">
+              <h3 className="text-2xl font-bold text-[#0A192F]">
                 Instructor Console & Scenario Architect
               </h3>
-              <p className="text-sm text-[#9A9CB3] leading-relaxed">
+              <p className="text-sm text-slate-600 leading-relaxed">
                 Instructors maintain omniscient control over the simulation clock, weather conditions, equipment health, and instantaneous emergency injection.
               </p>
 
               <div className="space-y-3 pt-2">
-                <div className="rounded-lg border border-white/5 bg-[#121524] p-3 text-xs">
-                  <span className="font-mono-tag text-[#38BDF8] font-bold">SNAPSHOT & REWIND:</span>
-                  <p className="text-[#9A9CB3] mt-1">Capture state before an upset to retry the scenario with alternate trainee actions.</p>
+                <div className="rounded-lg border border-slate-200 bg-slate-50 p-3 text-xs">
+                  <span className="font-mono-tag text-[#1D4ED8] font-bold">SNAPSHOT & REWIND:</span>
+                  <p className="text-slate-600 mt-1">Capture state before an upset to retry the scenario with alternate trainee actions.</p>
                 </div>
-                <div className="rounded-lg border border-white/5 bg-[#121524] p-3 text-xs">
-                  <span className="font-mono-tag text-[#F59E0B] font-bold">SILENT FAULT INJECTION:</span>
-                  <p className="text-[#9A9CB3] mt-1">Introduce subtle instrument drift that requires diagnostic trend cross-checking.</p>
+                <div className="rounded-lg border border-slate-200 bg-slate-50 p-3 text-xs">
+                  <span className="font-mono-tag text-amber-600 font-bold">SILENT FAULT INJECTION:</span>
+                  <p className="text-slate-600 mt-1">Introduce subtle instrument drift that requires diagnostic trend cross-checking.</p>
                 </div>
               </div>
             </div>
@@ -211,28 +212,29 @@ export default async function PlatformPage({ params }: Props) {
         </div>
 
         {/* Section 4: Engineering Specifications Table */}
-        <div className="mt-20">
+        <div className="mt-16">
           <SectionHeader
             eyebrow="TECHNICAL SPECIFICATIONS"
             title="Platform Engineering Specifications"
             subtitle="Built to satisfy stringent refinery IT/OT cybersecurity and reliability requirements."
+            theme="light"
           />
 
-          <div className="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-[#0E111C] shadow-2xl">
+          <div className="mt-6 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
             <table className="w-full text-start border-collapse">
               <thead>
-                <tr className="border-b border-white/10 bg-[#121626] font-mono-tag text-xs font-bold text-[#9A9CB3] uppercase">
+                <tr className="border-b border-slate-200 bg-slate-100/80 font-mono-tag text-xs font-bold text-slate-700 uppercase">
                   <th className="py-4 px-6 text-start">System Capability</th>
                   <th className="py-4 px-6 text-start">Engineering Specification</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-white/5 text-sm">
+              <tbody className="divide-y divide-slate-100 text-sm">
                 {specs.map((item, i) => (
-                  <tr key={i} className="hover:bg-white/[0.02] transition-colors">
-                    <td className="py-4 px-6 font-semibold text-white font-mono-tag text-xs">
+                  <tr key={i} className="hover:bg-slate-50 transition-colors">
+                    <td className="py-4 px-6 font-semibold text-[#0A192F] font-mono-tag text-xs">
                       {item.feature}
                     </td>
-                    <td className="py-4 px-6 text-[#9A9CB3]">
+                    <td className="py-4 px-6 text-slate-600">
                       {item.value}
                     </td>
                   </tr>

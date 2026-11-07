@@ -1,6 +1,5 @@
 import React from 'react';
 import { getMessages, setRequestLocale } from 'next-intl/server';
-import { PromoBand } from '@/components/home/PromoBand';
 import { HeroSection } from '@/components/home/HeroSection';
 import { TrustStrip } from '@/components/home/TrustStrip';
 import { ProblemSection } from '@/components/home/ProblemSection';
@@ -31,9 +30,6 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <div className="flex flex-col w-full">
-      {/* 0. Top promo band */}
-      <PromoBand locale={locale} dict={messages} />
-
       {/* 1. HERO */}
       <HeroSection locale={locale} dict={messages} />
 
@@ -50,7 +46,7 @@ export default async function HomePage({ params }: Props) {
       <HowItWorksSection dict={messages} />
 
       {/* 6. LIVE DEMO — "Try the console" */}
-      <section className="relative py-24 bg-[#05060A] overflow-hidden border-b border-white/10">
+      <section className="relative py-20 bg-[#0A192F] overflow-hidden border-b border-slate-800">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow={messages?.demo?.eyebrow || 'INTERACTIVE SIMULATOR'}
@@ -60,6 +56,7 @@ export default async function HomePage({ params }: Props) {
               'Experience Nexiiva’s dynamic model directly in your browser. Trigger an operational upset on the atmospheric column and watch the DCS alarms react.'
             }
             align="center"
+            theme="dark"
           />
           <LiveDemoConsole dict={messages?.demo} />
         </div>

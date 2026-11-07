@@ -30,7 +30,7 @@ export function PidGrid({ className = '', showSymbols = true }: PidGridProps) {
             <path
               d="M 20 0 L 0 0 0 20"
               fill="none"
-              stroke="#A87FFB"
+              stroke="#64748B"
               strokeWidth="0.6"
             />
           </pattern>
@@ -44,18 +44,13 @@ export function PidGrid({ className = '', showSymbols = true }: PidGridProps) {
             <path
               d="M 100 0 L 0 0 0 100"
               fill="none"
-              stroke="#38BDF8"
-              strokeWidth="1.2"
+              stroke="#0A192F"
+              strokeWidth="1.0"
             />
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#pid-major-grid)" />
       </svg>
-
-      {/* Atmospheric ambient purple/blue glow blobs */}
-      <div className="absolute -top-40 -left-40 h-96 w-96 rounded-full bg-[#6D3BF0]/10 blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/3 -right-40 h-[450px] w-[450px] rounded-full bg-[#3B6BFF]/10 blur-[140px] pointer-events-none" />
-      <div className="absolute -bottom-40 left-1/4 h-80 w-80 rounded-full bg-[#4C1DB8]/10 blur-[100px] pointer-events-none" />
 
       {/* Floating P&ID Instrument bubbles & glyphs */}
       {showSymbols && (

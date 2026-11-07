@@ -34,19 +34,19 @@ export function TrustStrip(_props: TrustStripProps) {
   return (
     <section
       id="trust-strip"
-      className="relative z-20 border-y border-white/10 bg-[#070912] py-4 overflow-hidden"
+      className="relative z-20 border-y border-slate-800 bg-[#0A192F] py-4 overflow-hidden"
       aria-label="Platform Capabilities"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8">
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6">
           {capabilities.map((item, index) => {
             const Icon = item.icon;
             return (
               <div
                 key={index}
-                className="flex items-center gap-2.5 rounded-lg border border-white/5 bg-white/[0.02] px-3.5 py-1.5 font-mono-tag text-xs font-medium text-[#E9EAF4] transition-all duration-200 hover:border-[#8B4CFF]/40 hover:bg-white/5"
+                className="flex items-center gap-2 rounded-md border border-slate-700/80 bg-slate-800/50 px-3 py-1.5 font-mono-tag text-xs font-semibold text-slate-200 hover:border-slate-600 transition-colors"
               >
-                <Icon className="h-3.5 w-3.5 text-[#38BDF8]" />
+                <Icon className="h-3.5 w-3.5 text-blue-400 shrink-0" />
                 <span className="tracking-wide">{item.label}</span>
               </div>
             );

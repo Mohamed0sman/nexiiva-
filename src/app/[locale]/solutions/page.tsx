@@ -110,15 +110,16 @@ export default async function SolutionsPage({ params }: Props) {
   ];
 
   return (
-    <div className="py-24 bg-[#05060A]">
+    <div className="py-20 bg-slate-50 border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="PRODUCT SUITE"
           title="Engineered Solutions for Plant Operations"
           subtitle="Explore the four modular pillars that power the Nexiiva Operator Training Simulator platform."
+          theme="light"
         />
 
-        <div className="mt-16 space-y-24">
+        <div className="mt-12 space-y-16">
           {solutions.map((sol, index) => {
             const Icon = sol.icon;
             const isReversed = index % 2 === 1;
@@ -127,47 +128,47 @@ export default async function SolutionsPage({ params }: Props) {
               <section
                 key={sol.id}
                 id={sol.id}
-                className="scroll-mt-28 rounded-3xl border border-white/10 bg-[#0A0D18] p-8 lg:p-12 shadow-2xl"
+                className="scroll-mt-28 rounded-2xl border border-slate-200 bg-white p-8 lg:p-12 shadow-sm"
               >
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                   {/* Text Details Column */}
                   <div className={`lg:col-span-6 ${isReversed ? 'lg:order-2' : ''}`}>
                     <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#6D3BF0]/20 text-[#38BDF8]">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-[#1D4ED8]">
                         <Icon className="h-5 w-5" />
                       </div>
-                      <span className="font-mono-tag text-xs font-bold text-[#8B4CFF]">
+                      <span className="font-mono-tag text-xs font-bold text-[#1D4ED8]">
                         {sol.eyebrow}
                       </span>
                     </div>
 
-                    <h2 className="mt-4 text-2xl sm:text-3xl font-extrabold text-[#E9EAF4]">
+                    <h2 className="mt-4 text-2xl sm:text-3xl font-extrabold text-[#0A192F]">
                       {sol.title}
                     </h2>
-                    <p className="mt-1 font-mono-tag text-xs text-[#38BDF8]">
+                    <p className="mt-1 font-mono-tag text-xs text-slate-500 font-semibold">
                       {sol.tagline}
                     </p>
 
-                    <div className="mt-6 space-y-4 text-sm text-[#9A9CB3] leading-relaxed">
+                    <div className="mt-6 space-y-4 text-sm text-slate-600 leading-relaxed">
                       <div>
-                        <strong className="text-white block mb-1">What It Is:</strong>
+                        <strong className="text-[#0A192F] block mb-1">What It Is:</strong>
                         <p>{sol.whatItIs}</p>
                       </div>
 
                       <div>
-                        <strong className="text-white block mb-1">How It Works:</strong>
+                        <strong className="text-[#0A192F] block mb-1">How It Works:</strong>
                         <p>{sol.howItWorks}</p>
                       </div>
                     </div>
 
-                    <div className="mt-6 pt-6 border-t border-white/10">
-                      <strong className="text-white text-xs font-mono-tag uppercase tracking-wider block mb-3">
+                    <div className="mt-6 pt-6 border-t border-slate-100">
+                      <strong className="text-[#0A192F] text-xs font-mono-tag uppercase tracking-wider block mb-3">
                         Operational Outcomes:
                       </strong>
                       <ul className="space-y-2.5">
                         {sol.outcomes.map((item, i) => (
-                          <li key={i} className="flex items-start gap-2.5 text-xs text-[#E9EAF4]">
-                            <CheckCircle2 className="h-4 w-4 text-[#22C55E] shrink-0 mt-0.5" />
+                          <li key={i} className="flex items-start gap-2.5 text-xs text-slate-800">
+                            <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
                             <span>{item}</span>
                           </li>
                         ))}
@@ -177,7 +178,7 @@ export default async function SolutionsPage({ params }: Props) {
                     <div className="mt-8">
                       <Link
                         href={`/${locale}/pilot`}
-                        className="inline-flex items-center gap-2 rounded-xl brand-gradient px-6 py-3 text-xs font-bold text-white shadow-lg transition-all hover:brightness-110 active:scale-95"
+                        className="inline-flex items-center gap-2 rounded-lg bg-[#1D4ED8] hover:bg-blue-600 px-6 py-3 text-xs font-bold text-white shadow-sm transition-colors active:scale-95"
                       >
                         <span>Request a Pilot for this Solution</span>
                         <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />
