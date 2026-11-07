@@ -3,14 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import {
-  ArrowRight,
-  Play,
-  X,
-  ShieldCheck,
-  CheckCircle2,
-  Lock,
-} from 'lucide-react';
+import { ArrowRight, Play, X } from 'lucide-react';
 import type { Dict } from '@/types/dict';
 
 interface HeroSectionProps {
@@ -129,19 +122,12 @@ export function HeroSection({ locale }: HeroSectionProps) {
             </div>
 
             {/* Accreditations & Standards Bar */}
-            <div className="mt-8 flex flex-wrap items-center gap-6 pt-6 border-t border-slate-800 text-xs text-slate-400">
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="h-4 w-4 text-emerald-400 shrink-0" />
-                <span>{isAr ? 'تشغيل محلي معزول 100% (Air-Gapped)' : '100% Air-Gapped On-Premise'}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Lock className="h-4 w-4 text-blue-400 shrink-0" />
-                <span>{isAr ? 'حماية تامة لأسرار العمليات والمخططات' : 'Zero Cloud & Intellectual Property Risk'}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
-                <span>{isAr ? 'معايير الإنذارات ISA-18.2' : 'ISA-18.2 Alarm Compliant'}</span>
-              </div>
+            <div className="mt-8 flex flex-wrap items-center gap-4 pt-6 border-t border-slate-800 text-xs font-mono text-slate-400">
+              <span>{isAr ? 'تشغيل محلي معزول 100% (Air-Gapped)' : '100% Air-Gapped On-Premise'}</span>
+              <span className="text-slate-600">·</span>
+              <span>{isAr ? 'حماية تامة للبيانات والمخططات' : 'Zero Cloud Telemetry Risk'}</span>
+              <span className="text-slate-600">·</span>
+              <span>{isAr ? 'معايير الإنذارات القياسية ISA-18.2' : 'ISA-18.2 Alarm Standard'}</span>
             </div>
           </div>
 

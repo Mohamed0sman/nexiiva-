@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { Quote, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import type { Dict } from '@/types/dict';
 
 interface LeadershipSectionProps {
@@ -54,17 +53,13 @@ export function LeadershipSection({ locale = 'en', dict }: LeadershipSectionProp
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Executive Keynote Mission Quote */}
         <div className="mx-auto max-w-4xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1 text-xs font-semibold text-slate-700">
-            <ShieldCheck className="h-4 w-4 text-emerald-600" />
-            <span>
-              {dict?.leadership?.teamEyebrow ||
-                (locale === 'ar' ? 'القيادة وفريق العمل' : 'LEADERSHIP & FOUNDERS')}
-            </span>
-          </div>
+          <span className="font-mono text-xs font-bold uppercase tracking-wider text-slate-500 block mb-3">
+            {dict?.leadership?.teamEyebrow ||
+              (locale === 'ar' ? 'القيادة وفريق العمل' : 'LEADERSHIP & FOUNDING PARTNERS')}
+          </span>
 
-          <div className="relative mt-6">
-            <Quote className="mx-auto h-8 w-8 text-blue-200" />
-            <blockquote className="mt-2 text-xl sm:text-2xl lg:text-3xl font-medium text-[#0A192F] leading-relaxed tracking-tight">
+          <div className="relative mt-4">
+            <blockquote className="text-xl sm:text-2xl lg:text-3xl font-medium text-[#0A192F] leading-relaxed tracking-tight">
               &ldquo;
               {dict?.leadership?.quote ||
                 (locale === 'ar'
@@ -82,14 +77,14 @@ export function LeadershipSection({ locale = 'en', dict }: LeadershipSectionProp
                 {dict?.leadership?.role || (locale === 'ar' ? 'المؤسس والرئيس التنفيذي، نكسيفا' : 'Founder & CEO, Nexiiva')}
               </span>
               <span>·</span>
-              <span className="text-emerald-700 font-medium">
+              <span className="text-slate-600 font-medium">
                 {dict?.leadership?.note || (locale === 'ar' ? 'ملتزمون بسلامة المنشآت الحيوية' : 'Committed to Plant Safety')}
               </span>
             </div>
           </div>
         </div>
 
-        {/* Founding & Leadership Team Grid (Pure Typography & Clean Structural Cards — No Photos) */}
+        {/* Founding & Leadership Team Grid */}
         <div className="mt-16 pt-12 border-t border-slate-100">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <h3 className="text-xl sm:text-2xl font-bold text-[#0A192F]">
@@ -108,13 +103,13 @@ export function LeadershipSection({ locale = 'en', dict }: LeadershipSectionProp
             {members.map((member, idx) => (
               <div
                 key={idx}
-                className="group relative flex flex-col justify-between rounded-xl border border-slate-200 bg-slate-50/60 p-6 hover:border-slate-300 hover:bg-white transition-all duration-200 shadow-xs"
+                className="group relative flex flex-col justify-between rounded-xl border border-slate-200 bg-slate-50/60 p-6 hover:border-slate-300 hover:bg-white transition-all duration-200 shadow-2xs"
               >
                 <div>
                   {/* Discipline / Domain Tag */}
-                  <div className="inline-block rounded-md bg-white border border-slate-200/80 px-2.5 py-1 text-[10px] font-bold text-[#1D4ED8] tracking-wider">
+                  <span className="inline-block rounded bg-white border border-slate-200 px-2 py-0.5 text-[10px] font-bold text-[#1D4ED8] tracking-wider font-mono">
                     {member.domain}
-                  </div>
+                  </span>
 
                   <h4 className="mt-4 text-base font-bold text-[#0A192F] group-hover:text-[#1D4ED8] transition-colors">
                     {member.name}
@@ -129,9 +124,8 @@ export function LeadershipSection({ locale = 'en', dict }: LeadershipSectionProp
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-200/60 flex items-center justify-between text-[11px] text-slate-500">
-                  <span className="font-medium">Nexiiva Leadership</span>
-                  <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" />
+                <div className="mt-6 pt-4 border-t border-slate-200/60 text-[11px] text-slate-500 font-mono">
+                  Nexiiva Leadership
                 </div>
               </div>
             ))}

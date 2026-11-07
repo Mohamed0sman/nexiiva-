@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { SectionHeader } from '@/components/SectionHeader';
-import { Shield, Trees, AlertOctagon, CheckCircle2 } from 'lucide-react';
 import type { Dict } from '@/types/dict';
 
 interface ResponsibilitySectionProps {
@@ -13,7 +12,7 @@ interface ResponsibilitySectionProps {
 export function ResponsibilitySection({ locale = 'en', dict }: ResponsibilitySectionProps) {
   const pillars = [
     {
-      icon: Shield,
+      code: '01',
       standard: locale === 'ar' ? 'معيار OSHA PSM 1910.119' : 'OSHA PSM 1910.119 COMPLIANT',
       title:
         locale === 'ar'
@@ -29,7 +28,7 @@ export function ResponsibilitySection({ locale = 'en', dict }: ResponsibilitySec
           : 'Full muscle-memory reps on lethal scenarios with zero operator risk',
     },
     {
-      icon: Trees,
+      code: '02',
       standard: locale === 'ar' ? 'معايير حماية البيئة وخفض الانبعاثات' : 'EMISSIONS & FLARING MITIGATION',
       title:
         locale === 'ar'
@@ -45,7 +44,7 @@ export function ResponsibilitySection({ locale = 'en', dict }: ResponsibilitySec
           : 'Dramatically reduces flaring fines and off-spec hydrocarbon loss',
     },
     {
-      icon: AlertOctagon,
+      code: '03',
       standard: locale === 'ar' ? 'حماية المعدات API RP 571' : 'API RP 571 DAMAGE MITIGATION',
       title:
         locale === 'ar'
@@ -85,38 +84,35 @@ export function ResponsibilitySection({ locale = 'en', dict }: ResponsibilitySec
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-14">
-          {pillars.map((item, idx) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={idx}
-                className="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-8 shadow-2xs transition-colors hover:border-slate-300"
-              >
-                <div>
-                  <div className="flex items-center justify-between">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600 text-white shadow-xs">
-                      <Icon className="h-6 w-6" />
-                    </div>
-                    <span className="font-mono text-[10px] font-bold text-slate-500 uppercase tracking-wider">
-                      {item.standard}
-                    </span>
-                  </div>
-
-                  <h3 className="mt-6 text-lg font-bold text-[#0A192F]">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-xs sm:text-sm leading-relaxed text-slate-600">
-                    {item.desc}
-                  </p>
+          {pillars.map((item, idx) => (
+            <div
+              key={idx}
+              className="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-8 shadow-2xs transition-colors hover:border-slate-300"
+            >
+              <div>
+                <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+                  <span className="font-mono text-xs font-bold text-blue-700 bg-blue-50 border border-blue-200 rounded px-2.5 py-0.5">
+                    {item.code}
+                  </span>
+                  <span className="font-mono text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+                    {item.standard}
+                  </span>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs text-slate-700 font-medium">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
-                  <span>{item.impact}</span>
-                </div>
+                <h3 className="mt-5 text-lg font-bold text-[#0A192F]">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-xs sm:text-sm leading-relaxed text-slate-600">
+                  {item.desc}
+                </p>
               </div>
-            );
-          })}
+
+              <div className="mt-6 pt-4 border-t border-slate-100 text-xs text-slate-700 font-medium">
+                <span className="font-mono text-slate-400 block mb-0.5">{locale === 'ar' ? 'الأثر التشغيلي:' : 'Operational Impact:'}</span>
+                <span>{item.impact}</span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

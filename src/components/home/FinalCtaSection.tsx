@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { NexiivaLogo } from '@/components/NexiivaLogo';
-import { ArrowRight, Mail, MessageSquare, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Mail, MessageSquare } from 'lucide-react';
 import type { Dict } from '@/types/dict';
 
 interface FinalCtaSectionProps {
@@ -28,10 +28,9 @@ export function FinalCtaSection({ locale, dict }: FinalCtaSectionProps) {
         {/* Brand Logo & Eyebrow */}
         <NexiivaLogo variant="light" className="h-9 w-auto mb-6" />
 
-        <div className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-500/10 px-3.5 py-1 text-xs font-semibold text-blue-300 mb-4">
-          <ShieldCheck className="h-4 w-4 text-emerald-400" />
-          <span>{locale === 'ar' ? 'جاهزية كاملة لنشر المشاريع التجريبية' : 'PILOT PROGRAMME ENROLLMENT OPEN'}</span>
-        </div>
+        <span className="font-mono text-xs font-bold uppercase tracking-wider text-blue-300 block mb-4">
+          {locale === 'ar' ? 'المشاريع التجريبية والتواصل المؤسسي' : 'PILOT PROGRAMME ENROLLMENT OPEN'}
+        </span>
 
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.18] max-w-3xl">
           {dict?.finalCta?.title ||
@@ -40,7 +39,7 @@ export function FinalCtaSection({ locale, dict }: FinalCtaSectionProps) {
               : 'Let’s make OTS accessible to every industrial unit.')}
         </h2>
 
-        <p className="mt-5 text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
+        <p className="mt-5 text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed font-normal">
           {dict?.finalCta?.subtitle ||
             (locale === 'ar'
               ? 'انضم إلينا في تغيير مستقبل التدريب الصناعي وسلامة العمليات. ابدأ بمشروع تجريبي منضبط لوحدة تشغيلية حقيقية في منشأتك.'
@@ -49,13 +48,13 @@ export function FinalCtaSection({ locale, dict }: FinalCtaSectionProps) {
 
         {/* Qualification Checklist Bar */}
         <div className="mt-10 w-full max-w-3xl rounded-xl border border-slate-800 bg-slate-900/60 p-6 text-start">
-          <span className="font-mono text-xs font-bold uppercase tracking-wider text-blue-400 block mb-3 text-center sm:text-start">
-            {locale === 'ar' ? 'متطلبات البدء في المشروع التجريبي (Pilot Criteria):' : 'PILOT PROGRAMME QUALIFICATION CRITERIA:'}
+          <span className="font-mono text-xs font-bold uppercase tracking-wider text-slate-300 block mb-4 text-center sm:text-start">
+            {locale === 'ar' ? 'معايير التأهيل للمشروع التجريبي:' : 'PILOT QUALIFICATION CRITERIA:'}
           </span>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300">
             {qualificationChecklist.map((item, idx) => (
-              <div key={idx} className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+              <div key={idx} className="flex items-start gap-2.5">
+                <span className="font-mono text-blue-400 font-bold shrink-0">—</span>
                 <span>{item}</span>
               </div>
             ))}
@@ -76,7 +75,7 @@ export function FinalCtaSection({ locale, dict }: FinalCtaSectionProps) {
             href={`https://wa.me/20${verifiedPhone.startsWith('0') ? verifiedPhone.slice(1) : verifiedPhone}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border border-emerald-600/60 bg-emerald-950/40 hover:bg-emerald-900/40 px-7 py-4 text-sm font-semibold text-emerald-300 transition-colors active:scale-95"
+            className="inline-flex items-center gap-2 rounded-lg border border-emerald-600/50 bg-emerald-950/30 hover:bg-emerald-900/40 px-7 py-4 text-sm font-semibold text-emerald-300 transition-colors active:scale-95"
           >
             <MessageSquare className="h-4 w-4 text-emerald-400" />
             <span>{locale === 'ar' ? `واتساب مباشر (${verifiedPhone})` : `Direct WhatsApp (${verifiedPhone})`}</span>
@@ -92,11 +91,10 @@ export function FinalCtaSection({ locale, dict }: FinalCtaSectionProps) {
         </div>
 
         {/* NDA & Confidentiality Reassurance */}
-        <div className="mt-8 flex items-center gap-2 text-xs text-slate-400">
-          <ShieldCheck className="h-4 w-4 text-emerald-400" />
+        <div className="mt-8 text-xs text-slate-400">
           <span>
             {locale === 'ar'
-              ? 'حماية كاملة للبيانات: توقيع اتفاقية سرية متبادلة (Mutual NDA) يسبق استلام أي وثائق.'
+              ? 'حماية كاملة للبيانات: توقيع اتفاقية سرية المعلومات (Mutual NDA) يسبق استلام أي وثائق هندسية.'
               : 'Complete IP Protection: Mutual NDA executed prior to receipt of any plant documentation.'}
           </span>
         </div>

@@ -7,9 +7,6 @@ import { CorporateProjects } from '@/components/home/CorporateProjects';
 import { SolutionsSection } from '@/components/home/SolutionsSection';
 import { IndustriesSection } from '@/components/home/IndustriesSection';
 import { ProblemSection } from '@/components/home/ProblemSection';
-import { SolutionSection } from '@/components/home/SolutionSection';
-import { HowItWorksSection } from '@/components/home/HowItWorksSection';
-import { WhyNexiivaSection } from '@/components/home/WhyNexiivaSection';
 import { ComparisonSection } from '@/components/home/ComparisonSection';
 import { PilotSection } from '@/components/home/PilotSection';
 import { LeadershipSection } from '@/components/home/LeadershipSection';
@@ -42,44 +39,36 @@ export default async function HomePage({ params }: Props) {
       {/* 4. FEATURED ENGINEERING PROJECTS & UNIT SIMULATORS (Mirroring Onspec Latest Projects) */}
       <CorporateProjects locale={locale} dict={messages} />
 
-      {/* 5. CORE SIMULATION CAPABILITIES & SOLUTIONS */}
+      {/* 5. CORE SIMULATION CAPABILITIES & ARCHITECTURAL PILLARS */}
       <SolutionsSection locale={locale} dict={messages} />
 
-      {/* 6. INDUSTRIAL SECTORS & UNIT COVERAGE */}
+      {/* 6. INDUSTRIAL SECTORS & THERMODYNAMIC COVERAGE */}
       <IndustriesSection locale={locale} dict={messages} />
 
       {/* 7. OPERATIONAL REALITY & INCIDENT COST AUDIT */}
       <ProblemSection locale={locale} dict={messages} />
 
-      {/* 8. ARCHITECTURAL ENGINEERING PILLARS */}
-      <SolutionSection locale={locale} dict={messages} />
-
-      {/* 9. QUALIFICATION CYCLE — Practice. Instruct. Certify. */}
-      <HowItWorksSection locale={locale} dict={messages} />
-
-      {/* 10. ENGINEERING DISTINCTION & TECHNICAL BENCHMARKS */}
-      <WhyNexiivaSection locale={locale} dict={messages} />
-
-      {/* 11. 5-DIMENSION TECHNICAL & ECONOMIC COMPARISON */}
+      {/* 8. PROCUREMENT & ECONOMIC BENCHMARK */}
       <ComparisonSection locale={locale} dict={messages} />
 
-      {/* 12. STRUCTURED LOW-RISK PLANT PILOT PROGRAMME */}
+      {/* 9. STRUCTURED LOW-RISK PLANT PILOT PROGRAMME */}
       <PilotSection locale={locale} dict={messages} />
 
-      {/* 13. EXECUTIVE LEADERSHIP & BOARD OF DIRECTORS */}
+      {/* 10. EXECUTIVE LEADERSHIP & FOUNDING PARTNERS */}
       <LeadershipSection locale={locale} dict={messages} />
 
-      {/* 14. ENGINEERING MILESTONES & REGIONAL DEPLOYMENT ROADMAP */}
+      {/* 11. ENGINEERING MILESTONES & REGIONAL ROADMAP */}
       <JourneySection locale={locale} dict={messages} />
 
-      {/* 15. PROCESS SAFETY MANAGEMENT & ENVIRONMENTAL MITIGATION */}
+      {/* 12. PROCESS SAFETY MANAGEMENT & ENVIRONMENTAL MITIGATION */}
       <ResponsibilitySection locale={locale} dict={messages} />
 
-      {/* 16. TECHNICAL PAPERS & ENGINEERING PERSPECTIVES */}
+      {/* 13. TECHNICAL PAPERS & ENGINEERING PERSPECTIVES */}
       <InsightsSection locale={locale} dict={messages} />
 
-      {/* 17. CORPORATE HEADQUARTERS & DIRECT ENGAGEMENT ACTION CENTER */}
+      {/* 14. CORPORATE HEADQUARTERS & DIRECT ENGAGEMENT ACTION CENTER */}
       <FinalCtaSection locale={locale} dict={messages} />
     </div>
   );
 }
+

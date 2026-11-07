@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { SectionHeader } from '@/components/SectionHeader';
-import { Clock, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import type { Dict } from '@/types/dict';
 
 interface InsightsSectionProps {
@@ -99,13 +99,10 @@ export function InsightsSection({ locale, dict }: InsightsSectionProps) {
             >
               <div>
                 <div className="flex items-center justify-between text-[11px] font-mono text-slate-500">
-                  <span className="rounded bg-white border border-slate-200 px-2.5 py-0.5 text-blue-700 font-bold uppercase tracking-wider">
+                  <span className="rounded bg-white border border-slate-200 px-2 py-0.5 text-blue-700 font-bold uppercase tracking-wider">
                     {item.category}
                   </span>
-                  <div className="flex items-center gap-1.5">
-                    <Clock className="h-3.5 w-3.5 text-slate-400" />
-                    <span>{item.readTime}</span>
-                  </div>
+                  <span>{item.readTime}</span>
                 </div>
 
                 <h3 className="mt-5 text-lg font-bold text-[#0A192F] group-hover:text-blue-700 transition-colors leading-snug">
