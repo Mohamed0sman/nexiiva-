@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { SectionHeader } from '@/components/SectionHeader';
 import { MonitorFrame } from '@/components/MonitorFrame';
-import { Monitor, Sliders, Award, CheckCircle2 } from 'lucide-react';
+import { Monitor, Sliders, Award, CheckCircle2, ShieldCheck, Activity, FileCheck } from 'lucide-react';
 import type { Dict } from '@/types/dict';
 
 interface HowItWorksSectionProps {
@@ -17,9 +17,10 @@ export function HowItWorksSection({ locale = 'en', dict }: HowItWorksSectionProp
   const steps = [
     {
       id: 'practice',
+      badge: locale === 'ar' ? 'المرحلة 01: محاكاة المشغل' : 'STAGE 01: OPERATOR CONSOLE',
       tabLabel:
         dict?.howItWorks?.steps?.[0]?.tab ||
-        (locale === 'ar' ? '1. الممارسة والتشغيل' : '1. Practice'),
+        (locale === 'ar' ? '1. الممارسة والتشغيل' : '1. Practice (DCS Console)'),
       title:
         dict?.howItWorks?.steps?.[0]?.title ||
         (locale === 'ar'
@@ -28,43 +29,47 @@ export function HowItWorksSection({ locale = 'en', dict }: HowItWorksSectionProp
       desc:
         dict?.howItWorks?.steps?.[0]?.desc ||
         (locale === 'ar'
-          ? 'يتدرب المشغلون على شاشات واقعية لنظام التحكم الموزع مع مخططات PFD حية، إنذارات، لوحات صمامات، و12 مؤشراً بيانياً متزامناً.'
-          : 'Operators train on realistic distributed control system screens with live PFD diagrams, alarms, faceplates, and 12 simultaneous live trends.'),
+          ? 'يتدرب المشغلون على شاشات واقعية لنظام التحكم الموزع مع مخططات PFD حية، إنذارات، لوحات صمامات، و12 مؤشراً بيانياً متزامناً لمراقبة السلوك الهيدروليكي والحراري.'
+          : 'Operators train on authentic distributed control system (DCS) displays with live PFD schematics, interactive faceplates, and 12 synchronized multi-pen trends.'),
       src: '/assets/screens/cdu-atm-column-pfd.png',
       alt: 'Atmospheric Distillation Column PFD Console',
       caption:
         locale === 'ar'
-          ? 'شاشة برج التقطير الجوي CDU مع 12 مؤشراً بيانياً وهرمية الإنذارات'
-          : 'Real CDU PFD Console with 12 Live Trends & Alarm Hierarchy',
+          ? 'شاشة برج التقطير الجوي CDU مع 12 مؤشراً بيانياً وهرمية الإنذارات حسب مواصفات ISA'
+          : 'Real CDU PFD Console with 12 Live Trends & ISA-18.2 Alarm Hierarchy',
       icon: Monitor,
+      metric: '1:1 DCS FACES',
+      metricDesc: locale === 'ar' ? 'مطابقة هندسية كاملة' : 'Full Console Parity',
+      metricIcon: Activity,
       bullets:
         locale === 'ar'
           ? [
-              'محاكاة مطابقة 1:1 للوحات تحكم الـ DCS وصمامات العمليات',
-              'مخططات بيانية متعددة لمراقبة درجات الحرارة والتدفقات وفرق الضغط',
-              'لافتات إنذارات قياسية حسب معايير ISA مع بروتوكولات الإقرار والإسكات',
+              'محاكاة مطابقة 1:1 للوحات تحكم الـ DCS وصمامات العمليات والتحكم التتابعي',
+              'مخططات بيانية متعددة لمراقبة درجات الحرارة والتدفقات وفرق ضغط البرج (ΔP)',
+              'لافتات إنذارات قياسية حسب معايير ISA-18.2 مع بروتوكولات الإقرار والإسكات',
             ]
           : [
-              '1:1 functional emulation of control room DCS faceplates',
-              'Multi-pen trends monitoring temperature, flow, and column delta-P',
-              'Authentic ISA alarm banners with acknowledge & silence protocols',
+              '1:1 functional emulation of control room DCS faceplates & cascade loops',
+              'Multi-pen trends monitoring temperature, flow, and column delta-P (ΔP)',
+              'Authentic ISA-18.2 alarm banners with acknowledge, silence & trip protocols',
             ],
     },
     {
       id: 'instruct',
+      badge: locale === 'ar' ? 'المرحلة 02: إشراف المدرب' : 'STAGE 02: SUPERVISORY INJECTION',
       tabLabel:
         dict?.howItWorks?.steps?.[1]?.tab ||
-        (locale === 'ar' ? '2. الإشراف والتدخل' : '2. Instruct'),
+        (locale === 'ar' ? '2. الإشراف والتدخل' : '2. Instruct (Fault Injection)'),
       title:
         dict?.howItWorks?.steps?.[1]?.title ||
         (locale === 'ar'
-          ? 'حقن الأعطال التشغيلية في الزمن الفعلي'
-          : 'Real-Time Fault Injection'),
+          ? 'حقن الأعطال التشغيلية وحالات الطوارئ في الزمن الفعلي'
+          : 'Real-Time Fault Injection & Supervision'),
       desc:
         dict?.howItWorks?.steps?.[1]?.desc ||
         (locale === 'ar'
-          ? 'يتحكم المدرب في إطلاق أعطال مسبقة أو فورية (توقف مضخات، استعصاء صمامات، تسريب أنابيب أفران) ومراقبة رد فعل المشغل فورياً.'
-          : 'The instructor triggers pre-programmed or live faults (pump trips, valve stiction, furnace tube leaks) and monitors trainee response in real time.'),
+          ? 'يتحكم المدرب في إطلاق أعطال مسبقة أو فورية (توقف مضخات، استعصاء صمامات، تسريب أنابيب أفران) مع إمكانية تجميد المحاكاة وتحليل الخطأ الجذري.'
+          : 'Instructors trigger pre-programmed or live process upsets (pump trips, valve stiction, furnace leaks) with instant scenario freeze and root-cause replay capabilities.'),
       src: '/assets/screens/instructor-console.png',
       alt: 'Instructor Supervisory Console',
       caption:
@@ -72,34 +77,38 @@ export function HowItWorksSection({ locale = 'en', dict }: HowItWorksSectionProp
           ? 'كونسول المشرف للتحكم بسيناريوهات الطوارئ وحقن الأعطال الفورية'
           : 'Supervisory Fault Injection Console with Real-Time Scenario Control',
       icon: Sliders,
+      metric: 'ZERO DELAY',
+      metricDesc: locale === 'ar' ? 'حقن فوري للأعطال' : 'Instant Transients',
+      metricIcon: ShieldCheck,
       bullets:
         locale === 'ar'
           ? [
               'حقن فوري للأعطال: توقف مضخات، تجمد صمامات، وانحراف حساسات القياس',
-              'إيقاف مؤقت، لقطة حالة (Snapshot)، وإعادة المحاكاة للتحليل الفني للحادث',
-              'تسجيل زمني دقيق لكل خطوة وإجراء يتخذه المشغل المتدرب',
+              'وظائف التجميد المؤقت (Freeze)، لقطة الحالة (Snapshot)، وإعادة المحاكاة',
+              'تسجيل زمني دقيق لكل خطوة وإجراء يتخذه المشغل المتدرب بدقة المللي ثانية',
             ]
           : [
-              'Instant fault injection: pump trips, valve freeze, transmitter drift',
-              'Freeze, snapshot, and rewind functions for root-cause debriefs',
-              'Trainee action logging with millisecond timestamp precision',
+              'Instant fault injection: pump trips, valve freeze, and sensor calibration drift',
+              'Freeze, snapshot, and rewind functions for root-cause operational debriefs',
+              'Trainee action logging with millisecond timestamp precision and sequence tracking',
             ],
     },
     {
       id: 'certify',
+      badge: locale === 'ar' ? 'المرحلة 03: التقييم والاعتماد' : 'STAGE 03: SOP CERTIFICATION',
       tabLabel:
         dict?.howItWorks?.steps?.[2]?.tab ||
-        (locale === 'ar' ? '3. التقييم والاعتماد' : '3. Certify'),
+        (locale === 'ar' ? '3. التقييم والاعتماد' : '3. Certify (SOP Scoring)'),
       title:
         dict?.howItWorks?.steps?.[2]?.title ||
         (locale === 'ar'
-          ? 'تقييم موضوعي وشهادات كفاءة رقمية'
-          : 'Objective Scoring & Credentials'),
+          ? 'تقييم موضوعي وشهادات كفاءة تشغيلية رقمية'
+          : 'Objective Scoring & SOP Certification'),
       desc:
         dict?.howItWorks?.steps?.[2]?.desc ||
         (locale === 'ar'
-          ? 'يتم تسجيل كل إجراء يقوم به المشغل ومطابقته بدقة مع إجراءات التشغيل القياسية (SOP). تقارير تقييم تفصيلية وشهادات اعتماد.'
-          : 'Every trainee action is timestamped against standard operating procedures. Receive an itemized performance breakdown and verification certificate.'),
+          ? 'يتم تسجيل كل إجراء يقوم به المشغل ومطابقته بدقة مع إجراءات التشغيل القياسية (SOP). تقارير تقييم تفصيلية وشهادات اعتماد تثبت كفاءة الكادر قبل تسلم الوردية الحية.'
+          : 'Every trainee action is timestamped against standard operating procedures. Receive an itemized performance breakdown and verification certificate before live plant shifts.'),
       src: '/assets/screens/preheat-train-pfd.png',
       alt: 'Preheat Train Process Diagram',
       caption:
@@ -107,28 +116,32 @@ export function HowItWorksSection({ locale = 'en', dict }: HowItWorksSectionProp
           ? 'محاكاة ديناميكية لشبكة التسخين الأولي والتقييم الآلي للمتدرب'
           : 'Preheat Train Hydraulic Simulation and Automated Scoring',
       icon: Award,
+      metric: '100% SOP AUDIT',
+      metricDesc: locale === 'ar' ? 'سجل امتثال موثق' : 'Verifiable Qualification',
+      metricIcon: FileCheck,
       bullets:
         locale === 'ar'
           ? [
-              'تقييم آلي وموضوعي مستند إلى إجراءات التشغيل القياسية (SOP)',
-              'شهادة كفاءة موثقة وسجل زمني للاستجابة لحالات الطوارئ',
-              'قياس جاهزية المشغل قبل تكليفه بالورديات الحية في المنشأة',
+              'تقييم آلي وموضوعي مستند إلى إجراءات التشغيل القياسية (SOP) للمنشأة',
+              'شهادة كفاءة موثقة وسجل زمني للاستجابة لحالات الطوارئ لحماية الأصول',
+              'قياس جاهزية المشغل قبل تكليفه بالورديات الحية في المنشأة الحيوية',
             ]
           : [
-              'Automated scoring against verified standard operating procedures (SOP)',
-              'Granular timeline of operator reaction time during process alarms',
-              'Objective certification before assigning live plant console shifts',
+              'Automated scoring against verified plant standard operating procedures (SOP)',
+              'Granular timeline of operator reaction latency during process alarms',
+              'Objective qualification sign-off before assigning live plant console shifts',
             ],
     },
   ];
 
   const current = steps[activeTab];
+  const MetricIcon = current.metricIcon;
 
   return (
     <section className="relative py-24 bg-white overflow-hidden border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          eyebrow={dict?.howItWorks?.eyebrow || (locale === 'ar' ? 'منهجية العمل والتدريب' : 'OPERATIONAL QUALIFICATION')}
+          eyebrow={dict?.howItWorks?.eyebrow || (locale === 'ar' ? 'منهجية العمل والتأهيل' : 'OPERATIONAL QUALIFICATION WORKFLOW')}
           title={
             dict?.howItWorks?.title ||
             (locale === 'ar'
@@ -138,14 +151,14 @@ export function HowItWorksSection({ locale = 'en', dict }: HowItWorksSectionProp
           subtitle={
             dict?.howItWorks?.subtitle ||
             (locale === 'ar'
-              ? 'دورة تدريبية متكاملة تعكس بيئة أنظمة التحكم الموزع DCS الحقيقية.'
-              : 'A complete operational qualification cycle replicating live DCS workflows.')
+              ? 'دورة تدريبية متكاملة تعكس بيئة أنظمة التحكم الموزع DCS الحقيقية من الممارسة وحتى إصدار الشهادات.'
+              : 'A complete operational qualification cycle replicating real DCS workflows from console reps to certification.')
           }
           align="center"
           theme="light"
         />
 
-        {/* Tab Controls */}
+        {/* Tab Controls - Crisp & Enterprise */}
         <div className="mt-12 flex justify-center">
           <div className="inline-flex rounded-xl bg-slate-100 p-1.5 border border-slate-200 shadow-2xs">
             {steps.map((step, idx) => {
@@ -162,7 +175,7 @@ export function HowItWorksSection({ locale = 'en', dict }: HowItWorksSectionProp
                       : 'text-slate-600 hover:text-slate-900'
                   }`}
                 >
-                  <Icon className={`h-4 w-4 ${isActive ? 'text-[#1D4ED8]' : 'text-slate-500'}`} />
+                  <Icon className={`h-4 w-4 ${isActive ? 'text-blue-600' : 'text-slate-500'}`} />
                   <span>{step.tabLabel}</span>
                 </button>
               );
@@ -182,9 +195,14 @@ export function HowItWorksSection({ locale = 'en', dict }: HowItWorksSectionProp
             />
           </div>
 
-          {/* Right Column: Narrative & Key Bullets */}
+          {/* Right Column: Narrative, Key Checkpoints & Spec Metric */}
           <div className="lg:col-span-5 flex flex-col justify-center">
-            <h3 className="text-2xl sm:text-3xl font-bold text-[#0A192F] leading-tight">
+            {/* Step Stage Pill */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-mono font-bold text-blue-700 w-fit">
+              <span>{current.badge}</span>
+            </div>
+
+            <h3 className="mt-4 text-2xl sm:text-3xl font-bold text-[#0A192F] leading-tight">
               {current.title}
             </h3>
 
@@ -192,6 +210,7 @@ export function HowItWorksSection({ locale = 'en', dict }: HowItWorksSectionProp
               {current.desc}
             </p>
 
+            {/* Bullets */}
             <ul className="mt-6 space-y-3">
               {current.bullets.map((bullet, i) => (
                 <li key={i} className="flex items-start gap-3 text-xs sm:text-sm text-slate-700">
@@ -200,6 +219,21 @@ export function HowItWorksSection({ locale = 'en', dict }: HowItWorksSectionProp
                 </li>
               ))}
             </ul>
+
+            {/* Metric Callout Card */}
+            <div className="mt-8 flex items-center gap-4 rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-600 text-white">
+                <MetricIcon className="h-5 w-5" />
+              </div>
+              <div>
+                <span className="font-mono text-xs font-bold text-[#0A192F] uppercase tracking-wider block">
+                  {current.metric}
+                </span>
+                <span className="text-xs text-slate-500">
+                  {current.metricDesc}
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

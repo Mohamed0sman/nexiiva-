@@ -30,30 +30,38 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <div className="flex flex-col w-full">
-      {/* 1. HERO */}
+      {/* 1. HERO — Grand Stature + Services Dock + DCS Frame */}
       <HeroSection locale={locale} dict={messages} />
 
-      {/* 2. Trust/capability strip */}
+      {/* 2. Trust & Cybersecurity Standards Strip */}
       <TrustStrip locale={locale} dict={messages} />
 
-      {/* 3. THE PROBLEM */}
+      {/* 3. THE PROBLEM — Operational Reality & Incident Cost Analysis */}
       <ProblemSection locale={locale} dict={messages} />
 
-      {/* 4. 02 — THE SOLUTION */}
-      <SolutionSection dict={messages} />
+      {/* 4. THE SOLUTION — 4 Architectural Engineering Pillars */}
+      <SolutionSection locale={locale} dict={messages} />
 
-      {/* 5. HOW IT WORKS */}
+      {/* 5. HOW IT WORKS — Practice. Instruct. Certify. */}
       <HowItWorksSection locale={locale} dict={messages} />
 
       {/* 6. LIVE DEMO — "Try the console" */}
-      <section className="relative py-20 bg-[#0A192F] overflow-hidden border-b border-slate-800">
+      <section className="relative py-24 bg-[#0A192F] overflow-hidden border-b border-slate-800">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            eyebrow={messages?.demo?.eyebrow || 'INTERACTIVE SIMULATOR'}
-            title={messages?.demo?.title || 'Try the console'}
+            eyebrow={
+              messages?.demo?.eyebrow ||
+              (locale === 'ar' ? 'محاكي تفاعلي حي' : 'INTERACTIVE SIMULATOR')
+            }
+            title={
+              messages?.demo?.title ||
+              (locale === 'ar' ? 'جرّب كونسول التحكم بنفسك' : 'Try the console')
+            }
             subtitle={
               messages?.demo?.subtitle ||
-              'Experience Nexiiva’s dynamic model directly in your browser. Trigger an operational upset on the atmospheric column and watch the DCS alarms react.'
+              (locale === 'ar'
+                ? 'اختبر نموذج نكسيفا الديناميكي مباشرة في متصفحك. أطلق اضطراباً تشغيلياً على برج التقطير الجوي وراقب استجابة إنذارات DCS الفورية.'
+                : 'Experience Nexiiva’s dynamic model directly in your browser. Trigger an operational upset on the atmospheric column and watch the DCS alarms react.')
             }
             align="center"
             theme="dark"
@@ -62,34 +70,34 @@ export default async function HomePage({ params }: Props) {
         </div>
       </section>
 
-      {/* 7. SOLUTIONS SUITE */}
+      {/* 7. SOLUTIONS SUITE — Comprehensive Simulation Infrastructure */}
       <SolutionsSection locale={locale} dict={messages} />
 
-      {/* 8. INDUSTRIES COVERED */}
+      {/* 8. INDUSTRIES COVERED — Supported Domains & Unit Operations */}
       <IndustriesSection locale={locale} dict={messages} />
 
-      {/* 9. WHY NEXIIVA (ENGINEERING CAPABILITIES) */}
+      {/* 9. WHY NEXIIVA — Engineering Distinction & Technical Proof */}
       <WhyNexiivaSection locale={locale} dict={messages} />
 
-      {/* 10. TECHNICAL COMPARISON */}
+      {/* 10. TECHNICAL COMPARISON — 5-Dimension Economic & Technical Matrix */}
       <ComparisonSection locale={locale} dict={messages} />
 
-      {/* 11. PILOT PROGRAMME */}
+      {/* 11. PILOT PROGRAMME — Structured Low-Risk Deployment */}
       <PilotSection locale={locale} dict={messages} />
 
       {/* 12. EXECUTIVE LEADERSHIP & FOUNDING TEAM */}
       <LeadershipSection locale={locale} dict={messages} />
 
-      {/* 13. OUR JOURNEY & ROADMAP */}
-      <JourneySection dict={messages} />
+      {/* 13. OUR JOURNEY & ROADMAP — Engineering Progression */}
+      <JourneySection locale={locale} dict={messages} />
 
-      {/* 14. Responsibility / Safety block */}
+      {/* 14. SAFETY & RESPONSIBILITY — PSM & Environmental Mitigation */}
       <ResponsibilitySection locale={locale} dict={messages} />
 
-      {/* 15. Latest insights */}
+      {/* 15. LATEST INSIGHTS — Engineering Whitepapers */}
       <InsightsSection locale={locale} dict={messages} />
 
-      {/* 16. Final CTA */}
+      {/* 16. FINAL CTA — Enterprise Consultation Action Center */}
       <FinalCtaSection locale={locale} dict={messages} />
     </div>
   );
