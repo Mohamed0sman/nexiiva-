@@ -36,12 +36,13 @@ export function LeadershipSection({ dict }: LeadershipSectionProps) {
           {/* Founder Profile Details */}
           <div className="mt-8 pt-8 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
             <div className="flex items-center gap-4">
-              <div className="relative h-14 w-14 overflow-hidden rounded-full border-2 border-[#8B4CFF] shadow-lg">
+              <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border-2 border-[#8B4CFF] shadow-lg">
                 <Image
                   src="/assets/team/mostafa-adel.jpg"
                   alt="Mostafa Adel, Founder & CEO"
-                  fill
-                  className="object-cover"
+                  width={56}
+                  height={56}
+                  className="h-full w-full object-cover aspect-square"
                 />
               </div>
 

@@ -126,7 +126,7 @@ export default async function AboutPage({ params }: Props) {
               >
                 <div>
                   {/* Portrait or Initials Avatar with brand gradient ring */}
-                  <div className="mx-auto relative h-28 w-28 rounded-full p-1 brand-gradient shadow-xl">
+                  <div className="mx-auto relative h-28 w-28 shrink-0 rounded-full p-1 brand-gradient shadow-xl">
                     <div className="h-full w-full rounded-full overflow-hidden bg-[#0A0D18] flex items-center justify-center">
                       {member.image ? (
                         <Image
@@ -134,7 +134,7 @@ export default async function AboutPage({ params }: Props) {
                           alt={member.name}
                           width={112}
                           height={112}
-                          className="h-full w-full object-cover"
+                          className="h-full w-full object-cover aspect-square"
                         />
                       ) : (
                         <span className="font-mono-tag text-2xl font-bold tracking-wider text-white">
