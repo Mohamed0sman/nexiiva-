@@ -28,21 +28,21 @@ export function SectionHeader({
     >
       {/* Eyebrow with hairline rule */}
       <div
-        className={`inline-flex items-center gap-3 font-mono-tag text-xs font-bold tracking-[0.2em] uppercase ${
+        className={`inline-flex items-center gap-3 text-xs font-semibold tracking-wide ${
           isCenter ? 'justify-center' : ''
-        } ${isDark ? 'text-blue-400' : 'text-[#1D4ED8]'}`}
+        } ${isDark ? 'text-blue-300' : 'text-[#1D4ED8]'}`}
       >
         <span>{eyebrow}</span>
         <span
           className={`h-px w-8 ${
-            isDark ? 'bg-blue-400/40' : 'bg-[#1D4ED8]/30'
+            isDark ? 'bg-blue-400/30' : 'bg-[#1D4ED8]/25'
           }`}
         />
       </div>
 
       {/* Main Title */}
       <h2
-        className={`mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl leading-[1.15] ${
+        className={`mt-3 text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-[1.25] ${
           isDark ? 'text-white' : 'text-[#0A192F]'
         }`}
       >
@@ -52,7 +52,7 @@ export function SectionHeader({
       {/* Subtitle */}
       {subtitle && (
         <p
-          className={`mt-4 text-base sm:text-lg leading-relaxed ${
+          className={`mt-3 text-base sm:text-lg leading-relaxed ${
             isDark ? 'text-slate-300' : 'text-slate-600'
           }`}
         >

@@ -69,11 +69,11 @@ export function JourneySection({ dict }: JourneySectionProps) {
     <section className="relative py-20 bg-white overflow-hidden border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          eyebrow={dict?.journey?.eyebrow || '08 — OUR JOURNEY'}
-          title={dict?.journey?.title || 'Milestones and roadmap.'}
+          eyebrow={dict?.journey?.eyebrow || 'المسار وخارطة الطريق'}
+          title={dict?.journey?.title || 'المحطات الهندسية ومسار الإنجاز.'}
           subtitle={
             dict?.journey?.subtitle ||
-            'Honest progression from core engineering to industrial pilot deployment. Plainly pre-revenue and focused on execution.'
+            'تدرج هندسي شفاف من بناء النماذج الأساسية إلى التطبيق التجريبي الميداني.'
           }
           theme="light"
         />
@@ -89,12 +89,12 @@ export function JourneySection({ dict }: JourneySectionProps) {
               return (
                 <div
                   key={idx}
-                  className="relative flex flex-col md:flex-row items-start gap-6 rounded-xl border border-slate-200 bg-slate-50 p-6 transition-colors hover:border-slate-300 shadow-sm"
+                  className="relative flex flex-col md:flex-row items-start gap-6 rounded-xl border border-slate-200/90 bg-slate-50/70 p-6 transition-colors hover:border-slate-300 shadow-xs"
                 >
                   {/* Status Icon Indicator */}
-                  <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-800 shadow-sm">
+                  <div className="relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-800 shadow-xs">
                     <Icon
-                      className={`h-6 w-6 ${
+                      className={`h-5 w-5 ${
                         item.status === 'done'
                           ? 'text-emerald-600'
                           : item.status === 'in_progress'
@@ -108,11 +108,11 @@ export function JourneySection({ dict }: JourneySectionProps) {
                   <div className="flex-1">
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <span
-                        className={`inline-flex items-center rounded-md border px-2.5 py-0.5 font-mono-tag text-[10px] font-bold uppercase ${item.badgeColor}`}
+                        className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-[11px] font-semibold ${item.badgeColor}`}
                       >
                         {item.badge}
                       </span>
-                      <span className="font-mono-tag text-xs text-slate-500">
+                      <span className="text-xs text-slate-500">
                         {item.details}
                       </span>
                     </div>

@@ -74,17 +74,17 @@ export function HowItWorksSection({ dict }: HowItWorksSectionProps) {
     <section className="relative py-20 bg-white overflow-hidden border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          eyebrow={dict?.howItWorks?.eyebrow || '03 — HOW IT WORKS'}
-          title={dict?.howItWorks?.title || 'Practice. Instruct. Certify.'}
+          eyebrow={dict?.howItWorks?.eyebrow || 'منهجية التدريب والتشغيل'}
+          title={dict?.howItWorks?.title || 'الممارسة. التوجيه. الاعتماد.'}
           subtitle={
             dict?.howItWorks?.subtitle ||
-            'A complete operational cycle replicating real DCS workflows and plant safety protocols.'
+            'دورة تشغيلية متكاملة تماثل إجراءات غرف التحكم ومعايير السلامة الصناعية.'
           }
           theme="light"
         />
 
-        {/* Tab Navigation Pill Bar */}
-        <div className="flex flex-wrap items-center gap-3 border-b border-slate-200 pb-6">
+        {/* Tab Navigation */}
+        <div className="flex flex-wrap items-center gap-3 border-b border-slate-200 pb-5">
           {steps.map((step, idx) => {
             const isSelected = activeTab === idx;
             return (
@@ -92,9 +92,9 @@ export function HowItWorksSection({ dict }: HowItWorksSectionProps) {
                 key={step.id}
                 type="button"
                 onClick={() => setActiveTab(idx)}
-                className={`inline-flex items-center gap-2 rounded-lg px-5 py-2.5 font-mono-tag text-xs font-bold transition-all duration-150 ${
+                className={`inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-xs font-bold transition-all duration-150 ${
                   isSelected
-                    ? 'bg-[#0A192F] text-white shadow-sm'
+                    ? 'bg-[#0A192F] text-white shadow-xs'
                     : 'border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 hover:text-slate-900'
                 }`}
               >

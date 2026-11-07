@@ -31,9 +31,9 @@
     "menu": "Menu",
     "close": "Close",
     "solutionsMega": {
-      "otsTitle": "Operator Training Simulator",
+      "otsTitle": "Operator Training Simulator (OTS)",
       "otsDesc": "Dynamic 1:1 DCS console emulation with live multi-component physics.",
-      "builderTitle": "AI Unit Builder",
+      "builderTitle": "Unit Modeling Engine",
       "builderDesc": "Rapid unit generation from engineering flowsheets and process logic.",
       "consoleTitle": "Instructor Console",
       "consoleDesc": "Real-time fault injection, trainee monitoring, and emergency freezes.",
@@ -46,7 +46,7 @@
     "cta": "Learn about the pilot"
   },
   "hero": {
-    "eyebrow": "OPERATOR TRAINING SIMULATOR",
+    "eyebrow": "Operator Training Simulator (OTS)",
     "title": "Real operations.\nVirtual experience.",
     "subtitle": "Nexiiva turns your own process unit into a safe, realistic DCS-style training simulator — so operators face the worst day before it happens.",
     "primaryCta": "Request a Pilot",
@@ -70,7 +70,7 @@
     "Arabic & English"
   ],
   "problem": {
-    "eyebrow": "01 — THE PROBLEM",
+    "eyebrow": "Operational Reality",
     "title": "The high cost of learning on a live unit.",
     "statAmount": "$150K",
     "statLabel": "lost from one small problem",
@@ -104,7 +104,7 @@
     }
   },
   "solution": {
-    "eyebrow": "02 — THE SOLUTION",
+    "eyebrow": "Engineering Solution",
     "title": "A simulation platform built for industrial reality.",
     "subtitle": "Connecting engineering rigor with accessible console training.",
     "nodes": [
@@ -127,7 +127,7 @@
     ]
   },
   "howItWorks": {
-    "eyebrow": "03 — HOW IT WORKS",
+    "eyebrow": "Training & Qualification Workflow",
     "title": "Practice. Instruct. Certify.",
     "subtitle": "A complete operational cycle replicating real DCS workflows.",
     "steps": [
@@ -195,12 +195,12 @@
     }
   },
   "whyNexiiva": {
-    "eyebrow": "04 — WHY NEXIIVA",
+    "eyebrow": "Engineering Distinction",
     "title": "Engineered for speed, security, and precision.",
     "cards": [
       {
-        "title": "AI Unit Builder",
-        "desc": "An AI agent builds the unit from an Arabic or English description, converting engineering documents into simulator logic."
+        "title": "Unit Modeling Engine",
+        "desc": "Automated pipeline models the unit from technical specifications, converting engineering documents into simulator logic."
       },
       {
         "title": "387 Equipment Types",
@@ -217,7 +217,7 @@
     ]
   },
   "comparison": {
-    "eyebrow": "05 — HOW WE COMPARE",
+    "eyebrow": "Technical Comparison",
     "title": "A fundamental shift in simulator economics.",
     "headers": ["Provider Category", "Cost Profile", "Delivery & Deployment Architecture"],
     "rows": [
@@ -243,7 +243,7 @@
     ]
   },
   "solutions": {
-    "eyebrow": "06 — SOLUTIONS",
+    "eyebrow": "Simulation Infrastructure",
     "title": "Comprehensive simulation infrastructure.",
     "items": [
       {
@@ -253,7 +253,7 @@
       },
       {
         "id": "builder",
-        "title": "AI Unit Builder (OTS Builder)",
+        "title": "Unit Modeling Engine (OTS Builder)",
         "desc": "Automated model generation pipeline converting P&IDs and process operating envelopes into simulator units."
       },
       {
@@ -269,7 +269,7 @@
     ]
   },
   "industries": {
-    "eyebrow": "07 — INDUSTRIES",
+    "eyebrow": "Supported Domains",
     "title": "From one industrial unit to every process industry.",
     "items": [
       {
@@ -299,7 +299,7 @@
     ]
   },
   "journey": {
-    "eyebrow": "08 — OUR JOURNEY",
+    "eyebrow": "Roadmap & Milestones",
     "title": "Milestones and roadmap.",
     "subtitle": "Honest progression from core engineering to industrial pilot deployment.",
     "items": [
@@ -326,7 +326,7 @@
     ]
   },
   "pilotSection": {
-    "eyebrow": "09 — PILOT PROGRAMME",
+    "eyebrow": "Pilot Programme",
     "title": "Start with one unit.\nExpand across the facility.",
     "subtitle": "A structured, low-risk pilot program designed for plant operations and training leadership.",
     "steps": [

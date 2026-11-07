@@ -17,7 +17,7 @@ export function FinalCtaSection({ locale, dict }: FinalCtaSectionProps) {
       <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 flex flex-col items-center">
         <NexiivaLogo variant="light" className="h-9 w-auto mb-6" />
 
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-snug">
           {dict?.finalCta?.title ||
             'Let’s make OTS accessible to every industrial unit.'}
         </h2>

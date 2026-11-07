@@ -2,52 +2,76 @@
 
 import React from 'react';
 import {
-  Layers,
-  Flame,
-  Cpu,
-  LineChart,
-  Sliders,
-  Award,
-  WifiOff,
-  Globe,
+  ShieldCheck,
+  Boxes,
+  MonitorCheck,
+  Clock4,
 } from 'lucide-react';
-
 import type { Dict } from '@/types/dict';
 
 interface TrustStripProps {
   dict?: Dict;
 }
 
-export function TrustStrip(_props: TrustStripProps) {
-  void _props;
-  const capabilities = [
-    { label: 'CDU / VDU', icon: Layers },
-    { label: 'Preheat Train', icon: Flame },
-    { label: '387 equipment types', icon: Cpu },
-    { label: '12 live trends', icon: LineChart },
-    { label: 'Instructor-injected faults', icon: Sliders },
-    { label: 'Auto scoring + certificate', icon: Award },
-    { label: 'Offline mode', icon: WifiOff },
-    { label: 'Arabic & English', icon: Globe },
+export function TrustStrip({ dict }: TrustStripProps) {
+  const specs = [
+    {
+      metric: '100%',
+      title: dict?.trustStrip?.[6] || 'تشغيل محلي معزول (Air-Gapped)',
+      desc: 'يعمل دون إنترنت لضمان سرية وأمن بيانات المنشأة بالكامل.',
+      icon: ShieldCheck,
+    },
+    {
+      metric: '387',
+      title: dict?.trustStrip?.[2] || 'معدة وطراز هيدروليكي معتمد',
+      desc: 'مكتبة نمذجة متكاملة للأبراج والأفران والمضخات ومبادلات الحرارة.',
+      icon: Boxes,
+    },
+    {
+      metric: '1:1',
+      title: 'مطابقة شاشات التحكم الموزع (DCS)',
+      desc: 'نفس لوحات التحكم ومؤشرات الإنذار التي يتعامل معها المشغل يومياً.',
+      icon: MonitorCheck,
+    },
+    {
+      metric: '~1 wk',
+      title: 'أسبوع واحد مستهدف للبناء',
+      desc: 'مستهدف قياسي لبناء واختبار محاكي الوحدة التشغيلية.',
+      icon: Clock4,
+    },
   ];
 
   return (
     <section
       id="trust-strip"
-      className="relative z-20 border-y border-slate-800 bg-[#0A192F] py-4 overflow-hidden"
-      aria-label="Platform Capabilities"
+      className="relative z-20 border-y border-slate-200 bg-slate-50/80 py-8"
+      aria-label="Platform Specifications"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6">
-          {capabilities.map((item, index) => {
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          {specs.map((item, index) => {
             const Icon = item.icon;
             return (
               <div
                 key={index}
-                className="flex items-center gap-2 rounded-md border border-slate-700/80 bg-slate-800/50 px-3 py-1.5 font-mono-tag text-xs font-semibold text-slate-200 hover:border-slate-600 transition-colors"
+                className="flex items-start gap-4 p-4 rounded-xl bg-white border border-slate-200/80 shadow-xs"
               >
-                <Icon className="h-3.5 w-3.5 text-blue-400 shrink-0" />
-                <span className="tracking-wide">{item.label}</span>
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-[#1D4ED8]">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <div className="min-w-0">
+                  <div className="flex items-baseline gap-2">
+                    <span className="font-mono text-base font-bold text-[#0A192F]">
+                      {item.metric}
+                    </span>
+                    <span className="text-xs font-bold text-slate-800 truncate">
+                      {item.title}
+                    </span>
+                  </div>
+                  <p className="mt-1 text-xs leading-relaxed text-slate-500">
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             );
           })}

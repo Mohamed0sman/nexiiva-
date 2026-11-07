@@ -41,23 +41,23 @@ export function ComparisonSection({ dict }: ComparisonSectionProps) {
     <section className="relative py-20 bg-slate-50 overflow-hidden border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          eyebrow={dict?.comparison?.eyebrow || '05 — HOW WE COMPARE'}
+          eyebrow={dict?.comparison?.eyebrow || 'مقارنة الحلول التشغيلية'}
           title={
             dict?.comparison?.title ||
-            'A fundamental shift in simulator economics.'
+            'نقلة نوعية في اقتصاديات محاكيات التدريب.'
           }
-          subtitle="How Nexiiva's automated unit builder disrupts traditional multi-million dollar vendor cycles."
+          subtitle="مقارنة بين أنظمة المحاكاة التقليدية الباهظة وبين منصة نكسيفا الحديثة."
           theme="light"
         />
 
         {/* Comparison Table */}
-        <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+        <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xs">
           <div className="overflow-x-auto">
             <table className="w-full text-start border-collapse">
               <thead>
-                <tr className="border-b border-slate-200 bg-slate-100/80 text-xs font-mono-tag font-bold text-slate-700 uppercase">
-                  <th className="py-4 px-6 text-start">Provider Category</th>
-                  <th className="py-4 px-6 text-start">Cost Profile</th>
+                <tr className="border-b border-slate-200 bg-slate-50 text-xs font-semibold text-slate-700">
+                  <th className="py-4 px-6 text-start">فئة المزود</th>
+                  <th className="py-4 px-6 text-start">مستوى التكلفة</th>
                   <th className="py-4 px-6 text-start">Delivery & Deployment Architecture</th>
                 </tr>
               </thead>

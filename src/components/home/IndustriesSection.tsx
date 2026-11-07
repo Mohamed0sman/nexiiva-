@@ -59,12 +59,12 @@ export function IndustriesSection({ locale, dict }: IndustriesSectionProps) {
     <section className="relative py-20 bg-slate-50 overflow-hidden border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          eyebrow={dict?.industries?.eyebrow || '07 — INDUSTRIES'}
+          eyebrow={dict?.industries?.eyebrow || 'القطاعات الصناعية المدعومة'}
           title={
             dict?.industries?.title ||
-            'From one industrial unit to every process industry.'
+            'من وحدة تقطير واحدة إلى كافة العمليات الصناعية.'
           }
-          subtitle="Starting with critical distillation units and expanding into gas treatment and chemical synthesis."
+          subtitle="البداية من وحدات التكرير الحيوية مع التوسع نحو معالجة الغاز والبتروكيماويات."
           theme="light"
         />
 
@@ -76,26 +76,26 @@ export function IndustriesSection({ locale, dict }: IndustriesSectionProps) {
                 key={i}
                 className={`relative flex flex-col justify-between rounded-xl border p-6 transition-all duration-200 ${
                   ind.isDelivered
-                    ? 'border-[#1D4ED8] bg-blue-50/60 shadow-sm'
-                    : 'border-slate-200 bg-white hover:border-slate-300 shadow-sm'
+                    ? 'border-slate-300 bg-white shadow-xs'
+                    : 'border-slate-200/90 bg-white hover:border-slate-300 shadow-xs'
                 }`}
               >
                 <div>
                   <div className="flex items-center justify-between">
                     <div
-                      className={`flex h-12 w-12 items-center justify-center rounded-xl ${
+                      className={`flex h-11 w-11 items-center justify-center rounded-lg ${
                         ind.isDelivered
-                          ? 'bg-white border border-blue-200 text-[#1D4ED8]'
+                          ? 'bg-blue-50 text-[#1D4ED8]'
                           : 'bg-slate-100 text-slate-600'
                       }`}
                     >
-                      <Icon className="h-6 w-6" />
+                      <Icon className="h-5 w-5" />
                     </div>
 
                     <span
-                      className={`rounded px-2.5 py-0.5 font-mono-tag text-[10px] font-bold uppercase ${
+                      className={`rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${
                         ind.isDelivered
-                          ? 'bg-emerald-100 text-emerald-800 border border-emerald-300'
+                          ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
                           : 'bg-slate-100 text-slate-600 border border-slate-200'
                       }`}
                     >

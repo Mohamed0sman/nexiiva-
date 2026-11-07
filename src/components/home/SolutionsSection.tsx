@@ -59,11 +59,11 @@ export function SolutionsSection({ locale, dict }: SolutionsSectionProps) {
     <section className="relative py-20 bg-white overflow-hidden border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          eyebrow={dict?.solutions?.eyebrow || '06 — SOLUTIONS'}
+          eyebrow={dict?.solutions?.eyebrow || 'منظومة الحلول المتكاملة'}
           title={
-            dict?.solutions?.title || 'Comprehensive simulation infrastructure.'
+            dict?.solutions?.title || 'بنية تحتية هندسية متكاملة لمحاكاة العمليات.'
           }
-          subtitle="Engineered modules designed to integrate with your existing plant operations curriculum."
+          subtitle="وحدات مصممة للتكامل مع برامج التدريب والتأهيل المعتمدة في منشأتك."
           theme="light"
         />
 
@@ -73,18 +73,18 @@ export function SolutionsSection({ locale, dict }: SolutionsSectionProps) {
             return (
               <div
                 key={item.id}
-                className="group relative flex flex-col justify-between rounded-xl border border-slate-200 bg-slate-50 p-6 transition-colors hover:border-slate-300 shadow-sm"
+                className="group relative flex flex-col justify-between rounded-xl border border-slate-200/90 bg-slate-50/70 p-6 transition-colors hover:border-slate-300 shadow-xs"
               >
                 <div>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-[#1D4ED8]">
-                    <Icon className="h-6 w-6" />
+                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-blue-50 text-[#1D4ED8]">
+                    <Icon className="h-5 w-5" />
                   </div>
 
-                  <h3 className="mt-5 text-lg font-bold text-[#0A192F]">
+                  <h3 className="mt-5 text-base font-bold text-[#0A192F]">
                     {item.title}
                   </h3>
 
-                  <p className="mt-2.5 text-xs text-slate-600 leading-relaxed line-clamp-3">
+                  <p className="mt-2 text-xs text-slate-600 leading-relaxed line-clamp-3">
                     {item.desc}
                   </p>
                 </div>
@@ -92,9 +92,9 @@ export function SolutionsSection({ locale, dict }: SolutionsSectionProps) {
                 <div className="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between">
                   <Link
                     href={item.link}
-                    className="inline-flex items-center gap-1.5 font-mono-tag text-xs font-semibold text-[#1D4ED8] hover:underline"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1D4ED8] hover:underline"
                   >
-                    <span>Read more</span>
+                    <span>{dict?.common?.readMore || 'اقرأ المزيد'}</span>
                     <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />
                   </Link>
                 </div>

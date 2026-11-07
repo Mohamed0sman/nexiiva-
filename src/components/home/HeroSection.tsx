@@ -2,11 +2,10 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { MonitorFrame } from '@/components/MonitorFrame';
+import Image from 'next/image';
 import {
   ArrowRight,
   Play,
-  CheckCircle2,
   X,
 } from 'lucide-react';
 import type { Dict } from '@/types/dict';
@@ -33,19 +32,19 @@ export function HeroSection({ locale, dict }: HeroSectionProps) {
   };
 
   return (
-    <section className="relative bg-white pt-24 pb-16 lg:pt-32 lg:pb-24 border-b border-slate-200">
+    <section className="relative bg-white pt-20 pb-16 lg:pt-28 lg:pb-20 border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-12">
           {/* Left Column: Headline, Subtitle, CTAs */}
           <div className="lg:col-span-7 flex flex-col items-start text-start">
-            {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 rounded-md border border-slate-300 bg-slate-50 px-3 py-1 font-mono-tag text-xs font-bold tracking-wider text-[#0A192F] uppercase">
+            {/* Calm Eyebrow */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1 text-xs font-semibold text-slate-700">
               <span className="h-2 w-2 rounded-full bg-[#1D4ED8]" />
-              <span>{dict?.hero?.eyebrow || 'OPERATOR TRAINING SIMULATOR'}</span>
+              <span>{dict?.hero?.eyebrow || 'محاكي تدريب المشغلين (OTS)'}</span>
             </div>
 
             {/* H1 Headline */}
-            <h1 className="mt-5 text-4xl font-extrabold tracking-tight text-[#0A192F] sm:text-5xl xl:text-6xl leading-[1.12]">
+            <h1 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0A192F] leading-[1.2]">
               {dict?.hero?.title?.split('\n').map((line: string, i: number) => (
                 <span key={i} className="block">
                   {i === 1 ? (
@@ -56,43 +55,43 @@ export function HeroSection({ locale, dict }: HeroSectionProps) {
                 </span>
               )) || (
                 <>
-                  Real operations.
+                  عمليات حقيقية.
                   <span className="block text-[#1D4ED8]">
-                    Virtual experience.
+                    تجربة افتراضية.
                   </span>
                 </>
               )}
             </h1>
 
             {/* Subtitle */}
-            <p className="mt-5 max-w-2xl text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="mt-4 max-w-2xl text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
               {dict?.hero?.subtitle ||
-                'Nexiiva turns your own process unit into a safe, realistic DCS-style training simulator — so operators face the worst day before it happens.'}
+                'تحول نكسيفا وحدتك الصناعية الحقيقية إلى محاكي تدريب متقدم وواقعي بنظام تحكم موزع DCS — ليواجه المشغلون أصعب سيناريوهات الطوارئ قبل حدوثها على أرض الواقع.'}
             </p>
 
             {/* Action Buttons */}
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            <div className="mt-7 flex flex-wrap items-center gap-4">
               <Link
                 href={`/${locale}/pilot`}
-                className="inline-flex items-center gap-2 rounded-lg bg-[#0A192F] px-7 py-3.5 text-sm font-bold text-white transition-colors hover:bg-[#1E293B]"
+                className="inline-flex items-center gap-2 rounded-lg bg-[#0A192F] px-6 py-3.5 text-sm font-semibold text-white shadow-xs transition-colors hover:bg-[#1E293B]"
               >
-                <span>{dict?.hero?.primaryCta || 'Request a Pilot'}</span>
+                <span>{dict?.hero?.primaryCta || 'طلب مشروع تجريبي'}</span>
                 <ArrowRight className="h-4 w-4 rtl:rotate-180" />
               </Link>
 
               <button
                 type="button"
                 onClick={() => handleOpenVideo()}
-                className="inline-flex items-center gap-2.5 rounded-lg border border-slate-300 bg-white px-6 py-3.5 text-sm font-semibold text-slate-800 transition-colors hover:bg-slate-50 hover:border-slate-400"
+                className="inline-flex items-center gap-2.5 rounded-lg border border-slate-300 bg-white px-5 py-3.5 text-sm font-semibold text-slate-800 shadow-xs transition-colors hover:bg-slate-50 hover:border-slate-400"
               >
-                <div className="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 text-red-600">
+                <div className="flex h-5 w-5 items-center justify-center rounded-full bg-red-50 text-red-600">
                   <Play className="h-3 w-3 fill-current ms-0.5" />
                 </div>
-                <span>{dict?.hero?.secondaryCta || 'Watch the platform'}</span>
+                <span>{dict?.hero?.secondaryCta || 'مشاهدة المنصة (فيديو)'}</span>
               </button>
             </div>
 
-            {/* Quick Video Links Strip */}
+            {/* Direct Video Links */}
             <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-slate-500">
               <span className="font-medium text-slate-700">
                 {locale === 'ar' ? 'فيديوهات النظام:' : 'Demo Walkthroughs:'}
@@ -100,7 +99,7 @@ export function HeroSection({ locale, dict }: HeroSectionProps) {
               <button
                 type="button"
                 onClick={() => handleOpenVideo('en')}
-                className="underline hover:text-[#1D4ED8] font-medium"
+                className="text-[#1D4ED8] hover:underline font-medium"
               >
                 English Walkthrough (YouTube)
               </button>
@@ -108,52 +107,53 @@ export function HeroSection({ locale, dict }: HeroSectionProps) {
               <button
                 type="button"
                 onClick={() => handleOpenVideo('ar')}
-                className="underline hover:text-[#1D4ED8] font-medium"
+                className="text-[#1D4ED8] hover:underline font-medium"
               >
                 العرض باللغة العربية (YouTube)
               </button>
             </div>
-
-            {/* Feature Pills */}
-            <div className="mt-8 flex flex-wrap items-center gap-6 text-xs text-slate-600 pt-6 border-t border-slate-200">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-emerald-600" />
-                <span>100% Offline Air-Gapped Mode</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-emerald-600" />
-                <span>Bilingual (EN / AR) Console</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-emerald-600" />
-                <span>12 Live Dynamic Trends</span>
-              </div>
-            </div>
           </div>
 
-          {/* Right Column: Industrial Monitor with Click-to-Play Video */}
+          {/* Right Column: Clean Industrial Console Frame */}
           <div className="lg:col-span-5 flex flex-col items-center">
             <div
-              className="relative w-full cursor-pointer group"
+              className="relative w-full cursor-pointer group rounded-2xl border border-slate-200 bg-white p-2 shadow-sm transition-all hover:border-slate-300"
               onClick={() => handleOpenVideo()}
             >
-              <MonitorFrame
-                src="/assets/screens/cdu-atm-column-pfd.png"
-                alt="Atmospheric Distillation Column PFD Console"
-                title="CDU-101 ATM COLUMN · PFD CONSOLE"
-                caption={
-                  dict?.hero?.floatingCaption ||
-                  'Atmospheric Crude Distillation (CDU) — Dynamic Process Console'
-                }
-                priority={true}
-              />
-
-              {/* Centered Play Button Overlay */}
-              <div className="absolute inset-0 flex items-center justify-center bg-slate-900/40 rounded-xl transition-opacity group-hover:bg-slate-900/30">
-                <div className="flex items-center gap-3 rounded-full bg-white px-5 py-3 text-sm font-bold text-slate-900 shadow-xl transition-transform group-hover:scale-105">
-                  <Play className="h-4 w-4 fill-current text-red-600" />
-                  <span>{locale === 'ar' ? 'تشغيل الفيديو التجريبي' : 'Play Video Demo'}</span>
+              <div className="flex items-center justify-between px-3 py-2 text-[11px] font-mono text-slate-500 border-b border-slate-100">
+                <div className="flex items-center gap-1.5">
+                  <span className="h-2 w-2 rounded-full bg-slate-300" />
+                  <span className="h-2 w-2 rounded-full bg-slate-300" />
+                  <span className="h-2 w-2 rounded-full bg-slate-300" />
+                  <span className="ms-2 font-semibold text-slate-700">CDU-101 ATM COLUMN · PFD</span>
                 </div>
+                <span className="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-semibold">100% AIR-GAPPED</span>
+              </div>
+
+              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-slate-900 mt-2">
+                <Image
+                  src="/assets/screens/cdu-atm-column-pfd.png"
+                  alt="Atmospheric Distillation Column PFD Console"
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-[1.01]"
+                  priority
+                />
+
+                {/* Gentle Play Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center bg-slate-900/35 transition-colors group-hover:bg-slate-900/25">
+                  <div className="flex items-center gap-2.5 rounded-full bg-white px-5 py-2.5 text-xs font-bold text-slate-900 shadow-md transition-transform group-hover:scale-105">
+                    <div className="flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-white">
+                      <Play className="h-2.5 w-2.5 fill-current ms-0.5" />
+                    </div>
+                    <span>{locale === 'ar' ? 'تشغيل الفيديو التجريبي' : 'Play Video Demo'}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="px-3 pt-2 pb-1 text-center text-xs text-slate-500">
+                {locale === 'ar'
+                  ? 'شاشة محاكاة لبرج التقطير الجوي (CDU) متطابقة 1:1 مع أنظمة التحكم الموزع'
+                  : 'Authentic 1:1 DCS simulation screen of an atmospheric crude distillation column'}
               </div>
             </div>
           </div>
