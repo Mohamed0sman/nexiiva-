@@ -23,7 +23,7 @@ export function FinalCtaSection({ locale, dict }: FinalCtaSectionProps) {
   ];
 
   return (
-    <section className="relative py-24 bg-[#0A192F] overflow-hidden text-center border-t border-slate-800">
+    <section className="relative py-16 sm:py-20 bg-[#0A192F] overflow-hidden text-center border-t border-slate-800">
       <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 flex flex-col items-center">
         {/* Brand Logo & Eyebrow */}
         <NexiivaLogo variant="light" className="h-9 w-auto mb-6" />

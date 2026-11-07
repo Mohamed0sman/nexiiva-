@@ -53,7 +53,7 @@ export function SolutionsSection({ locale, dict }: SolutionsSectionProps) {
   ];
 
   return (
-    <section className="relative py-24 bg-slate-50 border-b border-slate-200">
+    <section className="relative py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-14">
           <div className="text-xs font-mono font-bold tracking-wider text-slate-500 uppercase">

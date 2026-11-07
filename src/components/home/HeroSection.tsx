@@ -29,7 +29,7 @@ export function HeroSection({ locale }: HeroSectionProps) {
   };
 
   return (
-    <section className="relative bg-[#0A192F] text-white pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden border-b border-slate-800">
+    <section className="relative bg-[#0A192F] text-white pt-16 pb-16 lg:pt-20 lg:pb-20 overflow-hidden border-b border-slate-800">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-14">
           {/* Left Column: Corporate Headline, Vision, CTAs */}

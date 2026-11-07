@@ -98,7 +98,7 @@ export function CorporateProjects({ locale }: CorporateProjectsProps) {
   ];
 
   return (
-    <section className="relative py-24 bg-white border-b border-slate-200" id="projects">
+    <section className="relative py-16 sm:py-20 bg-white border-b border-slate-200" id="projects">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">

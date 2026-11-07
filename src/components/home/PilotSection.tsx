@@ -61,7 +61,7 @@ export function PilotSection({ locale, dict }: PilotSectionProps) {
   ];
 
   return (
-    <section className="relative py-24 bg-slate-50 overflow-hidden border-b border-slate-200">
+    <section className="relative py-16 sm:py-20 bg-slate-50 overflow-hidden border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Main Panel Container */}
         <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-[#0A192F] p-8 sm:p-12 lg:p-14 shadow-xl">
