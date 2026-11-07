@@ -1,13 +1,13 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 import { SectionHeader } from '@/components/SectionHeader';
 import {
   Clock,
   UserX,
   TrendingUp,
   Flame,
+  AlertTriangle,
 } from 'lucide-react';
 import type { Dict } from '@/types/dict';
 
@@ -142,17 +142,31 @@ export function ProblemSection({ locale = 'en', dict }: ProblemSectionProps) {
             })}
           </div>
 
-          {/* Right: Real Photo + Calm Economic Breakdown (5 cols) */}
+          {/* Right: Operational Incident Brief + Cost Breakdown (5 cols) */}
           <div className="lg:col-span-5 flex flex-col gap-5">
-            {/* Operator Control Room Photo */}
-            <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-slate-900 shadow-xs">
-              <Image
-                src="/assets/photos/operator-control-room.jpg"
-                alt="Console Operator Monitoring Distributed Control System"
-                width={700}
-                height={460}
-                className="h-auto w-full object-cover"
-              />
+            {/* Operational Incident Case Brief */}
+            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-xs">
+              <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+                <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">
+                  {locale === 'ar' ? 'نموذج حالة تشغيلية واقعية' : 'OPERATIONAL INCIDENT MODEL'}
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-red-50 px-2.5 py-0.5 text-[11px] font-semibold text-red-700 border border-red-200">
+                  <AlertTriangle className="h-3 w-3 text-red-600" />
+                  <span>{locale === 'ar' ? 'إغلاق اضطراري كامل للوحدة' : 'Full Unit Emergency Trip'}</span>
+                </span>
+              </div>
+
+              <h4 className="mt-4 text-base font-bold text-[#0A192F]">
+                {locale === 'ar'
+                  ? 'وحدة التقطير الجوي (CDU) — انقطاع تيار الراجع'
+                  : 'Atmospheric Column (CDU) — Reflux Pump Failure'}
+              </h4>
+
+              <p className="mt-2 text-xs text-slate-600 leading-relaxed">
+                {locale === 'ar'
+                  ? 'أدى تردد المشغل لمدة 45 ثانية في تحويل الصمامات إلى ارتفاع حرارة قمة البرج وتجاوز ضغط الأمان، مما استوجب إيقاف الوحدة كلياً وتصريف الهيدروكربونات للشعلة.'
+                  : 'A 45-second operator hesitation while switching to the standby reflux circuit resulted in overhead temperature runaway, tripping automated ESD interlocks.'}
+              </p>
             </div>
 
             {/* Cost Buildup Breakdown Card */}

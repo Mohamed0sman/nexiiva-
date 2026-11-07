@@ -1,6 +1,5 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import { setRequestLocale, getMessages } from 'next-intl/server';
 import { SectionHeader } from '@/components/SectionHeader';
 import { JourneySection } from '@/components/home/JourneySection';
@@ -173,32 +172,23 @@ export default async function AboutPage({ params }: Props) {
             {team.map((member, idx) => (
               <div
                 key={idx}
-                className="group rounded-xl border border-slate-200 bg-white p-6 text-center shadow-xs transition-colors hover:border-slate-300 flex flex-col justify-between"
+                className="group rounded-xl border border-slate-200 bg-white p-6 shadow-xs transition-colors hover:border-slate-300 flex flex-col justify-between"
               >
                 <div>
-                  {/* Portrait or Initials Avatar with clean blue ring */}
-                  <div className="mx-auto relative h-28 w-28 shrink-0 rounded-full border-2 border-blue-600 p-0.5 shadow-xs">
-                    <div className="h-full w-full rounded-full overflow-hidden bg-slate-100 flex items-center justify-center">
-                      {member.image ? (
-                        <Image
-                          src={member.image}
-                          alt={member.name}
-                          width={112}
-                          height={112}
-                          className="h-full w-full object-cover aspect-square"
-                        />
-                      ) : (
-                        <span className="text-2xl font-bold tracking-wider text-[#0A192F]">
-                          {member.initials}
-                        </span>
-                      )}
-                    </div>
+                  <div className="inline-block rounded-md bg-slate-50 border border-slate-200/80 px-2.5 py-1 text-[10px] font-bold text-[#1D4ED8] tracking-wider mb-4">
+                    {idx === 0
+                      ? (locale === 'ar' ? 'نمذجة العمليات والمحاكاة' : 'PROCESS MODELING')
+                      : idx === 1
+                      ? (locale === 'ar' ? 'معمارية محركات المحاكاة' : 'SYSTEMS ARCHITECTURE')
+                      : idx === 2
+                      ? (locale === 'ar' ? 'الحوكمة والاستشارات' : 'STRATEGIC ADVISORY')
+                      : (locale === 'ar' ? 'النمو التجاري والشراكات' : 'COMMERCIAL GROWTH')}
                   </div>
 
-                  <h3 className="mt-5 text-lg font-bold text-[#0A192F] group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-base font-bold text-[#0A192F] group-hover:text-blue-600 transition-colors">
                     {member.name}
                   </h3>
-                  <p className="text-xs font-semibold text-blue-600 mt-1">
+                  <p className="text-xs font-semibold text-slate-700 mt-1">
                     {member.role}
                   </p>
 
@@ -207,11 +197,9 @@ export default async function AboutPage({ params }: Props) {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-100 flex justify-center">
-                  <span className="inline-flex items-center gap-1.5 text-[11px] font-medium text-slate-500">
-                    <LinkedinIcon className="h-3.5 w-3.5 text-blue-600" />
-                    <span>Nexiiva Executive Team</span>
-                  </span>
+                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+                  <span className="font-medium">Nexiiva Executive</span>
+                  <LinkedinIcon className="h-3.5 w-3.5 text-blue-600" />
                 </div>
               </div>
             ))}

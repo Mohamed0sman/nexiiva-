@@ -62,26 +62,26 @@ export default async function HomePage({ params }: Props) {
         </div>
       </section>
 
-      {/* 7. WHY NEXIIVA */}
-      <WhyNexiivaSection locale={locale} dict={messages} />
-
-      {/* 8. HOW WE COMPARE */}
-      <ComparisonSection locale={locale} dict={messages} />
-
-      {/* 9. SOLUTIONS */}
+      {/* 7. SOLUTIONS SUITE */}
       <SolutionsSection locale={locale} dict={messages} />
 
-      {/* 10. INDUSTRIES */}
+      {/* 8. INDUSTRIES COVERED */}
       <IndustriesSection locale={locale} dict={messages} />
 
-      {/* 11. OUR JOURNEY */}
-      <JourneySection dict={messages} />
+      {/* 9. WHY NEXIIVA (ENGINEERING CAPABILITIES) */}
+      <WhyNexiivaSection locale={locale} dict={messages} />
 
-      {/* 12. PILOT PROGRAMME */}
+      {/* 10. TECHNICAL COMPARISON */}
+      <ComparisonSection locale={locale} dict={messages} />
+
+      {/* 11. PILOT PROGRAMME */}
       <PilotSection locale={locale} dict={messages} />
 
-      {/* 13. Leadership & Founding Team */}
+      {/* 12. EXECUTIVE LEADERSHIP & FOUNDING TEAM */}
       <LeadershipSection locale={locale} dict={messages} />
+
+      {/* 13. OUR JOURNEY & ROADMAP */}
+      <JourneySection dict={messages} />
 
       {/* 14. Responsibility / Safety block */}
       <ResponsibilitySection locale={locale} dict={messages} />

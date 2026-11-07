@@ -33,19 +33,6 @@ export function HeroSection({ locale, dict }: HeroSectionProps) {
 
   return (
     <section className="relative bg-[#0A192F] text-white pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden border-b border-slate-800">
-      {/* Subtle authentic industrial refinery background */}
-      <div className="absolute inset-0 pointer-events-none opacity-20">
-        <Image
-          src="/assets/photos/refinery-dusk.jpg"
-          alt="Industrial Refinery Background"
-          fill
-          priority
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0A192F] via-[#0A192F]/90 to-[#0A192F]/70" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-transparent to-[#0A192F]/80" />
-      </div>
-
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-12">
           {/* Left Column: Headline, Subtitle, CTAs */}

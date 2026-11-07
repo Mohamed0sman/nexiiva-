@@ -1,8 +1,7 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
-import { Quote, ShieldCheck } from 'lucide-react';
+import { Quote, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import type { Dict } from '@/types/dict';
 
 interface LeadershipSectionProps {
@@ -10,138 +9,129 @@ interface LeadershipSectionProps {
   dict: Dict;
 }
 
-export function LeadershipSection({ dict }: LeadershipSectionProps) {
-  const members = dict?.leadership?.members || [
+export function LeadershipSection({ locale = 'en', dict }: LeadershipSectionProps) {
+  const members = [
     {
-      name: 'Mostafa Adel',
-      role: 'Founder & CEO',
-      bio: 'Process simulation specialist and chemical engineer focused on accessible high-fidelity dynamic modeling for energy plants.',
-      image: '/assets/team/mostafa-adel.jpg',
-      initials: 'MA',
+      name: locale === 'ar' ? 'مصطفى عادل' : 'Mostafa Adel',
+      role: locale === 'ar' ? 'المؤسس والرئيس التنفيذي' : 'Founder & CEO',
+      domain: locale === 'ar' ? 'نمذجة العمليات والمحاكاة' : 'PROCESS MODELING & SIMULATION',
+      bio:
+        locale === 'ar'
+          ? 'مهندس كيميائي ومتخصص في النمذجة الديناميكية للعمليات البترولية وتطوير أنظمة تدريب المشغلين.'
+          : 'Process simulation specialist and chemical engineer focused on accessible high-fidelity dynamic modeling for energy plants.',
     },
     {
-      name: 'Mohamed Osman',
-      role: 'Co-Founder & CTO',
-      bio: 'Software systems architect specializing in dynamic calculation engines, real-time thermodynamics, and air-gapped DCS emulation.',
-      image: '/assets/team/mohamed-osman.jpg',
-      initials: 'MO',
+      name: locale === 'ar' ? 'محمد عثمان' : 'Mohamed Osman',
+      role: locale === 'ar' ? 'شريك مؤسس والرئيس التقني (CTO)' : 'Co-Founder & CTO',
+      domain: locale === 'ar' ? 'معمارية محركات المحاكاة' : 'SIMULATION ENGINE ARCHITECTURE',
+      bio:
+        locale === 'ar'
+          ? 'معماري أنظمة برمجية متخصص في محركات الحسابات الديناميكية ومحاكاة شاشات DCS المعزولة أمنياً.'
+          : 'Software systems architect specializing in dynamic calculation engines, real-time thermodynamics, and air-gapped DCS emulation.',
     },
     {
-      name: 'Gehad Ashraf',
-      role: 'Co-Founder, Business Advisor & Mentor',
-      bio: 'Strategic operations mentor with deep cross-border expertise in regional venture growth, industrial partnerships, and corporate governance.',
-      image: null,
-      initials: 'GA',
+      name: locale === 'ar' ? 'جهاد أشرف' : 'Gehad Ashraf',
+      role: locale === 'ar' ? 'شريك مؤسس ومستشار الأعمال' : 'Co-Founder, Business Advisor & Mentor',
+      domain: locale === 'ar' ? 'الحوكمة والاستشارات الاستراتيجية' : 'STRATEGIC ADVISORY & GOVERNANCE',
+      bio:
+        locale === 'ar'
+          ? 'مستشار استراتيجي في الحوكمة المؤسسية والشراكات الإقليمية ونمو المشاريع الصناعية.'
+          : 'Strategic operations mentor with deep cross-border expertise in regional venture growth, industrial partnerships, and corporate governance.',
     },
     {
-      name: 'Rodayna Emam',
-      role: 'Co-Founder, Business Development',
-      bio: 'Commercial growth strategist leading refinery client engagement, industrial pilot contracts, and GCC expansion.',
-      image: null,
-      initials: 'RE',
+      name: locale === 'ar' ? 'ردينة إمام' : 'Rodayna Emam',
+      role: locale === 'ar' ? 'شريك مؤسس وتطوير الأعمال' : 'Co-Founder, Business Development',
+      domain: locale === 'ar' ? 'النمو التجاري والشراكات' : 'COMMERCIAL GROWTH & PARTNERSHIPS',
+      bio:
+        locale === 'ar'
+          ? 'مسؤولة النمو التجاري وإدارة عقود المشاريع التجريبية والتوسع في قطاع التكرير والطاقة.'
+          : 'Commercial growth strategist leading refinery client engagement, industrial pilot contracts, and GCC expansion.',
     },
   ];
 
   return (
-    <section className="relative py-24 bg-[#0A192F] text-white overflow-hidden border-b border-slate-800">
+    <section className="relative py-24 bg-white overflow-hidden border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* CEO Quote Card */}
-        <div className="relative rounded-2xl border border-slate-700/80 bg-slate-900/60 p-8 sm:p-12 shadow-sm backdrop-blur-sm">
-          <Quote className="h-10 w-10 text-blue-400/60" />
+        {/* Executive Keynote Mission Quote */}
+        <div className="mx-auto max-w-4xl text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1 text-xs font-semibold text-slate-700">
+            <ShieldCheck className="h-4 w-4 text-emerald-600" />
+            <span>
+              {dict?.leadership?.teamEyebrow ||
+                (locale === 'ar' ? 'القيادة وفريق العمل' : 'LEADERSHIP & FOUNDERS')}
+            </span>
+          </div>
 
-          {/* Quote Body */}
-          <blockquote className="mt-4 text-xl sm:text-2xl lg:text-3xl font-medium text-white leading-relaxed tracking-tight">
-            &ldquo;
-            {dict?.leadership?.quote ||
-              'Our mission is to ensure every control room technician has faced their worst-case emergency hundreds of times in simulation before ever touching live plant valves.'}
-            &rdquo;
-          </blockquote>
+          <div className="relative mt-6">
+            <Quote className="mx-auto h-8 w-8 text-blue-200" />
+            <blockquote className="mt-2 text-xl sm:text-2xl lg:text-3xl font-medium text-[#0A192F] leading-relaxed tracking-tight">
+              &ldquo;
+              {dict?.leadership?.quote ||
+                (locale === 'ar'
+                  ? 'هدفنا أن يمارس كل مهندس ومشغل في غرف التحكم أعتى حالات الطوارئ مئات المرات في بيئة المحاكاة الافتراضية قبل أن يتعامل مع صمام حي في المنشأة الصناعية.'
+                  : 'Our mission is to ensure every control room technician has faced their worst-case emergency hundreds of times in simulation before ever touching live plant valves.')}
+              &rdquo;
+            </blockquote>
 
-          {/* Founder Profile Details */}
-          <div className="mt-8 pt-8 border-t border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-            <div className="flex items-center gap-4">
-              <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border-2 border-blue-500 shadow-sm">
-                <Image
-                  src="/assets/team/mostafa-adel.jpg"
-                  alt="Mostafa Adel, Founder & CEO"
-                  width={56}
-                  height={56}
-                  className="h-full w-full object-cover aspect-square"
-                />
-              </div>
-
-              <div>
-                <h4 className="text-base font-bold text-white">
-                  {dict?.leadership?.author || 'Mostafa Adel'}
-                </h4>
-                <p className="text-xs text-blue-300/80">
-                  {dict?.leadership?.role || 'Founder & CEO, Nexiiva'}
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-2 rounded-full border border-slate-700/80 bg-slate-800/80 px-4 py-1.5 text-xs text-slate-300">
-              <ShieldCheck className="h-4 w-4 text-emerald-400" />
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs text-slate-500">
+              <span className="font-bold text-[#0A192F]">
+                {dict?.leadership?.author || (locale === 'ar' ? 'مصطفى عادل' : 'Mostafa Adel')}
+              </span>
+              <span>·</span>
               <span>
-                {dict?.leadership?.note ||
-                  'Committed to Operational Excellence & Plant Safety'}
+                {dict?.leadership?.role || (locale === 'ar' ? 'المؤسس والرئيس التنفيذي، نكسيفا' : 'Founder & CEO, Nexiiva')}
+              </span>
+              <span>·</span>
+              <span className="text-emerald-700 font-medium">
+                {dict?.leadership?.note || (locale === 'ar' ? 'ملتزمون بسلامة المنشآت الحيوية' : 'Committed to Plant Safety')}
               </span>
             </div>
           </div>
         </div>
 
-        {/* Founding & Leadership Team Grid */}
-        <div className="mt-20">
-          <div className="text-center max-w-3xl mx-auto">
-            <span className="inline-block text-xs font-semibold text-blue-400 tracking-wider">
-              {dict?.leadership?.teamEyebrow || 'LEADERSHIP & FOUNDERS'}
-            </span>
-            <h2 className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">
-              {dict?.leadership?.teamTitle || 'The Engineering & Executive Team'}
-            </h2>
-            <p className="mt-3 text-sm sm:text-base text-slate-400">
+        {/* Founding & Leadership Team Grid (Pure Typography & Clean Structural Cards — No Photos) */}
+        <div className="mt-16 pt-12 border-t border-slate-100">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <h3 className="text-xl sm:text-2xl font-bold text-[#0A192F]">
+              {dict?.leadership?.teamTitle ||
+                (locale === 'ar' ? 'الفريق القيادي والمهندسون المؤسسون' : 'The Engineering & Executive Team')}
+            </h3>
+            <p className="mt-2 text-xs sm:text-sm text-slate-600">
               {dict?.leadership?.teamSubtitle ||
-                'Led by process simulation engineers, software systems architects, and industrial commercial leaders.'}
+                (locale === 'ar'
+                  ? 'بقيادة مهندسي محاكاة العمليات الكيميائية ومعماريي البرمجيات المتقدمة وخبراء تطوير الأعمال الصناعية.'
+                  : 'Led by process simulation engineers, software systems architects, and industrial commercial leaders.')}
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {members.map((member, idx) => (
               <div
                 key={idx}
-                className="group rounded-xl border border-slate-700/80 bg-slate-900/50 p-6 flex flex-col justify-between hover:border-blue-500/50 transition-colors"
+                className="group relative flex flex-col justify-between rounded-xl border border-slate-200 bg-slate-50/60 p-6 hover:border-slate-300 hover:bg-white transition-all duration-200 shadow-xs"
               >
                 <div>
-                  {/* Portrait or Monogram Avatar */}
-                  <div className="mx-auto relative h-24 w-24 shrink-0 rounded-full border-2 border-blue-500/80 p-0.5 shadow-sm">
-                    <div className="h-full w-full rounded-full overflow-hidden bg-slate-800 flex items-center justify-center">
-                      {member.image ? (
-                        <Image
-                          src={member.image}
-                          alt={member.name}
-                          width={96}
-                          height={96}
-                          className="h-full w-full object-cover aspect-square"
-                        />
-                      ) : (
-                        <span className="text-xl font-bold tracking-wider text-blue-300">
-                          {member.initials}
-                        </span>
-                      )}
-                    </div>
+                  {/* Discipline / Domain Tag */}
+                  <div className="inline-block rounded-md bg-white border border-slate-200/80 px-2.5 py-1 text-[10px] font-bold text-[#1D4ED8] tracking-wider">
+                    {member.domain}
                   </div>
 
-                  <div className="mt-5 text-center">
-                    <h3 className="text-base font-bold text-white group-hover:text-blue-300 transition-colors">
-                      {member.name}
-                    </h3>
-                    <p className="mt-1 text-xs font-medium text-blue-400">
-                      {member.role}
-                    </p>
-                    <p className="mt-3 text-xs leading-relaxed text-slate-400 text-center">
-                      {member.bio}
-                    </p>
-                  </div>
+                  <h4 className="mt-4 text-base font-bold text-[#0A192F] group-hover:text-[#1D4ED8] transition-colors">
+                    {member.name}
+                  </h4>
+
+                  <p className="mt-1 text-xs font-semibold text-slate-700">
+                    {member.role}
+                  </p>
+
+                  <p className="mt-3 text-xs leading-relaxed text-slate-600">
+                    {member.bio}
+                  </p>
+                </div>
+
+                <div className="mt-6 pt-4 border-t border-slate-200/60 flex items-center justify-between text-[11px] text-slate-500">
+                  <span className="font-medium">Nexiiva Leadership</span>
+                  <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" />
                 </div>
               </div>
             ))}
