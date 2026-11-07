@@ -2,18 +2,18 @@ import React from 'react';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { HeroSection } from '@/components/home/HeroSection';
 import { TrustStrip } from '@/components/home/TrustStrip';
+import { ExecutiveLetter } from '@/components/home/ExecutiveLetter';
+import { CorporateProjects } from '@/components/home/CorporateProjects';
+import { SolutionsSection } from '@/components/home/SolutionsSection';
+import { IndustriesSection } from '@/components/home/IndustriesSection';
 import { ProblemSection } from '@/components/home/ProblemSection';
 import { SolutionSection } from '@/components/home/SolutionSection';
 import { HowItWorksSection } from '@/components/home/HowItWorksSection';
-import { LiveDemoConsole } from '@/components/LiveDemoConsole';
-import { SectionHeader } from '@/components/SectionHeader';
 import { WhyNexiivaSection } from '@/components/home/WhyNexiivaSection';
 import { ComparisonSection } from '@/components/home/ComparisonSection';
-import { SolutionsSection } from '@/components/home/SolutionsSection';
-import { IndustriesSection } from '@/components/home/IndustriesSection';
-import { JourneySection } from '@/components/home/JourneySection';
 import { PilotSection } from '@/components/home/PilotSection';
 import { LeadershipSection } from '@/components/home/LeadershipSection';
+import { JourneySection } from '@/components/home/JourneySection';
 import { ResponsibilitySection } from '@/components/home/ResponsibilitySection';
 import { InsightsSection } from '@/components/home/InsightsSection';
 import { FinalCtaSection } from '@/components/home/FinalCtaSection';
@@ -30,74 +30,55 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <div className="flex flex-col w-full">
-      {/* 1. HERO — Grand Stature + Services Dock + DCS Frame */}
+      {/* 1. CORPORATE HERO — Dynamic Process Simulation for Energy Facilities */}
       <HeroSection locale={locale} dict={messages} />
 
-      {/* 2. Trust & Cybersecurity Standards Strip */}
+      {/* 2. INDUSTRIAL STANDARDS & CREDIBILITY STRIP */}
       <TrustStrip locale={locale} dict={messages} />
 
-      {/* 3. THE PROBLEM — Operational Reality & Incident Cost Analysis */}
-      <ProblemSection locale={locale} dict={messages} />
+      {/* 3. EXECUTIVE COMMITMENT & FOUNDER'S LETTER (Mirroring Onspec Executive Statement) */}
+      <ExecutiveLetter locale={locale} dict={messages} />
 
-      {/* 4. THE SOLUTION — 4 Architectural Engineering Pillars */}
-      <SolutionSection locale={locale} dict={messages} />
+      {/* 4. FEATURED ENGINEERING PROJECTS & UNIT SIMULATORS (Mirroring Onspec Latest Projects) */}
+      <CorporateProjects locale={locale} dict={messages} />
 
-      {/* 5. HOW IT WORKS — Practice. Instruct. Certify. */}
-      <HowItWorksSection locale={locale} dict={messages} />
-
-      {/* 6. LIVE DEMO — "Try the console" */}
-      <section className="relative py-24 bg-[#0A192F] overflow-hidden border-b border-slate-800">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            eyebrow={
-              messages?.demo?.eyebrow ||
-              (locale === 'ar' ? 'محاكي تفاعلي حي' : 'INTERACTIVE SIMULATOR')
-            }
-            title={
-              messages?.demo?.title ||
-              (locale === 'ar' ? 'جرّب كونسول التحكم بنفسك' : 'Try the console')
-            }
-            subtitle={
-              messages?.demo?.subtitle ||
-              (locale === 'ar'
-                ? 'اختبر نموذج نكسيفا الديناميكي مباشرة في متصفحك. أطلق اضطراباً تشغيلياً على برج التقطير الجوي وراقب استجابة إنذارات DCS الفورية.'
-                : 'Experience Nexiiva’s dynamic model directly in your browser. Trigger an operational upset on the atmospheric column and watch the DCS alarms react.')
-            }
-            align="center"
-            theme="dark"
-          />
-          <LiveDemoConsole dict={messages?.demo} />
-        </div>
-      </section>
-
-      {/* 7. SOLUTIONS SUITE — Comprehensive Simulation Infrastructure */}
+      {/* 5. CORE SIMULATION CAPABILITIES & SOLUTIONS */}
       <SolutionsSection locale={locale} dict={messages} />
 
-      {/* 8. INDUSTRIES COVERED — Supported Domains & Unit Operations */}
+      {/* 6. INDUSTRIAL SECTORS & UNIT COVERAGE */}
       <IndustriesSection locale={locale} dict={messages} />
 
-      {/* 9. WHY NEXIIVA — Engineering Distinction & Technical Proof */}
+      {/* 7. OPERATIONAL REALITY & INCIDENT COST AUDIT */}
+      <ProblemSection locale={locale} dict={messages} />
+
+      {/* 8. ARCHITECTURAL ENGINEERING PILLARS */}
+      <SolutionSection locale={locale} dict={messages} />
+
+      {/* 9. QUALIFICATION CYCLE — Practice. Instruct. Certify. */}
+      <HowItWorksSection locale={locale} dict={messages} />
+
+      {/* 10. ENGINEERING DISTINCTION & TECHNICAL BENCHMARKS */}
       <WhyNexiivaSection locale={locale} dict={messages} />
 
-      {/* 10. TECHNICAL COMPARISON — 5-Dimension Economic & Technical Matrix */}
+      {/* 11. 5-DIMENSION TECHNICAL & ECONOMIC COMPARISON */}
       <ComparisonSection locale={locale} dict={messages} />
 
-      {/* 11. PILOT PROGRAMME — Structured Low-Risk Deployment */}
+      {/* 12. STRUCTURED LOW-RISK PLANT PILOT PROGRAMME */}
       <PilotSection locale={locale} dict={messages} />
 
-      {/* 12. EXECUTIVE LEADERSHIP & FOUNDING TEAM */}
+      {/* 13. EXECUTIVE LEADERSHIP & BOARD OF DIRECTORS */}
       <LeadershipSection locale={locale} dict={messages} />
 
-      {/* 13. OUR JOURNEY & ROADMAP — Engineering Progression */}
+      {/* 14. ENGINEERING MILESTONES & REGIONAL DEPLOYMENT ROADMAP */}
       <JourneySection locale={locale} dict={messages} />
 
-      {/* 14. SAFETY & RESPONSIBILITY — PSM & Environmental Mitigation */}
+      {/* 15. PROCESS SAFETY MANAGEMENT & ENVIRONMENTAL MITIGATION */}
       <ResponsibilitySection locale={locale} dict={messages} />
 
-      {/* 15. LATEST INSIGHTS — Engineering Whitepapers */}
+      {/* 16. TECHNICAL PAPERS & ENGINEERING PERSPECTIVES */}
       <InsightsSection locale={locale} dict={messages} />
 
-      {/* 16. FINAL CTA — Enterprise Consultation Action Center */}
+      {/* 17. CORPORATE HEADQUARTERS & DIRECT ENGAGEMENT ACTION CENTER */}
       <FinalCtaSection locale={locale} dict={messages} />
     </div>
   );
