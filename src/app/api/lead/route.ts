@@ -67,7 +67,7 @@ export async function POST(req: Request) {
 
         const html = `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px;">
-            <div style="background-color: #0A192F; padding: 16px; border-radius: 6px; text-align: center;">
+            <div style="background-color: #0284C7; padding: 16px; border-radius: 6px; text-align: center;">
               <h2 style="color: #ffffff; margin: 0; font-size: 20px;">NEXIIVA · NEW INQUIRY</h2>
             </div>
             <div style="padding: 20px 0;">

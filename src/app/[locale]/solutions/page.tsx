@@ -142,7 +142,7 @@ export default async function SolutionsPage({ params }: Props) {
                       </span>
                     </div>
 
-                    <h2 className="mt-4 text-2xl sm:text-3xl font-extrabold text-[#0A192F]">
+                    <h2 className="mt-4 text-2xl sm:text-3xl font-extrabold text-slate-900">
                       {sol.title}
                     </h2>
                     <p className="mt-1 font-mono-tag text-xs text-slate-500 font-semibold">
@@ -151,18 +151,18 @@ export default async function SolutionsPage({ params }: Props) {
 
                     <div className="mt-6 space-y-4 text-sm text-slate-600 leading-relaxed">
                       <div>
-                        <strong className="text-[#0A192F] block mb-1">What It Is:</strong>
+                        <strong className="text-slate-900 block mb-1">What It Is:</strong>
                         <p>{sol.whatItIs}</p>
                       </div>
 
                       <div>
-                        <strong className="text-[#0A192F] block mb-1">How It Works:</strong>
+                        <strong className="text-slate-900 block mb-1">How It Works:</strong>
                         <p>{sol.howItWorks}</p>
                       </div>
                     </div>
 
                     <div className="mt-6 pt-6 border-t border-slate-100">
-                      <strong className="text-[#0A192F] text-xs font-mono-tag uppercase tracking-wider block mb-3">
+                      <strong className="text-slate-900 text-xs font-mono-tag uppercase tracking-wider block mb-3">
                         Operational Outcomes:
                       </strong>
                       <ul className="space-y-2.5">

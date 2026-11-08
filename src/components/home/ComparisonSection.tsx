@@ -22,7 +22,7 @@ export function ComparisonSection({ locale = 'en', dict }: ComparisonSectionProp
     {
       provider: locale === 'ar' ? 'موردو أنظمة الـ DCS الكبار' : 'Legacy DCS Vendors',
       providerDesc: locale === 'ar' ? 'شركات أنظمة التحكم العالمية الكبرى' : 'Major multi-national DCS conglomerates',
-      cost: locale === 'ar' ? 'باهظ التكلفة ($1M+ CapEx)' : 'Very High ($1M+ CapEx)',
+      cost: locale === 'ar' ? 'استثمار رأسمالي ضخم' : 'Heavy Capital Expenditure',
       costPill: 'high',
       delivery: locale === 'ar' ? '12 - 24 شهراً' : '12–24 Months',
       security: locale === 'ar' ? 'أجهزة كونسول متخصصة ومغلقة' : 'Proprietary hardware required',
@@ -32,7 +32,7 @@ export function ComparisonSection({ locale = 'en', dict }: ComparisonSectionProp
     {
       provider: locale === 'ar' ? 'شركات المحاكاة الاستشارية' : 'Specialist Boutique Firms',
       providerDesc: locale === 'ar' ? 'مكاتب استشارية تبني برمجيات مخصصة' : 'Boutique simulation consultancies',
-      cost: locale === 'ar' ? 'تكلفة مرتفعة ($400K - $800K)' : 'High ($400K–$800K)',
+      cost: locale === 'ar' ? 'تكلفة استشارية مرتفعة' : 'High Boutique Consulting Retainers',
       costPill: 'medium',
       delivery: locale === 'ar' ? '6 - 12 شهراً' : '6–12 Months',
       security: locale === 'ar' ? 'تثبيت محلي مع رسوم صيانة دورية باهظة' : 'On-premise with heavy annual retainer',
@@ -42,7 +42,7 @@ export function ComparisonSection({ locale = 'en', dict }: ComparisonSectionProp
     {
       provider: locale === 'ar' ? 'نكسيفا (Nexiiva Platform)' : 'Nexiiva Platform',
       providerDesc: locale === 'ar' ? 'محاكي عمليات ديناميكي بنمذجة مؤتمتة' : 'Next-generation automated unit modeling',
-      cost: locale === 'ar' ? 'اقتصادي (~75% وفر رأسمالي)' : 'Accessible (~75% Lower CapEx)',
+      cost: locale === 'ar' ? 'نموذج مرن للمشاريع' : 'Agile & Efficient Pilot Model',
       costPill: 'low',
       delivery: locale === 'ar' ? 'أسبوع إلى أسبوعين مستهدف للبناء' : '~1–2 Weeks Build Target',
       security: locale === 'ar' ? 'تشغيل محلي معزول 100% بدون إنترنت' : '100% Air-Gapped (Zero Cloud Dependency)',
@@ -111,7 +111,7 @@ export function ComparisonSection({ locale = 'en', dict }: ComparisonSectionProp
                           <div
                             className={`font-bold ${
                               isHighlighted
-                                ? 'text-[#0A192F] text-base'
+                                ? 'text-slate-900 text-base'
                                 : 'text-slate-800'
                             }`}
                           >

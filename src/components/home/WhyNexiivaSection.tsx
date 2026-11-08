@@ -130,7 +130,7 @@ export function WhyNexiivaSection({ locale = 'en', dict }: WhyNexiivaSectionProp
                   </span>
                 </div>
 
-                <h3 className="mt-6 text-xl font-bold text-[#0A192F]">
+                <h3 className="mt-6 text-xl font-bold text-slate-900">
                   {card.title}
                 </h3>
                 <p className="mt-2.5 text-sm leading-relaxed text-slate-600">

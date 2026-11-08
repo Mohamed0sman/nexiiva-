@@ -67,7 +67,7 @@ export default async function PlatformPage({ params }: Props) {
               <span className="font-mono-tag text-xs text-[#1D4ED8] font-bold uppercase">
                 DCS-STYLE CONSOLE TABS
               </span>
-              <h3 className="text-xl font-bold text-[#0A192F] mt-1">
+              <h3 className="text-xl font-bold text-slate-900 mt-1">
                 Authentic Distributed Control System Interface
               </h3>
             </div>
@@ -79,7 +79,7 @@ export default async function PlatformPage({ params }: Props) {
                   key={idx}
                   className={`rounded-lg px-3 py-1 font-mono-tag text-xs font-semibold ${
                     idx === 0
-                      ? 'bg-[#0A192F] text-white shadow-sm'
+                      ? 'bg-sky-600 text-white shadow-sm'
                       : 'border border-slate-200 bg-slate-50 text-slate-600'
                   }`}
                 >
@@ -101,7 +101,7 @@ export default async function PlatformPage({ params }: Props) {
 
             <div className="lg:col-span-4 space-y-4">
               <div className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-                <h4 className="font-bold text-[#0A192F] flex items-center gap-2">
+                <h4 className="font-bold text-slate-900 flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-emerald-600" />
                   Multi-Stage Column Hydraulics
                 </h4>
@@ -111,7 +111,7 @@ export default async function PlatformPage({ params }: Props) {
               </div>
 
               <div className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-                <h4 className="font-bold text-[#0A192F] flex items-center gap-2">
+                <h4 className="font-bold text-slate-900 flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-emerald-600" />
                   Control Loop Cascades
                 </h4>
@@ -121,7 +121,7 @@ export default async function PlatformPage({ params }: Props) {
               </div>
 
               <div className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-                <h4 className="font-bold text-[#0A192F] flex items-center gap-2">
+                <h4 className="font-bold text-slate-900 flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-emerald-600" />
                   Alarm Suppression & Prioritization
                 </h4>
@@ -140,7 +140,7 @@ export default async function PlatformPage({ params }: Props) {
               <span className="font-mono-tag text-xs text-[#1D4ED8] font-bold uppercase">
                 HEAT INTEGRATION
               </span>
-              <h3 className="text-2xl font-bold text-[#0A192F]">
+              <h3 className="text-2xl font-bold text-slate-900">
                 Preheat Train & Shell-and-Tube Exchangers
               </h3>
               <p className="text-sm text-slate-600 leading-relaxed">
@@ -190,7 +190,7 @@ export default async function PlatformPage({ params }: Props) {
               <span className="font-mono-tag text-xs text-[#1D4ED8] font-bold uppercase">
                 SUPERVISORY CONTROL
               </span>
-              <h3 className="text-2xl font-bold text-[#0A192F]">
+              <h3 className="text-2xl font-bold text-slate-900">
                 Instructor Console & Scenario Architect
               </h3>
               <p className="text-sm text-slate-600 leading-relaxed">
@@ -231,7 +231,7 @@ export default async function PlatformPage({ params }: Props) {
               <tbody className="divide-y divide-slate-100 text-sm">
                 {specs.map((item, i) => (
                   <tr key={i} className="hover:bg-slate-50 transition-colors">
-                    <td className="py-4 px-6 font-semibold text-[#0A192F] font-mono-tag text-xs">
+                    <td className="py-4 px-6 font-semibold text-slate-900 font-mono-tag text-xs">
                       {item.feature}
                     </td>
                     <td className="py-4 px-6 text-slate-600">

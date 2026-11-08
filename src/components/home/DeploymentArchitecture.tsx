@@ -56,7 +56,7 @@ export function DeploymentArchitecture({ locale }: DeploymentArchitectureProps) 
     {
       title: isAr ? 'مخالفة معايير أمن منشآت الطاقة (OT Policy Violation)' : 'Energy OT Security Non-Compliance',
       desc: isAr
-        ? 'لوائح الأمن السيبراني لمصافي البترول ومجمعات الغاز تحظر قطعياً ربط محاكيات التحكم بشبكة الإنترنت العامة.'
+        ? 'لوائح الأمن السيبراني لمصافي البترول ومجمعات الغاز تحظر قطعياً ربط شاشات التحكم الهندسية بشبكة الإنترنت العامة.'
         : 'Refinery and petrochemical cybersecurity regulations strictly forbid exposing operator control interfaces to public networks.',
     },
     {
@@ -72,21 +72,20 @@ export function DeploymentArchitecture({ locale }: DeploymentArchitectureProps) 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 rounded-full border border-sky-300 bg-sky-100/70 px-3.5 py-1 text-xs font-bold text-sky-800 uppercase tracking-wider font-mono">
-            <span className="h-2 w-2 rounded-full bg-sky-600" />
-            <span>{isAr ? 'معمارية التشغيل والأمن السيبراني' : 'DEPLOYMENT ARCHITECTURE & OT SECURITY'}</span>
+          <div className="text-xs font-mono font-bold tracking-wider text-sky-600 uppercase">
+            {isAr ? 'معمارية التشغيل والأمن السيبراني' : 'DEPLOYMENT ARCHITECTURE & OT SECURITY'}
           </div>
 
-          <h2 className="mt-4 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          <h2 className="mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
             {isAr
-              ? 'المحاكاة المعزولة محلياً (On-Premise) مقابل الحوسبة السحابية (Cloud).'
+              ? 'معمارية التشغيل المعزول محلياً (On-Premise) مقابل الحوسبة السحابية (Cloud).'
               : 'Air-Gapped On-Premise vs. Cloud SaaS Architecture.'}
           </h2>
 
           <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
             {isAr
-              ? 'لماذا تفرض مصافي التكرير ومجمعات البتروكيماويات ومنشآت الطاقة تشغيل محاكيات الـ OTS داخل شبكتها المعزولة محلياً وتستبعد الحلول السحابية العامة تماماً.'
-              : 'Why critical energy, refining, and gas facilities mandate physically isolated offline simulation environments over public cloud services.'}
+              ? 'لماذا تفرض مصافي التكرير ومجمعات البتروكيماويات ومنشآت الطاقة تشغيل منظومات التوأم الرقمي والتحكم داخل شبكتها المعزولة محلياً وتستبعد الحلول السحابية العامة تماماً.'
+              : 'Why critical energy, refining, and gas facilities mandate physically isolated offline digital twin environments over public cloud services.'}
           </p>
         </div>
 
@@ -116,8 +115,8 @@ export function DeploymentArchitecture({ locale }: DeploymentArchitectureProps) 
               {/* Description */}
               <p className="mt-4 text-xs sm:text-sm text-slate-600 leading-relaxed">
                 {isAr
-                  ? 'برمجية مستقلة يتم تثبيتها مباشرة على أجهزة المحطة المحلية، لتمنح المنشأة ملكية كاملة للنموذج وسرية مطلقة دون أي اعتماد على خوادم خارجية.'
-                  : 'Self-contained simulator deployed directly on plant hardware, giving facilities total data sovereignty, zero cloud exposure, and uncompromised real-time control.'}
+                  ? 'منظومة مستقلة يتم تثبيتها مباشرة على أجهزة المحطة المحلية، لتمنح المنشأة ملكية كاملة للتوأم الرقمي وسرية مطلقة دون أي اعتماد على خوادم خارجية.'
+                  : 'Self-contained digital twin system deployed directly on plant hardware, giving facilities total data sovereignty, zero cloud exposure, and uncompromised real-time control.'}
               </p>
 
               {/* Feature List */}
@@ -155,7 +154,7 @@ export function DeploymentArchitecture({ locale }: DeploymentArchitectureProps) 
                     <span>{isAr ? 'البرمجيات السحابية العامة' : 'GENERIC CLOUD / SAAS'}</span>
                   </span>
                   <h3 className="mt-2 text-xl font-extrabold text-slate-700">
-                    {isAr ? 'الحوسبة السحابية (Cloud & Web Simulators)' : 'Multi-Tenant Cloud / SaaS Models'}
+                    {isAr ? 'الحوسبة السحابية متعددة المستأجرين (Multi-Tenant Cloud)' : 'Multi-Tenant Cloud / SaaS Models'}
                   </h3>
                 </div>
                 <div className="hidden sm:block text-end">
@@ -168,8 +167,8 @@ export function DeploymentArchitecture({ locale }: DeploymentArchitectureProps) 
               {/* Description */}
               <p className="mt-4 text-xs sm:text-sm text-slate-500 leading-relaxed">
                 {isAr
-                  ? 'منصات سحابية تعتمد على استضافة نماذج المحاكاة خارج المنشأة عبر متصفحات الإنترنت، مما يولد مخاطر سيبرانية وتأخيرات في الاستجابة اللحظية.'
-                  : 'Web-based simulators hosting physics models on third-party public clouds, introducing severe cybersecurity compliance issues and latency jitters.'}
+                  ? 'منصات سحابية تعتمد على استضافة النماذج خارج المنشأة عبر متصفحات الإنترنت، مما يولد مخاطر سيبرانية وتأخيرات في الاستجابة اللحظية.'
+                  : 'Web-based systems hosting physics models on third-party public clouds, introducing severe cybersecurity compliance issues and latency jitters.'}
               </p>
 
               {/* Feature List */}

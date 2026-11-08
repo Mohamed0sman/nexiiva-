@@ -42,31 +42,31 @@ export default async function PrivacyPage({ params }: Props) {
 
         <div className="mt-10 rounded-2xl border border-slate-200 bg-white p-8 sm:p-10 shadow-sm space-y-8 text-sm leading-relaxed text-slate-600">
           <section className="space-y-3">
-            <h2 className="text-lg font-bold text-[#0A192F]">1. Industrial Data Confidentiality</h2>
+            <h2 className="text-lg font-bold text-slate-900">1. Industrial Data Confidentiality</h2>
             <p>
               Nexiiva recognizes that process flow diagrams (P&IDs), operating envelopes, stream compositions, and production rates constitute confidential intellectual property of our client operating companies. All engineering exchanges are governed by bilateral non-disclosure agreements (NDAs) prior to data transfer.
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-lg font-bold text-[#0A192F]">2. Offline & Air-Gapped Operation</h2>
+            <h2 className="text-lg font-bold text-slate-900">2. Offline & Air-Gapped Operation</h2>
             <p>
               Nexiiva software is architected to operate fully disconnected from the public internet. Simulation runtime calculations, DCS screen telemetry, and instructor fault logs remain strictly local to client workstations or private on-premises servers. No telemetry or plant performance data is transmitted externally.
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-lg font-bold text-[#0A192F]">3. Information We Collect on Public Web Properties</h2>
+            <h2 className="text-lg font-bold text-slate-900">3. Information We Collect on Public Web Properties</h2>
             <p>
               On this public website, we only collect information explicitly submitted via our contact and pilot application forms (e.g., name, corporate email, company name, unit type). We do not sell or lease personal contact details to third-party marketing entities.
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-lg font-bold text-[#0A192F]">4. Inquiries & Data Rights</h2>
+            <h2 className="text-lg font-bold text-slate-900">4. Inquiries & Data Rights</h2>
             <p>
               For legal inquiries or requests to purge submitted contact data, contact{' '}
-              <a href="mailto:Mostafa.adel.esmaiel@gmail.com" className="font-semibold text-[#1D4ED8] hover:underline">
+              <a href="mailto:Mostafa.adel.esmaiel@gmail.com" className="font-semibold text-sky-600 hover:underline">
                 Mostafa.adel.esmaiel@gmail.com
               </a>.
             </p>

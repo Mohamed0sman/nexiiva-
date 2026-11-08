@@ -3,11 +3,11 @@
 @layer base {
   :root {
     --navy-950: #050D1A;
-    --navy-900: #0A192F;
+    --navy-900: #0F172A;
     --navy-800: #0F2744;
     --navy-700: #1B365D;
-    --blue-600: #1D4ED8;
-    --blue-500: #2563EB;
+    --blue-600: #0284C7;
+    --blue-500: #0EA5E9;
 
     --slate-50: #F8FAFC;
     --slate-100: #F1F5F9;
@@ -86,15 +86,15 @@ body {
 
 /* Corporate Solid Buttons & Accents - Clean & Calm */
 .brand-gradient {
-  background-color: #0A192F;
+  background-color: #0284C7;
 }
 
 .brand-gradient:hover {
-  background-color: #1E293B;
+  background-color: #0369A1;
 }
 
 .brand-gradient-text {
-  color: #1D4ED8;
+  color: #0284C7;
 }
 
 .font-mono-tag {

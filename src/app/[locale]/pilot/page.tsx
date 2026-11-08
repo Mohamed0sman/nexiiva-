@@ -93,7 +93,7 @@ export default async function PilotPage({ params }: Props) {
                 TARGET BUILD TIMELINE
               </span>
               <div className="mt-2 flex items-baseline gap-2">
-                <span className="text-3xl font-extrabold text-[#0A192F] font-mono-tag">~1 Week</span>
+                <span className="text-3xl font-extrabold text-slate-900 font-mono-tag">~1 Week</span>
                 <span className="text-xs text-slate-500">target build time per unit</span>
               </div>
               <p className="mt-2 text-xs text-slate-600 leading-relaxed">
@@ -102,7 +102,7 @@ export default async function PilotPage({ params }: Props) {
             </div>
 
             <div className="rounded-xl border border-slate-200 bg-white p-7 shadow-sm">
-              <h3 className="text-base font-bold text-[#0A192F] mb-4">
+              <h3 className="text-base font-bold text-slate-900 mb-4">
                 What Is Needed from the Client:
               </h3>
               <div className="space-y-4">
@@ -112,7 +112,7 @@ export default async function PilotPage({ params }: Props) {
                       {input.step}
                     </span>
                     <div>
-                      <h4 className="text-sm font-bold text-[#0A192F]">{input.title}</h4>
+                      <h4 className="text-sm font-bold text-slate-900">{input.title}</h4>
                       <p className="text-xs text-slate-600 mt-1 leading-relaxed">
                         {input.desc}
                       </p>
@@ -125,7 +125,7 @@ export default async function PilotPage({ params }: Props) {
             <div className="rounded-xl border border-slate-200 bg-white p-6 text-xs text-slate-600 space-y-2 font-mono-tag shadow-sm">
               <div className="flex items-center gap-2 text-emerald-700">
                 <ShieldCheck className="h-4 w-4" />
-                <span className="font-bold text-[#0A192F]">Mutual NDA Executed Prior to Data Transfer</span>
+                <span className="font-bold text-slate-900">Mutual NDA Executed Prior to Data Transfer</span>
               </div>
               <p>All client proprietary process data remains strictly confidential and stored on air-gapped systems.</p>
             </div>
@@ -153,7 +153,7 @@ export default async function PilotPage({ params }: Props) {
                 key={idx}
                 className="group rounded-xl border border-slate-200 bg-white p-6 transition-colors shadow-sm open:border-[#1D4ED8] open:bg-blue-50/30"
               >
-                <summary className="flex cursor-pointer items-center justify-between font-bold text-[#0A192F] hover:text-[#1D4ED8]">
+                <summary className="flex cursor-pointer items-center justify-between font-bold text-slate-900 hover:text-[#1D4ED8]">
                   <span className="text-base pe-4">{faq.q}</span>
                   <span className="ms-2 font-mono-tag text-base text-[#1D4ED8] font-bold group-open:rotate-45 transition-transform duration-200">
                     +

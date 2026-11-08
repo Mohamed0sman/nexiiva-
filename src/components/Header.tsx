@@ -65,26 +65,26 @@ export function Header({ locale, dict }: HeaderProps) {
     {
       href: `/${locale}/solutions#ots`,
       icon: Monitor,
-      title: dict?.nav?.solutionsMega?.otsTitle || 'Operator Training Simulator',
-      desc: dict?.nav?.solutionsMega?.otsDesc || 'Dynamic DCS console emulation with live multi-component physics.',
+      title: dict?.nav?.solutionsMega?.otsTitle || (locale === 'ar' ? 'التوأم الرقمي ومطابقة DCS' : 'Process Digital Twins & DCS'),
+      desc: dict?.nav?.solutionsMega?.otsDesc || (locale === 'ar' ? 'مطابقة ديناميكية متكاملة 1:1 مع شاشات كونسول DCS وفيزياء حية.' : 'Dynamic DCS console emulation with live multi-component physics.'),
     },
     {
       href: `/${locale}/solutions#builder`,
       icon: Cpu,
-      title: dict?.nav?.solutionsMega?.builderTitle || 'AI Unit Builder',
-      desc: dict?.nav?.solutionsMega?.builderDesc || 'Rapid unit generation from engineering flowsheets and process logic.',
+      title: dict?.nav?.solutionsMega?.builderTitle || (locale === 'ar' ? 'محرك النمذجة الهندسية للوحدات' : 'Unit Modeling Engine'),
+      desc: dict?.nav?.solutionsMega?.builderDesc || (locale === 'ar' ? 'بناء سريع للتوائم الرقمية بالاعتماد على مخططات التدفق الهندسية.' : 'Rapid unit generation from engineering flowsheets and process logic.'),
     },
     {
       href: `/${locale}/solutions#console`,
       icon: Sliders,
-      title: dict?.nav?.solutionsMega?.consoleTitle || 'Instructor Console',
-      desc: dict?.nav?.solutionsMega?.consoleDesc || 'Real-time fault injection, trainee monitoring, and emergency freezes.',
+      title: dict?.nav?.solutionsMega?.consoleTitle || (locale === 'ar' ? 'محطة التحكم الإشرافي وإدارة الطوارئ' : 'Supervisory Station'),
+      desc: dict?.nav?.solutionsMega?.consoleDesc || (locale === 'ar' ? 'حقن الأعطال التشغيلية فورياً، ومراقبة الكوادر، والتجميد الطارئ.' : 'Real-time fault injection, trainee monitoring, and emergency freezes.'),
     },
     {
       href: `/${locale}/solutions#certification`,
       icon: Award,
-      title: dict?.nav?.solutionsMega?.certTitle || 'Scoring & Certification',
-      desc: dict?.nav?.solutionsMega?.certDesc || 'Automated performance evaluation with objective error breakdown.',
+      title: dict?.nav?.solutionsMega?.certTitle || (locale === 'ar' ? 'منظومة تقييم واعتماد الكفاءة (SOP)' : 'SOP Qualification & Compliance'),
+      desc: dict?.nav?.solutionsMega?.certDesc || (locale === 'ar' ? 'تقييم أداء فوري وموضوعي مع تحليل دقيق للاستجابة.' : 'Automated performance evaluation with objective error breakdown.'),
     },
   ];
 

@@ -13,20 +13,20 @@ export function LeadershipSection({ locale = 'en', dict }: LeadershipSectionProp
     {
       name: locale === 'ar' ? 'مصطفى عادل' : 'Mostafa Adel',
       role: locale === 'ar' ? 'المؤسس والرئيس التنفيذي' : 'Founder & CEO',
-      domain: locale === 'ar' ? 'نمذجة العمليات والمحاكاة' : 'PROCESS MODELING & SIMULATION',
+      domain: locale === 'ar' ? 'هندسة العمليات والتوائم الرقمية' : 'PROCESS ENGINEERING & DIGITAL TWINS',
       bio:
         locale === 'ar'
-          ? 'مهندس كيميائي ومتخصص في النمذجة الديناميكية للعمليات البترولية وتطوير أنظمة تدريب المشغلين.'
-          : 'Process simulation specialist and chemical engineer focused on accessible high-fidelity dynamic modeling for energy plants.',
+          ? 'مهندس كيميائي ومتخصص في النمذجة الديناميكية للعمليات البترولية وتطوير أنظمة التشغيل والتحكم.'
+          : 'Chemical engineer specializing in high-fidelity dynamic modeling, process thermodynamics, and plant operations.',
     },
     {
       name: locale === 'ar' ? 'محمد عثمان' : 'Mohamed Osman',
       role: locale === 'ar' ? 'شريك مؤسس والرئيس التقني (CTO)' : 'Co-Founder & CTO',
-      domain: locale === 'ar' ? 'معمارية محركات المحاكاة' : 'SIMULATION ENGINE ARCHITECTURE',
+      domain: locale === 'ar' ? 'معمارية النظم والحسابات الديناميكية' : 'COMPUTATIONAL SYSTEMS & ARCHITECTURE',
       bio:
         locale === 'ar'
-          ? 'معماري أنظمة برمجية متخصص في محركات الحسابات الديناميكية ومحاكاة شاشات DCS المعزولة أمنياً.'
-          : 'Software systems architect specializing in dynamic calculation engines, real-time thermodynamics, and air-gapped DCS emulation.',
+          ? 'معماري أنظمة برمجية متخصص في محركات الحسابات الديناميكية ومطابقة أنظمة التحكم الموزع DCS.'
+          : 'Software systems architect specializing in dynamic calculation engines, real-time thermodynamics, and DCS console integration.',
     },
     {
       name: locale === 'ar' ? 'جهاد أشرف' : 'Gehad Ashraf',
@@ -63,8 +63,8 @@ export function LeadershipSection({ locale = 'en', dict }: LeadershipSectionProp
               &ldquo;
               {dict?.leadership?.quote ||
                 (locale === 'ar'
-                  ? 'هدفنا أن يمارس كل مهندس ومشغل في غرف التحكم أعتى حالات الطوارئ مئات المرات في بيئة المحاكاة الافتراضية قبل أن يتعامل مع صمام حي في المنشأة الصناعية.'
-                  : 'Our mission is to ensure every control room technician has faced their worst-case emergency hundreds of times in simulation before ever touching live plant valves.')}
+                  ? 'هدفنا تمكين مهندسي ومشغلي غرف التحكم من إدارة واختبار أعقد سيناريوهات التشغيل وحالات الطوارئ بدقة متناهية قبل التعامل مع خطوط الإنتاج الحية.'
+                  : 'Our mission is to enable plant engineers and console operators to master critical plant transients hundreds of times on high-fidelity digital twins before ever touching live valves.')}
               &rdquo;
             </blockquote>
 
@@ -94,8 +94,8 @@ export function LeadershipSection({ locale = 'en', dict }: LeadershipSectionProp
             <p className="mt-2 text-xs sm:text-sm text-slate-600">
               {dict?.leadership?.teamSubtitle ||
                 (locale === 'ar'
-                  ? 'بقيادة مهندسي محاكاة العمليات الكيميائية ومعماريي البرمجيات المتقدمة وخبراء تطوير الأعمال الصناعية.'
-                  : 'Led by process simulation engineers, software systems architects, and industrial commercial leaders.')}
+                  ? 'بقيادة مهندسي العمليات البتروكيماوية ومعماريي البرمجيات المتقدمة وخبراء تطوير الأعمال الصناعية.'
+                  : 'Led by process automation engineers, software systems architects, and industrial commercial leaders.')}
             </p>
           </div>
 

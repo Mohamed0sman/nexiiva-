@@ -42,31 +42,31 @@ export default async function TermsPage({ params }: Props) {
 
         <div className="mt-10 rounded-2xl border border-slate-200 bg-white p-8 sm:p-10 shadow-sm space-y-8 text-sm leading-relaxed text-slate-600">
           <section className="space-y-3">
-            <h2 className="text-lg font-bold text-[#0A192F]">1. Scope of Pilot & Simulation Services</h2>
+            <h2 className="text-lg font-bold text-slate-900">1. Scope of Pilot & Digital Twin Services</h2>
             <p>
-              Nexiiva provides computer-based Operator Training Simulators (OTS) designed to train control room personnel on procedural handling and upset recovery. Nexiiva simulators are training and engineering study tools; they do not replace live plant Distributed Control Systems (DCS) or Safety Instrumented Systems (SIS).
+              Nexiiva provides industrial process digital twins designed to train control room personnel on procedural handling and upset recovery. Nexiiva digital twins are operational training and engineering evaluation tools; they do not replace live plant Distributed Control Systems (DCS) or Safety Instrumented Systems (SIS).
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-lg font-bold text-[#0A192F]">2. Intellectual Property</h2>
+            <h2 className="text-lg font-bold text-slate-900">2. Intellectual Property</h2>
             <p>
-              All software algorithms, dynamic simulation equations, interface components, and graphics engines remain the proprietary intellectual property of Nexiiva. Client process configuration data and custom P&ID flowsheets remain the exclusive property of the client.
+              All software algorithms, dynamic calculation equations, interface components, and graphics engines remain the proprietary intellectual property of Nexiiva. Client process configuration data and custom P&ID flowsheets remain the exclusive property of the client.
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-lg font-bold text-[#0A192F]">3. Commercial Registration</h2>
+            <h2 className="text-lg font-bold text-slate-900">3. Commercial Registration</h2>
             <p>
               Nexiiva is currently operating in its pre-revenue stage, preparing formal incorporation and initial pilot trial contracts with industrial facilities in Egypt and the GCC region.
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-lg font-bold text-[#0A192F]">4. Contact & Inquiries</h2>
+            <h2 className="text-lg font-bold text-slate-900">4. Contact & Inquiries</h2>
             <p>
               Direct all contractual inquiries to{' '}
-              <a href="mailto:Mostafa.adel.esmaiel@gmail.com" className="font-semibold text-[#1D4ED8] hover:underline">
+              <a href="mailto:Mostafa.adel.esmaiel@gmail.com" className="font-semibold text-sky-600 hover:underline">
                 Mostafa.adel.esmaiel@gmail.com
               </a>.
             </p>

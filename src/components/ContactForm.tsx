@@ -71,9 +71,9 @@ export function ContactForm() {
         <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 mb-3">
           <CheckCircle2 className="h-6 w-6" />
         </div>
-        <h3 className="text-xl font-bold text-[#0A192F]">Message Transmitted</h3>
+        <h3 className="text-xl font-bold text-slate-900">Message Transmitted</h3>
         <p className="mt-2 text-xs text-slate-700 max-w-sm mx-auto leading-relaxed">
-          Your inquiry has been received and dispatched to <strong className="text-[#0A192F]">Mostafa.adel.esmaiel@gmail.com</strong>.
+          Your inquiry has been received and dispatched to <strong className="text-slate-900">Mostafa.adel.esmaiel@gmail.com</strong>.
         </p>
 
         {/* WhatsApp & Email Action */}
@@ -90,7 +90,7 @@ export function ContactForm() {
 
           <a
             href={getMailtoLink()}
-            className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[#0A192F] hover:bg-slate-800 px-4 py-2.5 text-xs font-bold text-white shadow-sm transition-colors"
+            className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-sky-600 hover:bg-sky-500 px-4 py-2.5 text-xs font-bold text-white shadow-sm transition-colors"
           >
             <Mail className="h-4 w-4" />
             <span>Direct Email</span>
@@ -124,7 +124,7 @@ export function ContactForm() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs font-mono-tag font-bold text-[#0A192F] mb-1.5">
+          <label className="block text-xs font-mono-tag font-bold text-slate-900 mb-1.5">
             Full Name *
           </label>
           <input
@@ -139,7 +139,7 @@ export function ContactForm() {
         </div>
 
         <div>
-          <label className="block text-xs font-mono-tag font-bold text-[#0A192F] mb-1.5">
+          <label className="block text-xs font-mono-tag font-bold text-slate-900 mb-1.5">
             Work Email *
           </label>
           <input
@@ -156,7 +156,7 @@ export function ContactForm() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs font-mono-tag font-bold text-[#0A192F] mb-1.5">
+          <label className="block text-xs font-mono-tag font-bold text-slate-900 mb-1.5">
             Company / Organization *
           </label>
           <input
@@ -171,7 +171,7 @@ export function ContactForm() {
         </div>
 
         <div>
-          <label className="block text-xs font-mono-tag font-bold text-[#0A192F] mb-1.5">
+          <label className="block text-xs font-mono-tag font-bold text-slate-900 mb-1.5">
             Subject *
           </label>
           <input
@@ -187,7 +187,7 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-xs font-mono-tag font-bold text-[#0A192F] mb-1.5">
+        <label className="block text-xs font-mono-tag font-bold text-slate-900 mb-1.5">
           Detailed Message *
         </label>
         <textarea

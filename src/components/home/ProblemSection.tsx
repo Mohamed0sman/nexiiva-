@@ -90,7 +90,7 @@ export function ProblemSection({ locale = 'en', dict }: ProblemSectionProps) {
                   </span>
 
                   <div>
-                    <h3 className="text-base font-bold text-[#0A192F]">
+                    <h3 className="text-base font-bold text-slate-900">
                       {beat.title}
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-slate-600">
@@ -115,7 +115,7 @@ export function ProblemSection({ locale = 'en', dict }: ProblemSectionProps) {
                 </span>
               </div>
 
-              <h4 className="mt-4 text-base font-bold text-[#0A192F]">
+              <h4 className="mt-4 text-base font-bold text-slate-900">
                 {locale === 'ar'
                   ? 'وحدة التقطير الجوي (CDU) — انقطاع مضخة الراجع'
                   : 'Atmospheric Distillation (CDU) — Reflux Pump Failure'}
@@ -128,45 +128,45 @@ export function ProblemSection({ locale = 'en', dict }: ProblemSectionProps) {
               </p>
             </div>
 
-            {/* Financial Impact Breakdown Table */}
+            {/* Operational Impact Breakdown Table */}
             <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-2xs">
               <div className="flex items-center justify-between pb-4 border-b border-slate-200">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700">
                   {locale === 'ar'
-                    ? 'الأثر المالي المباشر للتوقف غير المخطط له'
-                    : 'Unplanned Outage Cost Breakdown'}
+                    ? 'الأثر التشغيلي المباشر للتوقف غير المخطط له'
+                    : 'Unplanned Outage Impact Breakdown'}
                 </h4>
                 <span className="text-xs font-bold text-rose-700 font-mono">
-                  $150,000 USD
+                  {locale === 'ar' ? 'أثر حرج' : 'Critical Impact'}
                 </span>
               </div>
 
               <div className="mt-4 divide-y divide-slate-100 text-xs">
                 <div className="py-2.5 flex items-center justify-between">
                   <span className="text-slate-600">
-                    {locale === 'ar' ? 'فاقد الإنتاج وتوقف الوحدة (7 أيام)' : '7 Days Production Downtime'}
+                    {locale === 'ar' ? 'فاقد الإنتاج وتوقف الوحدة' : 'Production Downtime Duration'}
                   </span>
-                  <span className="font-mono font-bold text-slate-900">$70,000</span>
+                  <span className="font-mono font-bold text-slate-900">{locale === 'ar' ? '7 أيام متواصلة' : '7 Days Continuous'}</span>
                 </div>
                 <div className="py-2.5 flex items-center justify-between">
                   <span className="text-slate-600">
                     {locale === 'ar' ? 'صيانة البطانات وصواني البرج الداخلية' : 'Refractory & Column Tray Mechanical Repair'}
                   </span>
-                  <span className="font-mono font-bold text-slate-900">$50,000</span>
+                  <span className="font-mono font-bold text-slate-900">{locale === 'ar' ? 'إصلاح طارئ' : 'Emergency Repair'}</span>
                 </div>
                 <div className="py-2.5 flex items-center justify-between">
                   <span className="text-slate-600">
                     {locale === 'ar' ? 'غرامات تصريف الشعلة وإعادة تدوير الوقود' : 'Flare Emissions & Off-Spec Product Rerun'}
                   </span>
-                  <span className="font-mono font-bold text-slate-900">$30,000</span>
+                  <span className="font-mono font-bold text-slate-900">{locale === 'ar' ? 'هدر إنتاجي' : 'Severe Product Loss'}</span>
                 </div>
               </div>
 
               <div className="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-xs">
                 <span className="text-slate-500 font-medium">
-                  {locale === 'ar' ? 'إجمالي الخسائر المباشرة لحادثة واحدة:' : 'Total Direct Loss (Single Incident):'}
+                  {locale === 'ar' ? 'إجمالي الأثر التشغيلي لحادثة واحدة:' : 'Total Impact (Single Incident):'}
                 </span>
-                <span className="font-mono font-bold text-[#0A192F] text-sm">$150,000 USD</span>
+                <span className="font-mono font-bold text-rose-700 text-sm">{locale === 'ar' ? 'تعطيل كامل للمنشأة' : 'Major Plant Disruption'}</span>
               </div>
             </div>
           </div>

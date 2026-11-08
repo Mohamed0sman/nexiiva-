@@ -99,7 +99,7 @@ export function ResponsibilitySection({ locale = 'en', dict }: ResponsibilitySec
                   </span>
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-[#0A192F]">
+                <h3 className="mt-5 text-lg font-bold text-slate-900">
                   {item.title}
                 </h3>
                 <p className="mt-3 text-xs sm:text-sm leading-relaxed text-slate-600">

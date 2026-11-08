@@ -21,7 +21,7 @@ export function ExecutiveLetter({ locale }: ExecutiveLetterProps) {
           </div>
 
           {/* Letter Title */}
-          <h2 className="mt-6 text-2xl sm:text-3xl font-extrabold text-[#0A192F] leading-tight">
+          <h2 className="mt-6 text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight">
             {isAr
               ? 'ملتزمون بالتميز الهندسي وسلامة منشآت الطاقة والعمليات الصناعية'
               : 'Committed to Engineering Excellence & Plant Process Safety'}
@@ -41,7 +41,7 @@ export function ExecutiveLetter({ locale }: ExecutiveLetterProps) {
                 : 'Historically, energy facilities have struggled under the weight of multi-million dollar capital costs and multi-year lead times imposed by legacy DCS conglomerates, leaving the vast majority of processing units without dynamic emergency simulators. We have engineered Nexiiva to eliminate this barrier—delivering 1:1 DCS-matching simulators directly from plant documentation in weeks, with strictly air-gapped on-premise deployment.'}
             </p>
 
-            <blockquote className="my-6 ps-4 border-s-2 border-slate-900 text-base sm:text-lg font-medium text-[#0A192F] italic">
+            <blockquote className="my-6 ps-4 border-s-2 border-slate-900 text-base sm:text-lg font-medium text-slate-900 italic">
               {isAr
                 ? '«هدفنا أن يمارس كل مهندس ومشغّل في غرف التحكم أعتى حالات الطوارئ مئات المرات في بيئة المحاكاة الافتراضية قبل أن يتعامل مع صمام حي في المنشأة الصناعية.»'
                 : '“Our mission is to ensure every control room technician has faced their worst-case emergency hundreds of times in simulation before ever touching live plant valves.”'}
@@ -57,7 +57,7 @@ export function ExecutiveLetter({ locale }: ExecutiveLetterProps) {
           {/* Signature Block */}
           <div className="mt-8 pt-6 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <div className="text-base font-bold text-[#0A192F]">
+              <div className="text-base font-bold text-slate-900">
                 {isAr ? 'مصطفى عادل' : 'Mostafa Adel'}
               </div>
               <div className="text-xs text-slate-600 mt-0.5">

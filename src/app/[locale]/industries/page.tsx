@@ -120,7 +120,7 @@ export default async function IndustriesPage({ params }: Props) {
                       <Icon className="h-7 w-7" />
                     </div>
                     <div>
-                      <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0A192F]">
+                      <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
                         {ind.name}
                       </h2>
                       <p className="mt-1 font-mono-tag text-xs font-bold text-[#1D4ED8]">
@@ -150,7 +150,7 @@ export default async function IndustriesPage({ params }: Props) {
 
                 {/* Pre-engineered emergency scenarios table */}
                 <div className="mt-8 pt-6 border-t border-slate-100">
-                  <h3 className="font-mono-tag text-xs font-bold uppercase tracking-wider text-[#0A192F] flex items-center gap-2">
+                  <h3 className="font-mono-tag text-xs font-bold uppercase tracking-wider text-slate-900 flex items-center gap-2">
                     <AlertTriangle className="h-4 w-4 text-amber-500" />
                     Typical Emergency & Operational Upsets Trained:
                   </h3>
@@ -161,7 +161,7 @@ export default async function IndustriesPage({ params }: Props) {
                         key={i}
                         className="rounded-lg border border-slate-200 bg-slate-50 p-4"
                       >
-                        <span className="font-mono-tag text-xs font-bold text-[#0A192F] block">
+                        <span className="font-mono-tag text-xs font-bold text-slate-900 block">
                           {sc.name}
                         </span>
                         <p className="mt-1 text-xs text-slate-600 leading-relaxed">

@@ -41,18 +41,18 @@ export default async function ContactPage({ params }: Props) {
           {/* Right Column: Corporate Info & Direct Access (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
             <div className="rounded-xl border border-slate-200 bg-white p-7 shadow-sm space-y-6">
-              <h3 className="font-mono-tag text-xs font-bold uppercase tracking-wider text-[#0A192F]">
+              <h3 className="font-mono-tag text-xs font-bold uppercase tracking-wider text-slate-900">
                 Direct Contacts & Office
               </h3>
 
               <div className="space-y-4 text-sm">
                 <div className="flex items-start gap-3">
-                  <Mail className="h-5 w-5 text-[#1D4ED8] shrink-0 mt-0.5" />
+                  <Mail className="h-5 w-5 text-sky-600 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-[#0A192F] block font-mono-tag text-xs">DIRECT INQUIRIES EMAIL</strong>
+                    <strong className="text-slate-900 block font-mono-tag text-xs">DIRECT INQUIRIES EMAIL</strong>
                     <a
                       href="mailto:Mostafa.adel.esmaiel@gmail.com"
-                      className="text-xs text-[#1D4ED8] hover:underline font-mono-tag font-medium break-all"
+                      className="text-xs text-sky-600 hover:underline font-mono-tag font-medium break-all"
                     >
                       Mostafa.adel.esmaiel@gmail.com
                     </a>
@@ -62,7 +62,7 @@ export default async function ContactPage({ params }: Props) {
                 <div className="flex items-start gap-3">
                   <Phone className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-[#0A192F] block font-mono-tag text-xs">WHATSAPP & MOBILE</strong>
+                    <strong className="text-slate-900 block font-mono-tag text-xs">WHATSAPP & MOBILE</strong>
                     <a
                       href="https://wa.me/201004131154"
                       target="_blank"
@@ -76,9 +76,9 @@ export default async function ContactPage({ params }: Props) {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <MapPin className="h-5 w-5 text-[#1D4ED8] shrink-0 mt-0.5" />
+                  <MapPin className="h-5 w-5 text-sky-600 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-[#0A192F] block font-mono-tag text-xs">HEADQUARTERS LOCATION</strong>
+                    <strong className="text-slate-900 block font-mono-tag text-xs">HEADQUARTERS LOCATION</strong>
                     <span className="text-slate-600 text-xs font-mono-tag">
                       Cairo & Alexandria Operations, Egypt
                     </span>
@@ -88,7 +88,7 @@ export default async function ContactPage({ params }: Props) {
                 <div className="flex items-start gap-3">
                   <Clock className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-[#0A192F] block font-mono-tag text-xs">RESPONSE SLA</strong>
+                    <strong className="text-slate-900 block font-mono-tag text-xs">RESPONSE SLA</strong>
                     <span className="text-slate-600 text-xs font-mono-tag">
                       Sunday – Thursday: 08:00 – 18:00 (EET) · Inquiries acknowledged within 24 hours
                     </span>
@@ -99,10 +99,10 @@ export default async function ContactPage({ params }: Props) {
               {/* Direct WhatsApp Action Box */}
               <div className="pt-4 border-t border-slate-100">
                 <a
-                  href="https://wa.me/201004131154?text=Hello%20Eng.%20Mostafa%2C%20I%20am%20contacting%20you%20regarding%20Nexiiva%20industrial%20simulation."
+                  href="https://wa.me/201004131154?text=Hello%20Eng.%20Mostafa%2C%20I%20am%20contacting%20you%20regarding%20Nexiiva%20industrial%20digital%20twins."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[#25D366] hover:bg-[#20bd5a] px-4 py-3 text-xs font-bold text-white shadow-sm transition-colors"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 px-4 py-3 text-xs font-bold text-white shadow-sm transition-colors"
                 >
                   <MessageCircle className="h-4 w-4" />
                   <span>Start WhatsApp Conversation</span>
@@ -113,15 +113,15 @@ export default async function ContactPage({ params }: Props) {
             {/* Corporate Hub Card */}
             <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-[#1D4ED8]">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-sky-50 text-sky-600">
                   <Building2 className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-[#0A192F]">
+                  <h4 className="text-sm font-bold text-slate-900">
                     Egypt & GCC Industrial Deployment
                   </h4>
                   <p className="text-xs text-slate-500 font-mono-tag mt-0.5">
-                    Air-gapped on-premise installation & regional simulation support
+                    Air-gapped on-premise installation & regional engineering support
                   </p>
                 </div>
               </div>

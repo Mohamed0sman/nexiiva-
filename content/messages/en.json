@@ -2,7 +2,7 @@
   "common": {
     "brandName": "Nexiiva",
     "tagline": "REAL OPERATIONS. VIRTUAL EXPERIENCE.",
-    "closingLine": "Let's Make OTS Accessible to Every Industrial Unit.",
+    "closingLine": "High-Fidelity Process Digital Twins for Every Industrial Unit.",
     "requestPilot": "Request a Pilot",
     "bookDemo": "Book a Demo",
     "watchPlatform": "Watch the Platform",
@@ -31,24 +31,24 @@
     "menu": "Menu",
     "close": "Close",
     "solutionsMega": {
-      "otsTitle": "Operator Training Simulator (OTS)",
+      "otsTitle": "Process Digital Twins & DCS Emulation",
       "otsDesc": "Dynamic 1:1 DCS console emulation with live multi-component physics.",
       "builderTitle": "Unit Modeling Engine",
       "builderDesc": "Rapid unit generation from engineering flowsheets and process logic.",
-      "consoleTitle": "Instructor Console",
+      "consoleTitle": "Supervisory Station & Fault Injection",
       "consoleDesc": "Real-time fault injection, trainee monitoring, and emergency freezes.",
-      "certTitle": "Scoring & Certification",
+      "certTitle": "SOP Qualification & Compliance",
       "certDesc": "Automated performance evaluation with objective error breakdown."
     }
   },
   "announcement": {
-    "text": "Pilot programme open — train on your own unit in ~1 week of build time",
+    "text": "Pilot programme open — operational digital twin in ~1 week of build time",
     "cta": "Learn about the pilot"
   },
   "hero": {
-    "eyebrow": "Operator Training Simulator (OTS)",
-    "title": "Real operations.\nVirtual experience.",
-    "subtitle": "Nexiiva turns your own process unit into a safe, realistic DCS-style training simulator — so operators face the worst day before it happens.",
+    "eyebrow": "Industrial Digital Twins & Process Automation",
+    "title": "Industrial Digital Twins.\nEngineered for Energy Facilities.",
+    "subtitle": "Nexiiva turns your own process unit into a high-fidelity digital twin with DCS console parity — enabling engineering and operations teams to master transients before touching live valves.",
     "primaryCta": "Request a Pilot",
     "secondaryCta": "Watch the platform",
     "floatingCaption": "Atmospheric Crude Distillation (CDU) — Dynamic Process Console",
@@ -71,9 +71,9 @@
   ],
   "problem": {
     "eyebrow": "Operational Reality",
-    "title": "The high cost of learning on a live unit.",
-    "statAmount": "$150K",
-    "statLabel": "lost from one small problem",
+    "title": "The critical impact of unhandled upsets on a live unit.",
+    "statAmount": "7 Days",
+    "statLabel": "average downtime from a single unhandled transient",
     "beats": [
       {
         "step": "01",
@@ -92,15 +92,15 @@
       },
       {
         "step": "04",
-        "title": "The compounding bill",
-        "desc": "7 days down ($70K) + repairs ($50K) + penalties ($30K) = $150K total impact."
+        "title": "The compounding operational bill",
+        "desc": "7 days of plant downtime, refractory thermal shock, emergency flaring emissions, and off-spec product."
       }
     ],
     "costBreakdown": {
-      "downtime": "7 days downtime: $70K",
-      "repairs": "Refractory & equipment repairs: $50K",
-      "penalties": "Off-spec penalties & compliance: $30K",
-      "total": "Total direct loss: $150K"
+      "downtime": "7 days unplanned unit downtime",
+      "repairs": "Refractory and equipment emergency repairs",
+      "penalties": "Off-spec flaring and compliance penalties",
+      "total": "Severe operational & commercial facility disruption"
     }
   },
   "solution": {
@@ -158,7 +158,7 @@
     ]
   },
   "demo": {
-    "eyebrow": "INTERACTIVE SIMULATOR",
+    "eyebrow": "INTERACTIVE DIGITAL TWIN",
     "title": "Try the console",
     "subtitle": "Experience Nexiiva's dynamic model directly in your browser. Trigger an operational upset on the atmospheric column and watch the DCS alarms react.",
     "caption": "Illustrative interactive demo — values are simulated in real time using local client state.",
@@ -200,7 +200,7 @@
     "cards": [
       {
         "title": "Unit Modeling Engine",
-        "desc": "Automated pipeline models the unit from technical specifications, converting engineering documents into simulator logic."
+        "desc": "Automated pipeline models the unit from technical specifications, converting engineering documents into dynamic process models."
       },
       {
         "title": "387 Equipment Types",
@@ -218,7 +218,7 @@
   },
   "comparison": {
     "eyebrow": "Technical Comparison",
-    "title": "A fundamental shift in simulator economics.",
+    "title": "A fundamental shift in process engineering economics.",
     "headers": ["Provider Category", "Cost Profile", "Delivery & Deployment Architecture"],
     "rows": [
       {
@@ -228,7 +228,7 @@
         "delivery": "Longer delivery cycles, rigid vendor support, proprietary hardware requirements."
       },
       {
-        "provider": "Specialist Simulator Firms",
+        "provider": "Legacy Simulation Firms",
         "cost": "High cost",
         "costPill": "medium",
         "delivery": "Custom bespoke build per customer, heavy engineering consulting fees."
@@ -243,22 +243,22 @@
     ]
   },
   "solutions": {
-    "eyebrow": "Simulation Infrastructure",
-    "title": "Comprehensive simulation infrastructure.",
+    "eyebrow": "Engineering Infrastructure",
+    "title": "Comprehensive process engineering infrastructure.",
     "items": [
       {
         "id": "ots",
-        "title": "Operator Training Simulator",
-        "desc": "DCS-authentic console simulator with multi-trend monitoring and real thermodynamic balances."
+        "title": "Process Digital Twins & DCS Emulation",
+        "desc": "DCS-authentic console interface with multi-trend monitoring and real thermodynamic balances."
       },
       {
         "id": "builder",
-        "title": "Unit Modeling Engine (OTS Builder)",
-        "desc": "Automated model generation pipeline converting P&IDs and process operating envelopes into simulator units."
+        "title": "Unit Modeling Engine",
+        "desc": "Automated model generation pipeline converting P&IDs and process operating envelopes into dynamic unit models."
       },
       {
         "id": "console",
-        "title": "Instructor Console",
+        "title": "Supervisory Station & Fault Injection",
         "desc": "Supervisory fault injection platform enabling instructors to craft complex emergency scenarios on the fly."
       },
       {
@@ -310,13 +310,13 @@
       },
       {
         "status": "in_progress",
-        "title": "OTS Builder in Active Development",
+        "title": "Unit Modeling Engine in Active Development",
         "desc": "Engineering the automated unit generation pipeline. Second unit to measure real build time."
       },
       {
         "status": "done",
         "title": "Commercial Benchmarking Completed",
-        "desc": "Approached international OTS providers and evaluated preliminary market quotations to validate positioning."
+        "desc": "Benchmarked against international providers and evaluated commercial technical specifications to validate positioning."
       },
       {
         "status": "next",
@@ -337,8 +337,8 @@
       },
       {
         "step": "2",
-        "title": "Paid Pilot for One Process Unit",
-        "desc": "Rapid build and deployment of a single critical unit simulator tailored to your operating envelope."
+        "title": "Dedicated Unit Pilot Deployment",
+        "desc": "Rapid build and deployment of a single critical unit digital twin tailored to your operating envelope."
       },
       {
         "step": "3",
@@ -350,18 +350,18 @@
     "cta": "Request a Pilot"
   },
   "leadership": {
-    "quote": "Our mission is to ensure every control room technician has faced their worst-case emergency hundreds of times in simulation before ever touching live plant valves.",
+    "quote": "Our mission is to ensure every control room engineer and operator has mastered critical plant transients hundreds of times on high-fidelity digital twins before ever touching live valves.",
     "author": "Mostafa Adel",
     "role": "Founder & CEO, Nexiiva",
     "note": "Committed to Operational Excellence & Plant Safety",
     "teamEyebrow": "Leadership & Founders",
     "teamTitle": "The Engineering & Executive Team",
-    "teamSubtitle": "Led by process simulation engineers, software systems architects, and industrial commercial leaders.",
+    "teamSubtitle": "Led by process automation engineers, software systems architects, and industrial commercial leaders.",
     "members": [
       {
         "name": "Mostafa Adel",
         "role": "Founder & CEO",
-        "bio": "Process simulation specialist and chemical engineer focused on accessible high-fidelity dynamic modeling for energy plants.",
+        "bio": "Chemical engineer specializing in high-fidelity dynamic process modeling, thermodynamics, and plant operations.",
         "image": "/assets/team/mostafa-adel.jpg",
         "initials": "MA"
       },
@@ -390,9 +390,9 @@
   },
   "responsibility": {
     "eyebrow": "SAFETY & RESPONSIBILITY",
-    "title": "Safer plants start in the simulator.",
+    "title": "Safer, optimized plants start with high-fidelity digital twins.",
     "body1": "Industrial plants operate on the front line of community safety and environmental protection. An unexpected shutdown or flaring incident carries profound consequences far beyond balance sheets.",
-    "body2": "Nexiiva provides a risk-free digital environment where operators can fail safely, analyze procedural mistakes immediately, and master emergency sequences without venting a single gram of hydrocarbon or risking personnel safety."
+    "body2": "Nexiiva provides a risk-free digital environment where operators can test transients safely, analyze procedural mistakes immediately, and master emergency sequences without venting a single gram of hydrocarbon or risking personnel safety."
   },
   "insights": {
     "eyebrow": "LATEST INSIGHTS",
@@ -400,13 +400,13 @@
     "cta": "View all articles"
   },
   "finalCta": {
-    "title": "Let's make OTS accessible to every industrial unit.",
-    "subtitle": "Join us in changing the future of industrial training.",
+    "title": "Let's bring high-fidelity digital twins to every industrial unit.",
+    "subtitle": "Join us in transforming process safety, operator qualification, and plant operations.",
     "requestPilot": "Request a Pilot",
     "contactUs": "Contact Us"
   },
   "footer": {
-    "desc": "High-fidelity Operator Training Simulators (OTS) for refineries, gas plants, and petrochemical sites.",
+    "desc": "High-fidelity dynamic digital twins and DCS console integration for refineries, gas plants, and petrochemical facilities.",
     "navCol": "Navigation",
     "solutionsCol": "Solutions",
     "companyCol": "Company",

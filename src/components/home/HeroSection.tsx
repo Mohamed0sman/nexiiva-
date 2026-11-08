@@ -30,30 +30,27 @@ export function HeroSection({ locale }: HeroSectionProps) {
   return (
     <section className="relative bg-gradient-to-b from-sky-50/70 via-white to-slate-50 text-slate-900 pt-20 pb-16 lg:pt-28 lg:pb-24 overflow-hidden border-b border-slate-200">
       <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
-        {/* Corporate Discipline Eyebrow */}
-        <div className="inline-flex items-center gap-2 rounded-full border border-sky-300 bg-sky-100/80 px-4 py-1.5 text-xs font-bold text-sky-800 shadow-2xs">
-          <span className="h-2 w-2 rounded-full bg-sky-600" />
-          <span>
-            {isAr
-              ? 'هندسة محاكاة العمليات وتأهيل مشغلي منشآت الطاقة'
-              : 'ENERGY PROCESS SIMULATION & OPERATOR QUALIFICATION'}
-          </span>
+        {/* Corporate Discipline Header */}
+        <div className="text-xs font-mono font-bold tracking-wider text-sky-600 uppercase">
+          {isAr
+            ? 'هندسة العمليات والتوأم الرقمي لمنشآت الطاقة والتكرير'
+            : 'INDUSTRIAL DIGITAL TWINS & PROCESS AUTOMATION'}
         </div>
 
         {/* H1 Headline — Grand, Authoritative, Corporate with Logo Sky-Blue */}
-        <h1 className="mt-6 text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.14] max-w-4xl">
+        <h1 className="mt-4 text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.14] max-w-4xl">
           {isAr ? (
             <>
-              هندسة المحاكاة الديناميكية.
+              التوأم الرقمي وهندسة أتمتة العمليات.
               <span className="block text-sky-600 mt-2">
-                لتأهيل مشغلي المنشآت الحيوية.
+                بأعلى معايير الدقة لمنشآت الطاقة والتكرير.
               </span>
             </>
           ) : (
             <>
-              Dynamic Process Simulation.
+              Industrial Digital Twins & Process Automation.
               <span className="block text-sky-600 mt-2">
-                Engineered for Plant Reality.
+                Engineered for Energy Facilities.
               </span>
             </>
           )}
@@ -62,8 +59,8 @@ export function HeroSection({ locale }: HeroSectionProps) {
         {/* Corporate Mission Subtitle */}
         <p className="mt-6 max-w-3xl text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
           {isAr
-            ? 'تقوم نكسيفا ببناء محاكيات تدريب المشغلين (OTS) ونماذج التوأم الرقمي عالية الدقة لمصافي التكرير ومجمعات الغاز والبتروكيماويات بمطابقة تامة لأنظمة التحكم الموزع (DCS) لتمكين الكوادر من مواجهة أعتى طوارئ العمليات قبل حدوثها على أرض الواقع.'
-            : 'Nexiiva engineers high-fidelity dynamic process digital twins and Operator Training Simulators (OTS) tailored for refineries, gas complexes, and petrochemical facilities with 1:1 DCS console parity—ensuring operators master worst-case transients before touching live valves.'}
+            ? 'تقوم نكسيفا بتطوير نماذج التوأم الرقمي عالي الدقة وأنظمة مطابقة كونسول التحكم الموزع (DCS) لمصافي التكرير ومجمعات الغاز والبتروكيماويات بمطابقة فيزيائية تامة، لتمكين الكوادر من إدارة أعتى طوارئ العمليات بكفاءة وأمان كامل.'
+            : 'Nexiiva delivers high-fidelity dynamic process digital twins and 1:1 DCS console integration tailored for refineries, gas complexes, and petrochemical facilities—ensuring operations teams master worst-case transients before touching live valves.'}
         </p>
 
         {/* Action Buttons */}
@@ -121,16 +118,23 @@ export function HeroSection({ locale }: HeroSectionProps) {
         </div>
 
         {/* Accreditations & Standards Bar */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4 sm:gap-6 pt-6 border-t border-slate-200 text-xs font-mono text-slate-500">
-          <span className="font-semibold text-slate-700">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-6 sm:gap-8 pt-6 border-t border-slate-200 text-xs text-slate-600 font-medium">
+          <span className="inline-flex items-center gap-1.5 text-slate-800">
+            <span className="h-1.5 w-1.5 rounded-full bg-sky-600" />
             {isAr ? 'تشغيل محلي معزول 100% (Air-Gapped)' : '100% Air-Gapped On-Premise'}
           </span>
-          <span className="text-slate-300">·</span>
-          <span>{isAr ? 'حماية تامة للمخططات وسرية البيانات' : 'Zero Cloud Telemetry Risk'}</span>
-          <span className="text-slate-300">·</span>
-          <span>{isAr ? 'معايير الإنذارات القياسية ISA-18.2' : 'ISA-18.2 Alarm Hierarchy'}</span>
-          <span className="text-slate-300">·</span>
-          <span>{isAr ? 'توقيع اتفاقية سرية متبادلة (NDA)' : 'Binding Mutual NDA'}</span>
+          <span className="inline-flex items-center gap-1.5">
+            <span className="h-1.5 w-1.5 rounded-full bg-sky-600" />
+            {isAr ? 'حماية تامة للمخططات وسرية البيانات' : 'Zero Cloud Telemetry Risk'}
+          </span>
+          <span className="inline-flex items-center gap-1.5">
+            <span className="h-1.5 w-1.5 rounded-full bg-sky-600" />
+            {isAr ? 'معايير الإنذارات القياسية ISA-18.2' : 'ISA-18.2 Alarm Hierarchy'}
+          </span>
+          <span className="inline-flex items-center gap-1.5">
+            <span className="h-1.5 w-1.5 rounded-full bg-sky-600" />
+            {isAr ? 'توقيع اتفاقية سرية متبادلة (NDA)' : 'Binding Mutual NDA'}
+          </span>
         </div>
       </div>
 
@@ -151,8 +155,8 @@ export function HeroSection({ locale }: HeroSectionProps) {
               <div className="flex items-center gap-3">
                 <span className="text-sm font-bold text-white">
                   {selectedVideoLang === 'ar'
-                    ? 'عرض منصة نكسيفا (باللغة العربية)'
-                    : 'Nexiiva OTS Platform Walkthrough'}
+                    ? 'عرض منصة نكسيفا الهندسية (باللغة العربية)'
+                    : 'Nexiiva Process Digital Twin Platform Walkthrough'}
                 </span>
                 {/* Language Toggle in Modal */}
                 <div className="flex rounded-md bg-slate-900 p-0.5 border border-slate-800 text-xs">

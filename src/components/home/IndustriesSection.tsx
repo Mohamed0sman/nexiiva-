@@ -59,7 +59,7 @@ export function IndustriesSection({ locale }: IndustriesSectionProps) {
             <div className="text-xs font-mono font-bold tracking-wider text-slate-500 uppercase">
               {isAr ? 'القطاعات والصناعات المخدومة' : 'INDUSTRIES & DOMAINS'}
             </div>
-            <h2 className="mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0A192F] tracking-tight">
+            <h2 className="mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
               {isAr
                 ? 'من وحدة تكرير واحدة إلى كافة الصناعات التحويلية.'
                 : 'From a single process unit to the entire plant complex.'}
@@ -73,13 +73,13 @@ export function IndustriesSection({ locale }: IndustriesSectionProps) {
 
           <Link
             href={`/${locale}/industries`}
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-700 hover:underline shrink-0"
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-sky-600 hover:text-sky-700 hover:underline shrink-0"
           >
             <span>{isAr ? 'استعراض كتالوج الوحدات الكامل ←' : 'View full unit catalog →'}</span>
           </Link>
         </div>
 
-        {/* 4 Clean Editorial Cards (No icons) */}
+        {/* 4 Clean Editorial Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {industries.map((ind, i) => (
             <div
@@ -91,7 +91,7 @@ export function IndustriesSection({ locale }: IndustriesSectionProps) {
                   {ind.status}
                 </div>
 
-                <h3 className="mt-2 text-lg font-bold text-[#0A192F]">
+                <h3 className="mt-2 text-lg font-bold text-slate-900">
                   {ind.name}
                 </h3>
 
@@ -107,7 +107,7 @@ export function IndustriesSection({ locale }: IndustriesSectionProps) {
                 </div>
               </div>
 
-              <div className="mt-5 pt-3 border-t border-slate-200/80 font-mono text-xs text-blue-700 font-semibold">
+              <div className="mt-5 pt-3 border-t border-slate-200/80 font-mono text-xs text-sky-600 font-semibold">
                 {ind.units}
               </div>
             </div>

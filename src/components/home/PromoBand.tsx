@@ -16,7 +16,7 @@ export function PromoBand({ locale, dict }: PromoBandProps) {
   if (!isVisible) return null;
 
   return (
-    <div className="relative z-50 flex items-center justify-between border-b border-slate-800 bg-[#0A192F] px-4 py-2 text-xs text-slate-200">
+    <div className="relative z-50 flex items-center justify-between border-b border-slate-800 bg-slate-900 px-4 py-2 text-xs text-slate-200">
       <div className="mx-auto flex flex-wrap items-center justify-center gap-2 text-center">
         <span className="inline-flex items-center gap-1 rounded bg-blue-600/30 px-2 py-0.5 font-mono-tag text-[10px] font-bold text-blue-300 uppercase">
           <Sparkles className="h-3 w-3 text-blue-400" />

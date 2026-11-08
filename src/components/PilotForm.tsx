@@ -75,9 +75,9 @@ export function PilotForm() {
         <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 mb-4">
           <CheckCircle2 className="h-8 w-8" />
         </div>
-        <h3 className="text-2xl font-bold text-[#0A192F]">Pilot Request Transmitted</h3>
+        <h3 className="text-2xl font-bold text-slate-900">Pilot Request Transmitted</h3>
         <p className="mt-3 text-sm text-slate-700 max-w-md mx-auto leading-relaxed">
-          Your request details have been registered and dispatched directly to <strong className="text-[#0A192F]">Mostafa.adel.esmaiel@gmail.com</strong>.
+          Your request details have been registered and dispatched directly to <strong className="text-slate-900">Mostafa.adel.esmaiel@gmail.com</strong>.
         </p>
 
         {/* Instant Contact CTA Buttons */}
@@ -94,7 +94,7 @@ export function PilotForm() {
 
           <a
             href={getMailtoLink()}
-            className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[#0A192F] hover:bg-slate-800 px-5 py-3 text-sm font-bold text-white shadow-sm transition-colors"
+            className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-sky-600 hover:bg-sky-500 px-5 py-3 text-sm font-bold text-white shadow-sm transition-colors"
           >
             <Mail className="h-4 w-4" />
             <span>Open Email Direct</span>
@@ -118,7 +118,7 @@ export function PilotForm() {
       className="space-y-5 rounded-xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm"
     >
       <div className="border-b border-slate-200 pb-4">
-        <h3 className="text-xl font-bold text-[#0A192F]">
+        <h3 className="text-xl font-bold text-slate-900">
           Request an Industrial Pilot Deployment
         </h3>
         <p className="text-xs text-slate-600 mt-1">
@@ -139,7 +139,7 @@ export function PilotForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Full Name */}
         <div>
-          <label className="block text-xs font-mono-tag font-bold text-[#0A192F] mb-1.5">
+          <label className="block text-xs font-mono-tag font-bold text-slate-900 mb-1.5">
             Full Name *
           </label>
           <input
@@ -155,7 +155,7 @@ export function PilotForm() {
 
         {/* Work Email */}
         <div>
-          <label className="block text-xs font-mono-tag font-bold text-[#0A192F] mb-1.5">
+          <label className="block text-xs font-mono-tag font-bold text-slate-900 mb-1.5">
             Corporate Email *
           </label>
           <input
@@ -173,7 +173,7 @@ export function PilotForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Company Name */}
         <div>
-          <label className="block text-xs font-mono-tag font-bold text-[#0A192F] mb-1.5">
+          <label className="block text-xs font-mono-tag font-bold text-slate-900 mb-1.5">
             Plant / Organization Name *
           </label>
           <input
@@ -189,7 +189,7 @@ export function PilotForm() {
 
         {/* Role Title */}
         <div>
-          <label className="block text-xs font-mono-tag font-bold text-[#0A192F] mb-1.5">
+          <label className="block text-xs font-mono-tag font-bold text-slate-900 mb-1.5">
             Your Role / Designation *
           </label>
           <input
@@ -207,7 +207,7 @@ export function PilotForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Unit Type Selection */}
         <div>
-          <label className="block text-xs font-mono-tag font-bold text-[#0A192F] mb-1.5">
+          <label className="block text-xs font-mono-tag font-bold text-slate-900 mb-1.5">
             Target Unit for Pilot *
           </label>
           <select
@@ -229,7 +229,7 @@ export function PilotForm() {
 
         {/* Site Location */}
         <div>
-          <label className="block text-xs font-mono-tag font-bold text-[#0A192F] mb-1.5">
+          <label className="block text-xs font-mono-tag font-bold text-slate-900 mb-1.5">
             Site Location / Country *
           </label>
           <input
@@ -246,7 +246,7 @@ export function PilotForm() {
 
       {/* Target Operating Scenarios */}
       <div>
-        <label className="block text-xs font-mono-tag font-bold text-[#0A192F] mb-1.5">
+        <label className="block text-xs font-mono-tag font-bold text-slate-900 mb-1.5">
           Priority Training Scenarios (Optional)
         </label>
         <textarea

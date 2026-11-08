@@ -171,7 +171,7 @@ export function HowItWorksSection({ locale = 'en', dict }: HowItWorksSectionProp
                   onClick={() => setActiveTab(idx)}
                   className={`flex items-center gap-2 rounded-lg px-5 py-2.5 text-xs sm:text-sm font-semibold transition-all ${
                     isActive
-                      ? 'bg-white text-[#0A192F] shadow-xs'
+                      ? 'bg-white text-slate-900 shadow-xs'
                       : 'text-slate-600 hover:text-slate-900'
                   }`}
                 >
@@ -202,7 +202,7 @@ export function HowItWorksSection({ locale = 'en', dict }: HowItWorksSectionProp
               <span>{current.badge}</span>
             </div>
 
-            <h3 className="mt-4 text-2xl sm:text-3xl font-bold text-[#0A192F] leading-tight">
+            <h3 className="mt-4 text-2xl sm:text-3xl font-bold text-slate-900 leading-tight">
               {current.title}
             </h3>
 
@@ -226,7 +226,7 @@ export function HowItWorksSection({ locale = 'en', dict }: HowItWorksSectionProp
                 <MetricIcon className="h-5 w-5" />
               </div>
               <div>
-                <span className="font-mono text-xs font-bold text-[#0A192F] uppercase tracking-wider block">
+                <span className="font-mono text-xs font-bold text-slate-900 uppercase tracking-wider block">
                   {current.metric}
                 </span>
                 <span className="text-xs text-slate-500">

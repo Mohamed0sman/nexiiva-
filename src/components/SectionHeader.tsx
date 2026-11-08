@@ -30,12 +30,12 @@ export function SectionHeader({
       <div
         className={`inline-flex items-center gap-3 text-xs font-semibold tracking-wide ${
           isCenter ? 'justify-center' : ''
-        } ${isDark ? 'text-blue-300' : 'text-[#1D4ED8]'}`}
+        } ${isDark ? 'text-blue-300' : 'text-sky-600'}`}
       >
         <span>{eyebrow}</span>
         <span
           className={`h-px w-8 ${
-            isDark ? 'bg-blue-400/30' : 'bg-[#1D4ED8]/25'
+            isDark ? 'bg-blue-400/30' : 'bg-sky-600/25'
           }`}
         />
       </div>
@@ -43,7 +43,7 @@ export function SectionHeader({
       {/* Main Title */}
       <h2
         className={`mt-3 text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-[1.25] ${
-          isDark ? 'text-white' : 'text-[#0A192F]'
+          isDark ? 'text-white' : 'text-slate-900'
         }`}
       >
         {title}

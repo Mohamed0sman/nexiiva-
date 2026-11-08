@@ -37,17 +37,11 @@ export function JsonLd({ locale }: { locale: string }) {
       {
         '@type': 'SoftwareApplication',
         '@id': 'https://nexiiva.com/#software',
-        name: 'Nexiiva Operator Training Simulator (OTS)',
+        name: 'Nexiiva Industrial Digital Twin Platform',
         operatingSystem: 'Windows 10, Windows 11, Linux',
         applicationCategory: 'BusinessApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '800',
-          priceCurrency: 'USD',
-          description: 'Initial Paid Pilot for One Process Unit',
-        },
         description:
-          'DCS-authentic process simulation software for industrial control room operator qualification and emergency response training.',
+          'High-fidelity dynamic process digital twins and 1:1 DCS console emulation for energy and petrochemical facilities.',
       },
     ],
   };

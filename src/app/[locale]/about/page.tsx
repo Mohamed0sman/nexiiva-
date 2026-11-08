@@ -88,10 +88,10 @@ export default async function AboutPage({ params }: Props) {
         {/* Narrative Section: Adam's First Day */}
         <div className="mt-14 rounded-2xl border border-slate-200 bg-white p-8 lg:p-12 shadow-sm">
           <div className="max-w-3xl">
-            <span className="text-xs font-semibold text-[#1D4ED8]">
+            <span className="text-xs font-semibold text-sky-600">
               {locale === 'ar' ? 'قصة التأسيس الواقعية' : 'THE GENESIS NARRATIVE'}
             </span>
-            <h3 className="mt-3 text-2xl sm:text-3xl font-bold text-[#0A192F]">
+            <h3 className="mt-3 text-2xl sm:text-3xl font-bold text-slate-900">
               {locale === 'ar'
                 ? 'اليوم الأول للمهندس في غرفة التحكم المركزية'
                 : 'Adam’s First Day in the Central Control Room'}
@@ -101,31 +101,31 @@ export default async function AboutPage({ params }: Props) {
               {locale === 'ar' ? (
                 <>
                   <p>
-                    عندما بدأ مهندس الكونسول المبتدئ ورديته الأولى لمدة 12 ساعة في وحدة التقطير الجوي، سُلِّم سماعة الرأس وأمامه اثنتا عشرة شاشة متوهجة، وقيل له: <span className="text-[#0A192F] italic font-medium">&ldquo;اجلس بجوار المهندس الأقدم وشاهد ما يفعله بدقة.&rdquo;</span>
+                    عندما بدأ مهندس الكونسول المبتدئ ورديته الأولى لمدة 12 ساعة في وحدة التقطير الجوي، سُلِّم سماعة الرأس وأمامه اثنتا عشرة شاشة متوهجة، وقيل له: <span className="text-slate-900 italic font-medium">&ldquo;اجلس بجوار المهندس الأقدم وشاهد ما يفعله بدقة.&rdquo;</span>
                   </p>
                   <p>
                     مرت الأشهر وهو يشاهد عمليات روتينية هادئة: تعديلات طفيفة على الصمامات، تقلبات اعتيادية في المستويات، وأخذ عينات قياسية. أما حالات الطوارئ المخيفة — كانقطاع تيار الراجع، أو انطفاء شعلة الفرن، أو تسلسل الإغلاق الاضطراري — فتحدث مرة كل سنوات.
                   </p>
                   <p>
-                    وعندما وقع اضطراب حرج للمرة الأولى في غياب المهندس الأقدم، أدت ثوانٍ معدودة من التردد إلى إغلاق كامل للوحدة: <strong className="text-[#0A192F]">7 أيام من فقدان الإنتاج (70 ألف دولار)، 50 ألف دولار تكاليف صيانة لبطانة الفرن، و30 ألف دولار غرامات منتجات خارج المواصفات. خسارة تجاوزت 150 ألف دولار بسبب حادثة واحدة كان يمكن التدرب عليها مسبقاً.</strong>
+                    وعندما وقع اضطراب حرج للمرة الأولى في غياب المهندس الأقدم، أدت ثوانٍ معدودة من التردد إلى إغلاق كامل للوحدة: <strong className="text-slate-900">7 أيام من فقدان الإنتاج، وتلف صواني البرج وبطانة الفرن، وغرامات منتجات خارج المواصفات. خسائر تشغيلية كان يمكن تفاديها بالكامل بالتحضير المسبق.</strong>
                   </p>
                   <p>
-                    تأسست نكسيفا لإنهاء هذه المعضلة: لتمكين كل مشغل من مواجهة أسوأ السيناريوهات مئات المرات في بيئة محاكاة واقعية قبل أن يتعامل مع صمام حقيقي واحد.
+                    تأسست نكسيفا لإنهاء هذه المعضلة: لتمكين كل مهندس ومشغل من مواجهة أعقد السيناريوهات واختبارها على توائم رقمية واقعية قبل التعامل مع خطوط الإنتاج الحية.
                   </p>
                 </>
               ) : (
                 <>
                   <p>
-                    When a junior console engineer sat down for his first 12-hour shift at an atmospheric distillation unit, he was handed a headset, shown twelve glowing screens, and told: <span className="text-[#0A192F] italic font-medium">&ldquo;Sit next to the senior and watch carefully.&rdquo;</span>
+                    When a junior console engineer sat down for his first 12-hour shift at an atmospheric distillation unit, he was handed a headset, shown twelve glowing screens, and told: <span className="text-slate-900 italic font-medium">&ldquo;Sit next to the senior and watch carefully.&rdquo;</span>
                   </p>
                   <p>
                     Months passed. He observed routine steady-state conditions: slight valve tweaks, level drifts, normal rundown sampling. But the severe, terrifying operational transients—reflux pump seizure, furnace flameout, emergency trip sequences—only happened once every few years.
                   </p>
                   <p>
-                    When a rare upset finally occurred during an off-shift with the senior engineer away, the inevitable hesitation resulted in a unit trip: <strong className="text-[#0A192F]">seven days of lost production ($70K), $50K in refractory and tray repairs, and $30K in off-spec penalties. Over $150,000 lost from one small problem.</strong>
+                    When a rare upset finally occurred during an off-shift with the senior engineer away, the inevitable hesitation resulted in a unit trip: <strong className="text-slate-900">seven days of lost production, severe refractory and tray damage, and substantial off-spec downstream penalties. Critical downtime that could have been completely prevented with proper transient preparation.</strong>
                   </p>
                   <p>
-                    Nexiiva was founded to change this reality: to ensure that every control room operator faces the worst day hundreds of times in a realistic virtual simulator before ever touching a live valve.
+                    Nexiiva was founded to change this reality: to ensure that every control room engineer and operator masters worst-case transients on high-fidelity digital twins before touching live plant valves.
                   </p>
                 </>
               )}
@@ -135,18 +135,18 @@ export default async function AboutPage({ params }: Props) {
 
         {/* Mission Statement Callout */}
         <div className="mt-16 text-center max-w-3xl mx-auto">
-          <span className="text-xs font-semibold text-[#1D4ED8]">
+          <span className="text-xs font-semibold text-sky-600">
             {locale === 'ar' ? 'الرؤية المؤسسية' : 'CORPORATE VISION'}
           </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-[#0A192F]">
+          <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-slate-900">
             {locale === 'ar'
-              ? '«محاكيات تدريب المشغلين حق لكل وحدة صناعية وليست حكراً على المنشآت العملاقة.»'
-              : '“Let’s Make OTS Accessible to Every Industrial Unit.”'}
+              ? '«التوائم الرقمية المتقدمة وهندسة العمليات حق لكل منشأة صناعية وليست حكراً على المشاريع المليارية.»'
+              : '“High-Fidelity Process Digital Twins for Every Industrial Unit.”'}
           </h2>
           <p className="mt-4 text-sm text-slate-600 leading-relaxed">
             {locale === 'ar'
-              ? 'تتطلب أنظمة المحاكاة التقليدية ملايين الدولارات وسنوات طويلة للتسليم في بيئات برمجية معقدة. تقدم نكسيفا محاكاة عالية الدقة معزولة أمنياً في غضون أيام وبكسر من التكلفة المعتادة.'
-              : 'Traditional OTS providers charge millions of dollars and take years to deliver custom proprietary hardware. Nexiiva delivers air-gapped, high-fidelity simulation in approximately one week of build time at a fraction of the cost.'}
+              ? 'تتطلب حلول المحاكاة التقليدية استثمارات ضخمة وسنوات طويلة للتسليم في بيئات برمجية معقدة. تقدم نكسيفا توائم رقمية عالية الدقة معزولة أمنياً في غضون أيام وبأعلى كفاءة هندسية.'
+              : 'Traditional simulation providers charge vast capital budgets and take years to deliver. Nexiiva delivers air-gapped, high-fidelity dynamic models in approximately one week of build time with maximum engineering rigor.'}
           </p>
         </div>
 
@@ -161,8 +161,8 @@ export default async function AboutPage({ params }: Props) {
             }
             subtitle={
               locale === 'ar'
-                ? 'بقيادة مهندسي محاكاة العمليات الكيميائية ومعماريي البرمجيات وخبراء تطوير الأعمال الصناعية.'
-                : 'Led by process modeling engineers, systems architects, and industrial commercial leaders.'
+                ? 'بقيادة مهندسي العمليات البتروكيماوية ومعماريي البرمجيات المتقدمة وخبراء تطوير الأعمال الصناعية.'
+                : 'Led by process automation engineers, software systems architects, and industrial business leaders.'
             }
             align="center"
             theme="light"
@@ -175,17 +175,17 @@ export default async function AboutPage({ params }: Props) {
                 className="group rounded-xl border border-slate-200 bg-white p-6 shadow-xs transition-colors hover:border-slate-300 flex flex-col justify-between"
               >
                 <div>
-                  <div className="inline-block rounded-md bg-slate-50 border border-slate-200/80 px-2.5 py-1 text-[10px] font-bold text-[#1D4ED8] tracking-wider mb-4">
+                  <div className="inline-block rounded-md bg-sky-50 border border-sky-200 px-2.5 py-1 text-[10px] font-bold text-sky-700 tracking-wider mb-4">
                     {idx === 0
-                      ? (locale === 'ar' ? 'نمذجة العمليات والمحاكاة' : 'PROCESS MODELING')
+                      ? (locale === 'ar' ? 'هندسة العمليات والتوائم الرقمية' : 'PROCESS ENGINEERING')
                       : idx === 1
-                      ? (locale === 'ar' ? 'معمارية محركات المحاكاة' : 'SYSTEMS ARCHITECTURE')
+                      ? (locale === 'ar' ? 'معمارية النظم والحسابات' : 'SYSTEMS ARCHITECTURE')
                       : idx === 2
                       ? (locale === 'ar' ? 'الحوكمة والاستشارات' : 'STRATEGIC ADVISORY')
                       : (locale === 'ar' ? 'النمو التجاري والشراكات' : 'COMMERCIAL GROWTH')}
                   </div>
 
-                  <h3 className="text-base font-bold text-[#0A192F] group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-base font-bold text-slate-900 group-hover:text-sky-600 transition-colors">
                     {member.name}
                   </h3>
                   <p className="text-xs font-semibold text-slate-700 mt-1">

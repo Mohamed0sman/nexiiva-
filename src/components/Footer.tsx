@@ -41,11 +41,26 @@ export function Footer({ locale, dict }: FooterProps) {
   ];
 
   const solutionsLinks = [
-    { href: `/${locale}/solutions#ots`, label: 'Operator Training Simulator' },
-    { href: `/${locale}/solutions#builder`, label: 'AI Unit Builder (OTS Builder)' },
-    { href: `/${locale}/solutions#console`, label: 'Instructor Console' },
-    { href: `/${locale}/solutions#certification`, label: 'Scoring & Certification' },
-    { href: `/${locale}/industries`, label: 'Refining & Petrochemicals' },
+    {
+      href: `/${locale}/solutions#ots`,
+      label: locale === 'ar' ? 'التوأم الرقمي ومطابقة DCS' : 'Process Digital Twins & DCS',
+    },
+    {
+      href: `/${locale}/solutions#builder`,
+      label: locale === 'ar' ? 'محرك النمذجة الهندسية للوحدات' : 'Unit Modeling Engine',
+    },
+    {
+      href: `/${locale}/solutions#console`,
+      label: locale === 'ar' ? 'محطة التحكم الإشرافي وإدارة الطوارئ' : 'Supervisory Station',
+    },
+    {
+      href: `/${locale}/solutions#certification`,
+      label: locale === 'ar' ? 'منظومة تقييم واعتماد الكفاءة (SOP)' : 'SOP Qualification & Compliance',
+    },
+    {
+      href: `/${locale}/industries`,
+      label: locale === 'ar' ? 'التكرير والبتروكيماويات والغاز' : 'Refining & Petrochemicals',
+    },
   ];
 
   return (
@@ -60,14 +75,17 @@ export function Footer({ locale, dict }: FooterProps) {
               </Link>
               <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-600">
                 {dict?.footer?.desc ||
-                  'High-fidelity Operator Training Simulators (OTS) for refineries, gas plants, and petrochemical sites. Engineered to turn physical process units into virtual DCS consoles.'}
+                  'High-fidelity dynamic process digital twins and DCS console integration for refineries, gas plants, and petrochemical sites.'}
               </p>
 
               {/* Tagline Badge */}
               <div className="mt-4 inline-flex items-center gap-2 rounded border border-sky-200 bg-sky-50 px-2.5 py-1 font-mono text-[10px] text-sky-800">
-                <span className="font-bold">CLOSING VISION:</span>
+                <span className="font-bold">ENGINEERING VISION:</span>
                 <span className="text-slate-800">
-                  {dict?.common?.closingLine || 'Let’s Make OTS Accessible to Every Industrial Unit.'}
+                  {dict?.common?.closingLine ||
+                    (locale === 'ar'
+                      ? 'توائم رقمية متقدمة وهندسة عمليات لكل منشأة طاقة.'
+                      : 'High-Fidelity Process Digital Twins for Every Industrial Unit.')}
                 </span>
               </div>
             </div>
@@ -185,7 +203,7 @@ export function Footer({ locale, dict }: FooterProps) {
           <p className="text-slate-500">
             © {currentYear} Nexiiva. {dict?.footer?.rights || 'All rights reserved.'}{' '}
             <span className="font-mono text-[10px] text-sky-700 bg-sky-50 border border-sky-200 rounded px-1.5 py-0.5">
-              [PILOT READINESS · ENERGY OT OTS]
+              [PILOT READINESS · ENERGY OT & PROCESS TWINS]
             </span>
           </p>
 

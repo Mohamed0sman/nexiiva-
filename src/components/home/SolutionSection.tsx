@@ -97,7 +97,7 @@ export function SolutionSection({ locale = 'en', dict }: SolutionSectionProps) {
   ];
 
   return (
-    <section className="relative py-24 bg-[#0A192F] text-white overflow-hidden border-b border-slate-800">
+    <section className="relative py-24 bg-slate-900 text-white overflow-hidden border-b border-slate-800">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow={dict?.solution?.eyebrow || (locale === 'ar' ? 'الحل الهندسي للمحاكاة' : 'ENGINEERING SOLUTION ARCHITECTURE')}

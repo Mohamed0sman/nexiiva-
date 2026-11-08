@@ -44,7 +44,7 @@ export function PidGrid({ className = '', showSymbols = true }: PidGridProps) {
             <path
               d="M 100 0 L 0 0 0 100"
               fill="none"
-              stroke="#0A192F"
+              stroke="#0284C7"
               strokeWidth="1.0"
             />
           </pattern>

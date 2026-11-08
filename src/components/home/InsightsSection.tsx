@@ -83,7 +83,7 @@ export function InsightsSection({ locale, dict }: InsightsSectionProps) {
 
           <Link
             href={`/${locale}/insights`}
-            className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-5 py-2.5 text-xs font-bold text-[#0A192F] shadow-2xs hover:bg-slate-50 hover:border-slate-400 transition-colors shrink-0"
+            className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-5 py-2.5 text-xs font-bold text-slate-900 shadow-2xs hover:bg-slate-50 hover:border-slate-400 transition-colors shrink-0"
           >
             <span>{dict?.insights?.cta || (locale === 'ar' ? 'استعراض كافة الأوراق الفنية' : 'View all technical papers')}</span>
             <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180 text-blue-600" />
@@ -105,7 +105,7 @@ export function InsightsSection({ locale, dict }: InsightsSectionProps) {
                   <span>{item.readTime}</span>
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-[#0A192F] group-hover:text-blue-700 transition-colors leading-snug">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 group-hover:text-blue-700 transition-colors leading-snug">
                   {item.title}
                 </h3>
 

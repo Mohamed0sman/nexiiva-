@@ -74,7 +74,7 @@ export default async function InsightsPage({ params }: Props) {
             >
               <div>
                 <div className="flex items-center justify-between text-xs font-mono-tag text-slate-500">
-                  <span className="rounded bg-white border border-slate-200 px-2.5 py-1 text-[#1D4ED8] font-bold">
+                  <span className="rounded bg-sky-50 border border-sky-200 px-2.5 py-1 text-sky-700 font-bold">
                     {post.category}
                   </span>
                   <div className="flex items-center gap-1.5">
@@ -83,7 +83,7 @@ export default async function InsightsPage({ params }: Props) {
                   </div>
                 </div>
 
-                <h2 className="mt-5 text-xl font-bold text-[#0A192F] group-hover:text-[#1D4ED8] transition-colors">
+                <h2 className="mt-5 text-xl font-bold text-slate-900 group-hover:text-sky-600 transition-colors">
                   {post.title}
                 </h2>
 
@@ -94,7 +94,7 @@ export default async function InsightsPage({ params }: Props) {
 
               <div className="mt-8 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-mono-tag">
                 <span className="text-slate-500">{post.author}</span>
-                <span className="inline-flex items-center gap-1 font-semibold text-[#1D4ED8] group-hover:underline">
+                <span className="inline-flex items-center gap-1 font-semibold text-sky-600 group-hover:underline">
                   Read article →
                 </span>
               </div>

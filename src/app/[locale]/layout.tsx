@@ -119,11 +119,11 @@ export default async function LocaleLayout({
       dir={isRtl ? 'rtl' : 'ltr'}
       className={`h-full ${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} ${ibmPlexArabic.variable} ${cairo.variable}`}
     >
-      <body className="flex min-h-screen flex-col bg-white text-slate-900 antialiased selection:bg-[#0A192F] selection:text-white">
+      <body className="flex min-h-screen flex-col bg-white text-slate-900 antialiased selection:bg-sky-500 selection:text-white">
         {/* Skip to Content for WCAG Accessibility */}
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:start-4 focus:z-50 focus:rounded-lg focus:bg-[#0A192F] focus:px-4 focus:py-2 focus:text-white focus:shadow-md focus:outline-none"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:start-4 focus:z-50 focus:rounded-lg focus:bg-sky-600 focus:px-4 focus:py-2 focus:text-white focus:shadow-md focus:outline-none"
         >
           {isRtl ? 'الانتقال إلى المحتوى الرئيسي' : 'Skip to main content'}
         </a>

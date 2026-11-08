@@ -73,7 +73,7 @@ export function JourneySection({ locale = 'en', dict }: JourneySectionProps) {
         (locale === 'ar'
           ? 'مرحلة شفافة تسبق تحقيق الإيرادات التجارية. الاستعداد لنشر أولى المشاريع التجريبية المعتمدة مع شركات التكرير والطاقة في مصر والشرق الأوسط.'
           : 'Transparently pre-revenue. Preparing initial industrial pilot deployments and direct commercial entry with refineries across Egypt and the GCC.'),
-      details: locale === 'ar' ? 'باب المشاريع التجريبية مفتوح' : 'Paid Pilot Program Open',
+      details: locale === 'ar' ? 'باب المشاريع التجريبية مفتوح' : 'Unit Pilot Program Open',
     },
   ];
 
@@ -105,7 +105,7 @@ export function JourneySection({ locale = 'en', dict }: JourneySectionProps) {
               className="relative flex flex-col md:flex-row items-start gap-6 rounded-xl border border-slate-200 bg-slate-50/70 p-6 transition-colors hover:border-slate-300 shadow-2xs"
             >
               {/* Quarter Badge */}
-              <div className="shrink-0 font-mono text-sm font-bold text-[#0A192F] bg-white border border-slate-200 rounded px-3 py-1.5 shadow-2xs">
+              <div className="shrink-0 font-mono text-sm font-bold text-slate-900 bg-white border border-slate-200 rounded px-3 py-1.5 shadow-2xs">
                 {item.quarter}
               </div>
 
@@ -122,7 +122,7 @@ export function JourneySection({ locale = 'en', dict }: JourneySectionProps) {
                   </span>
                 </div>
 
-                <h3 className="mt-3 text-lg font-bold text-[#0A192F]">
+                <h3 className="mt-3 text-lg font-bold text-slate-900">
                   {item.title}
                 </h3>
                 <p className="mt-2 text-xs sm:text-sm leading-relaxed text-slate-600">
