@@ -46,11 +46,18 @@
     "cta": "Learn about the pilot"
   },
   "hero": {
-    "eyebrow": "Industrial Digital Twins & Process Automation",
-    "title": "Industrial Digital Twins.\nEngineered for Energy Facilities.",
-    "subtitle": "Nexiiva turns your own process unit into a high-fidelity digital twin with DCS console parity — enabling engineering and operations teams to master transients before touching live valves.",
-    "primaryCta": "Request a Pilot",
-    "secondaryCta": "Watch the platform",
+    "eyebrow": "PROCESS TRAINING SIMULATOR",
+    "title": "Fewer operator errors.\nSafer people. Protected profits.",
+    "subtitle": "Nexiiva is a process training simulator. Operators practice start-ups, upsets and shutdowns on a virtual unit, so mistakes happen in training and not at the real plant.",
+    "primaryCta": "Book a demo",
+    "secondaryCta": "Select your plan",
+    "howItHelpsTitle": "How it helps",
+    "howItHelpsDesc": "Fewer errors reach the real plant, which protects lives and company profit.",
+    "howItHelpsPoints": [
+      "Start-up, normal operation and shutdown",
+      "Handling upsets and alarms",
+      "Run on the cloud or inside your company"
+    ],
     "floatingCaption": "Atmospheric Crude Distillation (CDU) — Dynamic Process Console",
     "chips": {
       "cduTop": "TIC102 · 361.8 °C",
@@ -349,8 +356,98 @@
     "distributionNote": "Strategic partnerships available for regional distribution and operator training institutes.",
     "cta": "Request a Pilot"
   },
+  "about": {
+    "eyebrow": "Plant Experience",
+    "title": "Built with real plant experience",
+    "p1": "Nexiiva is built by operations engineers with years of experience in refining, petrochemicals and gas processing.",
+    "p2": "Our goal is to give every operator a safe place to practice the situations that cost the most when they go wrong.",
+    "p3": "Nexiiva is one platform for any process unit, not a single unit type."
+  },
+  "products": {
+    "eyebrow": "Our Products",
+    "title": "Simulation software built for real plant operations",
+    "subtitle": "Practice on ready process units or assemble new ones from an equipment library.",
+    "otsTag": "Available now",
+    "otsTitle": "Nexiiva OTS",
+    "otsDesc": "An operator training simulator. The CDU/VDU unit is ready and more units are on the way. Run it on the cloud or on your own servers.",
+    "otsFeatures": [
+      "Ready CDU/VDU unit with crude preheat train",
+      "1:1 DCS console emulation & multi-pen trend charts",
+      "Start-up, normal operation and emergency shutdown",
+      "Instructor fault injection & automated SOP scoring"
+    ],
+    "builderTag": "Early access",
+    "builderTitle": "Nexiiva OTS Builder",
+    "builderDesc": "Assemble a new unit from an equipment library and export it as a Nexiiva project. Gas units such as TEG dehydration and amine sweetening are being built with it. Still in testing.",
+    "builderFeatures": [
+      "Modular equipment library for unit assembly",
+      "TEG Dehydration & Amine Sweetening in testing",
+      "Export directly as an active Nexiiva project",
+      "Cuts unit modeling time to ~1 week"
+    ]
+  },
+  "plans": {
+    "eyebrow": "Select Your Plan",
+    "title": "Select your plan",
+    "subtitle": "Tell us which one fits and we will send you a quote.",
+    "pilot": {
+      "title": "Pilot",
+      "badge": "Low Risk",
+      "desc": "Three months with your own operators, before you commit to a license.",
+      "features": [
+        "Three months with your own plant operators",
+        "Practice start-ups, shutdowns, and custom upsets",
+        "Deploy on cloud or offline air-gapped workstations",
+        "Full trainee response & qualification reporting"
+      ],
+      "cta": "Request a pilot"
+    },
+    "companyLicense": {
+      "title": "Company license",
+      "badge": "Industrial Plants",
+      "desc": "One license per process unit plus yearly maintenance. Choose cloud or on-premises. For on-premises installation, your company covers our team’s travel and stay.",
+      "features": [
+        "One license per industrial process unit",
+        "Yearly maintenance, updates and engineer support",
+        "Choose cloud or on-premises installation",
+        "On-premises: company covers team travel & stay"
+      ],
+      "cta": "Request a quote"
+    },
+    "trainingCenter": {
+      "title": "Training center",
+      "badge": "Institutes & Academies",
+      "desc": "Per-person courses of 5 days, minimum 5 trainees, online or in person. Generic: practice on the units already on Nexiiva. Specific: you choose the unit and trainees train on it. For in-person courses the center covers the instructor’s travel and stay.",
+      "features": [
+        "5-day intensive per-person courses (min. 5 trainees)",
+        "Delivered online or in-person at your center",
+        "Generic track: practice on ready Nexiiva units",
+        "Specific track: trainees train on your chosen unit",
+        "In-person courses: center covers instructor travel & stay"
+      ],
+      "cta": "Request a course"
+    }
+  },
+  "contact": {
+    "title": "Contact us",
+    "subtitle": "Send us a message and we will reply by email.",
+    "emailLabel": "Email:",
+    "phoneLabel": "WhatsApp:",
+    "nameLabel": "Name",
+    "companyLabel": "Company",
+    "interestLabel": "I’m interested in",
+    "interests": {
+      "notSure": "Not sure yet",
+      "demo": "Demo",
+      "pilot": "Pilot",
+      "companyLicense": "Company license",
+      "trainingCenter": "Training center course"
+    },
+    "messageLabel": "Message",
+    "submitBtn": "Send message"
+  },
   "leadership": {
-    "quote": "Our mission is to ensure every control room engineer and operator has mastered critical plant transients hundreds of times on high-fidelity digital twins before ever touching live valves.",
+    "quote": "Our goal is to give every operator a safe place to practice the situations that cost the most when they go wrong.",
     "author": "Mostafa Adel",
     "role": "Founder & CEO, Nexiiva",
     "note": "Committed to Operational Excellence & Plant Safety",
@@ -361,7 +458,7 @@
       {
         "name": "Mostafa Adel",
         "role": "Founder & CEO",
-        "bio": "Chemical engineer specializing in high-fidelity dynamic process modeling, thermodynamics, and plant operations.",
+        "bio": "Operations engineer with 10 years in petrochemicals, refining and gas processing.",
         "image": "/assets/team/mostafa-adel.jpg",
         "initials": "MA"
       },

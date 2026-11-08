@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: locale === 'ar' ? 'الحلول الهندسية' : 'Solutions & Simulation Suite',
     description:
-      'Operator Training Simulator, AI Unit Builder, Instructor Console, and Automated Scoring & Certification.',
+      'Operator Training Simulator, Nexiiva OTS Builder, Instructor Console, and Automated Scoring & Certification.',
   };
 }
 
@@ -54,12 +54,12 @@ export default async function SolutionsPage({ params }: Props) {
       id: 'builder',
       icon: Cpu,
       eyebrow: 'SOLUTION 02',
-      title: 'AI Unit Builder (OTS Builder)',
-      tagline: 'Rapid Prompt-to-Unit Generation Pipeline',
+      title: 'Nexiiva OTS Builder',
+      tagline: 'Modular Unit Engineering & Assembly Pipeline',
       whatItIs:
-        'An automated engineering pipeline that synthesizes full simulation units from process engineering documentation (P&IDs, heat & material balances, control narratives) in English or Arabic.',
+        'Assemble a new unit from an equipment library and export it as an active Nexiiva project. Gas units such as TEG dehydration and amine sweetening are currently being built with it.',
       howItWorks:
-        'Our proprietary engine maps engineering flowsheets into an interconnected network of 387 verified equipment models, wiring up control loops and hydraulic resistances automatically.',
+        'Our engineering pipeline maps process flowsheets into an interconnected network of verified equipment models, wiring up control loops and hydraulic resistances automatically.',
       outcomes: [
         'Target build time of approximately one week per unit — to be measured and validated on unit two.',
         'Removes months of manual coding and prohibitive consulting fees from specialized simulation houses.',

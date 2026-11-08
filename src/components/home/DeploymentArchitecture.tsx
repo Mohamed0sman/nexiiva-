@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, ShieldCheck, CheckCircle2, XCircle } from 'lucide-react';
+import { ArrowRight, ShieldCheck, CheckCircle2, Cloud, Server, Laptop } from 'lucide-react';
 import type { Dict } from '@/types/dict';
 
 interface DeploymentArchitectureProps {
@@ -18,117 +18,132 @@ export function DeploymentArchitecture({ locale }: DeploymentArchitectureProps) 
       title: isAr ? 'تشغيل محلي معزول 100% (Air-Gapped Workstations)' : '100% Offline Air-Gapped Workstations',
       desc: isAr
         ? 'تثبيت كامل على أجهزة محطات العمل الهندسية أو شبكة قاعة التدريب المحلية (LAN) دون الحاجة للاتصال بالإنترنت نهائياً.'
-        : 'Installed directly on local plant engineering workstations or isolated training room LAN with zero internet dependency.',
+        : 'Installed directly on plant engineering workstations or isolated training room LAN with zero internet dependency.',
     },
     {
-      title: isAr ? 'سرية تامة للمخططات (Zero Cloud Telemetry)' : 'Zero Cloud Telemetry & Data Sovereignty',
+      title: isAr ? 'سرية تامة للمخططات (Zero Data Telemetry)' : 'Zero Data Telemetry & IP Sovereignty',
       desc: isAr
-        ? 'مخططات P&ID، جداول معدات المنشأة، وحدود التشغيل السرية لا تغادر أسوار الموقع أبداً. امتثال كامل لمعايير IEC 62443 و NIST SP 800-82.'
-        : 'Plant P&IDs, equipment datasheets, and proprietary process limits never leave the facility fence, ensuring full IEC 62443 & NIST SP 800-82 compliance.',
+        ? 'مخططات P&ID، جداول معدات المنشأة، وحدود التشغيل السرية لا تغادر أسوار الموقع أبداً. امتثال كامل لمعايير IEC 62443.'
+        : 'Plant P&IDs, equipment datasheets, and proprietary process limits never leave your facility perimeter.',
     },
     {
-      title: isAr ? 'معالجة فيزيائية لحظية بمعدل 60Hz (Deterministic Physics)' : 'Deterministic 60 Hz Physics Engine',
+      title: isAr ? 'معالجة فيزيائية لحظية بمعدل 60Hz' : 'Deterministic 60 Hz Physics Engine',
       desc: isAr
-        ? 'محرك الحسابات الديناميكية يعمل على المعالج المحلي بزمن استجابة فائق، دون أي تأخير في حركة المؤشرات أو اهتزازات في الشبكة.'
-        : 'Dynamic equations solved locally with millisecond fidelity—zero latency, zero jitter, and zero packet loss during emergency transients.',
+        ? 'محرك الحسابات الديناميكية يعمل على المعالج المحلي بزمن استجابة فائق دون أي تأخير في حركة المؤشرات أو اهتزازات في الشبكة.'
+        : 'Dynamic equations solved locally with millisecond fidelity—zero latency and zero jitter during emergency transients.',
     },
     {
-      title: isAr ? 'مطابقة تامة لشاشات غرف التحكم (1:1 DCS Parity)' : '1:1 Control Room DCS Console Parity',
+      title: isAr ? 'مطابقة تامة لشاشات غرف التحكم (1:1 DCS)' : '1:1 Control Room DCS Multi-Monitor Parity',
       desc: isAr
         ? 'تهيئة محطات متعددة الشاشات تماثل غرف التحكم الميدانية (Yokogawa, DeltaV, Foxboro, Honeywell) لأداء تدريبي واقعي.'
         : 'Authentic multi-monitor layouts mirroring live industrial control rooms for seamless operational muscle memory.',
     },
   ];
 
-  const cloudLimitations = [
+  const cloudStrengths = [
     {
-      title: isAr ? 'مخاطر رفع المخططات السحابية (IP Leakage Risk)' : 'Proprietary IP Exposure Risk',
+      title: isAr ? 'وصول فوري دون الحاجة لشراء خوادم خاصة' : 'Instant Browser Access & Zero Server Setup',
       desc: isAr
-        ? 'إجبار المنشأة على رفع تصاميم P&ID وبيانات الإنتاج الحساسة إلى خوادم سحابية خارجية مشتركة.'
-        : 'Requires uploading proprietary plant flowsheets and operational recipes to external multi-tenant cloud servers.',
+        ? 'تشغيل مباشر عبر متصفح الويب للفرق الموزعة، ومراكز التدريب، والاستشاريين دون الحاجة لتهيئة عتاد محلي معقد.'
+        : 'Instant web access for distributed teams, training academies, and process engineers without complex on-site IT provisioning.',
     },
     {
-      title: isAr ? 'تأخير شبكة الاتصال (WAN Latency & Jitter)' : 'Network Latency & Transient Distortion',
+      title: isAr ? 'تحديثات مستمرة للنماذج ومكتبة المعدات' : 'Continuous Library & Model Updates',
       desc: isAr
-        ? 'تأخر استجابة المؤشرات والإنذارات أثناء الاضطرابات السريعة (مثل توقف الضاغط أو غلق صمام الطوارئ) بسبب بطء الإنترنت.'
-        : 'Internet lag and packet loss distort transient physics during rapid upsets such as compressor surges or emergency trips.',
+        ? 'الحصول التلقائي على أحدث تحديثات محرك المحاكاة، ونماذج الوحدات الجديدة (مثل وحدات الغاز TEG والأمين) فور إطلاقها.'
+        : 'Automatic delivery of latest simulation solver enhancements, bug fixes, and upcoming gas process units (TEG, Amine).',
     },
     {
-      title: isAr ? 'مخالفة معايير أمن منشآت الطاقة (OT Policy Violation)' : 'Energy OT Security Non-Compliance',
+      title: isAr ? 'مرونة عالية للتدريب عن بُعد' : 'Flexible Multi-Site & Remote Training',
       desc: isAr
-        ? 'لوائح الأمن السيبراني لمصافي البترول ومجمعات الغاز تحظر قطعياً ربط شاشات التحكم الهندسية بشبكة الإنترنت العامة.'
-        : 'Refinery and petrochemical cybersecurity regulations strictly forbid exposing operator control interfaces to public networks.',
+        ? 'إمكانية تدريب المهندسين والمشغلين من أي موقع مصرح به، مع إدارة إشرافية مركزية ومزامنة سيناريوهات المدرب.'
+        : 'Enable operators to practice from regional plant annexes or remote offices with centralized instructor oversight.',
     },
     {
-      title: isAr ? 'توقف التدريب عند انقطاع الخدمة (Cloud Outage Dependency)' : 'Cloud Downtime Interruptions',
+      title: isAr ? 'أمان اتصال مشفر بالكامل (TLS 1.3 / Enterprise Auth)' : 'Encrypted Channels & Role-Based Access',
       desc: isAr
-        ? 'انقطاع خدمة الإنترنت أو تعطل خوادم المزود السحابي يوقف خطط تدريب المشغلين واختبارات الاعتماد المهني.'
-        : 'Local internet dropouts or cloud vendor service outages disrupt scheduled training shifts and qualification exams.',
+        ? 'قنوات اتصال مشفرة وإدارة وصول قائمة على الأدوار لمنع أي وصول غير مصرح به لشاشات وبيانات التدريب.'
+        : 'Enterprise authentication with strict role-based permissions and end-to-end encryption for session data.',
     },
   ];
+
+  const handleSelectPlan = (plan: string) => {
+    if (typeof window !== 'undefined') {
+      const selectElement = document.getElementById('contact-interest') as HTMLSelectElement | null;
+      if (selectElement) {
+        selectElement.value = plan;
+      }
+      const target = document.getElementById('contact');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <section className="relative py-16 sm:py-20 bg-slate-50 border-b border-slate-200" id="architecture">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
         {/* Section Header */}
-        <div className="max-w-3xl mb-12">
+        <div className="max-w-3xl mb-12 text-start">
           <div className="text-xs font-mono font-bold tracking-wider text-sky-600 uppercase">
-            {isAr ? 'معمارية التشغيل والأمن السيبراني' : 'DEPLOYMENT ARCHITECTURE & OT SECURITY'}
+            {isAr ? 'خيارات النشر والتشغيل' : 'DEPLOYMENT ARCHITECTURE'}
           </div>
 
           <h2 className="mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
             {isAr
-              ? 'معمارية التشغيل المعزول محلياً (On-Premise) مقابل الحوسبة السحابية (Cloud).'
-              : 'Air-Gapped On-Premise vs. Cloud SaaS Architecture.'}
+              ? 'تشغيل على السحابة أو داخل شركتك.'
+              : 'Run on the cloud or inside your company.'}
           </h2>
 
           <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
             {isAr
-              ? 'لماذا تفرض مصافي التكرير ومجمعات البتروكيماويات ومنشآت الطاقة تشغيل منظومات التوأم الرقمي والتحكم داخل شبكتها المعزولة محلياً وتستبعد الحلول السحابية العامة تماماً.'
-              : 'Why critical energy, refining, and gas facilities mandate physically isolated offline digital twin environments over public cloud services.'}
+              ? 'توفر نكسيفا خيارين للنشر لتلبية احتياجات المصافي الكبرى التي تفرض العزل الأمني التام، أو الفرق ومراكز التدريب التي تتطلب الوصول السحابي الفوري.'
+              : 'Nexiiva offers two proven deployment options: 100% offline air-gapped workstations for secure plant perimeters, or instant cloud access for distributed teams and training academies.'}
           </p>
         </div>
 
-        {/* Side-by-side Comparison Grid */}
+        {/* Side-by-side Deployment Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-          {/* Card 1: Nexiiva Air-Gapped On-Premise (Recommended / Plant Standard) */}
+          
+          {/* Card 1: On-Premises Air-Gapped */}
           <div className="relative rounded-2xl border-2 border-sky-300 bg-white p-6 sm:p-8 shadow-xs flex flex-col justify-between">
             <div>
-              {/* Badge */}
               <div className="flex items-center justify-between gap-4 pb-5 border-b border-sky-100">
-                <div>
-                  <span className="inline-flex items-center gap-1.5 rounded bg-sky-50 text-sky-700 border border-sky-200 px-2.5 py-1 font-mono text-xs font-bold uppercase tracking-wider">
-                    <ShieldCheck className="h-3.5 w-3.5 text-sky-600" />
-                    <span>{isAr ? 'نظام نكسيفا المعتمد' : 'NEXIIVA STANDARD'}</span>
-                  </span>
-                  <h3 className="mt-2 text-xl font-extrabold text-slate-900">
-                    {isAr ? 'التشغيل المحلي المعزول (Air-Gapped On-Premise)' : '100% Offline Air-Gapped On-Premise'}
-                  </h3>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-sky-50 text-sky-600 border border-sky-200">
+                    <Server className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <span className="font-mono text-xs font-bold text-sky-700 uppercase">
+                      {isAr ? 'الخيار المعتمد للمصافي' : 'FOR ENERGY REFINERIES'}
+                    </span>
+                    <h3 className="text-xl font-bold text-slate-900">
+                      {isAr ? 'التثبيت داخل الشركة (On-Premises)' : 'On-Premises Air-Gapped'}
+                    </h3>
+                  </div>
                 </div>
-                <div className="hidden sm:block text-end">
-                  <span className="text-[11px] font-mono font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded">
-                    {isAr ? 'مطابق لمعايير الطاقة' : 'Energy OT Compliant'}
-                  </span>
-                </div>
+
+                <span className="text-[11px] font-mono font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded">
+                  {isAr ? 'معزول 100%' : '100% Offline'}
+                </span>
               </div>
 
-              {/* Description */}
               <p className="mt-4 text-xs sm:text-sm text-slate-600 leading-relaxed">
                 {isAr
-                  ? 'منظومة مستقلة يتم تثبيتها مباشرة على أجهزة المحطة المحلية، لتمنح المنشأة ملكية كاملة للتوأم الرقمي وسرية مطلقة دون أي اعتماد على خوادم خارجية.'
-                  : 'Self-contained digital twin system deployed directly on plant hardware, giving facilities total data sovereignty, zero cloud exposure, and uncompromised real-time control.'}
+                  ? 'تثبيت مباشر داخل شبكة المنشأة أو على أجهزة التدريب المستقلة دون الحاجة لأي اتصال بالإنترنت. تتحمّل المنشأة سفر فريقنا وإقامته.'
+                  : 'Installed directly behind plant firewalls on local workstations with zero internet access required. Company covers team travel & stay.'}
               </p>
 
-              {/* Feature List */}
-              <div className="mt-6 space-y-4">
+              <div className="mt-6 space-y-3.5">
                 {onPremiseStrengths.map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-sky-600 shrink-0 mt-0.5" />
+                  <div key={idx} className="flex items-start gap-2.5">
+                    <CheckCircle2 className="h-4 w-4 text-sky-600 shrink-0 mt-0.5" />
                     <div>
                       <h4 className="text-xs sm:text-sm font-bold text-slate-900">
                         {item.title}
                       </h4>
-                      <p className="mt-1 text-xs text-slate-600 leading-relaxed">
+                      <p className="mt-0.5 text-xs text-slate-600 leading-relaxed">
                         {item.desc}
                       </p>
                     </div>
@@ -137,50 +152,59 @@ export function DeploymentArchitecture({ locale }: DeploymentArchitectureProps) 
               </div>
             </div>
 
-            {/* Bottom summary box */}
-            <div className="mt-8 pt-5 border-t border-sky-100 bg-sky-50/50 rounded-xl p-4 text-xs font-mono text-sky-900 flex items-center justify-between">
-              <span>{isAr ? 'الامتثال الأمني:' : 'Security Standard:'}</span>
-              <span className="font-bold text-sky-700">{isAr ? 'معايير IEC 62443 / NIST SP 800-82' : 'IEC 62443 / NIST SP 800-82 Strict'}</span>
+            <div className="mt-8 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <span className="text-xs font-mono text-slate-500">
+                {isAr ? 'الأمان: معايير IEC 62443' : 'Security: IEC 62443 Compliant'}
+              </span>
+              <button
+                type="button"
+                onClick={() => handleSelectPlan('Company license')}
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-sky-600 hover:text-sky-700 cursor-pointer"
+              >
+                <span>{isAr ? 'طلب تثبيت محلي' : 'Inquire On-Premises'}</span>
+                <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />
+              </button>
             </div>
           </div>
 
-          {/* Card 2: Cloud / Generic SaaS Simulators */}
+          {/* Card 2: Cloud Deployment */}
           <div className="relative rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-2xs flex flex-col justify-between">
             <div>
-              {/* Badge */}
               <div className="flex items-center justify-between gap-4 pb-5 border-b border-slate-100">
-                <div>
-                  <span className="inline-flex items-center gap-1.5 rounded bg-slate-100 text-slate-600 border border-slate-200 px-2.5 py-1 font-mono text-xs font-bold uppercase tracking-wider">
-                    <span>{isAr ? 'البرمجيات السحابية العامة' : 'GENERIC CLOUD / SAAS'}</span>
-                  </span>
-                  <h3 className="mt-2 text-xl font-extrabold text-slate-700">
-                    {isAr ? 'الحوسبة السحابية متعددة المستأجرين (Multi-Tenant Cloud)' : 'Multi-Tenant Cloud / SaaS Models'}
-                  </h3>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-slate-700 border border-slate-200">
+                    <Cloud className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <span className="font-mono text-xs font-bold text-slate-600 uppercase">
+                      {isAr ? 'مرونة وسرعة النشر' : 'INSTANT ACCESS'}
+                    </span>
+                    <h3 className="text-xl font-bold text-slate-900">
+                      {isAr ? 'التشغيل على السحابة (Cloud)' : 'Cloud Deployment'}
+                    </h3>
+                  </div>
                 </div>
-                <div className="hidden sm:block text-end">
-                  <span className="text-[11px] font-mono font-semibold text-rose-700 bg-rose-50 border border-rose-200 px-2.5 py-1 rounded">
-                    {isAr ? 'مرفوض في شبكات الـ OT' : 'Disallowed in Industrial OT'}
-                  </span>
-                </div>
+
+                <span className="text-[11px] font-mono font-bold text-sky-800 bg-sky-50 border border-sky-200 px-2.5 py-1 rounded">
+                  {isAr ? 'تشغيل فوري' : 'Instant Run'}
+                </span>
               </div>
 
-              {/* Description */}
-              <p className="mt-4 text-xs sm:text-sm text-slate-500 leading-relaxed">
+              <p className="mt-4 text-xs sm:text-sm text-slate-600 leading-relaxed">
                 {isAr
-                  ? 'منصات سحابية تعتمد على استضافة النماذج خارج المنشأة عبر متصفحات الإنترنت، مما يولد مخاطر سيبرانية وتأخيرات في الاستجابة اللحظية.'
-                  : 'Web-based systems hosting physics models on third-party public clouds, introducing severe cybersecurity compliance issues and latency jitters.'}
+                  ? 'وصول فوري من أي حاسوب مصرح به عبر المتصفح. مناسب للتجارب السريعة، الأكاديميات والمعاهد، والفرق الموزعة جغرافياً.'
+                  : 'Immediate browser-based training access. Ideal for quick pilots, training center courses, and multi-location engineering teams.'}
               </p>
 
-              {/* Feature List */}
-              <div className="mt-6 space-y-4">
-                {cloudLimitations.map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
-                    <XCircle className="h-5 w-5 text-rose-500 shrink-0 mt-0.5" />
+              <div className="mt-6 space-y-3.5">
+                {cloudStrengths.map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-2.5">
+                    <CheckCircle2 className="h-4 w-4 text-slate-700 shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="text-xs sm:text-sm font-bold text-slate-800">
+                      <h4 className="text-xs sm:text-sm font-bold text-slate-900">
                         {item.title}
                       </h4>
-                      <p className="mt-1 text-xs text-slate-500 leading-relaxed">
+                      <p className="mt-0.5 text-xs text-slate-600 leading-relaxed">
                         {item.desc}
                       </p>
                     </div>
@@ -189,37 +213,23 @@ export function DeploymentArchitecture({ locale }: DeploymentArchitectureProps) 
               </div>
             </div>
 
-            {/* Bottom summary box */}
-            <div className="mt-8 pt-5 border-t border-slate-100 bg-slate-50 rounded-xl p-4 text-xs font-mono text-slate-500 flex items-center justify-between">
-              <span>{isAr ? 'حالة الاعتماد في المنشآت الحيوية:' : 'Industrial Viability:'}</span>
-              <span className="font-semibold text-rose-600">{isAr ? 'غير مناسب لمنشآت الطاقة الحساسة' : 'Not suitable for critical assets'}</span>
+            <div className="mt-8 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <span className="text-xs font-mono text-slate-500">
+                {isAr ? 'الوصول: فوري عبر المتصفح' : 'Access: Zero Hardware Setup'}
+              </span>
+              <button
+                type="button"
+                onClick={() => handleSelectPlan('Demo')}
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-sky-600 cursor-pointer"
+              >
+                <span>{isAr ? 'تجربة سحابية سريعة' : 'Try Cloud Demo'}</span>
+                <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />
+              </button>
             </div>
           </div>
+
         </div>
 
-        {/* Corporate Scoping Callout */}
-        <div className="mt-10 rounded-xl border border-slate-200 bg-white p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-center sm:text-start">
-            <h4 className="text-sm font-bold text-slate-900">
-              {isAr
-                ? 'هل ترغب في فحص متطلبات الأجهزة والتثبيت المحلي لمنشأتك؟'
-                : 'Need hardware specifications and local workstation requirements?'}
-            </h4>
-            <p className="mt-1 text-xs text-slate-600">
-              {isAr
-                ? 'فريقنا الهندسي يوفر وثيقة المتطلبات الفنية للأجهزة ومواصفات كروت الرسوميات وشاشات كونسول الـ DCS.'
-                : 'Our engineering team provides comprehensive workstation, GPU, and multi-monitor hardware deployment specifications.'}
-            </p>
-          </div>
-
-          <Link
-            href={`/${locale}/pilot`}
-            className="inline-flex items-center gap-2 rounded-lg bg-sky-600 hover:bg-sky-500 px-6 py-2.5 text-xs font-bold text-white transition-colors active:scale-95 shrink-0"
-          >
-            <span>{isAr ? 'طلب المواصفات الفنية' : 'Request Hardware Specs'}</span>
-            <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />
-          </Link>
-        </div>
       </div>
     </section>
   );

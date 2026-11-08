@@ -9,128 +9,133 @@ interface LeadershipSectionProps {
 }
 
 export function LeadershipSection({ locale = 'en', dict }: LeadershipSectionProps) {
+  const isAr = locale === 'ar';
+
   const members = [
     {
-      name: locale === 'ar' ? 'مصطفى عادل' : 'Mostafa Adel',
-      role: locale === 'ar' ? 'المؤسس والرئيس التنفيذي' : 'Founder & CEO',
-      domain: locale === 'ar' ? 'هندسة العمليات والتوائم الرقمية' : 'PROCESS ENGINEERING & DIGITAL TWINS',
+      initials: 'MA',
+      name: isAr ? 'مصطفى عادل' : 'Mostafa Adel',
+      role: isAr ? 'المؤسس والرئيس التنفيذي' : 'Founder & CEO',
+      domain: isAr ? 'هندسة العمليات والتشغيل' : 'PLANT OPERATIONS & REFINING',
       bio:
-        locale === 'ar'
-          ? 'مهندس كيميائي ومتخصص في النمذجة الديناميكية للعمليات البترولية وتطوير أنظمة التشغيل والتحكم.'
-          : 'Chemical engineer specializing in high-fidelity dynamic modeling, process thermodynamics, and plant operations.',
+        isAr
+          ? 'مهندس عمليات بخبرة ١٠ سنوات في البتروكيماويات والتكرير ومعالجة الغاز.'
+          : 'Operations engineer with 10 years in petrochemicals, refining and gas processing.',
     },
     {
-      name: locale === 'ar' ? 'محمد عثمان' : 'Mohamed Osman',
-      role: locale === 'ar' ? 'شريك مؤسس والرئيس التقني (CTO)' : 'Co-Founder & CTO',
-      domain: locale === 'ar' ? 'معمارية النظم والحسابات الديناميكية' : 'COMPUTATIONAL SYSTEMS & ARCHITECTURE',
+      initials: 'MO',
+      name: isAr ? 'محمد عثمان' : 'Mohamed Osman',
+      role: isAr ? 'شريك مؤسس والمدير التقني' : 'Co-Founder & CTO',
+      domain: isAr ? 'معمارية النظم والحسابات' : 'DYNAMIC COMPUTATIONAL SYSTEMS',
       bio:
-        locale === 'ar'
+        isAr
           ? 'معماري أنظمة برمجية متخصص في محركات الحسابات الديناميكية ومطابقة أنظمة التحكم الموزع DCS.'
           : 'Software systems architect specializing in dynamic calculation engines, real-time thermodynamics, and DCS console integration.',
     },
     {
-      name: locale === 'ar' ? 'جهاد أشرف' : 'Gehad Ashraf',
-      role: locale === 'ar' ? 'شريك مؤسس ومستشار الأعمال' : 'Co-Founder, Business Advisor & Mentor',
-      domain: locale === 'ar' ? 'الحوكمة والاستشارات الاستراتيجية' : 'STRATEGIC ADVISORY & GOVERNANCE',
+      initials: 'GA',
+      name: isAr ? 'جهاد أشرف' : 'Gehad Ashraf',
+      role: isAr ? 'شريك مؤسس ومستشار الأعمال' : 'Co-Founder, Business Advisor & Mentor',
+      domain: isAr ? 'الحوكمة والاستشارات الاستراتيجية' : 'STRATEGIC ADVISORY & GOVERNANCE',
       bio:
-        locale === 'ar'
+        isAr
           ? 'مستشار استراتيجي في الحوكمة المؤسسية والشراكات الإقليمية ونمو المشاريع الصناعية.'
           : 'Strategic operations mentor with deep cross-border expertise in regional venture growth, industrial partnerships, and corporate governance.',
     },
     {
-      name: locale === 'ar' ? 'ردينة إمام' : 'Rodayna Emam',
-      role: locale === 'ar' ? 'شريك مؤسس وتطوير الأعمال' : 'Co-Founder, Business Development',
-      domain: locale === 'ar' ? 'النمو التجاري والشراكات' : 'COMMERCIAL GROWTH & PARTNERSHIPS',
+      initials: 'RE',
+      name: isAr ? 'ردينة إمام' : 'Rodayna Emam',
+      role: isAr ? 'شريك مؤسس وتطوير الأعمال' : 'Co-Founder, Business Development',
+      domain: isAr ? 'النمو التجاري والشراكات' : 'COMMERCIAL GROWTH & PARTNERSHIPS',
       bio:
-        locale === 'ar'
+        isAr
           ? 'مسؤولة النمو التجاري وإدارة عقود المشاريع التجريبية والتوسع في قطاع التكرير والطاقة.'
           : 'Commercial growth strategist leading refinery client engagement, industrial pilot contracts, and GCC expansion.',
     },
   ];
 
   return (
-    <section className="relative py-16 sm:py-20 bg-white overflow-hidden border-b border-slate-200">
+    <section id="about" className="relative py-16 sm:py-20 bg-white overflow-hidden border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Executive Keynote Mission Quote */}
-        <div className="mx-auto max-w-4xl text-center">
-          <span className="font-mono text-xs font-bold uppercase tracking-wider text-slate-500 block mb-3">
-            {dict?.leadership?.teamEyebrow ||
-              (locale === 'ar' ? 'القيادة وفريق العمل' : 'LEADERSHIP & FOUNDING PARTNERS')}
+        
+        {/* PART 1: ABOUT US — Built with real plant experience */}
+        <div className="max-w-4xl text-start">
+          <span className="font-mono text-xs font-bold uppercase tracking-wider text-sky-600 block mb-2">
+            {dict?.about?.eyebrow || (isAr ? 'من نحن' : 'ABOUT US')}
           </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            {dict?.about?.title ||
+              (isAr ? 'نبني نكسيفا بخبرة تشغيل حقيقية' : 'Built with real plant experience')}
+          </h2>
 
-          <div className="relative mt-4">
-            <blockquote className="text-xl sm:text-2xl lg:text-3xl font-medium text-slate-900 leading-relaxed tracking-tight">
-              &ldquo;
-              {dict?.leadership?.quote ||
-                (locale === 'ar'
-                  ? 'هدفنا تمكين مهندسي ومشغلي غرف التحكم من إدارة واختبار أعقد سيناريوهات التشغيل وحالات الطوارئ بدقة متناهية قبل التعامل مع خطوط الإنتاج الحية.'
-                  : 'Our mission is to enable plant engineers and console operators to master critical plant transients hundreds of times on high-fidelity digital twins before ever touching live valves.')}
-              &rdquo;
-            </blockquote>
-
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs text-slate-500">
-              <span className="font-bold text-slate-900">
-                {dict?.leadership?.author || (locale === 'ar' ? 'مصطفى عادل' : 'Mostafa Adel')}
-              </span>
-              <span>·</span>
-              <span>
-                {dict?.leadership?.role || (locale === 'ar' ? 'المؤسس والرئيس التنفيذي، نكسيفا' : 'Founder & CEO, Nexiiva')}
-              </span>
-              <span>·</span>
-              <span className="text-slate-600 font-medium">
-                {dict?.leadership?.note || (locale === 'ar' ? 'ملتزمون بسلامة المنشآت الحيوية' : 'Committed to Plant Safety')}
-              </span>
-            </div>
+          <div className="mt-6 space-y-4 text-base sm:text-lg text-slate-700 leading-relaxed max-w-3xl">
+            <p>
+              {dict?.about?.p1 ||
+                (isAr
+                  ? 'يبني نكسيفا مهندسو عمليات لديهم سنوات من الخبرة في التكرير والبتروكيماويات ومعالجة الغاز.'
+                  : 'Nexiiva is built by operations engineers with years of experience in refining, petrochemicals and gas processing.')}
+            </p>
+            <p>
+              {dict?.about?.p2 ||
+                (isAr
+                  ? 'هدفنا أن نمنح كل مشغّل مكانًا آمنًا للتدرّب على المواقف التي تكلّف أكثر ما يمكن عندما تسوء.'
+                  : 'Our goal is to give every operator a safe place to practice the situations that cost the most when they go wrong.')}
+            </p>
+            <p className="font-semibold text-slate-900">
+              {dict?.about?.p3 ||
+                (isAr
+                  ? 'نكسيفا منصة واحدة لأي وحدة عمليات، وليست لنوع واحد من الوحدات.'
+                  : 'Nexiiva is one platform for any process unit, not a single unit type.')}
+            </p>
           </div>
         </div>
 
-        {/* Founding & Leadership Team Grid */}
-        <div className="mt-16 pt-12 border-t border-slate-100">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
-              {dict?.leadership?.teamTitle ||
-                (locale === 'ar' ? 'الفريق القيادي والمهندسون المؤسسون' : 'The Engineering & Executive Team')}
+        {/* PART 2: THE TEAM */}
+        <div id="team" className="mt-16 pt-12 border-t border-slate-100">
+          <div className="max-w-3xl mb-10 text-start">
+            <span className="font-mono text-xs font-bold uppercase tracking-wider text-slate-500 block mb-2">
+              {dict?.leadership?.teamEyebrow || (isAr ? 'الفريق' : 'THE TEAM')}
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+              {dict?.leadership?.teamTitle || (isAr ? 'فريق العمل والقيادة' : 'The team')}
             </h3>
-            <p className="mt-2 text-xs sm:text-sm text-slate-600">
+            <p className="mt-2 text-sm text-slate-600">
               {dict?.leadership?.teamSubtitle ||
-                (locale === 'ar'
-                  ? 'بقيادة مهندسي العمليات البتروكيماوية ومعماريي البرمجيات المتقدمة وخبراء تطوير الأعمال الصناعية.'
-                  : 'Led by process automation engineers, software systems architects, and industrial commercial leaders.')}
+                (isAr
+                  ? 'مهندسو عمليات بخبرة تشغيل حقيقية في المصافي ومجمعات البتروكيماويات.'
+                  : 'Operations engineers with direct field background in refining, petrochemicals and gas processing.')}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Members Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {members.map((member, idx) => (
               <div
                 key={idx}
-                className="group relative flex flex-col justify-between rounded-xl border border-slate-200 bg-slate-50/60 p-6 hover:border-sky-300 hover:bg-white transition-all duration-200 shadow-2xs"
+                className="flex flex-col justify-between rounded-xl border border-slate-200 bg-slate-50/50 p-6 hover:border-sky-300 transition-colors"
               >
                 <div>
-                  {/* Discipline / Domain Tag */}
-                  <span className="inline-block rounded bg-sky-50 border border-sky-200 px-2 py-0.5 text-[10px] font-bold text-sky-700 tracking-wider font-mono">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white border-2 border-sky-600 font-mono text-sm font-bold text-sky-800 shadow-2xs">
+                      {member.initials}
+                    </div>
+                    <div>
+                      <h4 className="text-base font-bold text-slate-900">{member.name}</h4>
+                      <p className="text-xs font-semibold text-sky-700">{member.role}</p>
+                    </div>
+                  </div>
+
+                  <span className="font-mono text-[10px] uppercase font-bold tracking-wider text-slate-600 block mb-2">
                     {member.domain}
                   </span>
 
-                  <h4 className="mt-4 text-base font-bold text-slate-900 group-hover:text-sky-600 transition-colors">
-                    {member.name}
-                  </h4>
-
-                  <p className="mt-1 text-xs font-semibold text-slate-700">
-                    {member.role}
-                  </p>
-
-                  <p className="mt-3 text-xs leading-relaxed text-slate-600">
-                    {member.bio}
-                  </p>
-                </div>
-
-                <div className="mt-6 pt-4 border-t border-slate-200/60 text-[11px] text-slate-500 font-mono">
-                  Nexiiva Leadership
+                  <p className="text-xs text-slate-600 leading-relaxed">{member.bio}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
+
       </div>
     </section>
   );
