@@ -24,9 +24,9 @@
     "solutions": "Solutions",
     "industries": "Industries",
     "pilot": "Pilot",
-    "about": "About",
+    "about": "About us",
     "insights": "Insights",
-    "contact": "Contact",
+    "contact": "Contact us",
     "investors": "Investors",
     "menu": "Menu",
     "close": "Close",
@@ -39,15 +39,20 @@
       "consoleDesc": "Real-time fault injection, trainee monitoring, and emergency freezes.",
       "certTitle": "SOP Qualification & Compliance",
       "certDesc": "Automated performance evaluation with objective error breakdown."
-    }
+    },
+    "home": "Introduction",
+    "team": "Team",
+    "products": "Our products",
+    "plans": "Select your plan",
+    "whatsapp": "WhatsApp"
   },
   "announcement": {
     "text": "Pilot programme open — operational digital twin in ~1 week of build time",
     "cta": "Learn about the pilot"
   },
   "hero": {
-    "eyebrow": "PROCESS TRAINING SIMULATOR",
-    "title": "Fewer operator errors.\nSafer people. Protected profits.",
+    "eyebrow": "Process training simulator",
+    "title": "Fewer operator errors.",
     "subtitle": "Nexiiva is a process training simulator. Operators practice start-ups, upsets and shutdowns on a virtual unit, so mistakes happen in training and not at the real plant.",
     "primaryCta": "Book a demo",
     "secondaryCta": "Select your plan",
@@ -64,7 +69,11 @@
       "reflux": "FIC104 · 142.4 m³/h",
       "drumLevel": "LIC009 · 54.2 %",
       "columnPres": "PIC101 · 1.42 bar"
-    }
+    },
+    "titleBlue": "Safer people. Protected profits.",
+    "bookDemo": "Book a demo",
+    "selectPlan": "Select your plan",
+    "watchDemo": "Watch demo"
   },
   "trustStrip": [
     "CDU / VDU",
@@ -165,14 +174,15 @@
     ]
   },
   "demo": {
-    "eyebrow": "INTERACTIVE DIGITAL TWIN",
-    "title": "Try the console",
-    "subtitle": "Experience Nexiiva's dynamic model directly in your browser. Trigger an operational upset on the atmospheric column and watch the DCS alarms react.",
-    "caption": "Illustrative interactive demo — values are simulated in real time using local client state.",
+    "eyebrow": "DEMO",
+    "title": "Watch the demo",
+    "english": "English",
+    "arabic": "العربية",
     "normalStatus": "NORMAL RUN",
     "alarmStatus": "PROCESS ALARM",
     "tripStatus": "TRIP EMERGENCY",
     "scoreLabel": "Trainee Score",
+    "caption": "Illustrative demo",
     "columnUnit": "CDU-101 Atmospheric Distillation Column",
     "furnace": "Furnace H01",
     "refluxDrum": "Reflux V10",
@@ -226,7 +236,11 @@
   "comparison": {
     "eyebrow": "Technical Comparison",
     "title": "A fundamental shift in process engineering economics.",
-    "headers": ["Provider Category", "Cost Profile", "Delivery & Deployment Architecture"],
+    "headers": [
+      "Provider Category",
+      "Cost Profile",
+      "Delivery & Deployment Architecture"
+    ],
     "rows": [
       {
         "provider": "Large DCS Vendors",
@@ -357,93 +371,106 @@
     "cta": "Request a Pilot"
   },
   "about": {
-    "eyebrow": "Plant Experience",
+    "eyebrow": "PLANT EXPERIENCE",
     "title": "Built with real plant experience",
     "p1": "Nexiiva is built by operations engineers with years of experience in refining, petrochemicals and gas processing.",
     "p2": "Our goal is to give every operator a safe place to practice the situations that cost the most when they go wrong.",
     "p3": "Nexiiva is one platform for any process unit, not a single unit type."
   },
   "products": {
-    "eyebrow": "Our Products",
+    "eyebrow": "OUR PRODUCTS",
     "title": "Simulation software built for real plant operations",
-    "subtitle": "Practice on ready process units or assemble new ones from an equipment library.",
+    "lead": "Practice on ready process units.",
+    "tag": "Available now",
+    "name": "Nexiiva OTS",
+    "bullets": [
+      "CDU/VDU unit ready, more units on the way",
+      "DCS-style console with live trends and alarms",
+      "Instructor console for fault injection and scoring"
+    ],
+    "screenshots": [
+      {
+        "caption": "Atmospheric column",
+        "src": "/assets/screens/cdu-atm-column.webp"
+      },
+      {
+        "caption": "Vacuum column",
+        "src": "/assets/screens/vdu-vacuum-column.webp"
+      },
+      {
+        "caption": "Crude preheat train",
+        "src": "/assets/screens/crude-preheat-train.webp"
+      },
+      {
+        "caption": "Live process values",
+        "src": "/assets/screens/live-process-values.webp"
+      },
+      {
+        "caption": "12 live trends at once",
+        "src": "/assets/screens/live-trends-12.webp"
+      }
+    ],
+    "subtitle": "Practice on ready process units.",
     "otsTag": "Available now",
     "otsTitle": "Nexiiva OTS",
-    "otsDesc": "An operator training simulator. The CDU/VDU unit is ready and more units are on the way. Run it on the cloud or on your own servers.",
-    "otsFeatures": [
-      "Ready CDU/VDU unit with crude preheat train",
-      "1:1 DCS console emulation & multi-pen trend charts",
-      "Start-up, normal operation and emergency shutdown",
-      "Instructor fault injection & automated SOP scoring"
-    ],
+    "otsDesc": "An operator training simulator. CDU/VDU ready.",
     "builderTag": "Early access",
     "builderTitle": "Nexiiva OTS Builder",
-    "builderDesc": "Assemble a new unit from an equipment library and export it as a Nexiiva project. Gas units such as TEG dehydration and amine sweetening are being built with it. Still in testing.",
-    "builderFeatures": [
-      "Modular equipment library for unit assembly",
-      "TEG Dehydration & Amine Sweetening in testing",
-      "Export directly as an active Nexiiva project",
-      "Cuts unit modeling time to ~1 week"
-    ]
+    "builderDesc": "Assemble new units from an equipment library."
   },
   "plans": {
-    "eyebrow": "Select Your Plan",
+    "eyebrow": "SELECT YOUR PLAN",
     "title": "Select your plan",
-    "subtitle": "Tell us which one fits and we will send you a quote.",
+    "lead": "Tell us which one fits and we will send you a quote.",
     "pilot": {
       "title": "Pilot",
-      "badge": "Low Risk",
-      "desc": "Three months with your own operators, before you commit to a license.",
-      "features": [
-        "Three months with your own plant operators",
-        "Practice start-ups, shutdowns, and custom upsets",
-        "Deploy on cloud or offline air-gapped workstations",
-        "Full trainee response & qualification reporting"
-      ],
+      "desc": "Three months with your own operators before you commit to a license. Includes start-ups, shutdowns, 5 custom upsets and a trainee scoring report.",
       "cta": "Request a pilot"
     },
+    "onPrem": {
+      "title": "On-premises license",
+      "desc": "Installed offline inside your plant. One license per process unit plus yearly maintenance. Your company covers our team’s travel and stay for the installation.",
+      "cta": "Request a quote"
+    },
+    "cloud": {
+      "title": "Cloud license",
+      "desc": "Access from the browser with no server setup. One license per process unit plus yearly maintenance.",
+      "cta": "Request a quote"
+    },
+    "subtitle": "Tell us which one fits and we will send you a quote.",
     "companyLicense": {
-      "title": "Company license",
-      "badge": "Industrial Plants",
-      "desc": "One license per process unit plus yearly maintenance. Choose cloud or on-premises. For on-premises installation, your company covers our team’s travel and stay.",
-      "features": [
-        "One license per industrial process unit",
-        "Yearly maintenance, updates and engineer support",
-        "Choose cloud or on-premises installation",
-        "On-premises: company covers team travel & stay"
-      ],
+      "title": "On-premises license",
+      "desc": "Installed offline inside your plant. One license per process unit plus yearly maintenance. Your company covers our team’s travel and stay for the installation.",
       "cta": "Request a quote"
     },
     "trainingCenter": {
       "title": "Training center",
       "badge": "Institutes & Academies",
-      "desc": "Per-person courses of 5 days, minimum 5 trainees, online or in person. Generic: practice on the units already on Nexiiva. Specific: you choose the unit and trainees train on it. For in-person courses the center covers the instructor’s travel and stay.",
-      "features": [
-        "5-day intensive per-person courses (min. 5 trainees)",
-        "Delivered online or in-person at your center",
-        "Generic track: practice on ready Nexiiva units",
-        "Specific track: trainees train on your chosen unit",
-        "In-person courses: center covers instructor travel & stay"
-      ],
+      "desc": "5-day courses",
       "cta": "Request a course"
     }
   },
   "contact": {
+    "eyebrow": "CONTACT US",
     "title": "Contact us",
-    "subtitle": "Send us a message and we will reply by email.",
-    "emailLabel": "Email:",
-    "phoneLabel": "WhatsApp:",
+    "lead": "Send us a message and we will reply. We sign a mutual NDA before reviewing any plant documents.",
+    "whatsapp": "WhatsApp",
+    "email": "Mostafa.adel.esmaiel@gmail.com",
     "nameLabel": "Name",
     "companyLabel": "Company",
     "interestLabel": "I’m interested in",
-    "interests": {
-      "notSure": "Not sure yet",
-      "demo": "Demo",
-      "pilot": "Pilot",
-      "companyLicense": "Company license",
-      "trainingCenter": "Training center course"
-    },
+    "options": [
+      "Not sure yet",
+      "Demo",
+      "Pilot",
+      "On-premises license",
+      "Cloud license"
+    ],
     "messageLabel": "Message",
+    "sendBtn": "Send message",
+    "subtitle": "Send us a message and we will reply. We sign a mutual NDA before reviewing any plant documents.",
+    "emailLabel": "Email:",
+    "phoneLabel": "WhatsApp:",
     "submitBtn": "Send message"
   },
   "leadership": {
@@ -513,6 +540,47 @@
     "phonePlaceholder": "+20 100 413 1154",
     "rights": "All rights reserved.",
     "privacy": "Privacy Policy",
-    "terms": "Terms of Service"
+    "terms": "Terms of Service",
+    "copy": "© 2026 Nexiiva · Cairo / Alexandria, Egypt"
+  },
+  "impact": {
+    "eyebrow": "OPERATIONAL IMPACT",
+    "title": "How it helps",
+    "lead": "Fewer errors reach the real plant, which protects lives and company profit.",
+    "points": [
+      "Practice start-up and shutdown with no risk to equipment",
+      "Face upsets and alarms before they happen for real",
+      "Run on the cloud, or offline inside your plant"
+    ]
+  },
+  "team": {
+    "eyebrow": "LEADERSHIP & FOUNDERS",
+    "title": "The team",
+    "members": [
+      {
+        "name": "Mostafa Adel",
+        "role": "Founder & CEO",
+        "bio": "Operations engineer with 10 years in petrochemicals, refining and gas processing.",
+        "initials": "MA"
+      },
+      {
+        "name": "Mohamed Osman",
+        "role": "Co-founder & CTO",
+        "bio": "Software architect for dynamic calculation engines and DCS console integration.",
+        "initials": "MO"
+      },
+      {
+        "name": "Gehad Ashraf",
+        "role": "Co-founder & Business Advisor",
+        "bio": "Mentor in strategy, partnerships and governance.",
+        "initials": "GA"
+      },
+      {
+        "name": "Rodayna Emam",
+        "role": "Co-founder & Business Development",
+        "bio": "Leads refinery client engagement and pilot contracts.",
+        "initials": "RE"
+      }
+    ]
   }
 }

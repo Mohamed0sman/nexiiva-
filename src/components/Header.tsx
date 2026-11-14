@@ -3,43 +3,21 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { NexiivaLogo } from './NexiivaLogo';
 import type { Dict } from '@/types/dict';
-import {
-  ChevronDown,
-  Menu,
-  X,
-  Languages,
-  Monitor,
-  Cpu,
-  Sliders,
-  Award,
-  ArrowRight,
-  MessageCircle,
-} from 'lucide-react';
 
 interface HeaderProps {
   locale: string;
-  dict: Dict;
+  dict?: Dict;
 }
 
 export function Header({ locale, dict }: HeaderProps) {
   const pathname = usePathname();
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const isAr = locale === 'ar';
+  const switchLocale = isAr ? 'en' : 'ar';
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   // Compute other locale URL
-  const switchLocale = locale === 'en' ? 'ar' : 'en';
   const redirectedPathName = (targetLocale: string) => {
     if (!pathname) return `/${targetLocale}`;
     const segments = pathname.split('/');
@@ -47,271 +25,152 @@ export function Header({ locale, dict }: HeaderProps) {
     return segments.join('/') || `/${targetLocale}`;
   };
 
-  const navLinks = [
-    { href: `/${locale}/platform`, label: dict?.nav?.platform || 'Platform' },
-    {
-      href: `/${locale}/solutions`,
-      label: dict?.nav?.solutions || 'Solutions',
-      isMega: true,
-    },
-    { href: `/${locale}/industries`, label: dict?.nav?.industries || 'Industries' },
-    { href: `/${locale}/pilot`, label: dict?.nav?.pilot || 'Pilot' },
-    { href: `/${locale}/about`, label: dict?.nav?.about || 'About' },
-    { href: `/${locale}/insights`, label: dict?.nav?.insights || 'Insights' },
-    { href: `/${locale}/contact`, label: dict?.nav?.contact || 'Contact' },
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const sections = ['home', 'demo', 'about', 'team', 'products', 'plans', 'contact'];
+    const handleScroll = () => {
+      const scrollPos = window.scrollY + 100;
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const id = sections[i];
+        const el = document.getElementById(id);
+        if (el) {
+          const top = el.offsetTop;
+          if (scrollPos >= top) {
+            setActiveSection(id === 'demo' ? 'home' : id);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navItems = [
+    { id: 'home', label: dict?.nav?.home || (isAr ? 'المقدمة' : 'Introduction') },
+    { id: 'about', label: dict?.nav?.about || (isAr ? 'من نحن' : 'About us') },
+    { id: 'team', label: dict?.nav?.team || (isAr ? 'الفريق' : 'Team') },
+    { id: 'products', label: dict?.nav?.products || (isAr ? 'منتجاتنا' : 'Our products') },
+    { id: 'plans', label: dict?.nav?.plans || (isAr ? 'اختر خطتك' : 'Select your plan') },
+    { id: 'contact', label: dict?.nav?.contact || (isAr ? 'تواصل معنا' : 'Contact us') },
   ];
 
-  const megaSolutions = [
-    {
-      href: `/${locale}/solutions#ots`,
-      icon: Monitor,
-      title: dict?.nav?.solutionsMega?.otsTitle || (locale === 'ar' ? 'التوأم الرقمي ومطابقة DCS' : 'Process Digital Twins & DCS'),
-      desc: dict?.nav?.solutionsMega?.otsDesc || (locale === 'ar' ? 'مطابقة ديناميكية متكاملة 1:1 مع شاشات كونسول DCS وفيزياء حية.' : 'Dynamic DCS console emulation with live multi-component physics.'),
-    },
-    {
-      href: `/${locale}/solutions#builder`,
-      icon: Cpu,
-      title: dict?.nav?.solutionsMega?.builderTitle || (locale === 'ar' ? 'محرك النمذجة الهندسية للوحدات' : 'Unit Modeling Engine'),
-      desc: dict?.nav?.solutionsMega?.builderDesc || (locale === 'ar' ? 'بناء سريع للتوائم الرقمية بالاعتماد على مخططات التدفق الهندسية.' : 'Rapid unit generation from engineering flowsheets and process logic.'),
-    },
-    {
-      href: `/${locale}/solutions#console`,
-      icon: Sliders,
-      title: dict?.nav?.solutionsMega?.consoleTitle || (locale === 'ar' ? 'محطة التحكم الإشرافي وإدارة الطوارئ' : 'Supervisory Station'),
-      desc: dict?.nav?.solutionsMega?.consoleDesc || (locale === 'ar' ? 'حقن الأعطال التشغيلية فورياً، ومراقبة الكوادر، والتجميد الطارئ.' : 'Real-time fault injection, trainee monitoring, and emergency freezes.'),
-    },
-    {
-      href: `/${locale}/solutions#certification`,
-      icon: Award,
-      title: dict?.nav?.solutionsMega?.certTitle || (locale === 'ar' ? 'منظومة تقييم واعتماد الكفاءة (SOP)' : 'SOP Qualification & Compliance'),
-      desc: dict?.nav?.solutionsMega?.certDesc || (locale === 'ar' ? 'تقييم أداء فوري وموضوعي مع تحليل دقيق للاستجابة.' : 'Automated performance evaluation with objective error breakdown.'),
-    },
-  ];
+  const handleNavClick = (id: string) => {
+    setIsMobileOpen(false);
+    setActiveSection(id);
+    const target = document.getElementById(id);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
-    <>
-      <header
-        className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 bg-white/95 backdrop-blur-md text-slate-900 border-b border-slate-200 ${
-          isScrolled ? 'py-3 shadow-xs' : 'py-4'
-        }`}
-      >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          {/* Logo */}
-          <Link
-            href={`/${locale}`}
-            className="flex items-center gap-2 focus:outline-none"
-            aria-label="Nexiiva Home"
+    <header className="sticky top-0 z-40 bg-white border-b border-[#e3e8ee]">
+      <div className="mx-auto max-w-[1100px] px-5 flex items-center h-[68px]">
+        {/* Brand Logo */}
+        <Link
+          href={`/${locale}#home`}
+          onClick={() => handleNavClick('home')}
+          className="flex items-center gap-2 focus:outline-none"
+          aria-label="Nexiiva"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/assets/brand/nexiiva-logo-v8.png"
+            alt="Nexiiva"
+            className="h-[30px] w-auto block"
+          />
+        </Link>
+
+        {/* Desktop Navigation Links */}
+        <nav className="hidden md:flex items-center gap-1 ms-auto">
+          {navItems.map((item) => {
+            const isCurrent = activeSection === item.id;
+            return (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick(item.id);
+                }}
+                className={`text-[0.95rem] font-medium px-3.5 py-2 rounded-lg transition-colors ${
+                  isCurrent
+                    ? 'text-[#0084d3] bg-[#e7faff]'
+                    : 'text-[#485460] hover:text-[#101622] hover:bg-[#f8fbfe]'
+                }`}
+              >
+                {item.label}
+              </a>
+            );
+          })}
+        </nav>
+
+        {/* Actions (WhatsApp, Language Toggle, Mobile Toggle) */}
+        <div className="flex items-center gap-2 ms-auto md:ms-4">
+          {/* WhatsApp Direct Icon Button */}
+          <a
+            href="https://wa.me/201004131154"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+            className="h-11 w-11 rounded-xl border border-[#a7f3d0] bg-[#ecfdf5] text-[#006145] hover:bg-emerald-100 flex items-center justify-center transition-colors"
+            title="WhatsApp: 01004131154"
           >
-            <NexiivaLogo
-              variant="dark"
-              className="h-8 w-auto"
-              showTagline={false}
-            />
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z" />
+            </svg>
+          </a>
+
+          {/* Language Switch Button */}
+          <Link
+            href={redirectedPathName(switchLocale)}
+            className="h-11 px-4 rounded-xl border border-[#e3e8ee] bg-[#f8fbfe] text-[#101622] hover:bg-slate-100 flex items-center justify-center text-sm font-semibold transition-colors font-sans select-none"
+            title="Switch Language"
+          >
+            {isAr ? 'EN' : 'عربي'}
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-7">
-            {navLinks.map((item) => {
-              if (item.isMega) {
-                return (
-                  <div
-                    key={item.href}
-                    className="relative group"
-                    onMouseEnter={() => setIsSolutionsOpen(true)}
-                    onMouseLeave={() => setIsSolutionsOpen(false)}
-                  >
-                    <Link
-                      href={item.href}
-                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-700 transition-colors hover:text-sky-600"
-                    >
-                      {item.label}
-                      <ChevronDown
-                        className={`h-4 w-4 transition-transform duration-200 ${
-                          isSolutionsOpen ? 'rotate-180 text-sky-600' : 'text-slate-400'
-                        }`}
-                      />
-                    </Link>
-
-                    {/* Solutions Mega Menu Dropdown */}
-                    {isSolutionsOpen && (
-                      <div className="absolute start-1/2 top-full -translate-x-1/2 pt-3 w-[560px]">
-                        <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-4 shadow-xl">
-                          <div className="grid grid-cols-2 gap-3">
-                            {megaSolutions.map((sol) => {
-                              const Icon = sol.icon;
-                              return (
-                                <Link
-                                  key={sol.href}
-                                  href={sol.href}
-                                  className="group/item flex flex-col rounded-lg border border-transparent p-3 transition-colors hover:border-slate-200 hover:bg-slate-50"
-                                >
-                                  <div className="flex items-center gap-2.5">
-                                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-sky-50 text-sky-600">
-                                      <Icon className="h-4 w-4" />
-                                    </div>
-                                    <span className="text-xs font-bold text-slate-900 group-hover/item:text-sky-600">
-                                      {sol.title}
-                                    </span>
-                                  </div>
-                                  <p className="mt-2 text-[11px] leading-relaxed text-slate-600">
-                                    {sol.desc}
-                                  </p>
-                                </Link>
-                              );
-                            })}
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                );
-              }
-
-              const isActive = pathname === item.href;
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`text-sm font-semibold transition-colors ${
-                    isActive
-                      ? 'text-sky-600 font-bold'
-                      : 'text-slate-700 hover:text-sky-600'
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-          </nav>
-
-          {/* Right Header Actions: WhatsApp, Locale switch, CTA */}
-          <div className="hidden lg:flex items-center gap-3">
-            {/* WhatsApp Direct Connect */}
-            <a
-              href="https://wa.me/201004131154"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-300 bg-emerald-50 px-3 py-1.5 font-mono-tag text-xs font-bold text-emerald-800 hover:bg-emerald-100 transition-colors"
-              title="WhatsApp: 01004131154"
-            >
-              <MessageCircle className="h-3.5 w-3.5 fill-current text-emerald-600" />
-              <span>01004131154</span>
-            </a>
-
-            {/* EN / AR Switcher */}
-            <Link
-              href={redirectedPathName(switchLocale)}
-              className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 font-mono-tag text-xs font-semibold text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900"
-              title="Switch Language"
-            >
-              <Languages className="h-3.5 w-3.5 text-sky-600" />
-              <span>{locale === 'en' ? 'العربية' : 'EN'}</span>
-            </Link>
-
-            {/* Request a Pilot CTA */}
-            <Link
-              href={`/${locale}/pilot`}
-              className="inline-flex items-center gap-2 rounded-lg bg-sky-600 hover:bg-sky-500 px-4 py-2 text-xs font-bold text-white transition-colors shadow-xs active:scale-95"
-            >
-              <span>{dict?.common?.requestPilot || 'Request a Pilot'}</span>
-              <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />
-            </Link>
-          </div>
-
           {/* Mobile Hamburger Button */}
-          <div className="flex items-center gap-2 lg:hidden">
-            <a
-              href="https://wa.me/201004131154"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-lg border border-emerald-300 bg-emerald-50 p-2 text-emerald-700"
-              title="WhatsApp"
-            >
-              <MessageCircle className="h-4 w-4 fill-current" />
-            </a>
-            <Link
-              href={redirectedPathName(switchLocale)}
-              className="rounded-lg border border-slate-200 bg-slate-50 p-2 text-xs font-mono-tag text-slate-800 font-bold"
-            >
-              {locale === 'en' ? 'عربي' : 'EN'}
-            </Link>
-            <button
-              type="button"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="rounded-lg border border-slate-200 bg-slate-50 p-2 text-slate-800 hover:bg-slate-100"
-              aria-label="Toggle navigation menu"
-            >
-              {isMobileMenuOpen ? (
-                <X className="h-5 w-5" />
-              ) : (
-                <Menu className="h-5 w-5" />
-              )}
-            </button>
-          </div>
+          <button
+            type="button"
+            onClick={() => setIsMobileOpen(!isMobileOpen)}
+            aria-label="Toggle navigation"
+            className="md:hidden h-11 w-11 rounded-xl border border-[#e3e8ee] bg-[#f8fbfe] text-[#101622] flex items-center justify-center hover:bg-slate-100"
+          >
+            {isMobileOpen ? (
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                <path d="M4 7h16M4 12h16M4 17h16" />
+              </svg>
+            )}
+          </button>
         </div>
-      </header>
+      </div>
 
-      {/* Full-Height Mobile Navigation Drawer / Sheet */}
-      {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-50 flex flex-col bg-white text-slate-900 lg:hidden">
-          <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4">
-            <NexiivaLogo variant="dark" className="h-7 w-auto" />
-            <button
-              type="button"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="rounded-lg border border-slate-200 bg-slate-50 p-2 text-slate-800"
-              aria-label="Close menu"
+      {/* Mobile Drawer */}
+      {isMobileOpen && (
+        <div className="md:hidden border-t border-[#e3e8ee] bg-white px-5 py-4 flex flex-col space-y-2">
+          {navItems.map((item) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick(item.id);
+              }}
+              className="py-2.5 px-3 rounded-lg text-base font-semibold text-[#485460] hover:text-[#101622] hover:bg-[#f8fbfe]"
             >
-              <X className="h-5 w-5" />
-            </button>
-          </div>
-
-          <div className="flex-1 overflow-y-auto px-6 py-6">
-            <nav className="flex flex-col space-y-4">
-              {navLinks.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="border-b border-slate-100 pb-3 text-base font-semibold text-slate-800 hover:text-sky-600"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-
-            <div className="mt-8 flex flex-col gap-3">
-              <a
-                href="https://wa.me/201004131154"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 rounded-lg bg-emerald-600 py-3 text-sm font-bold text-white hover:bg-emerald-700 transition-colors shadow-xs"
-              >
-                <MessageCircle className="h-4 w-4 fill-current" />
-                <span>واتساب مباشر: 01004131154</span>
-              </a>
-
-              <Link
-                href={`/${locale}/pilot`}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 rounded-lg bg-sky-600 py-3 text-sm font-bold text-white shadow-xs"
-              >
-                <span>{dict?.common?.requestPilot || 'Request a Pilot'}</span>
-                <ArrowRight className="h-4 w-4 rtl:rotate-180" />
-              </Link>
-
-              <Link
-                href={redirectedPathName(switchLocale)}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-slate-50 py-2.5 font-mono-tag text-xs font-semibold text-slate-800"
-              >
-                <Languages className="h-4 w-4 text-sky-600" />
-                <span>{locale === 'en' ? 'التحويل إلى العربية' : 'Switch to English'}</span>
-              </Link>
-            </div>
-          </div>
+              {item.label}
+            </a>
+          ))}
         </div>
       )}
-    </>
+    </header>
   );
 }
