@@ -54,11 +54,12 @@
 ## 4. State & Data Flow
 - **Localization**: Handled by `next-intl` reading `content/messages/en.json` and `content/messages/ar.json`.
 - **Direction**: Automatic `dir="ltr"` for `/en` and `dir="rtl"` for `/ar`.
-- **Form Actions**: Selection of any plan in `PlansSection` automatically populates the `I'm interested in` dropdown in `ContactSection` and smoothly scrolls into view.
+- **Form Actions**: Selection of any plan in `PlansSection` automatically populates the `I'm interested in` dropdown in `ContactSection` and smoothly scrolls into view. Form submission asynchronously posts to `/api/lead` with server-side lead recording in `data/leads.jsonl` and real-time SMTP dispatch to `Mostafa.adel.esmaiel@gmail.com` with client `replyTo` binding.
 - **Direct Communication**: One-click WhatsApp link directly opens WhatsApp with pre-composed inquiry details.
 
 ---
 
 ## 5. Changelog
-- **v8.1.0 (Current)**: Studio-Grade Craft & Visual Polish. Complete redesign of the Navbar with centered floating pill navigation, live engine status badge, WhatsApp direct pill, and Book Demo CTA. Elevated Hero Section with industrial grid texture, proof markers, and animated flow dash trays on the CDU-101 schematic. Polished all sections with Bento cards, console video frame, editorial layout, and enhanced micro-interactions while preserving zero-AI industrial engineering tone.
+- **v8.1.1 (Current)**: Lead Capture & Automated Email Dispatch Engine. Upgraded ContactSection to perform asynchronous background submission to `/api/lead` with fields for Name, Work Email, Phone/WhatsApp, Company, Interest, and Unit Scope. Configured `replyTo` so Eng. Mostafa can reply directly to clients from his Gmail inbox. Added zero-loss persistence to `data/leads.jsonl`, in-page transmission spinner and success confirmation card with 1-click WhatsApp follow-up.
+- **v8.1.0**: Studio-Grade Craft & Visual Polish. Complete redesign of the Navbar with centered floating pill navigation, live engine status badge, WhatsApp direct pill, and Book Demo CTA. Elevated Hero Section with industrial grid texture, proof markers, and animated flow dash trays on the CDU-101 schematic. Polished all sections with Bento cards, console video frame, editorial layout, and enhanced micro-interactions while preserving zero-AI industrial engineering tone.
 - **v8.0.0**: Aligned site design, content, and section rhythm with `nexiiva-site-v8.html`. Extracted 5 high-res WebP screenshots, integrated interactive video player with language switcher, consolidated commercial tiers (Pilot / On-prem / Cloud).

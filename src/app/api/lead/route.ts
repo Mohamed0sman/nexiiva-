@@ -62,39 +62,69 @@ export async function POST(req: Request) {
 
         const subject =
           data.type === 'pilot'
-            ? `[Nexiiva Pilot Request] ${data.companyName || ''} - ${data.fullName || ''}`
-            : `[Nexiiva Contact Inquiry] ${data.subject || ''} from ${data.name || ''}`;
+            ? `[Nexiiva Pilot Request] ${data.companyName || data.company || ''} - ${data.fullName || data.name || ''}`
+            : `[Nexiiva Inquiries] ${data.interest || data.subject || 'New Contact'} from ${data.name || ''} (${data.company || ''})`;
 
         const html = `
-          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px;">
-            <div style="background-color: #0284C7; padding: 16px; border-radius: 6px; text-align: center;">
-              <h2 style="color: #ffffff; margin: 0; font-size: 20px;">NEXIIVA · NEW INQUIRY</h2>
+          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 620px; margin: 0 auto; padding: 24px; border: 1px solid #e2e8f0; border-radius: 12px; background-color: #ffffff;">
+            <div style="background-color: #0084d3; padding: 18px 24px; border-radius: 8px; text-align: left;">
+              <h2 style="color: #ffffff; margin: 0; font-size: 18px; letter-spacing: 0.5px; font-weight: 700;">NEXIIVA · OPERATOR TRAINING SIMULATOR</h2>
+              <p style="color: #e0f2fe; margin: 4px 0 0 0; font-size: 13px;">New Web Lead & Direct Inquiries Notification</p>
             </div>
-            <div style="padding: 20px 0;">
-              <p style="font-size: 14px; color: #475569;">Received at: <strong>${timestamp}</strong></p>
-              <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
-                ${Object.entries(data)
-                  .filter(([k]) => k !== 'honeypot')
-                  .map(
-                    ([k, v]) => `
-                  <tr>
-                    <td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #64748b; font-weight: bold; width: 35%; text-transform: capitalize;">${k}</td>
-                    <td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #0f172a;">${v}</td>
-                  </tr>
-                `
-                  )
-                  .join('')}
+            
+            <div style="padding: 24px 0;">
+              <p style="font-size: 13px; color: #64748b; margin-top: 0;">Received at: <strong style="color: #0f172a;">${timestamp}</strong></p>
+              
+              <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 16px;">
+                <tr>
+                  <td style="padding: 10px 12px; border-bottom: 1px solid #f1f5f9; color: #64748b; font-weight: 600; width: 30%;">Full Name</td>
+                  <td style="padding: 10px 12px; border-bottom: 1px solid #f1f5f9; color: #0f172a; font-weight: 700;">${data.name || data.fullName || '—'}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px 12px; border-bottom: 1px solid #f1f5f9; color: #64748b; font-weight: 600;">Client Email</td>
+                  <td style="padding: 10px 12px; border-bottom: 1px solid #f1f5f9; color: #0084d3; font-weight: 600;">
+                    ${data.email ? `<a href="mailto:${data.email}" style="color: #0084d3; text-decoration: underline;">${data.email}</a>` : '—'}
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px 12px; border-bottom: 1px solid #f1f5f9; color: #64748b; font-weight: 600;">Phone / WhatsApp</td>
+                  <td style="padding: 10px 12px; border-bottom: 1px solid #f1f5f9; color: #0f172a; font-weight: 600;">
+                    ${data.phone ? `<a href="https://wa.me/${data.phone.replace(/[^0-9]/g, '')}" style="color: #059669; text-decoration: underline;">${data.phone}</a>` : '—'}
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px 12px; border-bottom: 1px solid #f1f5f9; color: #64748b; font-weight: 600;">Company / Facility</td>
+                  <td style="padding: 10px 12px; border-bottom: 1px solid #f1f5f9; color: #0f172a;">${data.company || data.companyName || '—'}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px 12px; border-bottom: 1px solid #f1f5f9; color: #64748b; font-weight: 600;">Interested In / Plan</td>
+                  <td style="padding: 10px 12px; border-bottom: 1px solid #f1f5f9; color: #0f172a; font-weight: 600;">${data.interest || data.subject || data.type || 'General'}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px 12px; border-bottom: 1px solid #f1f5f9; color: #64748b; font-weight: 600; vertical-align: top;">Message / Scope</td>
+                  <td style="padding: 10px 12px; border-bottom: 1px solid #f1f5f9; color: #0f172a; white-space: pre-wrap; line-height: 1.6;">${data.message || '—'}</td>
+                </tr>
               </table>
             </div>
-            <div style="background-color: #f8fafc; padding: 12px; border-radius: 6px; font-size: 12px; color: #64748b; text-align: center;">
-              This notification was generated from Nexiiva Web Platform for Eng. Mostafa Adel.
+
+            <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; padding: 14px 18px; border-radius: 8px; font-size: 13px; color: #475569;">
+              <p style="margin: 0 0 6px 0; font-weight: 600; color: #0f172a;">Quick Actions for Eng. Mostafa Adel:</p>
+              <ul style="margin: 0; padding-left: 20px; color: #475569;">
+                <li>Click <strong>Reply</strong> in your email client to respond directly to <a href="mailto:${data.email}">${data.email || 'the client'}</a>.</li>
+                ${data.phone ? `<li>Open WhatsApp: <a href="https://wa.me/${data.phone.replace(/[^0-9]/g, '')}" style="color: #059669; font-weight: 600;">Chat with client on WhatsApp</a></li>` : ''}
+              </ul>
+            </div>
+            
+            <div style="margin-top: 20px; font-size: 11px; color: #94a3b8; text-align: center;">
+              Dispatched automatically by Nexiiva Web Engine to Eng. Mostafa Adel (mostafa.adel.esmaiel@gmail.com).
             </div>
           </div>
         `;
 
         await transporter.sendMail({
-          from: `"Nexiiva Operations" <${smtpUser}>`,
+          from: `"Nexiiva Lead System" <${smtpUser}>`,
           to: NOTIFICATION_EMAIL,
+          replyTo: data.email || undefined,
           subject,
           html,
         });
@@ -109,7 +139,9 @@ export async function POST(req: Request) {
       emailSent,
       notificationEmail: NOTIFICATION_EMAIL,
       whatsappNumber: WHATSAPP_NUMBER,
-      message: 'Inquiry registered and dispatched.',
+      message: emailSent
+        ? 'Inquiry registered and email dispatched to Mostafa Adel.'
+        : 'Inquiry registered in database. Configure GMAIL_APP_PASSWORD to enable real-time email dispatch.',
     });
   } catch (error) {
     console.error('[Nexiiva API Lead Error]', error);

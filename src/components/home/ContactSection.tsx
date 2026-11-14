@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Mail, MessageCircle, ShieldCheck, Check, Send, PhoneCall } from 'lucide-react';
+import { Mail, MessageCircle, ShieldCheck, CheckCircle2, Send, PhoneCall, Loader2, ArrowRight } from 'lucide-react';
 import type { Dict } from '@/types/dict';
 
 interface ContactSectionProps {
@@ -15,10 +15,14 @@ const WHATSAPP_URL = 'https://wa.me/201004131154';
 export function ContactSection({ locale, dict }: ContactSectionProps) {
   const isAr = locale === 'ar';
   const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [company, setCompany] = useState('');
   const [interest, setInterest] = useState('Not sure yet');
   const [message, setMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const eyebrow = dict?.contact?.eyebrow || (isAr ? 'تواصل معنا' : 'CONTACT US');
   const title = dict?.contact?.title || (isAr ? 'تواصل معنا' : 'Contact us');
@@ -36,16 +40,64 @@ export function ContactSection({ locale, dict }: ContactSectionProps) {
     { value: 'Cloud license', label: isAr ? 'ترخيص سحابي (Cloud)' : 'Cloud license' },
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setErrorMessage('');
 
-    const body = `Name: ${name}\nCompany: ${company}\nInterested in: ${interest}\n\n${message}`;
-    const mailtoUrl = `mailto:${EMAIL}?subject=${encodeURIComponent(
-      `Nexiiva – ${interest}`
-    )}&body=${encodeURIComponent(body)}`;
+    try {
+      const res = await fetch('/api/lead', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          type: 'contact',
+          name,
+          email,
+          phone,
+          company,
+          interest,
+          message,
+        }),
+      });
 
-    window.location.href = mailtoUrl;
-    setSubmitted(true);
+      if (!res.ok) {
+        throw new Error('Server response failed');
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      console.error('[Contact Submit Error]', err);
+      // Fallback: Open mail client if background API dispatch failed
+      const body = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCompany: ${company}\nInterested in: ${interest}\n\n${message}`;
+      const mailtoUrl = `mailto:${EMAIL}?subject=${encodeURIComponent(
+        `Nexiiva – ${interest} from ${name}`
+      )}&body=${encodeURIComponent(body)}`;
+
+      window.location.href = mailtoUrl;
+      setSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const resetForm = () => {
+    setName('');
+    setEmail('');
+    setPhone('');
+    setCompany('');
+    setInterest('Not sure yet');
+    setMessage('');
+    setSubmitted(false);
+    setErrorMessage('');
+  };
+
+  const getWhatsAppFollowupLink = () => {
+    const text = isAr
+      ? `مرحباً م. مصطفى عادل، تواصلت معكم عبر موقع نكسيفا بخصوص: ${interest} - الاسم: ${name} (${company}).`
+      : `Hello Eng. Mostafa, I reached out through the Nexiiva platform regarding: ${interest} - ${name} (${company}).`;
+    return `https://wa.me/201004131154?text=${encodeURIComponent(text)}`;
   };
 
   return (
@@ -146,59 +198,136 @@ export function ContactSection({ locale, dict }: ContactSectionProps) {
           {/* Right Column: Clean Interactive Form */}
           <div className="lg:col-span-7 bg-white border border-[#e3e8ee] rounded-[24px] p-6 sm:p-8 shadow-[0_12px_40px_-10px_rgba(16,22,34,0.06)]">
             {submitted ? (
-              <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-7 text-start">
-                <div className="flex items-center gap-2.5 text-emerald-800 font-bold mb-2 text-base">
-                  <Check className="h-5 w-5 text-emerald-600" />
-                  <span>{isAr ? 'تم فتح تطبيق البريد الخاص بك بنجاح!' : 'Email client opened successfully!'}</span>
+              <div className="rounded-2xl border border-emerald-200 bg-emerald-50/70 p-6 sm:p-8 text-start">
+                <div className="flex items-center gap-3 text-emerald-800 font-bold mb-3 text-lg">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 shrink-0">
+                    <CheckCircle2 className="h-6 w-6" />
+                  </div>
+                  <span>{isAr ? 'تم إرسال رسالتك بنجاح!' : 'Inquiry Received Successfully!'}</span>
                 </div>
-                <p className="text-sm text-emerald-700 leading-relaxed">
-                  {isAr
-                    ? 'تم تجهيز مسودة الرسالة متضمنة بياناتك واختيارك. إذا لم يفتح البريد تلقائياً، يمكنك مراسلتنا مباشرة على Mostafa.adel.esmaiel@gmail.com.'
-                    : 'Your message has been formatted. If your email application did not launch automatically, feel free to email Mostafa.adel.esmaiel@gmail.com directly.'}
+
+                <p className="text-sm text-slate-700 leading-relaxed mb-4">
+                  {isAr ? (
+                    <>
+                      شكراً لتواصلك. تم استلام تفاصيل طلبك وتسجيلها في النظام، وسيتواصل معك المهندس <strong>مصطفى عادل</strong> وفريق العمليات الهندسية في أقرب وقت.
+                    </>
+                  ) : (
+                    <>
+                      Thank you. Your request details have been registered and dispatched. Eng. <strong>Mostafa Adel</strong> and the engineering team will review and reply promptly.
+                    </>
+                  )}
                 </p>
+
+                {/* Quick actions after submit */}
+                <div className="pt-2 flex flex-col sm:flex-row gap-3 items-stretch">
+                  <a
+                    href={getWhatsAppFollowupLink()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 px-5 py-2.5 text-xs font-bold text-white shadow-xs transition-colors"
+                  >
+                    <MessageCircle className="w-4 h-4 fill-current" />
+                    <span>{isAr ? 'متابعة عبر واتساب (01004131154)' : 'Quick WhatsApp Confirmation'}</span>
+                  </a>
+
+                  <button
+                    type="button"
+                    onClick={resetForm}
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 px-5 py-2.5 text-xs font-semibold text-slate-700 shadow-2xs transition-colors"
+                  >
+                    <span>{isAr ? 'إرسال رسالة أخرى' : 'Send another inquiry'}</span>
+                  </button>
+                </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
-                {/* Name */}
-                <div>
-                  <label
-                    htmlFor="n"
-                    className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-700 mb-1.5"
-                  >
-                    {dict?.contact?.nameLabel || (isAr ? 'الاسم' : 'Name')}
-                  </label>
-                  <input
-                    id="n"
-                    name="name"
-                    type="text"
-                    required
-                    autoComplete="name"
-                    placeholder={isAr ? 'مثال: م. أحمد مصطفى' : 'e.g. John Doe'}
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-4 py-2.5 text-sm text-[#101622] focus:border-[#0084d3] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0084d3]/20 transition-colors"
-                  />
+                {/* Name & Email Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {/* Name */}
+                  <div>
+                    <label
+                      htmlFor="n"
+                      className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-700 mb-1.5"
+                    >
+                      {dict?.contact?.nameLabel || (isAr ? 'الاسم' : 'Name')} <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      id="n"
+                      name="name"
+                      type="text"
+                      required
+                      autoComplete="name"
+                      placeholder={isAr ? 'مثال: م. أحمد مصطفى' : 'e.g. John Doe'}
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-4 py-2.5 text-sm text-[#101622] focus:border-[#0084d3] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0084d3]/20 transition-colors"
+                    />
+                  </div>
+
+                  {/* Work Email */}
+                  <div>
+                    <label
+                      htmlFor="em"
+                      className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-700 mb-1.5"
+                    >
+                      {dict?.contact?.emailLabel || (isAr ? 'البريد الإلكتروني للرد' : 'Work Email')} <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      id="em"
+                      name="email"
+                      type="email"
+                      required
+                      autoComplete="email"
+                      placeholder={isAr ? 'name@refinery.com' : 'john@refinery.com'}
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-4 py-2.5 text-sm text-[#101622] focus:border-[#0084d3] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0084d3]/20 transition-colors"
+                    />
+                  </div>
                 </div>
 
-                {/* Company */}
-                <div>
-                  <label
-                    htmlFor="c"
-                    className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-700 mb-1.5"
-                  >
-                    {dict?.contact?.companyLabel || (isAr ? 'الشركة / المصنع' : 'Company / Refinery')}
-                  </label>
-                  <input
-                    id="c"
-                    name="company"
-                    type="text"
-                    required
-                    autoComplete="organization"
-                    placeholder={isAr ? 'اسم الشركة أو مصفاة التكرير' : 'e.g. Alexandria Petroleum Company'}
-                    value={company}
-                    onChange={(e) => setCompany(e.target.value)}
-                    className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-4 py-2.5 text-sm text-[#101622] focus:border-[#0084d3] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0084d3]/20 transition-colors"
-                  />
+                {/* Company & Phone Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {/* Company */}
+                  <div>
+                    <label
+                      htmlFor="c"
+                      className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-700 mb-1.5"
+                    >
+                      {dict?.contact?.companyLabel || (isAr ? 'الشركة / المصنع' : 'Company / Refinery')} <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      id="c"
+                      name="company"
+                      type="text"
+                      required
+                      autoComplete="organization"
+                      placeholder={isAr ? 'اسم الشركة أو مصفاة التكرير' : 'e.g. Alexandria Petroleum Company'}
+                      value={company}
+                      onChange={(e) => setCompany(e.target.value)}
+                      className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-4 py-2.5 text-sm text-[#101622] focus:border-[#0084d3] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0084d3]/20 transition-colors"
+                    />
+                  </div>
+
+                  {/* Phone / WhatsApp */}
+                  <div>
+                    <label
+                      htmlFor="ph"
+                      className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-700 mb-1.5"
+                    >
+                      {dict?.contact?.phoneLabel || (isAr ? 'رقم الهاتف / واتساب' : 'Phone / WhatsApp')}
+                    </label>
+                    <input
+                      id="ph"
+                      name="phone"
+                      type="tel"
+                      autoComplete="tel"
+                      placeholder={isAr ? 'مثال: 010xxxxxxxx' : '+20 100 xxxx xxx'}
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-4 py-2.5 text-sm text-[#101622] focus:border-[#0084d3] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0084d3]/20 transition-colors"
+                    />
+                  </div>
                 </div>
 
                 {/* Interest Dropdown */}
@@ -230,7 +359,7 @@ export function ContactSection({ locale, dict }: ContactSectionProps) {
                     htmlFor="m"
                     className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-700 mb-1.5"
                   >
-                    {dict?.contact?.messageLabel || (isAr ? 'رسالتك / متطلبات الوحدة' : 'Message / Unit Scope')}
+                    {dict?.contact?.messageLabel || (isAr ? 'رسالتك / متطلبات الوحدة' : 'Message / Unit Scope')} <span className="text-red-500">*</span>
                   </label>
                   <textarea
                     id="m"
@@ -245,15 +374,30 @@ export function ContactSection({ locale, dict }: ContactSectionProps) {
                 </div>
 
                 {/* Submit Action */}
-                <div className="pt-2">
+                <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3">
                   <button
                     id="send"
                     type="submit"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-[#0084d3] hover:bg-[#006fb3] px-7 py-3 text-sm font-semibold text-white shadow-xs transition-all active:scale-[0.98] cursor-pointer"
+                    disabled={isSubmitting}
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-[#0084d3] hover:bg-[#006fb3] px-7 py-3 text-sm font-semibold text-white shadow-xs transition-all active:scale-[0.98] cursor-pointer disabled:opacity-60"
                   >
-                    <Send className="w-4 h-4 rtl:-scale-x-100" />
-                    <span>{dict?.contact?.sendBtn || (isAr ? 'أرسل الرسالة' : 'Send message')}</span>
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span>{isAr ? 'جاري الإرسال...' : 'Sending...'}</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4 rtl:-scale-x-100" />
+                        <span>{dict?.contact?.sendBtn || (isAr ? 'أرسل الرسالة' : 'Send message')}</span>
+                      </>
+                    )}
                   </button>
+
+                  <div className="text-xs text-slate-500 font-mono flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block"></span>
+                    <span>{isAr ? 'إشعار مباشر لإدارة نكسيفا' : 'Direct notification to Mostafa Adel'}</span>
+                  </div>
                 </div>
               </form>
             )}
