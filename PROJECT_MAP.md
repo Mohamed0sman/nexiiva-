@@ -60,4 +60,5 @@
 ---
 
 ## 5. Changelog
-- **v8.0.0 (Current)**: Aligned site design, content, and section rhythm with `nexiiva-site-v8.html`. Extracted 5 high-res WebP screenshots, integrated interactive video player with language switcher, consolidated commercial tiers (Pilot / On-prem / Cloud), and preserved zero-AI authentic industrial engineering tone.
+- **v8.1.0 (Current)**: Studio-Grade Craft & Visual Polish. Complete redesign of the Navbar with centered floating pill navigation, live engine status badge, WhatsApp direct pill, and Book Demo CTA. Elevated Hero Section with industrial grid texture, proof markers, and animated flow dash trays on the CDU-101 schematic. Polished all sections with Bento cards, console video frame, editorial layout, and enhanced micro-interactions while preserving zero-AI industrial engineering tone.
+- **v8.0.0**: Aligned site design, content, and section rhythm with `nexiiva-site-v8.html`. Extracted 5 high-res WebP screenshots, integrated interactive video player with language switcher, consolidated commercial tiers (Pilot / On-prem / Cloud).
